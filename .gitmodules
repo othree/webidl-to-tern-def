@@ -1,0 +1,3 @@
+[submodule "webidl"]
+	path = webidl
+	url = git@github.com:othree/webidl.git
