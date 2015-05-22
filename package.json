@@ -1,6 +1,7 @@
 {
   "name": "webidl-to-tern-def",
   "dependencies": {
+    "walk": "^2.3.9",
     "webidl2": "https://github.com/othree/webidl2.js/tarball/moz"
   }
 }
