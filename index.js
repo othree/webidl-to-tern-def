@@ -1,8 +1,8 @@
 "use strict";
 
 var loader = require('./loader.js');
-// var transformer = require('./transformer.js');
-// var generator = require('./generator.js');
+var transformer = require('./transformer.js');
+var generator = require('./generator.js');
 
 var walk = require('walk');
 var files = [];
@@ -13,7 +13,6 @@ var st = {};
 var walker  = walk.walk('./webidl/webidl', { followLinks: false });
 
 walker.on('file', function(root, stat, next) {
-  // Add this file to the list of files
   st = loader.file(root + '/' + stat.name, st);
   next();
 });
@@ -21,7 +20,7 @@ walker.on('file', function(root, stat, next) {
 walker.on('end', function() {
   "use strict";
 
-  // var data = transformer.run(st);
-  // var code = generator.run(data);
+  var data = transformer.run(st);
+  var code = generator.run(data);
 });
 
