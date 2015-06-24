@@ -96,10 +96,22 @@ var loader = {
       if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
       if (prop.idlType && prop.idlType.sequence) { idl = false; }
       if (prop.idlType && prop.idlType.union) { idl = false; }
+      let args = [];
+      if (prop.arguments) {
+        for (let arg of prop.arguments) {
+          let idl = (arg.idlType && arg.idlType.idlType) || null;
+          args.push({
+            name: arg.name,
+            optional: !!arg.optional,
+            idl: idl
+          });
+        }
+      }
       members.push({
         name: prop.name,
         type: prop.type,
         static: !!prop.static,
+        arguments: args,
         idl: idl
       });
     }
