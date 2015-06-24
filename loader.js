@@ -103,7 +103,8 @@ var loader = {
           args.push({
             name: arg.name,
             optional: !!arg.optional,
-            idl: idl
+            variadic: !!arg.variadic,
+            idlType: idl
           });
         }
       }
@@ -112,7 +113,7 @@ var loader = {
         type: prop.type,
         static: !!prop.static,
         arguments: args,
-        idl: idl
+        idlType: idl
       });
     }
     return {
