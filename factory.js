@@ -24,7 +24,7 @@ var factory = {
         name: member.name,
         type: (member.type === 'operation') ? 'method' : 'prop',
         static: member.static,
-        interface: member.idl
+        interface: member.idlType
       };
       if (m.type === 'method') {
         m.arguments = member.arguments;
