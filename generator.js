@@ -61,10 +61,19 @@ var method = function (inter) {
 
 var prop = function (inter) {
   "use strict";
-  var type = inter.interface ? ptype(inter.interface) : '?';
-  return {
-    "!type": type
-  };
+  var type = inter.interface ? ptype(inter.interface) : null;
+  var def = {};
+  if (type) {
+    def["!type"] = type;
+  }
+  if (inter.members) {
+    for (let m of inter.members) {
+      let name = m.name;
+      let inter = member(m);
+      def[name] = inter;
+    }
+  }
+  return def;
 };
 
 var cons = function (inter) {
@@ -106,7 +115,6 @@ var generator = {
       "!name": "webidl"
     };
     for (let inter of data) {
-      // console.log(inter);
       var name = inter.name;
       def[name] = member(inter);
     }
