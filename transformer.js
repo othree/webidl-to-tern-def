@@ -41,11 +41,14 @@ var transform = {
 
     for (let name in st.interfaces) {
       let o = null;
+      let namedo = null;
       let currentInterface = st.interfaces[name];
       if (currentInterface.constructor) {
         o = transform.constructor(currentInterface);
       } else if (currentInterface.named) {
         o = transform.constructor(currentInterface);
+        namedo = transform.constructor(currentInterface);
+        namedo.name = currentInterface.named;
       } else if (currentInterface.nointerface) {
         continue;
       } else {
@@ -60,6 +63,9 @@ var transform = {
       transform.uniqueMembers(o);
 
       primaryGlobal.push(o);
+      if (namedo) {
+        primaryGlobal.push(namedo);
+      }
 
       if (o.primary) {
         primary = o;

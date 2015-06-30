@@ -61,8 +61,8 @@ var loader = {
     if (def.extAttrs) {
       for (let attr of def.extAttrs) {
         if (attr.name === 'PrimaryGlobal')     { primary = true; }
-        if (attr.name === 'Constructor')       { constructor = true; }
-        if (attr.name === 'NamedConstructor')  { named = attr.rhs.value; }
+        if (attr.name === 'Constructor')       { constructor = true; def.arguments = attr.arguments; }
+        if (attr.name === 'NamedConstructor')  { named = attr.rhs.value; def.arguments = attr.arguments;  }
         if (attr.name === 'NoInterfaceObject') { nointerface = true; }
         if (attr.name === 'ChromeOnly')        { chrome = true; }
         if (attr.name === 'Exposed') {
@@ -75,7 +75,7 @@ var loader = {
       }
     }
 
-    return {
+    var rtn = {
       primary: primary,
       constructor: constructor,
       nointerface: nointerface,
@@ -83,6 +83,10 @@ var loader = {
       named: named,
       exposed: exposed
     };
+    if (rtn.constructor || rtn.named) {
+      rtn.arguments = def.arguments || [];
+    }
+    return rtn;
   },
   interface: function (def) {
     "use strict";
@@ -92,19 +96,28 @@ var loader = {
     for (let prop of def.members) {
       if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
       if (/-/.test(prop.name)) { continue; }
-      let idl = (prop.idlType && prop.idlType.idlType) || null;
-      if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
-      if (prop.idlType && prop.idlType.sequence) { idl = false; }
-      if (prop.idlType && prop.idlType.union) { idl = false; }
+      // let idl = (prop.idlType && prop.idlType.idlType) || null;
+      // if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
+      // if (prop.idlType && prop.idlType.sequence) { idl = false; }
+      // if (prop.idlType && prop.idlType.union) { idl = false; }
       let args = [];
       if (prop.arguments) {
         for (let arg of prop.arguments) {
-          let idl = (arg.idlType && arg.idlType.idlType) || null;
+          // let idl = (arg.idlType && arg.idlType.idlType) || null;
+          let idl = arg.idlType || null;
+          let sequence = false;
+          if (idl) {
+            if (idl.sequence) {
+              sequence = true;
+              idl = idl.idlType;
+            }
+          }
+
           args.push({
             name: arg.name,
             optional: !!arg.optional,
             variadic: !!arg.variadic,
-            idlType: idl
+            idlType: arg.idlType
           });
         }
       }
@@ -113,7 +126,7 @@ var loader = {
         type: prop.type,
         static: !!prop.static,
         arguments: args,
-        idlType: idl
+        idlType: prop.idlType
       });
     }
     return {
