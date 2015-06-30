@@ -112,7 +112,7 @@ var generator = {
     }
 
     // console.log(util.inspect(def, {showHidden: false, depth: null}));
-    console.log(JSON.stringify(def));
+    console.log(JSON.stringify(def, null, 2));
   }
 };
 
