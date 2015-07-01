@@ -41,7 +41,9 @@ var ptype = function (inter, nogenericinfo) {
     let itype = type;
     type = `+${generic}`;
     if (!nogenericinfo) {
-      type += `[value=${ptype(itype)}]`;
+      if (!itype.generic) {
+        type += `[value=${ptype(itype)}]`;
+      }
     }
   }
   return type;
