@@ -32,11 +32,8 @@ var ptype = function (inter, nogenericinfo) {
     type = "?";
   }
   if (type === 'EventHandler') {
-    type = "fn(event)";
+    type = "fn(+Event)";
   }
-  // if (/[A-Z]/.test(type[0])) {
-    // type = `${type}`;
-  // }
   if (sequence || generic === 'sequence') {
     type = `[${ptype(type)}]`;
   }
