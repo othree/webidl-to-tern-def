@@ -50,7 +50,7 @@ var transform = {
         namedo = transform.constructor(currentInterface);
         namedo.name = currentInterface.named;
       } else if (currentInterface.nointerface) {
-        continue;
+        o = transform.object(currentInterface);
       } else {
         o = transform.object(currentInterface);
       }

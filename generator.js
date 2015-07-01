@@ -116,11 +116,16 @@ var generator = {
   run: function (data) {
     "use strict";
     var def = {
-      "!name": "webidl"
+      "!name": "webidl",
+      "!define": {}
     };
     for (let inter of data) {
       var name = inter.name;
-      def[name] = member(inter);
+      if (inter.nointerface) {
+        def['!define'][name] = member(inter);
+      } else {
+        def[name] = member(inter);
+      }
     }
 
     // console.log(util.inspect(def, {showHidden: false, depth: null}));

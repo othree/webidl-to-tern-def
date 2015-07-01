@@ -13,7 +13,8 @@ var factory = {
       name: def.name,
       primary: def.primary,
       type: 'prop',
-      members: factory.members(def.members)
+      members: factory.members(def.members),
+      nointerface: def.nointerface
     }
   },
   members: function (members) {
