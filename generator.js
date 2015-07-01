@@ -91,16 +91,22 @@ var cons = function (inter) {
     args.push(`${arg.name}${optional}: ${ptype(arg.idlType)}`)
   }
   var type = `fn(${args.join(', ')})`;
-  let proto = {};
+  var proto = {};
+  var rtn = {
+    "!type": type,
+  }
+
   for (let m of inter.members) {
     let name = m.name;
     let inter = member(m);
-    proto[name] = inter;
+    if (m.static) {
+      rtn[name] = inter;
+    } else {
+      proto[name] = inter;
+    }
   }
-  return {
-    "!type": type,
-    "prototype": proto
-  }
+  rtn.prototype = proto;
+  return rtn;
 };
 
 var member = function (inter) {
