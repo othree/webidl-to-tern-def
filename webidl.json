@@ -384,7 +384,7 @@
         "!type": "?"
       },
       "error": {
-        "!type": "DOMError"
+        "!type": "+DOMError"
       },
       "onsuccess": {
         "!type": "fn(+Event)"
@@ -420,7 +420,7 @@
         "!type": "string"
       },
       "createFile": {
-        "!type": "fn(path: string, options?: CreateFileOptions) -> +Promise[value=File]"
+        "!type": "fn(path: string, options?: CreateFileOptions) -> +Promise[value=+File]"
       },
       "createDirectory": {
         "!type": "fn(path: string) -> +Promise[value=Directory]"
@@ -711,10 +711,10 @@
         "!type": "fn() -> +Promise[value=ArrayBuffer]"
       },
       "blob": {
-        "!type": "fn() -> +Promise[value=Blob]"
+        "!type": "fn() -> +Promise[value=+Blob]"
       },
       "formData": {
-        "!type": "fn() -> +Promise[value=FormData]"
+        "!type": "fn() -> +Promise[value=+FormData]"
       },
       "json": {
         "!type": "fn() -> +Promise[value=JSON]"
@@ -725,7 +725,7 @@
     },
     "GlobalFetch": {
       "fetch": {
-        "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=Response]"
+        "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
       }
     },
     "FontFaceSetIterator": {
@@ -751,16 +751,16 @@
     },
     "GeometryUtils": {
       "getBoxQuads": {
-        "!type": "fn(options?: BoxQuadOptions) -> [DOMQuad]"
+        "!type": "fn(options?: BoxQuadOptions) -> [+DOMQuad]"
       },
       "convertQuadFromNode": {
-        "!type": "fn(quad: DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(quad: +DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertRectFromNode": {
-        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertPointFromNode": {
-        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMPoint"
+        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMPoint"
       }
     },
     "GetUserMediaRequest": {
@@ -1233,7 +1233,7 @@
         "!type": "fn(x: number, y: number) -> TreeCellInfo"
       },
       "getCoordsForCellItem": {
-        "!type": "fn(row: number, col: TreeColumn, element: string) -> DOMRect"
+        "!type": "fn(row: number, col: TreeColumn, element: string) -> +DOMRect"
       },
       "isCellCropped": {
         "!type": "fn(row: number, col: TreeColumn) -> bool"
@@ -1288,7 +1288,7 @@
     },
     "URLUtilsSearchParams": {
       "searchParams": {
-        "!type": "URLSearchParams"
+        "!type": "+URLSearchParams"
       }
     },
     "URLUtilsReadOnly": {
@@ -1785,7 +1785,7 @@
     }
   },
   "ArchiveReader": {
-    "!type": "fn(blob: Blob, options?: ArchiveReaderOptions)",
+    "!type": "fn(blob: +Blob, options?: ArchiveReaderOptions)",
     "prototype": {
       "getFilenames": {
         "!type": "fn() -> ArchiveRequest"
@@ -1800,7 +1800,7 @@
   },
   "ArchiveRequest": {
     "reader": {
-      "!type": "ArchiveReader"
+      "!type": "+ArchiveReader"
     }
   },
   "Attr": {
@@ -2026,7 +2026,7 @@
       "!type": "fn(output?: number)"
     },
     "context": {
-      "!type": "AudioContext"
+      "!type": "+AudioContext"
     },
     "numberOfInputs": {
       "!type": "number"
@@ -2213,7 +2213,7 @@
         "!type": "string"
       },
       "slice": {
-        "!type": "fn(start?: number, end?: number, contentType?: string) -> Blob"
+        "!type": "fn(start?: number, end?: number, contentType?: string) -> +Blob"
       }
     }
   },
@@ -2221,7 +2221,7 @@
     "!type": "fn(type: string, eventInitDict?: BlobEventInit)",
     "prototype": {
       "data": {
-        "!type": "Blob"
+        "!type": "+Blob"
       }
     }
   },
@@ -2305,7 +2305,7 @@
       "!type": "fn(device: BluetoothDevice, serviceUuid?: number) -> DOMRequest"
     },
     "sendFile": {
-      "!type": "fn(deviceAddress: string, blob: Blob) -> DOMRequest"
+      "!type": "fn(deviceAddress: string, blob: +Blob) -> DOMRequest"
     },
     "stopSendingFile": {
       "!type": "fn(deviceAddress: string) -> DOMRequest"
@@ -3610,7 +3610,7 @@
     "!type": "fn(type: string, eventInitDict?: CSSFontFaceLoadEventInit)",
     "prototype": {
       "fontfaces": {
-        "!type": "[FontFace]"
+        "!type": "[+FontFace]"
       }
     }
   },
@@ -3813,7 +3813,7 @@
   },
   "Cache": {
     "match": {
-      "!type": "fn(request: RequestInfo, options?: CacheQueryOptions) -> +Promise[value=Response]"
+      "!type": "fn(request: RequestInfo, options?: CacheQueryOptions) -> +Promise[value=+Response]"
     },
     "matchAll": {
       "!type": "fn(request?: RequestInfo, options?: CacheQueryOptions) -> +Promise"
@@ -3825,7 +3825,7 @@
       "!type": "fn(requests: [RequestInfo]) -> +Promise[value=void]"
     },
     "put": {
-      "!type": "fn(request: RequestInfo, response: Response) -> +Promise[value=void]"
+      "!type": "fn(request: RequestInfo, response: +Response) -> +Promise[value=void]"
     },
     "delete": {
       "!type": "fn(request: RequestInfo, options?: CacheQueryOptions) -> +Promise[value=bool]"
@@ -3836,7 +3836,7 @@
   },
   "CacheStorage": {
     "match": {
-      "!type": "fn(request: RequestInfo, options?: CacheQueryOptions) -> +Promise[value=Response]"
+      "!type": "fn(request: RequestInfo, options?: CacheQueryOptions) -> +Promise[value=+Response]"
     },
     "has": {
       "!type": "fn(cacheName: string) -> +Promise[value=bool]"
@@ -4101,7 +4101,7 @@
       "!type": "fn(+Event)"
     },
     "takePicture": {
-      "!type": "fn(options?: CameraPictureOptions) -> +Promise[value=Blob]"
+      "!type": "fn(options?: CameraPictureOptions) -> +Promise[value=+Blob]"
     },
     "onpicture": {
       "!type": "fn(+Event)"
@@ -4147,25 +4147,25 @@
         "!type": "number"
       },
       "bounds": {
-        "!type": "DOMRect"
+        "!type": "+DOMRect"
       },
       "hasLeftEye": {
         "!type": "bool"
       },
       "leftEye": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "hasRightEye": {
         "!type": "bool"
       },
       "rightEye": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "hasMouth": {
         "!type": "bool"
       },
       "mouth": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       }
     }
   },
@@ -4173,7 +4173,7 @@
     "!type": "fn(type: string, eventInitDict?: CameraFacesDetectedEventInit)",
     "prototype": {
       "faces": {
-        "!type": "[CameraDetectedFace]"
+        "!type": "[+CameraDetectedFace]"
       }
     }
   },
@@ -4312,13 +4312,13 @@
       "!type": "fn()"
     },
     "createImageData": {
-      "!type": "fn(sw: number, sh: number) -> ImageData"
+      "!type": "fn(sw: number, sh: number) -> +ImageData"
     },
     "getImageData": {
-      "!type": "fn(sx: number, sy: number, sw: number, sh: number) -> ImageData"
+      "!type": "fn(sx: number, sy: number, sw: number, sh: number) -> +ImageData"
     },
     "putImageData": {
-      "!type": "fn(imagedata: ImageData, dx: number, dy: number)"
+      "!type": "fn(imagedata: +ImageData, dx: number, dy: number)"
     },
     "DRAWWINDOW_DRAW_CARET": {
       "!type": "number"
@@ -4418,7 +4418,7 @@
     "!type": "fn(pathString: string)",
     "prototype": {
       "addPath": {
-        "!type": "fn(path: Path2D, transformation?: SVGMatrix)"
+        "!type": "fn(path: +Path2D, transformation?: SVGMatrix)"
       },
       "closePath": {
         "!type": "fn()"
@@ -4454,7 +4454,7 @@
       "!type": "number"
     },
     "getClientRect": {
-      "!type": "fn() -> DOMRect"
+      "!type": "fn() -> +DOMRect"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -4630,7 +4630,7 @@
       "!type": "?"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "onsuccess": {
       "!type": "fn(+Event)"
@@ -4772,10 +4772,10 @@
       "!type": "fn(qualifiedName: string, publicId: string, systemId: string) -> DocumentType"
     },
     "createDocument": {
-      "!type": "fn(namespace: string, qualifiedName: string, doctype?: DocumentType) -> Document"
+      "!type": "fn(namespace: string, qualifiedName: string, doctype?: DocumentType) -> +Document"
     },
     "createHTMLDocument": {
-      "!type": "fn(title?: string) -> Document"
+      "!type": "fn(title?: string) -> +Document"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -4857,43 +4857,43 @@
       "!type": "number"
     },
     "translate": {
-      "!type": "fn(tx: number, ty: number, tz?: number) -> DOMMatrix"
+      "!type": "fn(tx: number, ty: number, tz?: number) -> +DOMMatrix"
     },
     "scale": {
-      "!type": "fn(scale: number, originX?: number, originY?: number) -> DOMMatrix"
+      "!type": "fn(scale: number, originX?: number, originY?: number) -> +DOMMatrix"
     },
     "scale3d": {
-      "!type": "fn(scale: number, originX?: number, originY?: number, originZ?: number) -> DOMMatrix"
+      "!type": "fn(scale: number, originX?: number, originY?: number, originZ?: number) -> +DOMMatrix"
     },
     "scaleNonUniform": {
-      "!type": "fn(scaleX: number, scaleY?: number, scaleZ?: number, originX?: number, originY?: number, originZ?: number) -> DOMMatrix"
+      "!type": "fn(scaleX: number, scaleY?: number, scaleZ?: number, originX?: number, originY?: number, originZ?: number) -> +DOMMatrix"
     },
     "rotate": {
-      "!type": "fn(angle: number, originX?: number, originY?: number) -> DOMMatrix"
+      "!type": "fn(angle: number, originX?: number, originY?: number) -> +DOMMatrix"
     },
     "rotateFromVector": {
-      "!type": "fn(x: number, y: number) -> DOMMatrix"
+      "!type": "fn(x: number, y: number) -> +DOMMatrix"
     },
     "rotateAxisAngle": {
-      "!type": "fn(x: number, y: number, z: number, angle: number) -> DOMMatrix"
+      "!type": "fn(x: number, y: number, z: number, angle: number) -> +DOMMatrix"
     },
     "skewX": {
-      "!type": "fn(sx: number) -> DOMMatrix"
+      "!type": "fn(sx: number) -> +DOMMatrix"
     },
     "skewY": {
-      "!type": "fn(sy: number) -> DOMMatrix"
+      "!type": "fn(sy: number) -> +DOMMatrix"
     },
     "multiply": {
-      "!type": "fn(other: DOMMatrix) -> DOMMatrix"
+      "!type": "fn(other: +DOMMatrix) -> +DOMMatrix"
     },
     "flipX": {
-      "!type": "fn() -> DOMMatrix"
+      "!type": "fn() -> +DOMMatrix"
     },
     "flipY": {
-      "!type": "fn() -> DOMMatrix"
+      "!type": "fn() -> +DOMMatrix"
     },
     "inverse": {
-      "!type": "fn() -> DOMMatrix"
+      "!type": "fn() -> +DOMMatrix"
     },
     "is2D": {
       "!type": "bool"
@@ -4902,7 +4902,7 @@
       "!type": "bool"
     },
     "transformPoint": {
-      "!type": "fn(point?: DOMPointInit) -> DOMPoint"
+      "!type": "fn(point?: DOMPointInit) -> +DOMPoint"
     },
     "toFloat32Array": {
       "!type": "fn() -> Float32Array"
@@ -4981,43 +4981,43 @@
         "!type": "number"
       },
       "multiplySelf": {
-        "!type": "fn(other: DOMMatrix) -> DOMMatrix"
+        "!type": "fn(other: +DOMMatrix) -> +DOMMatrix"
       },
       "preMultiplySelf": {
-        "!type": "fn(other: DOMMatrix) -> DOMMatrix"
+        "!type": "fn(other: +DOMMatrix) -> +DOMMatrix"
       },
       "translateSelf": {
-        "!type": "fn(tx: number, ty: number, tz?: number) -> DOMMatrix"
+        "!type": "fn(tx: number, ty: number, tz?: number) -> +DOMMatrix"
       },
       "scaleSelf": {
-        "!type": "fn(scale: number, originX?: number, originY?: number) -> DOMMatrix"
+        "!type": "fn(scale: number, originX?: number, originY?: number) -> +DOMMatrix"
       },
       "scale3dSelf": {
-        "!type": "fn(scale: number, originX?: number, originY?: number, originZ?: number) -> DOMMatrix"
+        "!type": "fn(scale: number, originX?: number, originY?: number, originZ?: number) -> +DOMMatrix"
       },
       "scaleNonUniformSelf": {
-        "!type": "fn(scaleX: number, scaleY?: number, scaleZ?: number, originX?: number, originY?: number, originZ?: number) -> DOMMatrix"
+        "!type": "fn(scaleX: number, scaleY?: number, scaleZ?: number, originX?: number, originY?: number, originZ?: number) -> +DOMMatrix"
       },
       "rotateSelf": {
-        "!type": "fn(angle: number, originX?: number, originY?: number) -> DOMMatrix"
+        "!type": "fn(angle: number, originX?: number, originY?: number) -> +DOMMatrix"
       },
       "rotateFromVectorSelf": {
-        "!type": "fn(x: number, y: number) -> DOMMatrix"
+        "!type": "fn(x: number, y: number) -> +DOMMatrix"
       },
       "rotateAxisAngleSelf": {
-        "!type": "fn(x: number, y: number, z: number, angle: number) -> DOMMatrix"
+        "!type": "fn(x: number, y: number, z: number, angle: number) -> +DOMMatrix"
       },
       "skewXSelf": {
-        "!type": "fn(sx: number) -> DOMMatrix"
+        "!type": "fn(sx: number) -> +DOMMatrix"
       },
       "skewYSelf": {
-        "!type": "fn(sy: number) -> DOMMatrix"
+        "!type": "fn(sy: number) -> +DOMMatrix"
       },
       "invertSelf": {
-        "!type": "fn() -> DOMMatrix"
+        "!type": "fn() -> +DOMMatrix"
       },
       "setMatrixValue": {
-        "!type": "fn(transformList: string) -> DOMMatrix"
+        "!type": "fn(transformList: string) -> +DOMMatrix"
       }
     }
   },
@@ -5033,13 +5033,13 @@
     "!type": "fn(prin: Principal, documentURI?: URI, baseURI?: URI)",
     "prototype": {
       "parseFromString": {
-        "!type": "fn(str: string, type: SupportedType) -> Document"
+        "!type": "fn(str: string, type: SupportedType) -> +Document"
       },
       "parseFromBuffer": {
-        "!type": "fn(buf: [number], bufLen: number, type: SupportedType) -> Document"
+        "!type": "fn(buf: [number], bufLen: number, type: SupportedType) -> +Document"
       },
       "parseFromStream": {
-        "!type": "fn(stream: InputStream, charset: string, contentLength: number, type: SupportedType) -> Document"
+        "!type": "fn(stream: InputStream, charset: string, contentLength: number, type: SupportedType) -> +Document"
       },
       "init": {
         "!type": "fn(principal?: Principal, documentURI?: URI, baseURI?: URI)"
@@ -5084,16 +5084,16 @@
     "!type": "fn(rect: DOMRectReadOnly)",
     "prototype": {
       "p1": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "p2": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "p3": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "p4": {
-        "!type": "DOMPoint"
+        "!type": "+DOMPoint"
       },
       "bounds": {
         "!type": "DOMRectReadOnly"
@@ -5148,7 +5148,7 @@
       "!type": "number"
     },
     "item": {
-      "!type": "fn(index: number) -> DOMRect"
+      "!type": "fn(index: number) -> +DOMRect"
     }
   },
   "DOMRequest": {
@@ -5162,7 +5162,7 @@
       "!type": "?"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "onsuccess": {
       "!type": "fn(+Event)"
@@ -5527,13 +5527,13 @@
       "!type": "fn(+Event)"
     },
     "add": {
-      "!type": "fn(aBlob: Blob) -> DOMRequest"
+      "!type": "fn(aBlob: +Blob) -> DOMRequest"
     },
     "addNamed": {
-      "!type": "fn(aBlob: Blob, aName: string) -> DOMRequest"
+      "!type": "fn(aBlob: +Blob, aName: string) -> DOMRequest"
     },
     "appendNamed": {
-      "!type": "fn(aBlob: Blob, aName: string) -> DOMRequest"
+      "!type": "fn(aBlob: +Blob, aName: string) -> DOMRequest"
     },
     "get": {
       "!type": "fn(aName: string) -> DOMRequest"
@@ -5652,13 +5652,13 @@
         "!type": "fn(namespace: string, qualifiedName: string) -> Element"
       },
       "createDocumentFragment": {
-        "!type": "fn() -> DocumentFragment"
+        "!type": "fn() -> +DocumentFragment"
       },
       "createTextNode": {
-        "!type": "fn(data: string) -> Text"
+        "!type": "fn(data: string) -> +Text"
       },
       "createComment": {
-        "!type": "fn(data: string) -> Comment"
+        "!type": "fn(data: string) -> +Comment"
       },
       "createProcessingInstruction": {
         "!type": "fn(target: string, data: string) -> ProcessingInstruction"
@@ -5670,10 +5670,10 @@
         "!type": "fn(node: Node) -> Node"
       },
       "createEvent": {
-        "!type": "fn(interface: string) -> Event"
+        "!type": "fn(interface: string) -> +Event"
       },
       "createRange": {
-        "!type": "fn() -> Range"
+        "!type": "fn() -> +Range"
       },
       "createNodeIterator": {
         "!type": "fn(root: Node, whatToShow?: number, filter?: NodeFilter) -> NodeIterator"
@@ -6081,16 +6081,16 @@
         "!type": "fn(+Event)"
       },
       "getBoxQuads": {
-        "!type": "fn(options?: BoxQuadOptions) -> [DOMQuad]"
+        "!type": "fn(options?: BoxQuadOptions) -> [+DOMQuad]"
       },
       "convertQuadFromNode": {
-        "!type": "fn(quad: DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(quad: +DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertRectFromNode": {
-        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertPointFromNode": {
-        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMPoint"
+        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMPoint"
       },
       "fonts": {
         "!type": "FontFaceSet"
@@ -6190,7 +6190,7 @@
       "!type": "string"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "pause": {
       "!type": "fn() -> +Promise[value=DOMDownload]"
@@ -6340,7 +6340,7 @@
       "!type": "fn() -> DOMRectList"
     },
     "getBoundingClientRect": {
-      "!type": "fn() -> DOMRect"
+      "!type": "fn() -> +DOMRect"
     },
     "scrollIntoView": {
       "!type": "fn(top: bool)"
@@ -6439,16 +6439,16 @@
       "!type": "fn() -> [Animation]"
     },
     "getBoxQuads": {
-      "!type": "fn(options?: BoxQuadOptions) -> [DOMQuad]"
+      "!type": "fn(options?: BoxQuadOptions) -> [+DOMQuad]"
     },
     "convertQuadFromNode": {
-      "!type": "fn(quad: DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+      "!type": "fn(quad: +DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
     },
     "convertRectFromNode": {
-      "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+      "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
     },
     "convertPointFromNode": {
-      "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMPoint"
+      "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMPoint"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -6620,7 +6620,7 @@
       "!type": "fn(type: string, listener: EventListener, capture?: bool)"
     },
     "dispatchEvent": {
-      "!type": "fn(event: Event) -> bool"
+      "!type": "fn(event: +Event) -> bool"
     },
     "setEventHandler": {
       "!type": "fn(type: string, handler: fn(+Event))"
@@ -6753,7 +6753,7 @@
     "!type": "fn(type: string, eventInitDict?: FetchEventInit)",
     "prototype": {
       "request": {
-        "!type": "Request"
+        "!type": "+Request"
       },
       "client": {
         "!type": "Client"
@@ -6782,7 +6782,7 @@
   },
   "FileList": {
     "item": {
-      "!type": "fn(index: number) -> File"
+      "!type": "fn(index: number) -> +File"
     },
     "length": {
       "!type": "number"
@@ -6795,13 +6795,13 @@
     "!type": "fn()",
     "prototype": {
       "readAsArrayBuffer": {
-        "!type": "fn(blob: Blob)"
+        "!type": "fn(blob: +Blob)"
       },
       "readAsText": {
-        "!type": "fn(blob: Blob, label?: string)"
+        "!type": "fn(blob: +Blob, label?: string)"
       },
       "readAsDataURL": {
-        "!type": "fn(blob: Blob)"
+        "!type": "fn(blob: +Blob)"
       },
       "abort": {
         "!type": "fn()"
@@ -6822,7 +6822,7 @@
         "!type": "?"
       },
       "error": {
-        "!type": "DOMError"
+        "!type": "+DOMError"
       },
       "onloadstart": {
         "!type": "fn(+Event)"
@@ -6843,7 +6843,7 @@
         "!type": "fn(+Event)"
       },
       "readAsBinaryString": {
-        "!type": "fn(filedata: Blob)"
+        "!type": "fn(filedata: +Blob)"
       }
     }
   },
@@ -6851,16 +6851,16 @@
     "!type": "fn()",
     "prototype": {
       "readAsArrayBuffer": {
-        "!type": "fn(blob: Blob) -> ArrayBuffer"
+        "!type": "fn(blob: +Blob) -> ArrayBuffer"
       },
       "readAsBinaryString": {
-        "!type": "fn(blob: Blob) -> string"
+        "!type": "fn(blob: +Blob) -> string"
       },
       "readAsText": {
-        "!type": "fn(blob: Blob, encoding?: string) -> string"
+        "!type": "fn(blob: +Blob, encoding?: string) -> string"
       },
       "readAsDataURL": {
-        "!type": "fn(blob: Blob) -> string"
+        "!type": "fn(blob: +Blob) -> string"
       }
     }
   },
@@ -6900,10 +6900,10 @@
         "!type": "FontFaceLoadStatus"
       },
       "load": {
-        "!type": "fn() -> +Promise[value=FontFace]"
+        "!type": "fn() -> +Promise[value=+FontFace]"
       },
       "loaded": {
-        "!type": "+Promise[value=FontFace]"
+        "!type": "+Promise[value=+FontFace]"
       }
     }
   },
@@ -6912,13 +6912,13 @@
       "!type": "number"
     },
     "add": {
-      "!type": "fn(font: FontFace)"
+      "!type": "fn(font: +FontFace)"
     },
     "has": {
-      "!type": "fn(font: FontFace) -> bool"
+      "!type": "fn(font: +FontFace) -> bool"
     },
     "delete": {
-      "!type": "fn(font: FontFace) -> bool"
+      "!type": "fn(font: +FontFace) -> bool"
     },
     "clear": {
       "!type": "fn()"
@@ -6952,7 +6952,7 @@
     "!type": "fn(form?: HTMLFormElement)",
     "prototype": {
       "append": {
-        "!type": "fn(name: string, value: Blob, filename?: string)"
+        "!type": "fn(name: string, value: +Blob, filename?: string)"
       },
       "delete": {
         "!type": "fn(name: string)"
@@ -6967,7 +6967,7 @@
         "!type": "fn(name: string) -> bool"
       },
       "set": {
-        "!type": "fn(name: string, value: Blob, filename?: string)"
+        "!type": "fn(name: string, value: +Blob, filename?: string)"
       },
       "queryInterface": {
         "!type": "fn(iid: IID) -> nsISupports"
@@ -7126,7 +7126,7 @@
       "!type": "string"
     },
     "searchParams": {
-      "!type": "URLSearchParams"
+      "!type": "+URLSearchParams"
     }
   },
   "HTMLAppletElement": {
@@ -7226,7 +7226,7 @@
       "!type": "string"
     },
     "searchParams": {
-      "!type": "URLSearchParams"
+      "!type": "+URLSearchParams"
     }
   },
   "HTMLAudioElement": {
@@ -7459,7 +7459,7 @@
       "!type": "fn(typeNames?: string) -> NodeList"
     },
     "open": {
-      "!type": "fn(type?: string, replace?: string) -> Document"
+      "!type": "fn(type?: string, replace?: string) -> +Document"
     },
     "close": {
       "!type": "fn()"
@@ -7872,7 +7872,7 @@
       "!type": "string"
     },
     "getSVGDocument": {
-      "!type": "fn() -> Document"
+      "!type": "fn() -> +Document"
     }
   },
   "HTMLFieldSetElement": {
@@ -7990,7 +7990,7 @@
       "!type": "bool"
     },
     "contentDocument": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "contentWindow": {
       "!type": "WindowProxy"
@@ -8097,7 +8097,7 @@
       "!type": "string"
     },
     "contentDocument": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "contentWindow": {
       "!type": "WindowProxy"
@@ -8121,7 +8121,7 @@
       "!type": "string"
     },
     "getSVGDocument": {
-      "!type": "fn() -> Document"
+      "!type": "fn() -> +Document"
     },
     "appManifestURL": {
       "!type": "string"
@@ -8575,7 +8575,7 @@
       "!type": "string"
     },
     "import": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "sheet": {
       "!type": "StyleSheet"
@@ -8852,7 +8852,7 @@
       "!type": "string"
     },
     "contentDocument": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "contentWindow": {
       "!type": "WindowProxy"
@@ -8903,7 +8903,7 @@
       "!type": "string"
     },
     "getSVGDocument": {
-      "!type": "fn() -> Document"
+      "!type": "fn() -> +Document"
     }
   },
   "HTMLOptGroupElement": {
@@ -9142,7 +9142,7 @@
       "!type": "fn(index: number) -> Element"
     },
     "namedItem": {
-      "!type": "fn(name: string) -> HTMLOptionElement"
+      "!type": "fn(name: string) -> +HTMLOptionElement"
     },
     "add": {
       "!type": "fn(element: ?, before?: ?)"
@@ -9415,7 +9415,7 @@
   },
   "HTMLTemplateElement": {
     "content": {
-      "!type": "DocumentFragment"
+      "!type": "+DocumentFragment"
     }
   },
   "HTMLTextAreaElement": {
@@ -9949,7 +9949,7 @@
       "!type": "?"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "source": {
       "!type": "?"
@@ -9975,7 +9975,7 @@
       "!type": "IDBDatabase"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "objectStore": {
       "!type": "fn(name: string) -> IDBObjectStore"
@@ -11662,7 +11662,7 @@
       "!type": "Element"
     },
     "handleKeyPress": {
-      "!type": "fn(keyEvent: KeyboardEvent) -> bool"
+      "!type": "fn(keyEvent: +KeyboardEvent) -> bool"
     },
     "openedWithKey": {
       "!type": "bool"
@@ -12143,7 +12143,7 @@
       "!type": "string"
     },
     "ownerDocument": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "parentNode": {
       "!type": "Node"
@@ -12251,7 +12251,7 @@
       "!type": "URI"
     },
     "getBoundMutationObservers": {
-      "!type": "fn() -> [MutationObserver]"
+      "!type": "fn() -> [+MutationObserver]"
     }
   },
   "NodeIterator": {
@@ -12352,7 +12352,7 @@
       "!type": "DOMRectList"
     },
     "boundingClientRect": {
-      "!type": "DOMRect"
+      "!type": "+DOMRect"
     },
     "paintRequests": {
       "!type": "PaintRequestList"
@@ -12466,7 +12466,7 @@
   },
   "PaintRequest": {
     "clientRect": {
-      "!type": "DOMRect"
+      "!type": "+DOMRect"
     },
     "reason": {
       "!type": "string"
@@ -12859,10 +12859,10 @@
       "!type": "fn(left: number, top: number)"
     },
     "openPopup": {
-      "!type": "fn(anchorElement: Element, position?: string, x: number, y: number, isContextMenu: bool, attributesOverride: bool, triggerEvent: Event)"
+      "!type": "fn(anchorElement: Element, position?: string, x: number, y: number, isContextMenu: bool, attributesOverride: bool, triggerEvent: +Event)"
     },
     "openPopupAtScreen": {
-      "!type": "fn(x: number, y: number, isContextMenu: bool, triggerEvent: Event)"
+      "!type": "fn(x: number, y: number, isContextMenu: bool, triggerEvent: +Event)"
     },
     "popupState": {
       "!type": "string"
@@ -12874,7 +12874,7 @@
       "!type": "Element"
     },
     "getOuterScreenRect": {
-      "!type": "fn() -> DOMRect"
+      "!type": "fn() -> +DOMRect"
     },
     "moveToAnchor": {
       "!type": "fn(anchorElement: Element, position?: string, x: number, y: number, attributesOverride: bool)"
@@ -12969,7 +12969,7 @@
       "!type": "fn() -> ArrayBuffer"
     },
     "blob": {
-      "!type": "fn() -> Blob"
+      "!type": "fn() -> +Blob"
     },
     "json": {
       "!type": "fn() -> object"
@@ -13099,16 +13099,16 @@
         "!type": "number"
       },
       "compareBoundaryPoints": {
-        "!type": "fn(how: number, sourceRange: Range) -> number"
+        "!type": "fn(how: number, sourceRange: +Range) -> number"
       },
       "deleteContents": {
         "!type": "fn()"
       },
       "extractContents": {
-        "!type": "fn() -> DocumentFragment"
+        "!type": "fn() -> +DocumentFragment"
       },
       "cloneContents": {
-        "!type": "fn() -> DocumentFragment"
+        "!type": "fn() -> +DocumentFragment"
       },
       "insertNode": {
         "!type": "fn(node: Node)"
@@ -13117,7 +13117,7 @@
         "!type": "fn(newParent: Node)"
       },
       "cloneRange": {
-        "!type": "fn() -> Range"
+        "!type": "fn() -> +Range"
       },
       "detach": {
         "!type": "fn()"
@@ -13132,13 +13132,13 @@
         "!type": "fn(node: Node) -> bool"
       },
       "createContextualFragment": {
-        "!type": "fn(fragment: string) -> DocumentFragment"
+        "!type": "fn(fragment: string) -> +DocumentFragment"
       },
       "getClientRects": {
         "!type": "fn() -> DOMRectList"
       },
       "getBoundingClientRect": {
-        "!type": "fn() -> DOMRect"
+        "!type": "fn() -> +DOMRect"
       },
       "queryInterface": {
         "!type": "fn(iid: IID) -> nsISupports"
@@ -13180,7 +13180,7 @@
         "!type": "string"
       },
       "headers": {
-        "!type": "Headers"
+        "!type": "+Headers"
       },
       "context": {
         "!type": "RequestContext"
@@ -13198,7 +13198,7 @@
         "!type": "RequestCache"
       },
       "clone": {
-        "!type": "fn() -> Request"
+        "!type": "fn() -> +Request"
       },
       "setContext": {
         "!type": "fn(context: RequestContext)"
@@ -13210,10 +13210,10 @@
         "!type": "fn() -> +Promise[value=ArrayBuffer]"
       },
       "blob": {
-        "!type": "fn() -> +Promise[value=Blob]"
+        "!type": "fn() -> +Promise[value=+Blob]"
       },
       "formData": {
-        "!type": "fn() -> +Promise[value=FormData]"
+        "!type": "fn() -> +Promise[value=+FormData]"
       },
       "json": {
         "!type": "fn() -> +Promise[value=JSON]"
@@ -13397,10 +13397,10 @@
   "Response": {
     "!type": "fn(body?: BodyInit, init?: ResponseInit)",
     "error": {
-      "!type": "fn() -> Response"
+      "!type": "fn() -> +Response"
     },
     "redirect": {
-      "!type": "fn(url: string, status?: number) -> Response"
+      "!type": "fn(url: string, status?: number) -> +Response"
     },
     "prototype": {
       "type": {
@@ -13419,10 +13419,10 @@
         "!type": "ByteString"
       },
       "headers": {
-        "!type": "Headers"
+        "!type": "+Headers"
       },
       "clone": {
-        "!type": "fn() -> Response"
+        "!type": "fn() -> +Response"
       },
       "bodyUsed": {
         "!type": "bool"
@@ -13431,10 +13431,10 @@
         "!type": "fn() -> +Promise[value=ArrayBuffer]"
       },
       "blob": {
-        "!type": "fn() -> +Promise[value=Blob]"
+        "!type": "fn() -> +Promise[value=+Blob]"
       },
       "formData": {
-        "!type": "fn() -> +Promise[value=FormData]"
+        "!type": "fn() -> +Promise[value=+FormData]"
       },
       "json": {
         "!type": "fn() -> +Promise[value=JSON]"
@@ -14825,7 +14825,7 @@
       "!type": "DOMSettableTokenList"
     },
     "contentDocument": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "contentWindow": {
       "!type": "WindowProxy"
@@ -15127,22 +15127,22 @@
       "!type": "fn()"
     },
     "initialize": {
-      "!type": "fn(newItem: SVGNumber) -> SVGNumber"
+      "!type": "fn(newItem: +SVGNumber) -> +SVGNumber"
     },
     "getItem": {
-      "!type": "fn(index: number) -> SVGNumber"
+      "!type": "fn(index: number) -> +SVGNumber"
     },
     "insertItemBefore": {
-      "!type": "fn(newItem: SVGNumber, index: number) -> SVGNumber"
+      "!type": "fn(newItem: +SVGNumber, index: number) -> +SVGNumber"
     },
     "replaceItem": {
-      "!type": "fn(newItem: SVGNumber, index: number) -> SVGNumber"
+      "!type": "fn(newItem: +SVGNumber, index: number) -> +SVGNumber"
     },
     "removeItem": {
-      "!type": "fn(index: number) -> SVGNumber"
+      "!type": "fn(index: number) -> +SVGNumber"
     },
     "appendItem": {
-      "!type": "fn(newItem: SVGNumber) -> SVGNumber"
+      "!type": "fn(newItem: +SVGNumber) -> +SVGNumber"
     },
     "length": {
       "!type": "number"
@@ -15815,7 +15815,7 @@
       "!type": "fn()"
     },
     "createSVGNumber": {
-      "!type": "fn() -> SVGNumber"
+      "!type": "fn() -> +SVGNumber"
     },
     "createSVGLength": {
       "!type": "fn() -> SVGLength"
@@ -16376,13 +16376,13 @@
       "!type": "number"
     },
     "getRangeAt": {
-      "!type": "fn(index: number) -> Range"
+      "!type": "fn(index: number) -> +Range"
     },
     "addRange": {
-      "!type": "fn(range: Range)"
+      "!type": "fn(range: +Range)"
     },
     "removeRange": {
-      "!type": "fn(range: Range)"
+      "!type": "fn(range: +Range)"
     },
     "removeAllRanges": {
       "!type": "fn()"
@@ -16415,7 +16415,7 @@
       "!type": "number"
     },
     "GetRangesForInterval": {
-      "!type": "fn(beginNode: Node, beginOffset: number, endNode: Node, endOffset: number, allowAdjacent: bool) -> [Range]"
+      "!type": "fn(beginNode: Node, beginOffset: number, endNode: Node, endOffset: number, allowAdjacent: bool) -> [+Range]"
     },
     "scrollIntoView": {
       "!type": "fn(aRegion: number, aIsSynchronous: bool, aVPercent: number, aHPercent: number)"
@@ -16727,7 +16727,7 @@
         "!type": "number"
       },
       "item": {
-        "!type": "fn(index: number) -> SpeechGrammar"
+        "!type": "fn(index: number) -> +SpeechGrammar"
       },
       "addFromURI": {
         "!type": "fn(src: string, weight?: number)"
@@ -16741,7 +16741,7 @@
     "!type": "fn()",
     "prototype": {
       "grammars": {
-        "!type": "SpeechGrammarList"
+        "!type": "+SpeechGrammarList"
       },
       "lang": {
         "!type": "string"
@@ -16834,7 +16834,7 @@
         "!type": "string"
       },
       "emma": {
-        "!type": "Document"
+        "!type": "+Document"
       }
     }
   },
@@ -16868,7 +16868,7 @@
       "!type": "bool"
     },
     "speak": {
-      "!type": "fn(utterance: SpeechSynthesisUtterance)"
+      "!type": "fn(utterance: +SpeechSynthesisUtterance)"
     },
     "cancel": {
       "!type": "fn()"
@@ -17327,7 +17327,7 @@
       "!type": "bool"
     },
     "error": {
-      "!type": "DOMError"
+      "!type": "+DOMError"
     },
     "disconnectedReason": {
       "!type": "TelephonyCallDisconnectedReason"
@@ -17541,7 +17541,7 @@
     "!type": "fn(data?: string)",
     "prototype": {
       "splitText": {
-        "!type": "fn(offset: number) -> Text"
+        "!type": "fn(offset: number) -> +Text"
       },
       "wholeText": {
         "!type": "string"
@@ -17550,16 +17550,16 @@
         "!type": "fn(iid: IID) -> nsISupports"
       },
       "getBoxQuads": {
-        "!type": "fn(options?: BoxQuadOptions) -> [DOMQuad]"
+        "!type": "fn(options?: BoxQuadOptions) -> [+DOMQuad]"
       },
       "convertQuadFromNode": {
-        "!type": "fn(quad: DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(quad: +DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertRectFromNode": {
-        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMQuad"
+        "!type": "fn(rect: DOMRectReadOnly, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad"
       },
       "convertPointFromNode": {
-        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> DOMPoint"
+        "!type": "fn(point: DOMPointInit, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMPoint"
       }
     }
   },
@@ -17614,10 +17614,10 @@
       "!type": "TextTrackCueList"
     },
     "addCue": {
-      "!type": "fn(cue: VTTCue)"
+      "!type": "fn(cue: +VTTCue)"
     },
     "removeCue": {
-      "!type": "fn(cue: VTTCue)"
+      "!type": "fn(cue: +VTTCue)"
     },
     "textTrackList": {
       "!type": "TextTrackList"
@@ -17628,7 +17628,7 @@
       "!type": "number"
     },
     "getCueById": {
-      "!type": "fn(id: string) -> VTTCue"
+      "!type": "fn(id: string) -> +VTTCue"
     }
   },
   "TextTrackList": {
@@ -18022,7 +18022,7 @@
   "URL": {
     "!type": "fn(url: string, base?: string)",
     "createObjectURL": {
-      "!type": "fn(blob: Blob, options?: objectURLOptions) -> string"
+      "!type": "fn(blob: +Blob, options?: objectURLOptions) -> string"
     },
     "revokeObjectURL": {
       "!type": "fn(url: string)"
@@ -18062,12 +18062,12 @@
         "!type": "string"
       },
       "searchParams": {
-        "!type": "URLSearchParams"
+        "!type": "+URLSearchParams"
       }
     }
   },
   "URLSearchParams": {
-    "!type": "fn(init: URLSearchParams)",
+    "!type": "fn(init: +URLSearchParams)",
     "prototype": {
       "append": {
         "!type": "fn(name: string, value: string)"
@@ -18099,7 +18099,7 @@
         "!type": "string"
       },
       "session": {
-        "!type": "USSDSession"
+        "!type": "+USSDSession"
       }
     }
   },
@@ -18190,45 +18190,45 @@
       "!type": "bool"
     },
     "position": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "linearVelocity": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "linearAcceleration": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "hasOrientation": {
       "!type": "bool"
     },
     "orientation": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "angularVelocity": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "angularAcceleration": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     }
   },
   "VREyeParameters": {
     "minimumFieldOfView": {
-      "!type": "VRFieldOfView"
+      "!type": "+VRFieldOfView"
     },
     "maximumFieldOfView": {
-      "!type": "VRFieldOfView"
+      "!type": "+VRFieldOfView"
     },
     "recommendedFieldOfView": {
-      "!type": "VRFieldOfView"
+      "!type": "+VRFieldOfView"
     },
     "eyeTranslation": {
-      "!type": "DOMPoint"
+      "!type": "+DOMPoint"
     },
     "currentFieldOfView": {
-      "!type": "VRFieldOfView"
+      "!type": "+VRFieldOfView"
     },
     "renderRect": {
-      "!type": "DOMRect"
+      "!type": "+DOMRect"
     }
   },
   "VRDevice": {
@@ -18280,7 +18280,7 @@
         "!type": "bool"
       },
       "region": {
-        "!type": "VTTRegion"
+        "!type": "+VTTRegion"
       },
       "vertical": {
         "!type": "DirectionSetting"
@@ -18310,7 +18310,7 @@
         "!type": "string"
       },
       "getCueAsHTML": {
-        "!type": "fn() -> DocumentFragment"
+        "!type": "fn() -> +DocumentFragment"
       },
       "onenter": {
         "!type": "fn(+Event)"
@@ -20985,7 +20985,7 @@
       "!type": "WindowProxy"
     },
     "document": {
-      "!type": "Document"
+      "!type": "+Document"
     },
     "name": {
       "!type": "string"
@@ -21588,10 +21588,10 @@
       "!type": "fn(aGroup: string) -> nsIMessageBroadcaster"
     },
     "beginWindowMove": {
-      "!type": "fn(mouseDownEvent: Event, panel?: Element)"
+      "!type": "fn(mouseDownEvent: +Event, panel?: Element)"
     },
     "fetch": {
-      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=Response]"
+      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
     }
   },
   "ChromeWindow": {
@@ -21641,7 +21641,7 @@
       "!type": "fn(aGroup: string) -> nsIMessageBroadcaster"
     },
     "beginWindowMove": {
-      "!type": "fn(mouseDownEvent: Event, panel?: Element)"
+      "!type": "fn(mouseDownEvent: +Event, panel?: Element)"
     }
   },
   "Worker": {
@@ -21756,7 +21756,7 @@
       "!type": "fn(atob: string) -> string"
     },
     "fetch": {
-      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=Response]"
+      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
     },
     "indexedDB": {
       "!type": "IDBFactory"
@@ -21907,7 +21907,7 @@
         "!type": "string"
       },
       "responseXML": {
-        "!type": "Document"
+        "!type": "+Document"
       },
       "channel": {
         "!type": "MozChannel"
@@ -22062,10 +22062,10 @@
         "!type": "fn(style: Node)"
       },
       "transformToFragment": {
-        "!type": "fn(source: Node, output: Document) -> DocumentFragment"
+        "!type": "fn(source: Node, output: +Document) -> +DocumentFragment"
       },
       "transformToDocument": {
-        "!type": "fn(source: Node) -> Document"
+        "!type": "fn(source: Node) -> +Document"
       },
       "setParameter": {
         "!type": "fn(namespaceURI: string, localName: string, value: ?)"
@@ -22097,7 +22097,7 @@
     "!type": "WindowProxy"
   },
   "document": {
-    "!type": "Document"
+    "!type": "+Document"
   },
   "name": {
     "!type": "string"
@@ -22700,9 +22700,9 @@
     "!type": "fn(aGroup: string) -> nsIMessageBroadcaster"
   },
   "beginWindowMove": {
-    "!type": "fn(mouseDownEvent: Event, panel?: Element)"
+    "!type": "fn(mouseDownEvent: +Event, panel?: Element)"
   },
   "fetch": {
-    "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=Response]"
+    "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
   }
 }

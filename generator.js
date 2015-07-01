@@ -1,5 +1,16 @@
 var util = require('util');
 
+var store = {
+  set: function (st) {
+    this.st = st;
+  },
+  isCons: function (name) {
+    if (!this.st[name]) {
+      return false;
+    }
+    return (this.st[name].type === 'cons');
+  }
+};
 
 var ptype = function (inter, nogenericinfo) {
   "use strict";
@@ -12,6 +23,9 @@ var ptype = function (inter, nogenericinfo) {
     type = inter.idlType;
     if (Array.isArray(type)) {
       type = 'any';
+    }
+    if (typeof type === 'string' && store.isCons(type)) {
+      type = `+${type}`;
     }
   } else {
     type = inter;
@@ -125,12 +139,14 @@ var member = function (inter) {
 var generator = {
   run: function (data) {
     "use strict";
+    store.set(data);
+
     var def = {
       "!name": "webidl",
       "!define": {}
     };
-    for (let inter of data) {
-      var name = inter.name;
+    for (let name in data) {
+      let inter = data[name];
       if (inter.nointerface) {
         def['!define'][name] = member(inter);
       } else {
