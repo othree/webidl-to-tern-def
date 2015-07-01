@@ -53,7 +53,11 @@ var method = function (inter) {
   for (let arg of inter.arguments) {
     args.push(`${arg.name}: ${ptype(arg.idlType, true)}`)
   }
-  var type = `fn(${args.join(', ')}) -> ${ptype(inter.interface)}`;
+  var type = `fn(${args.join(', ')})`;
+  var rtn = ptype(inter.interface);
+  if (rtn && rtn !== 'void') {
+    type += ` -> ${rtn}`
+  }
   return {
     "!type": type
   };
