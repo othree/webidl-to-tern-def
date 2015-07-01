@@ -53,7 +53,8 @@ var method = function (inter) {
   "use strict";
   var args = [];
   for (let arg of inter.arguments) {
-    args.push(`${arg.name}: ${ptype(arg.idlType, true)}`)
+    let optional = arg.optional ? '?' : '';
+    args.push(`${arg.name}${optional}: ${ptype(arg.idlType, true)}`)
   }
   var type = `fn(${args.join(', ')})`;
   var rtn = ptype(inter.interface);
@@ -86,7 +87,8 @@ var cons = function (inter) {
   "use strict";
   var args = [];
   for (let arg of inter.arguments) {
-    args.push(`${arg.name}: ${ptype(arg.idlType)}`)
+    let optional = arg.optional ? '?' : '';
+    args.push(`${arg.name}${optional}: ${ptype(arg.idlType)}`)
   }
   var type = `fn(${args.join(', ')})`;
   let proto = {};
