@@ -254,6 +254,7 @@
       }
     },
     "ContactManager": {
+      "!proto": "EventTarget",
       "find": {
         "!type": "fn(options?: ContactFindOptions) -> DOMRequest"
       },
@@ -280,6 +281,7 @@
       }
     },
     "ContainerBoxObject": {
+      "!proto": "BoxObject",
       "docShell": {
         "!type": "nsIDocShell"
       }
@@ -436,6 +438,7 @@
       }
     },
     "DOMDownloadManager": {
+      "!proto": "EventTarget",
       "getDownloads": {
         "!type": "fn() -> +Promise"
       },
@@ -847,6 +850,7 @@
       }
     },
     "ListBoxObject": {
+      "!proto": "BoxObject",
       "getRowCount": {
         "!type": "fn() -> number"
       },
@@ -1096,6 +1100,7 @@
       }
     },
     "ScrollBoxObject": {
+      "!proto": "BoxObject",
       "scrollTo": {
         "!type": "fn(x: number, y: number)"
       },
@@ -1151,6 +1156,7 @@
       }
     },
     "TreeBoxObject": {
+      "!proto": "BoxObject",
       "columns": {
         "!type": "TreeColumns"
       },
@@ -1648,7 +1654,9 @@
       }
     }
   },
-  "AVInputPort": {},
+  "AVInputPort": {
+    "!proto": "InputPort"
+  },
   "AlarmsManager": {
     "getAll": {
       "!type": "fn() -> DOMRequest"
@@ -1661,6 +1669,7 @@
     }
   },
   "AnalyserNode": {
+    "!proto": "AudioNode",
     "getFloatFrequencyData": {
       "!type": "fn(array: Float32Array)"
     },
@@ -1738,6 +1747,7 @@
   "AnimationEffectReadonly": {},
   "AnimationEvent": {
     "!type": "fn(type: string, eventInitDict?: AnimationEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "animationName": {
         "!type": "string"
@@ -1799,11 +1809,13 @@
     }
   },
   "ArchiveRequest": {
+    "!proto": "DOMRequest",
     "reader": {
       "!type": "+ArchiveReader"
     }
   },
   "Attr": {
+    "!proto": "Node",
     "localName": {
       "!type": "string"
     },
@@ -1853,6 +1865,7 @@
     }
   },
   "AudioBufferSourceNode": {
+    "!proto": "AudioNode",
     "buffer": {
       "!type": "AudioBuffer"
     },
@@ -1885,6 +1898,7 @@
     }
   },
   "AudioChannelManager": {
+    "!proto": "EventTarget",
     "headphones": {
       "!type": "bool"
     },
@@ -1897,6 +1911,7 @@
   },
   "AudioContext": {
     "!type": "fn(audioChannelType: AudioChannel)",
+    "!proto": "EventTarget",
     "prototype": {
       "destination": {
         "!type": "AudioDestinationNode"
@@ -1997,6 +2012,7 @@
     }
   },
   "AudioDestinationNode": {
+    "!proto": "AudioNode",
     "maxChannelCount": {
       "!type": "number"
     }
@@ -2019,6 +2035,7 @@
     }
   },
   "AudioNode": {
+    "!proto": "EventTarget",
     "connect": {
       "!type": "fn(destination: AudioNode, output?: number, input?: number)"
     },
@@ -2080,6 +2097,7 @@
     }
   },
   "AudioProcessingEvent": {
+    "!proto": "Event.prototype",
     "playbackTime": {
       "!type": "number"
     },
@@ -2090,7 +2108,9 @@
       "!type": "AudioBuffer"
     }
   },
-  "AudioStreamTrack": {},
+  "AudioStreamTrack": {
+    "!proto": "MediaStreamTrack"
+  },
   "AudioTrack": {
     "id": {
       "!type": "string"
@@ -2109,6 +2129,7 @@
     }
   },
   "AudioTrackList": {
+    "!proto": "EventTarget",
     "length": {
       "!type": "number"
     },
@@ -2127,6 +2148,7 @@
   },
   "AutocompleteErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: AutocompleteErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "reason": {
         "!type": "AutoCompleteErrorReason"
@@ -2142,6 +2164,7 @@
     }
   },
   "BatteryManager": {
+    "!proto": "EventTarget",
     "charging": {
       "!type": "bool"
     },
@@ -2169,6 +2192,7 @@
   },
   "BeforeAfterKeyboardEvent": {
     "!type": "fn(typeArg: string, eventInitDict?: BeforeAfterKeyboardEventInit)",
+    "!proto": "KeyboardEvent.prototype",
     "prototype": {
       "embeddedCancelled": {
         "!type": "bool"
@@ -2176,11 +2200,13 @@
     }
   },
   "BeforeUnloadEvent": {
+    "!proto": "Event.prototype",
     "returnValue": {
       "!type": "string"
     }
   },
   "BiquadFilterNode": {
+    "!proto": "AudioNode",
     "type": {
       "!type": "BiquadFilterType"
     },
@@ -2219,6 +2245,7 @@
   },
   "BlobEvent": {
     "!type": "fn(type: string, eventInitDict?: BlobEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "data": {
         "!type": "+Blob"
@@ -2226,6 +2253,7 @@
     }
   },
   "BluetoothAdapter": {
+    "!proto": "EventTarget",
     "state": {
       "!type": "BluetoothAdapterState"
     },
@@ -2340,6 +2368,7 @@
   },
   "BluetoothAdapterEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothAdapterEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "adapter": {
         "!type": "BluetoothAdapter"
@@ -2351,6 +2380,7 @@
   },
   "BluetoothAttributeEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothAttributeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "attrs": {
         "!type": "[string]"
@@ -2429,6 +2459,7 @@
     }
   },
   "BluetoothDevice": {
+    "!proto": "EventTarget",
     "address": {
       "!type": "string"
     },
@@ -2459,6 +2490,7 @@
   },
   "BluetoothDeviceEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothDeviceEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "device": {
         "!type": "BluetoothDevice"
@@ -2469,12 +2501,14 @@
     }
   },
   "BluetoothDiscoveryHandle": {
+    "!proto": "EventTarget",
     "ondevicefound": {
       "!type": "fn(+Event)"
     }
   },
   "BluetoothDiscoveryStateChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothDiscoveryStateChangedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "discovering": {
         "!type": "bool"
@@ -2482,6 +2516,7 @@
     }
   },
   "BluetoothGatt": {
+    "!proto": "EventTarget",
     "services": {
       "!type": "[BluetoothGattService]"
     },
@@ -2541,6 +2576,7 @@
   },
   "BluetoothGattCharacteristicEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothGattCharacteristicEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "characteristic": {
         "!type": "BluetoothGattCharacteristic"
@@ -2582,6 +2618,7 @@
     }
   },
   "BluetoothManager": {
+    "!proto": "EventTarget",
     "defaultAdapter": {
       "!type": "BluetoothAdapter"
     },
@@ -2600,6 +2637,7 @@
   },
   "BluetoothPairingEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothPairingEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "deviceName": {
         "!type": "string"
@@ -2624,6 +2662,7 @@
     }
   },
   "BluetoothPairingListener": {
+    "!proto": "EventTarget",
     "ondisplaypasskeyreq": {
       "!type": "fn(+Event)"
     },
@@ -2639,6 +2678,7 @@
   },
   "BluetoothStatusChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothStatusChangedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "address": {
         "!type": "string"
@@ -2706,6 +2746,7 @@
   },
   "BroadcastChannel": {
     "!type": "fn(channel: string)",
+    "!proto": "EventTarget",
     "prototype": {
       "name": {
         "!type": "string"
@@ -2732,9 +2773,12 @@
       }
     }
   },
-  "CDATASection": {},
+  "CDATASection": {
+    "!proto": "Text.prototype"
+  },
   "CFStateChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: CFStateChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "action": {
         "!type": "number"
@@ -2762,6 +2806,7 @@
     }
   },
   "CSS2Properties": {
+    "!proto": "CSSStyleDeclaration",
     "all": {
       "!type": "string"
     },
@@ -3608,6 +3653,7 @@
   },
   "CSSFontFaceLoadEvent": {
     "!type": "fn(type: string, eventInitDict?: CSSFontFaceLoadEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "fontfaces": {
         "!type": "[+FontFace]"
@@ -3616,6 +3662,7 @@
   },
   "Counter": {},
   "CSSPrimitiveValue": {
+    "!proto": "CSSValue",
     "CSS_UNKNOWN": {
       "!type": "number"
     },
@@ -3767,6 +3814,7 @@
     }
   },
   "CSSStyleSheet": {
+    "!proto": "StyleSheet",
     "ownerRule": {
       "!type": "CSSRule"
     },
@@ -3801,6 +3849,7 @@
     }
   },
   "CSSValueList": {
+    "!proto": "CSSValue",
     "length": {
       "!type": "number"
     },
@@ -3853,6 +3902,7 @@
   },
   "CallEvent": {
     "!type": "fn(type: string, eventInitDict?: CallEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "call": {
         "!type": "TelephonyCall"
@@ -3861,6 +3911,7 @@
   },
   "CallGroupErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: CallGroupErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "name": {
         "!type": "string"
@@ -3986,6 +4037,7 @@
   },
   "CameraClosedEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraClosedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "reason": {
         "!type": "string"
@@ -3994,6 +4046,7 @@
   },
   "CameraConfigurationEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraConfigurationEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "mode": {
         "!type": "CameraMode"
@@ -4010,6 +4063,7 @@
     }
   },
   "CameraControl": {
+    "!proto": "MediaStream",
     "capabilities": {
       "!type": "CameraCapabilities"
     },
@@ -4171,6 +4225,7 @@
   },
   "CameraFacesDetectedEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraFacesDetectedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "faces": {
         "!type": "[+CameraDetectedFace]"
@@ -4187,6 +4242,7 @@
   },
   "CameraStateChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraStateChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "newState": {
         "!type": "string"
@@ -4460,9 +4516,14 @@
       "!type": "fn(iid: IID) -> nsISupports"
     }
   },
-  "ChannelMergerNode": {},
-  "ChannelSplitterNode": {},
+  "ChannelMergerNode": {
+    "!proto": "AudioNode"
+  },
+  "ChannelSplitterNode": {
+    "!proto": "AudioNode"
+  },
   "CharacterData": {
+    "!proto": "Node",
     "data": {
       "!type": "string"
     },
@@ -4507,6 +4568,7 @@
     }
   },
   "WindowClient": {
+    "!proto": "Client",
     "visibilityState": {
       "!type": "VisibilityState"
     },
@@ -4533,6 +4595,7 @@
   },
   "ClipboardEvent": {
     "!type": "fn(type: string, eventInitDict?: ClipboardEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "clipboardData": {
         "!type": "DataTransfer"
@@ -4541,6 +4604,7 @@
   },
   "CloseEvent": {
     "!type": "fn(type: string, eventInitDict?: CloseEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "wasClean": {
         "!type": "bool"
@@ -4557,6 +4621,7 @@
     }
   },
   "CommandEvent": {
+    "!proto": "Event.prototype",
     "command": {
       "!type": "string"
     },
@@ -4566,6 +4631,7 @@
   },
   "Comment": {
     "!type": "fn(data?: string)",
+    "!proto": "CharacterData",
     "prototype": {
       "queryInterface": {
         "!type": "fn(iid: IID) -> nsISupports"
@@ -4573,6 +4639,7 @@
     }
   },
   "CompositionEvent": {
+    "!proto": "UIEvent.prototype",
     "data": {
       "!type": "string"
     },
@@ -4584,6 +4651,7 @@
     }
   },
   "ConvolverNode": {
+    "!proto": "AudioNode",
     "buffer": {
       "!type": "AudioBuffer"
     },
@@ -4607,6 +4675,7 @@
   },
   "CustomEvent": {
     "!type": "fn(type: string, eventInitDict?: CustomEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "detail": {
         "!type": "?"
@@ -4617,6 +4686,7 @@
     }
   },
   "DOMCursor": {
+    "!proto": "EventTarget",
     "done": {
       "!type": "bool"
     },
@@ -4782,6 +4852,7 @@
     }
   },
   "DOMMMIError": {
+    "!proto": "DOMError.prototype",
     "serviceCode": {
       "!type": "string"
     },
@@ -4913,6 +4984,7 @@
   },
   "DOMMatrix": {
     "!type": "fn(numberSequence: [number])",
+    "!proto": "DOMMatrixReadOnly",
     "prototype": {
       "a": {
         "!type": "number"
@@ -5022,6 +5094,7 @@
     }
   },
   "DOMMobileMessageError": {
+    "!proto": "DOMError.prototype",
     "data": {
       "!type": "?"
     }
@@ -5065,6 +5138,7 @@
   },
   "DOMPoint": {
     "!type": "fn(x: number, y: number, z?: number, w?: number)",
+    "!proto": "DOMPointReadOnly",
     "prototype": {
       "x": {
         "!type": "number"
@@ -5102,6 +5176,7 @@
   },
   "DOMRect": {
     "!type": "fn(x: number, y: number, width: number, height: number)",
+    "!proto": "DOMRectReadOnly",
     "prototype": {
       "x": {
         "!type": "number"
@@ -5152,6 +5227,7 @@
     }
   },
   "DOMRequest": {
+    "!proto": "EventTarget",
     "then": {
       "!type": "fn(fulfillCallback?: AnyCallback, rejectCallback?: AnyCallback) -> +Promise[value=?]"
     },
@@ -5172,6 +5248,7 @@
     }
   },
   "DOMSettableTokenList": {
+    "!proto": "DOMTokenList",
     "value": {
       "!type": "string"
     }
@@ -5217,6 +5294,7 @@
   },
   "DOMTransactionEvent": {
     "!type": "fn(type: string, eventInitDict?: DOMTransactionEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "transactions": {
         "!type": "?"
@@ -5224,6 +5302,7 @@
     }
   },
   "DataChannel": {
+    "!proto": "EventTarget",
     "label": {
       "!type": "string"
     },
@@ -5272,6 +5351,7 @@
   },
   "DataErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: DataErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "message": {
         "!type": "string"
@@ -5279,6 +5359,7 @@
     }
   },
   "DataStore": {
+    "!proto": "EventTarget",
     "name": {
       "!type": "string"
     },
@@ -5335,6 +5416,7 @@
   },
   "DataStoreChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: DataStoreChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "revisionId": {
         "!type": "string"
@@ -5429,6 +5511,7 @@
     }
   },
   "DedicatedWorkerGlobalScope": {
+    "!proto": "WorkerGlobalScope",
     "postMessage": {
       "!type": "fn(message: ?, transfer?: [?])"
     },
@@ -5437,6 +5520,7 @@
     }
   },
   "DelayNode": {
+    "!proto": "AudioNode",
     "delayTime": {
       "!type": "AudioParam"
     },
@@ -5450,6 +5534,7 @@
     }
   },
   "DesktopNotification": {
+    "!proto": "EventTarget",
     "show": {
       "!type": "fn()"
     },
@@ -5462,6 +5547,7 @@
   },
   "DeviceLightEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceLightEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "value": {
         "!type": "number"
@@ -5470,6 +5556,7 @@
   },
   "DeviceMotionEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceMotionEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "acceleration": {
         "!type": "DeviceAcceleration"
@@ -5490,6 +5577,7 @@
   },
   "DeviceOrientationEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceOrientationEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "alpha": {
         "!type": "number"
@@ -5510,6 +5598,7 @@
   },
   "DeviceProximityEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceProximityEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "value": {
         "!type": "number"
@@ -5523,6 +5612,7 @@
     }
   },
   "DeviceStorage": {
+    "!proto": "EventTarget",
     "onchange": {
       "!type": "fn(+Event)"
     },
@@ -5595,6 +5685,7 @@
   },
   "DeviceStorageChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceStorageChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "path": {
         "!type": "string"
@@ -5604,10 +5695,13 @@
       }
     }
   },
-  "DisplayPortInputPort": {},
+  "DisplayPortInputPort": {
+    "!proto": "InputPort"
+  },
   "WindowProxy": {},
   "Document": {
     "!type": "fn()",
+    "!proto": "Node",
     "prototype": {
       "implementation": {
         "!type": "DOMImplementation"
@@ -6099,6 +6193,7 @@
   },
   "DocumentFragment": {
     "!type": "fn()",
+    "!proto": "Node",
     "prototype": {
       "getElementById": {
         "!type": "fn(elementId: string) -> Element"
@@ -6126,8 +6221,11 @@
       }
     }
   },
-  "DocumentTimeline": {},
+  "DocumentTimeline": {
+    "!proto": "AnimationTimeline"
+  },
   "DocumentType": {
+    "!proto": "Node",
     "name": {
       "!type": "string"
     },
@@ -6149,6 +6247,7 @@
   },
   "DownloadEvent": {
     "!type": "fn(type: string, eventInitDict?: DownloadEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "download": {
         "!type": "DOMDownload"
@@ -6156,6 +6255,7 @@
     }
   },
   "DOMDownload": {
+    "!proto": "EventTarget",
     "totalBytes": {
       "!type": "number"
     },
@@ -6204,6 +6304,7 @@
   },
   "DragEvent": {
     "!type": "fn(type: string, eventInitDict?: DragEventInit)",
+    "!proto": "MouseEvent",
     "prototype": {
       "dataTransfer": {
         "!type": "DataTransfer"
@@ -6220,6 +6321,7 @@
   },
   "DummyInterfaceWorkers": {},
   "DynamicsCompressorNode": {
+    "!proto": "AudioNode",
     "threshold": {
       "!type": "AudioParam"
     },
@@ -6243,6 +6345,7 @@
     }
   },
   "Element": {
+    "!proto": "Node",
     "tagName": {
       "!type": "string"
     },
@@ -6455,6 +6558,7 @@
     }
   },
   "EngineeringMode": {
+    "!proto": "EventTarget",
     "getValue": {
       "!type": "fn(name: string) -> +Promise[value=string]"
     },
@@ -6467,6 +6571,7 @@
   },
   "ErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: ErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "message": {
         "!type": "string"
@@ -6576,6 +6681,7 @@
   },
   "EventSource": {
     "!type": "fn(url: string, eventSourceInitDict?: EventSourceInit)",
+    "!proto": "EventTarget",
     "prototype": {
       "url": {
         "!type": "string"
@@ -6634,6 +6740,7 @@
   },
   "ExtendableEvent": {
     "!type": "fn(type: string, eventInitDict?: ExtendableEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "waitUntil": {
         "!type": "fn(p: +Promise)"
@@ -6652,6 +6759,7 @@
     }
   },
   "FMRadio": {
+    "!proto": "EventTarget",
     "enabled": {
       "!type": "bool"
     },
@@ -6751,6 +6859,7 @@
   },
   "FetchEvent": {
     "!type": "fn(type: string, eventInitDict?: FetchEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "request": {
         "!type": "+Request"
@@ -6768,6 +6877,7 @@
   },
   "File": {
     "!type": "fn(fileBits: string, options?: ChromeFilePropertyBag)",
+    "!proto": "Blob.prototype",
     "prototype": {
       "name": {
         "!type": "string"
@@ -6793,6 +6903,7 @@
   },
   "FileReader": {
     "!type": "fn()",
+    "!proto": "EventTarget",
     "prototype": {
       "readAsArrayBuffer": {
         "!type": "fn(blob: +Blob)"
@@ -6866,6 +6977,7 @@
   },
   "FocusEvent": {
     "!type": "fn(typeArg: string, focusEventInitDict?: FocusEventInit)",
+    "!proto": "UIEvent.prototype",
     "prototype": {
       "relatedTarget": {
         "!type": "EventTarget"
@@ -6908,6 +7020,7 @@
     }
   },
   "FontFaceSet": {
+    "!proto": "EventTarget",
     "size": {
       "!type": "number"
     },
@@ -6975,6 +7088,7 @@
     }
   },
   "GainNode": {
+    "!proto": "AudioNode",
     "gain": {
       "!type": "AudioParam"
     },
@@ -7015,6 +7129,7 @@
   },
   "GamepadAxisMoveEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadAxisMoveEventInit)",
+    "!proto": "GamepadEvent.prototype",
     "prototype": {
       "axis": {
         "!type": "number"
@@ -7026,6 +7141,7 @@
   },
   "GamepadButtonEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadButtonEventInit)",
+    "!proto": "GamepadEvent.prototype",
     "prototype": {
       "button": {
         "!type": "number"
@@ -7034,13 +7150,16 @@
   },
   "GamepadEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "gamepad": {
         "!type": "Gamepad"
       }
     }
   },
-  "HDMIInputPort": {},
+  "HDMIInputPort": {
+    "!proto": "InputPort"
+  },
   "HTMLAllCollection": {
     "length": {
       "!type": "number"
@@ -7053,6 +7172,7 @@
     }
   },
   "HTMLAnchorElement": {
+    "!proto": "HTMLElement",
     "target": {
       "!type": "string"
     },
@@ -7130,6 +7250,7 @@
     }
   },
   "HTMLAppletElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     },
@@ -7165,6 +7286,7 @@
     }
   },
   "HTMLAreaElement": {
+    "!proto": "HTMLElement",
     "alt": {
       "!type": "string"
     },
@@ -7231,18 +7353,22 @@
   },
   "HTMLAudioElement": {
     "!type": "fn(src?: string)",
+    "!proto": "HTMLMediaElement",
     "prototype": {}
   },
   "Audio": {
     "!type": "fn(src?: string)",
+    "!proto": "HTMLMediaElement",
     "prototype": {}
   },
   "HTMLBRElement": {
+    "!proto": "HTMLElement",
     "clear": {
       "!type": "string"
     }
   },
   "HTMLBaseElement": {
+    "!proto": "HTMLElement",
     "href": {
       "!type": "string"
     },
@@ -7251,6 +7377,7 @@
     }
   },
   "HTMLBodyElement": {
+    "!proto": "HTMLElement",
     "text": {
       "!type": "string"
     },
@@ -7307,6 +7434,7 @@
     }
   },
   "HTMLButtonElement": {
+    "!proto": "HTMLElement",
     "autofocus": {
       "!type": "bool"
     },
@@ -7358,6 +7486,7 @@
   },
   "Variant": {},
   "HTMLCanvasElement": {
+    "!proto": "HTMLElement",
     "width": {
       "!type": "number"
     },
@@ -7389,6 +7518,7 @@
     }
   },
   "HTMLContentElement": {
+    "!proto": "HTMLElement",
     "select": {
       "!type": "string"
     },
@@ -7397,31 +7527,37 @@
     }
   },
   "HTMLDListElement": {
+    "!proto": "HTMLElement",
     "compact": {
       "!type": "bool"
     }
   },
   "HTMLDataElement": {
+    "!proto": "HTMLElement",
     "value": {
       "!type": "string"
     }
   },
   "HTMLDataListElement": {
+    "!proto": "HTMLElement",
     "options": {
       "!type": "HTMLCollection"
     }
   },
   "HTMLDirectoryElement": {
+    "!proto": "HTMLElement",
     "compact": {
       "!type": "bool"
     }
   },
   "HTMLDivElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     }
   },
   "HTMLDocument": {
+    "!proto": "Document.prototype",
     "domain": {
       "!type": "string"
     },
@@ -7535,6 +7671,7 @@
     }
   },
   "HTMLElement": {
+    "!proto": "Element",
     "title": {
       "!type": "string"
     },
@@ -7851,8 +7988,11 @@
       "!type": "fn(+Event)"
     }
   },
-  "HTMLUnknownElement": {},
+  "HTMLUnknownElement": {
+    "!proto": "HTMLElement"
+  },
   "HTMLEmbedElement": {
+    "!proto": "HTMLElement",
     "src": {
       "!type": "string"
     },
@@ -7876,6 +8016,7 @@
     }
   },
   "HTMLFieldSetElement": {
+    "!proto": "HTMLElement",
     "disabled": {
       "!type": "bool"
     },
@@ -7908,6 +8049,7 @@
     }
   },
   "HTMLFontElement": {
+    "!proto": "HTMLElement",
     "color": {
       "!type": "string"
     },
@@ -7919,11 +8061,13 @@
     }
   },
   "HTMLFormControlsCollection": {
+    "!proto": "HTMLCollection",
     "namedItem": {
       "!type": "fn(name: string) -> ?"
     }
   },
   "HTMLFormElement": {
+    "!proto": "HTMLElement",
     "acceptCharset": {
       "!type": "string"
     },
@@ -7971,6 +8115,7 @@
     }
   },
   "HTMLFrameElement": {
+    "!proto": "HTMLElement",
     "name": {
       "!type": "string"
     },
@@ -8003,6 +8148,7 @@
     }
   },
   "HTMLFrameSetElement": {
+    "!proto": "HTMLElement",
     "cols": {
       "!type": "string"
     },
@@ -8047,6 +8193,7 @@
     }
   },
   "HTMLHRElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     },
@@ -8063,18 +8210,23 @@
       "!type": "string"
     }
   },
-  "HTMLHeadElement": {},
+  "HTMLHeadElement": {
+    "!proto": "HTMLElement"
+  },
   "HTMLHeadingElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     }
   },
   "HTMLHtmlElement": {
+    "!proto": "HTMLElement",
     "version": {
       "!type": "string"
     }
   },
   "HTMLIFrameElement": {
+    "!proto": "HTMLElement",
     "src": {
       "!type": "string"
     },
@@ -8194,6 +8346,7 @@
   "imgIRequest": {},
   "HTMLImageElement": {
     "!type": "fn(width?: number, height?: number)",
+    "!proto": "HTMLElement",
     "prototype": {
       "alt": {
         "!type": "string"
@@ -8265,6 +8418,7 @@
   },
   "Image": {
     "!type": "fn(width?: number, height?: number)",
+    "!proto": "HTMLElement",
     "prototype": {
       "alt": {
         "!type": "string"
@@ -8335,6 +8489,7 @@
     }
   },
   "HTMLInputElement": {
+    "!proto": "HTMLElement",
     "accept": {
       "!type": "string"
     },
@@ -8511,6 +8666,7 @@
     }
   },
   "HTMLLIElement": {
+    "!proto": "HTMLElement",
     "value": {
       "!type": "number"
     },
@@ -8519,6 +8675,7 @@
     }
   },
   "HTMLLabelElement": {
+    "!proto": "HTMLElement",
     "form": {
       "!type": "HTMLFormElement"
     },
@@ -8530,6 +8687,7 @@
     }
   },
   "HTMLLegendElement": {
+    "!proto": "HTMLElement",
     "form": {
       "!type": "HTMLFormElement"
     },
@@ -8538,6 +8696,7 @@
     }
   },
   "HTMLLinkElement": {
+    "!proto": "HTMLElement",
     "disabled": {
       "!type": "bool"
     },
@@ -8582,6 +8741,7 @@
     }
   },
   "HTMLMapElement": {
+    "!proto": "HTMLElement",
     "name": {
       "!type": "string"
     },
@@ -8590,6 +8750,7 @@
     }
   },
   "HTMLMediaElement": {
+    "!proto": "HTMLElement",
     "error": {
       "!type": "MediaError"
     },
@@ -8728,6 +8889,7 @@
   },
   "MenuBuilder": {},
   "HTMLMenuElement": {
+    "!proto": "HTMLElement",
     "type": {
       "!type": "string"
     },
@@ -8748,6 +8910,7 @@
     }
   },
   "HTMLMenuItemElement": {
+    "!proto": "HTMLElement",
     "type": {
       "!type": "string"
     },
@@ -8771,6 +8934,7 @@
     }
   },
   "HTMLMetaElement": {
+    "!proto": "HTMLElement",
     "name": {
       "!type": "string"
     },
@@ -8785,6 +8949,7 @@
     }
   },
   "HTMLMeterElement": {
+    "!proto": "HTMLElement",
     "value": {
       "!type": "number"
     },
@@ -8805,6 +8970,7 @@
     }
   },
   "HTMLModElement": {
+    "!proto": "HTMLElement",
     "cite": {
       "!type": "string"
     },
@@ -8813,6 +8979,7 @@
     }
   },
   "HTMLOListElement": {
+    "!proto": "HTMLElement",
     "reversed": {
       "!type": "bool"
     },
@@ -8827,6 +8994,7 @@
     }
   },
   "HTMLObjectElement": {
+    "!proto": "HTMLElement",
     "data": {
       "!type": "string"
     },
@@ -8907,6 +9075,7 @@
     }
   },
   "HTMLOptGroupElement": {
+    "!proto": "HTMLElement",
     "disabled": {
       "!type": "bool"
     },
@@ -8916,6 +9085,7 @@
   },
   "HTMLOptionElement": {
     "!type": "fn(text?: string, value?: string, defaultSelected?: bool, selected?: bool)",
+    "!proto": "HTMLElement",
     "prototype": {
       "disabled": {
         "!type": "bool"
@@ -8945,6 +9115,7 @@
   },
   "Option": {
     "!type": "fn(text?: string, value?: string, defaultSelected?: bool, selected?: bool)",
+    "!proto": "HTMLElement",
     "prototype": {
       "disabled": {
         "!type": "bool"
@@ -8973,6 +9144,7 @@
     }
   },
   "HTMLOptionsCollection": {
+    "!proto": "HTMLCollection",
     "length": {
       "!type": "number"
     },
@@ -8987,6 +9159,7 @@
     }
   },
   "HTMLOutputElement": {
+    "!proto": "HTMLElement",
     "htmlFor": {
       "!type": "DOMSettableTokenList"
     },
@@ -9022,11 +9195,13 @@
     }
   },
   "HTMLParagraphElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     }
   },
   "HTMLParamElement": {
+    "!proto": "HTMLElement",
     "name": {
       "!type": "string"
     },
@@ -9040,13 +9215,17 @@
       "!type": "string"
     }
   },
-  "HTMLPictureElement": {},
+  "HTMLPictureElement": {
+    "!proto": "HTMLElement"
+  },
   "HTMLPreElement": {
+    "!proto": "HTMLElement",
     "width": {
       "!type": "number"
     }
   },
   "HTMLProgressElement": {
+    "!proto": "HTMLElement",
     "value": {
       "!type": "number"
     },
@@ -9058,6 +9237,7 @@
     }
   },
   "HTMLPropertiesCollection": {
+    "!proto": "HTMLCollection",
     "namedItem": {
       "!type": "fn(name: string) -> PropertyNodeList"
     },
@@ -9066,16 +9246,19 @@
     }
   },
   "PropertyNodeList": {
+    "!proto": "NodeList",
     "getValues": {
       "!type": "fn() -> PropertyValueArray"
     }
   },
   "HTMLQuoteElement": {
+    "!proto": "HTMLElement",
     "cite": {
       "!type": "string"
     }
   },
   "HTMLScriptElement": {
+    "!proto": "HTMLElement",
     "src": {
       "!type": "string"
     },
@@ -9105,6 +9288,7 @@
     }
   },
   "HTMLSelectElement": {
+    "!proto": "HTMLElement",
     "autofocus": {
       "!type": "bool"
     },
@@ -9176,11 +9360,13 @@
     }
   },
   "HTMLShadowElement": {
+    "!proto": "HTMLElement",
     "olderShadowRoot": {
       "!type": "ShadowRoot"
     }
   },
   "HTMLSourceElement": {
+    "!proto": "HTMLElement",
     "src": {
       "!type": "string"
     },
@@ -9197,8 +9383,11 @@
       "!type": "string"
     }
   },
-  "HTMLSpanElement": {},
+  "HTMLSpanElement": {
+    "!proto": "HTMLElement"
+  },
   "HTMLStyleElement": {
+    "!proto": "HTMLElement",
     "disabled": {
       "!type": "bool"
     },
@@ -9216,11 +9405,13 @@
     }
   },
   "HTMLTableCaptionElement": {
+    "!proto": "HTMLElement",
     "align": {
       "!type": "string"
     }
   },
   "HTMLTableCellElement": {
+    "!proto": "HTMLElement",
     "colSpan": {
       "!type": "number"
     },
@@ -9268,6 +9459,7 @@
     }
   },
   "HTMLTableColElement": {
+    "!proto": "HTMLElement",
     "span": {
       "!type": "number"
     },
@@ -9288,6 +9480,7 @@
     }
   },
   "HTMLTableElement": {
+    "!proto": "HTMLElement",
     "caption": {
       "!type": "HTMLTableCaptionElement"
     },
@@ -9359,6 +9552,7 @@
     }
   },
   "HTMLTableRowElement": {
+    "!proto": "HTMLElement",
     "rowIndex": {
       "!type": "number"
     },
@@ -9391,6 +9585,7 @@
     }
   },
   "HTMLTableSectionElement": {
+    "!proto": "HTMLElement",
     "rows": {
       "!type": "HTMLCollection"
     },
@@ -9414,11 +9609,13 @@
     }
   },
   "HTMLTemplateElement": {
+    "!proto": "HTMLElement",
     "content": {
       "!type": "+DocumentFragment"
     }
   },
   "HTMLTextAreaElement": {
+    "!proto": "HTMLElement",
     "autofocus": {
       "!type": "bool"
     },
@@ -9508,16 +9705,19 @@
     }
   },
   "HTMLTimeElement": {
+    "!proto": "HTMLElement",
     "dateTime": {
       "!type": "string"
     }
   },
   "HTMLTitleElement": {
+    "!proto": "HTMLElement",
     "text": {
       "!type": "string"
     }
   },
   "HTMLTrackElement": {
+    "!proto": "HTMLElement",
     "kind": {
       "!type": "string"
     },
@@ -9553,6 +9753,7 @@
     }
   },
   "HTMLUListElement": {
+    "!proto": "HTMLElement",
     "compact": {
       "!type": "bool"
     },
@@ -9561,6 +9762,7 @@
     }
   },
   "HTMLVideoElement": {
+    "!proto": "HTMLMediaElement",
     "width": {
       "!type": "number"
     },
@@ -9582,6 +9784,7 @@
   },
   "HashChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: HashChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "oldURL": {
         "!type": "string"
@@ -9673,11 +9876,13 @@
     }
   },
   "IDBCursorWithValue": {
+    "!proto": "IDBCursor",
     "value": {
       "!type": "?"
     }
   },
   "IDBDatabase": {
+    "!proto": "EventTarget",
     "name": {
       "!type": "string"
     },
@@ -9733,6 +9938,7 @@
     }
   },
   "IDBFileHandle": {
+    "!proto": "EventTarget",
     "mutableFile": {
       "!type": "IDBMutableFile"
     },
@@ -9783,6 +9989,7 @@
     }
   },
   "IDBFileRequest": {
+    "!proto": "DOMRequest",
     "fileHandle": {
       "!type": "IDBFileHandle"
     },
@@ -9858,6 +10065,7 @@
     }
   },
   "IDBMutableFile": {
+    "!proto": "EventTarget",
     "name": {
       "!type": "string"
     },
@@ -9937,6 +10145,7 @@
     }
   },
   "IDBOpenDBRequest": {
+    "!proto": "IDBRequest",
     "onblocked": {
       "!type": "fn(+Event)"
     },
@@ -9945,6 +10154,7 @@
     }
   },
   "IDBRequest": {
+    "!proto": "EventTarget",
     "result": {
       "!type": "?"
     },
@@ -9968,6 +10178,7 @@
     }
   },
   "IDBTransaction": {
+    "!proto": "EventTarget",
     "mode": {
       "!type": "IDBTransactionMode"
     },
@@ -9998,6 +10209,7 @@
   },
   "IDBVersionChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: IDBVersionChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "oldVersion": {
         "!type": "number"
@@ -10009,6 +10221,7 @@
   },
   "IccCardLockError": {
     "!type": "fn(errorName: string, retryCount: number)",
+    "!proto": "DOMError.prototype",
     "prototype": {
       "retryCount": {
         "!type": "number"
@@ -10017,6 +10230,7 @@
   },
   "IccChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: IccChangeEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "iccId": {
         "!type": "string"
@@ -10025,6 +10239,7 @@
   },
   "ImageCapture": {
     "!type": "fn(track: VideoStreamTrack)",
+    "!proto": "EventTarget",
     "prototype": {
       "videoStreamTrack": {
         "!type": "VideoStreamTrack"
@@ -10042,6 +10257,7 @@
   },
   "ImageCaptureErrorEvent": {
     "!type": "fn(type: string, imageCaptureErrorInitDict?: ImageCaptureErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "imageCaptureError": {
         "!type": "ImageCaptureError"
@@ -10064,6 +10280,7 @@
   },
   "InputEvent": {
     "!type": "fn(type: string, eventInitDict?: InputEventInit)",
+    "!proto": "UIEvent.prototype",
     "prototype": {
       "isComposing": {
         "!type": "bool"
@@ -10071,6 +10288,7 @@
     }
   },
   "InputPort": {
+    "!proto": "EventTarget",
     "id": {
       "!type": "string"
     },
@@ -10094,6 +10312,7 @@
   },
   "InstallEvent": {
     "!type": "fn(type: string, eventInitDict?: InstallEventInit)",
+    "!proto": "ExtendableEvent.prototype",
     "prototype": {
       "activeWorker": {
         "!type": "ServiceWorker"
@@ -10105,6 +10324,7 @@
   },
   "InstallPhaseEvent": {
     "!type": "fn(type: string, eventInitDict?: EventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "waitUntil": {
         "!type": "fn(p: +Promise)"
@@ -10673,6 +10893,7 @@
   },
   "KeyboardEvent": {
     "!type": "fn(typeArg: string, keyboardEventInitDict?: KeyboardEventInit)",
+    "!proto": "UIEvent.prototype",
     "prototype": {
       "charCode": {
         "!type": "number"
@@ -11283,6 +11504,7 @@
     }
   },
   "KeyframeEffectReadonly": {
+    "!proto": "AnimationEffectReadonly",
     "target": {
       "!type": "Element"
     },
@@ -11292,6 +11514,7 @@
   },
   "IID": {},
   "LocalMediaStream": {
+    "!proto": "MediaStream",
     "stop": {
       "!type": "fn()"
     }
@@ -11360,6 +11583,7 @@
     }
   },
   "MediaDevices": {
+    "!proto": "EventTarget",
     "enumerateDevices": {
       "!type": "fn() -> +Promise"
     },
@@ -11368,12 +11592,14 @@
     }
   },
   "MediaElementAudioSourceNode": {
+    "!proto": "AudioNode",
     "passThrough": {
       "!type": "bool"
     }
   },
   "MediaEncryptedEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaKeyNeededEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "initDataType": {
         "!type": "string"
@@ -11401,12 +11627,14 @@
     }
   },
   "MediaKeyError": {
+    "!proto": "Event.prototype",
     "systemCode": {
       "!type": "number"
     }
   },
   "MediaKeyMessageEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaKeyMessageEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "messageType": {
         "!type": "MediaKeyMessageType"
@@ -11417,6 +11645,7 @@
     }
   },
   "MediaKeySession": {
+    "!proto": "EventTarget",
     "error": {
       "!type": "MediaKeyError"
     },
@@ -11517,6 +11746,7 @@
   },
   "MediaRecorder": {
     "!type": "fn(node: AudioNode, output?: number, options?: MediaRecorderOptions)",
+    "!proto": "EventTarget",
     "prototype": {
       "stream": {
         "!type": "MediaStream"
@@ -11561,6 +11791,7 @@
   },
   "MediaSource": {
     "!type": "fn()",
+    "!proto": "EventTarget",
     "isTypeSupported": {
       "!type": "fn(type: string) -> bool"
     },
@@ -11589,6 +11820,7 @@
     }
   },
   "MediaStream": {
+    "!proto": "EventTarget",
     "id": {
       "!type": "string"
     },
@@ -11606,17 +11838,20 @@
     }
   },
   "MediaStreamAudioDestinationNode": {
+    "!proto": "AudioNode",
     "stream": {
       "!type": "MediaStream"
     }
   },
   "MediaStreamAudioSourceNode": {
+    "!proto": "AudioNode",
     "passThrough": {
       "!type": "bool"
     }
   },
   "MediaStreamEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaStreamEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "stream": {
         "!type": "MediaStream"
@@ -11642,6 +11877,7 @@
   },
   "MediaStreamTrackEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaStreamTrackEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "receiver": {
         "!type": "RTCRtpReceiver"
@@ -11655,6 +11891,7 @@
     }
   },
   "MenuBoxObject": {
+    "!proto": "BoxObject",
     "openMenu": {
       "!type": "fn(openFlag: bool)"
     },
@@ -11681,6 +11918,7 @@
   },
   "MessageEvent": {
     "!type": "fn(type: string, eventInitDict?: MessageEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "data": {
         "!type": "?"
@@ -11700,6 +11938,7 @@
     }
   },
   "MessagePort": {
+    "!proto": "EventTarget",
     "postMessage": {
       "!type": "fn(message: ?, transferable?: [Transferable])"
     },
@@ -11742,6 +11981,7 @@
     }
   },
   "MouseEvent": {
+    "!proto": "UIEvent.prototype",
     "screenX": {
       "!type": "number"
     },
@@ -11819,6 +12059,7 @@
     }
   },
   "MouseScrollEvent": {
+    "!proto": "MouseEvent",
     "HORIZONTAL_AXIS": {
       "!type": "number"
     },
@@ -11833,6 +12074,7 @@
     }
   },
   "MutationEvent": {
+    "!proto": "Event.prototype",
     "MODIFICATION": {
       "!type": "number"
     },
@@ -12089,6 +12331,7 @@
     }
   },
   "NetworkInformation": {
+    "!proto": "EventTarget",
     "type": {
       "!type": "ConnectionType"
     },
@@ -12097,6 +12340,7 @@
     }
   },
   "Node": {
+    "!proto": "EventTarget",
     "ELEMENT_NODE": {
       "!type": "number"
     },
@@ -12296,6 +12540,7 @@
   },
   "Notification": {
     "!type": "fn(title: string, options?: NotificationOptions)",
+    "!proto": "EventTarget",
     "permission": {
       "!type": "NotificationPermission"
     },
@@ -12348,6 +12593,7 @@
     }
   },
   "NotifyPaintEvent": {
+    "!proto": "Event.prototype",
     "clientRects": {
       "!type": "DOMRectList"
     },
@@ -12359,12 +12605,14 @@
     }
   },
   "OfflineAudioCompletionEvent": {
+    "!proto": "Event.prototype",
     "renderedBuffer": {
       "!type": "AudioBuffer"
     }
   },
   "OfflineAudioContext": {
     "!type": "fn(numberOfChannels: number, length: number, sampleRate: number)",
+    "!proto": "AudioContext.prototype",
     "prototype": {
       "startRendering": {
         "!type": "fn() -> +Promise[value=AudioBuffer]"
@@ -12375,6 +12623,7 @@
     }
   },
   "OfflineResourceList": {
+    "!proto": "EventTarget",
     "UNCACHED": {
       "!type": "number"
     },
@@ -12431,6 +12680,7 @@
     }
   },
   "OscillatorNode": {
+    "!proto": "AudioNode",
     "type": {
       "!type": "OscillatorType"
     },
@@ -12458,6 +12708,7 @@
   },
   "PageTransitionEvent": {
     "!type": "fn(type: string, eventInitDict?: PageTransitionEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "persisted": {
         "!type": "bool"
@@ -12487,6 +12738,7 @@
     }
   },
   "PannerNode": {
+    "!proto": "AudioNode",
     "panningModel": {
       "!type": "PanningModelType"
     },
@@ -12582,8 +12834,12 @@
       "!type": "DOMHighResTimeStamp"
     }
   },
-  "PerformanceMark": {},
-  "PerformanceMeasure": {},
+  "PerformanceMark": {
+    "!proto": "PerformanceEntry"
+  },
+  "PerformanceMeasure": {
+    "!proto": "PerformanceEntry"
+  },
   "PerformanceNavigation": {
     "TYPE_NAVIGATE": {
       "!type": "number"
@@ -12605,6 +12861,7 @@
     }
   },
   "PerformanceResourceTiming": {
+    "!proto": "PerformanceEntry",
     "initiatorType": {
       "!type": "string"
     },
@@ -12772,6 +13029,7 @@
   },
   "PointerEvent": {
     "!type": "fn(type: string, eventInitDict?: PointerEventInit)",
+    "!proto": "MouseEvent",
     "prototype": {
       "pointerId": {
         "!type": "number"
@@ -12801,6 +13059,7 @@
   },
   "PopStateEvent": {
     "!type": "fn(type: string, eventInitDict?: PopStateEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "state": {
         "!type": "?"
@@ -12809,6 +13068,7 @@
   },
   "PopupBlockedEvent": {
     "!type": "fn(type: string, eventInitDict?: PopupBlockedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "requestingWindow": {
         "!type": "Window"
@@ -12825,6 +13085,7 @@
     }
   },
   "PopupBoxObject": {
+    "!proto": "BoxObject",
     "showPopup": {
       "!type": "fn(srcContent: Element, popupContent: Element, xpos: number, ypos: number, popupType?: string, anchorAlignment?: string, popupAlignment?: string)"
     },
@@ -12887,6 +13148,7 @@
     }
   },
   "PresentationDeviceInfoManager": {
+    "!proto": "EventTarget",
     "ondevicechange": {
       "!type": "fn(+Event)"
     },
@@ -12898,6 +13160,7 @@
     }
   },
   "ProcessingInstruction": {
+    "!proto": "CharacterData",
     "target": {
       "!type": "string"
     },
@@ -12907,6 +13170,7 @@
   },
   "ProgressEvent": {
     "!type": "fn(type: string, eventInitDict?: ProgressEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "lengthComputable": {
         "!type": "bool"
@@ -12944,6 +13208,7 @@
   },
   "PushEvent": {
     "!type": "fn(type: string, eventInitDict?: PushEventInit)",
+    "!proto": "ExtendableEvent.prototype",
     "prototype": {
       "data": {
         "!type": "PushMessageData"
@@ -12995,6 +13260,7 @@
   "RTCDataChannel": {},
   "RTCDataChannelEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCDataChannelEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "channel": {
         "!type": "RTCDataChannel"
@@ -13003,6 +13269,7 @@
   },
   "RTCPeerConnectionIceEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCPeerConnectionIceEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "candidate": {
         "!type": "mozRTCIceCandidate"
@@ -13034,6 +13301,7 @@
     }
   },
   "RadioNodeList": {
+    "!proto": "NodeList",
     "value": {
       "!type": "string"
     }
@@ -13147,6 +13415,7 @@
   },
   "RecordErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: RecordErrorEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "name": {
         "!type": "string"
@@ -13445,6 +13714,7 @@
     }
   },
   "SVGAElement": {
+    "!proto": "SVGGraphicsElement",
     "target": {
       "!type": "SVGAnimatedString"
     },
@@ -13456,6 +13726,7 @@
     }
   },
   "SVGAltGlyphElement": {
+    "!proto": "SVGTextPositioningElement",
     "glyphRef": {
       "!type": "string"
     },
@@ -13501,9 +13772,15 @@
       "!type": "fn(unitType: number)"
     }
   },
-  "SVGAnimateElement": {},
-  "SVGAnimateMotionElement": {},
-  "SVGAnimateTransformElement": {},
+  "SVGAnimateElement": {
+    "!proto": "SVGAnimationElement"
+  },
+  "SVGAnimateMotionElement": {
+    "!proto": "SVGAnimationElement"
+  },
+  "SVGAnimateTransformElement": {
+    "!proto": "SVGAnimationElement"
+  },
   "SVGAnimatedAngle": {
     "baseVal": {
       "!type": "SVGAngle"
@@ -13619,6 +13896,7 @@
     }
   },
   "SVGAnimationElement": {
+    "!proto": "SVGElement",
     "targetElement": {
       "!type": "SVGElement"
     },
@@ -13657,6 +13935,7 @@
     }
   },
   "SVGCircleElement": {
+    "!proto": "SVGGraphicsElement",
     "cx": {
       "!type": "SVGAnimatedLength"
     },
@@ -13668,6 +13947,7 @@
     }
   },
   "SVGClipPathElement": {
+    "!proto": "SVGElement",
     "clipPathUnits": {
       "!type": "SVGAnimatedEnumeration"
     },
@@ -13685,6 +13965,7 @@
     }
   },
   "SVGComponentTransferFunctionElement": {
+    "!proto": "SVGElement",
     "SVG_FECOMPONENTTRANSFER_TYPE_UNKNOWN": {
       "!type": "number"
     },
@@ -13725,9 +14006,14 @@
       "!type": "SVGAnimatedNumber"
     }
   },
-  "SVGDefsElement": {},
-  "SVGDescElement": {},
+  "SVGDefsElement": {
+    "!proto": "SVGGraphicsElement"
+  },
+  "SVGDescElement": {
+    "!proto": "SVGElement"
+  },
   "SVGDocument": {
+    "!proto": "Document.prototype",
     "domain": {
       "!type": "string"
     },
@@ -13736,6 +14022,7 @@
     }
   },
   "SVGElement": {
+    "!proto": "Element",
     "id": {
       "!type": "string"
     },
@@ -13978,6 +14265,7 @@
     }
   },
   "SVGEllipseElement": {
+    "!proto": "SVGGraphicsElement",
     "cx": {
       "!type": "SVGAnimatedLength"
     },
@@ -13992,6 +14280,7 @@
     }
   },
   "SVGFEBlendElement": {
+    "!proto": "SVGElement",
     "SVG_FEBLEND_MODE_UNKNOWN": {
       "!type": "number"
     },
@@ -14069,6 +14358,7 @@
     }
   },
   "SVGFEColorMatrixElement": {
+    "!proto": "SVGElement",
     "SVG_FECOLORMATRIX_TYPE_UNKNOWN": {
       "!type": "number"
     },
@@ -14110,6 +14400,7 @@
     }
   },
   "SVGFEComponentTransferElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14130,6 +14421,7 @@
     }
   },
   "SVGFECompositeElement": {
+    "!proto": "SVGElement",
     "SVG_FECOMPOSITE_OPERATOR_UNKNOWN": {
       "!type": "number"
     },
@@ -14189,6 +14481,7 @@
     }
   },
   "SVGFEConvolveMatrixElement": {
+    "!proto": "SVGElement",
     "SVG_EDGEMODE_UNKNOWN": {
       "!type": "number"
     },
@@ -14254,6 +14547,7 @@
     }
   },
   "SVGFEDiffuseLightingElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14286,6 +14580,7 @@
     }
   },
   "SVGFEDisplacementMapElement": {
+    "!proto": "SVGElement",
     "SVG_CHANNEL_UNKNOWN": {
       "!type": "number"
     },
@@ -14333,6 +14628,7 @@
     }
   },
   "SVGFEDistantLightElement": {
+    "!proto": "SVGElement",
     "azimuth": {
       "!type": "SVGAnimatedNumber"
     },
@@ -14341,6 +14637,7 @@
     }
   },
   "SVGFEDropShadowElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14376,6 +14673,7 @@
     }
   },
   "SVGFEFloodElement": {
+    "!proto": "SVGElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -14392,11 +14690,20 @@
       "!type": "SVGAnimatedString"
     }
   },
-  "SVGFEFuncAElement": {},
-  "SVGFEFuncBElement": {},
-  "SVGFEFuncGElement": {},
-  "SVGFEFuncRElement": {},
+  "SVGFEFuncAElement": {
+    "!proto": "SVGComponentTransferFunctionElement"
+  },
+  "SVGFEFuncBElement": {
+    "!proto": "SVGComponentTransferFunctionElement"
+  },
+  "SVGFEFuncGElement": {
+    "!proto": "SVGComponentTransferFunctionElement"
+  },
+  "SVGFEFuncRElement": {
+    "!proto": "SVGComponentTransferFunctionElement"
+  },
   "SVGFEGaussianBlurElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14426,6 +14733,7 @@
     }
   },
   "SVGFEImageElement": {
+    "!proto": "SVGElement",
     "preserveAspectRatio": {
       "!type": "SVGAnimatedPreserveAspectRatio"
     },
@@ -14449,6 +14757,7 @@
     }
   },
   "SVGFEMergeElement": {
+    "!proto": "SVGElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -14466,11 +14775,13 @@
     }
   },
   "SVGFEMergeNodeElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     }
   },
   "SVGFEMorphologyElement": {
+    "!proto": "SVGElement",
     "SVG_MORPHOLOGY_OPERATOR_UNKNOWN": {
       "!type": "number"
     },
@@ -14509,6 +14820,7 @@
     }
   },
   "SVGFEOffsetElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14535,6 +14847,7 @@
     }
   },
   "SVGFEPointLightElement": {
+    "!proto": "SVGElement",
     "x": {
       "!type": "SVGAnimatedNumber"
     },
@@ -14546,6 +14859,7 @@
     }
   },
   "SVGFESpecularLightingElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14581,6 +14895,7 @@
     }
   },
   "SVGFESpotLightElement": {
+    "!proto": "SVGElement",
     "x": {
       "!type": "SVGAnimatedNumber"
     },
@@ -14607,6 +14922,7 @@
     }
   },
   "SVGFETileElement": {
+    "!proto": "SVGElement",
     "in1": {
       "!type": "SVGAnimatedString"
     },
@@ -14627,6 +14943,7 @@
     }
   },
   "SVGFETurbulenceElement": {
+    "!proto": "SVGElement",
     "SVG_TURBULENCE_TYPE_UNKNOWN": {
       "!type": "number"
     },
@@ -14680,6 +14997,7 @@
     }
   },
   "SVGFilterElement": {
+    "!proto": "SVGElement",
     "filterUnits": {
       "!type": "SVGAnimatedEnumeration"
     },
@@ -14712,6 +15030,7 @@
     }
   },
   "SVGForeignObjectElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -14725,8 +15044,11 @@
       "!type": "SVGAnimatedLength"
     }
   },
-  "SVGGElement": {},
+  "SVGGElement": {
+    "!proto": "SVGGraphicsElement"
+  },
   "SVGGradientElement": {
+    "!proto": "SVGElement",
     "SVG_SPREADMETHOD_UNKNOWN": {
       "!type": "number"
     },
@@ -14762,6 +15084,7 @@
     }
   },
   "SVGGraphicsElement": {
+    "!proto": "SVGElement",
     "transform": {
       "!type": "SVGAnimatedTransformList"
     },
@@ -14797,6 +15120,7 @@
     }
   },
   "SVGIFrameElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -14832,6 +15156,7 @@
     }
   },
   "SVGImageElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -14937,6 +15262,7 @@
     }
   },
   "SVGLineElement": {
+    "!proto": "SVGGraphicsElement",
     "x1": {
       "!type": "SVGAnimatedLength"
     },
@@ -14951,6 +15277,7 @@
     }
   },
   "SVGLinearGradientElement": {
+    "!proto": "SVGGradientElement",
     "x1": {
       "!type": "SVGAnimatedLength"
     },
@@ -14965,11 +15292,13 @@
     }
   },
   "SVGMPathElement": {
+    "!proto": "SVGElement",
     "href": {
       "!type": "SVGAnimatedString"
     }
   },
   "SVGMarkerElement": {
+    "!proto": "SVGElement",
     "SVG_MARKERUNITS_UNKNOWN": {
       "!type": "number"
     },
@@ -15023,6 +15352,7 @@
     }
   },
   "SVGMaskElement": {
+    "!proto": "SVGElement",
     "SVG_MASKTYPE_LUMINANCE": {
       "!type": "number"
     },
@@ -15110,7 +15440,9 @@
       "!type": "fn(angle: number) -> SVGMatrix"
     }
   },
-  "SVGMetadataElement": {},
+  "SVGMetadataElement": {
+    "!proto": "SVGElement"
+  },
   "SVGNumber": {
     "!type": "fn(value: number)",
     "prototype": {
@@ -15152,6 +15484,7 @@
     }
   },
   "SVGPathElement": {
+    "!proto": "SVGGraphicsElement",
     "pathLength": {
       "!type": "SVGAnimatedNumber"
     },
@@ -15296,8 +15629,11 @@
       "!type": "string"
     }
   },
-  "SVGPathSegClosePath": {},
+  "SVGPathSegClosePath": {
+    "!proto": "SVGPathSeg"
+  },
   "SVGPathSegMovetoAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15306,6 +15642,7 @@
     }
   },
   "SVGPathSegMovetoRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15314,6 +15651,7 @@
     }
   },
   "SVGPathSegLinetoAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15322,6 +15660,7 @@
     }
   },
   "SVGPathSegLinetoRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15330,6 +15669,7 @@
     }
   },
   "SVGPathSegCurvetoCubicAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15350,6 +15690,7 @@
     }
   },
   "SVGPathSegCurvetoCubicRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15370,6 +15711,7 @@
     }
   },
   "SVGPathSegCurvetoQuadraticAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15384,6 +15726,7 @@
     }
   },
   "SVGPathSegCurvetoQuadraticRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15398,6 +15741,7 @@
     }
   },
   "SVGPathSegArcAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15421,6 +15765,7 @@
     }
   },
   "SVGPathSegArcRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15444,26 +15789,31 @@
     }
   },
   "SVGPathSegLinetoHorizontalAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     }
   },
   "SVGPathSegLinetoHorizontalRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     }
   },
   "SVGPathSegLinetoVerticalAbs": {
+    "!proto": "SVGPathSeg",
     "y": {
       "!type": "number"
     }
   },
   "SVGPathSegLinetoVerticalRel": {
+    "!proto": "SVGPathSeg",
     "y": {
       "!type": "number"
     }
   },
   "SVGPathSegCurvetoCubicSmoothAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15478,6 +15828,7 @@
     }
   },
   "SVGPathSegCurvetoCubicSmoothRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15492,6 +15843,7 @@
     }
   },
   "SVGPathSegCurvetoQuadraticSmoothAbs": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15500,6 +15852,7 @@
     }
   },
   "SVGPathSegCurvetoQuadraticSmoothRel": {
+    "!proto": "SVGPathSeg",
     "x": {
       "!type": "number"
     },
@@ -15540,6 +15893,7 @@
     }
   },
   "SVGPatternElement": {
+    "!proto": "SVGElement",
     "patternUnits": {
       "!type": "SVGAnimatedEnumeration"
     },
@@ -15627,6 +15981,7 @@
     }
   },
   "SVGPolygonElement": {
+    "!proto": "SVGGraphicsElement",
     "points": {
       "!type": "SVGPointList"
     },
@@ -15635,6 +15990,7 @@
     }
   },
   "SVGPolylineElement": {
+    "!proto": "SVGGraphicsElement",
     "points": {
       "!type": "SVGPointList"
     },
@@ -15696,6 +16052,7 @@
     }
   },
   "SVGRadialGradientElement": {
+    "!proto": "SVGGradientElement",
     "cx": {
       "!type": "SVGAnimatedLength"
     },
@@ -15730,6 +16087,7 @@
     }
   },
   "SVGRectElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -15751,6 +16109,7 @@
   },
   "SVGViewSpec": {},
   "SVGSVGElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -15861,6 +16220,7 @@
     }
   },
   "SVGScriptElement": {
+    "!proto": "SVGElement",
     "type": {
       "!type": "string"
     },
@@ -15871,8 +16231,11 @@
       "!type": "SVGAnimatedString"
     }
   },
-  "SVGSetElement": {},
+  "SVGSetElement": {
+    "!proto": "SVGAnimationElement"
+  },
   "SVGStopElement": {
+    "!proto": "SVGElement",
     "offset": {
       "!type": "SVGAnimatedNumber"
     }
@@ -15910,6 +16273,7 @@
     }
   },
   "SVGStyleElement": {
+    "!proto": "SVGElement",
     "xmlspace": {
       "!type": "string"
     },
@@ -15926,8 +16290,11 @@
       "!type": "bool"
     }
   },
-  "SVGSwitchElement": {},
+  "SVGSwitchElement": {
+    "!proto": "SVGGraphicsElement"
+  },
   "SVGSymbolElement": {
+    "!proto": "SVGElement",
     "viewBox": {
       "!type": "SVGAnimatedRect"
     },
@@ -15947,8 +16314,11 @@
       "!type": "fn(extension: string) -> bool"
     }
   },
-  "SVGTSpanElement": {},
+  "SVGTSpanElement": {
+    "!proto": "SVGTextPositioningElement"
+  },
   "SVGTextContentElement": {
+    "!proto": "SVGGraphicsElement",
     "LENGTHADJUST_UNKNOWN": {
       "!type": "number"
     },
@@ -15992,8 +16362,11 @@
       "!type": "fn(charnum: number, nchars: number)"
     }
   },
-  "SVGTextElement": {},
+  "SVGTextElement": {
+    "!proto": "SVGTextPositioningElement"
+  },
   "SVGTextPathElement": {
+    "!proto": "SVGTextContentElement",
     "TEXTPATH_METHODTYPE_UNKNOWN": {
       "!type": "number"
     },
@@ -16026,6 +16399,7 @@
     }
   },
   "SVGTextPositioningElement": {
+    "!proto": "SVGTextContentElement",
     "x": {
       "!type": "SVGAnimatedLengthList"
     },
@@ -16042,7 +16416,9 @@
       "!type": "SVGAnimatedNumberList"
     }
   },
-  "SVGTitleElement": {},
+  "SVGTitleElement": {
+    "!proto": "SVGElement"
+  },
   "SVGTransform": {
     "SVG_TRANSFORM_UNKNOWN": {
       "!type": "number"
@@ -16143,6 +16519,7 @@
     }
   },
   "SVGUseElement": {
+    "!proto": "SVGGraphicsElement",
     "x": {
       "!type": "SVGAnimatedLength"
     },
@@ -16160,6 +16537,7 @@
     }
   },
   "SVGViewElement": {
+    "!proto": "SVGElement",
     "viewTarget": {
       "!type": "SVGStringList"
     },
@@ -16197,6 +16575,7 @@
     }
   },
   "SVGZoomEvent": {
+    "!proto": "UIEvent.prototype",
     "previousScale": {
       "!type": "number"
     },
@@ -16211,6 +16590,7 @@
     }
   },
   "Screen": {
+    "!proto": "EventTarget",
     "availWidth": {
       "!type": "number"
     },
@@ -16249,6 +16629,7 @@
     }
   },
   "ScriptProcessorNode": {
+    "!proto": "AudioNode",
     "onaudioprocess": {
       "!type": "fn(+Event)"
     },
@@ -16260,6 +16641,7 @@
     }
   },
   "ScrollAreaEvent": {
+    "!proto": "UIEvent.prototype",
     "x": {
       "!type": "number"
     },
@@ -16425,6 +16807,7 @@
     }
   },
   "ServiceWorker": {
+    "!proto": "EventTarget",
     "scriptURL": {
       "!type": "string"
     },
@@ -16458,6 +16841,7 @@
     }
   },
   "ServiceWorkerContainer": {
+    "!proto": "EventTarget",
     "controller": {
       "!type": "ServiceWorker"
     },
@@ -16490,6 +16874,7 @@
     }
   },
   "ServiceWorkerGlobalScope": {
+    "!proto": "WorkerGlobalScope",
     "clients": {
       "!type": "Clients"
     },
@@ -16522,6 +16907,7 @@
     }
   },
   "ServiceWorkerRegistration": {
+    "!proto": "EventTarget",
     "installing": {
       "!type": "ServiceWorker"
     },
@@ -16548,6 +16934,7 @@
     }
   },
   "SettingsLock": {
+    "!proto": "EventTarget",
     "closed": {
       "!type": "bool"
     },
@@ -16568,6 +16955,7 @@
     }
   },
   "SettingsManager": {
+    "!proto": "EventTarget",
     "createLock": {
       "!type": "fn() -> SettingsLock"
     },
@@ -16582,6 +16970,7 @@
     }
   },
   "ShadowRoot": {
+    "!proto": "DocumentFragment.prototype",
     "getElementById": {
       "!type": "fn(elementId: string) -> Element"
     },
@@ -16612,6 +17001,7 @@
   },
   "SharedWorker": {
     "!type": "fn(scriptURL: string, name?: string)",
+    "!proto": "EventTarget",
     "prototype": {
       "port": {
         "!type": "MessagePort"
@@ -16622,6 +17012,7 @@
     }
   },
   "SharedWorkerGlobalScope": {
+    "!proto": "WorkerGlobalScope",
     "name": {
       "!type": "string"
     },
@@ -16630,6 +17021,7 @@
     }
   },
   "SimpleGestureEvent": {
+    "!proto": "MouseEvent",
     "DIRECTION_UP": {
       "!type": "number"
     },
@@ -16676,6 +17068,7 @@
     }
   },
   "SourceBuffer": {
+    "!proto": "EventTarget",
     "mode": {
       "!type": "SourceBufferAppendMode"
     },
@@ -16705,6 +17098,7 @@
     }
   },
   "SourceBufferList": {
+    "!proto": "EventTarget",
     "length": {
       "!type": "number"
     }
@@ -16739,6 +17133,7 @@
   },
   "SpeechRecognition": {
     "!type": "fn()",
+    "!proto": "EventTarget",
     "prototype": {
       "grammars": {
         "!type": "+SpeechGrammarList"
@@ -16812,6 +17207,7 @@
   },
   "SpeechRecognitionError": {
     "!type": "fn(type: string, eventInitDict?: SpeechRecognitionErrorInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "error": {
         "!type": "SpeechRecognitionErrorCode"
@@ -16823,6 +17219,7 @@
   },
   "SpeechRecognitionEvent": {
     "!type": "fn(type: string, eventInitDict?: SpeechRecognitionEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "resultIndex": {
         "!type": "number"
@@ -16885,6 +17282,7 @@
   },
   "SpeechSynthesisEvent": {
     "!type": "fn(type: string, eventInitDict?: SpeechSynthesisEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "charIndex": {
         "!type": "number"
@@ -16899,6 +17297,7 @@
   },
   "SpeechSynthesisUtterance": {
     "!type": "fn(text: string)",
+    "!proto": "EventTarget",
     "prototype": {
       "text": {
         "!type": "string"
@@ -16959,6 +17358,7 @@
     }
   },
   "StereoPannerNode": {
+    "!proto": "AudioNode",
     "pan": {
       "!type": "AudioParam"
     },
@@ -16988,6 +17388,7 @@
   },
   "StorageEvent": {
     "!type": "fn(type: string, eventInitDict?: StorageEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "key": {
         "!type": "string"
@@ -17096,6 +17497,7 @@
     }
   },
   "TVChannel": {
+    "!proto": "EventTarget",
     "getPrograms": {
       "!type": "fn(options?: TVGetProgramsOptions) -> +Promise"
     },
@@ -17132,6 +17534,7 @@
   },
   "TVCurrentChannelChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVCurrentChannelChangedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "channel": {
         "!type": "TVChannel"
@@ -17140,6 +17543,7 @@
   },
   "TVCurrentSourceChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVCurrentSourceChangedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "source": {
         "!type": "TVSource"
@@ -17148,6 +17552,7 @@
   },
   "TVEITBroadcastedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVEITBroadcastedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "programs": {
         "!type": "[TVProgram]"
@@ -17155,6 +17560,7 @@
     }
   },
   "TVManager": {
+    "!proto": "EventTarget",
     "getTuners": {
       "!type": "fn() -> +Promise"
     }
@@ -17190,6 +17596,7 @@
   },
   "TVScanningStateChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVScanningStateChangedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "state": {
         "!type": "TVScanningState"
@@ -17200,6 +17607,7 @@
     }
   },
   "TVSource": {
+    "!proto": "EventTarget",
     "getChannels": {
       "!type": "fn() -> +Promise"
     },
@@ -17235,6 +17643,7 @@
     }
   },
   "TVTuner": {
+    "!proto": "EventTarget",
     "getSupportedSourceTypes": {
       "!type": "fn() -> [TVSourceType]"
     },
@@ -17258,6 +17667,7 @@
     }
   },
   "Telephony": {
+    "!proto": "EventTarget",
     "dial": {
       "!type": "fn(number: string, serviceId?: number) -> +Promise[value=?]"
     },
@@ -17305,6 +17715,7 @@
     }
   },
   "TelephonyCall": {
+    "!proto": "EventTarget",
     "serviceId": {
       "!type": "number"
     },
@@ -17373,6 +17784,7 @@
     }
   },
   "TelephonyCallGroup": {
+    "!proto": "EventTarget",
     "calls": {
       "!type": "CallsList"
     },
@@ -17539,6 +17951,7 @@
   },
   "Text": {
     "!type": "fn(data?: string)",
+    "!proto": "CharacterData",
     "prototype": {
       "splitText": {
         "!type": "fn(offset: number) -> +Text"
@@ -17589,6 +18002,7 @@
     }
   },
   "TextTrack": {
+    "!proto": "EventTarget",
     "kind": {
       "!type": "TextTrackKind"
     },
@@ -17632,6 +18046,7 @@
     }
   },
   "TextTrackList": {
+    "!proto": "EventTarget",
     "length": {
       "!type": "number"
     },
@@ -17652,6 +18067,7 @@
     }
   },
   "TimeEvent": {
+    "!proto": "Event.prototype",
     "detail": {
       "!type": "number"
     },
@@ -17715,6 +18131,7 @@
     }
   },
   "TouchEvent": {
+    "!proto": "UIEvent.prototype",
     "touches": {
       "!type": "TouchList"
     },
@@ -17756,6 +18173,7 @@
   },
   "TrackEvent": {
     "!type": "fn(type: string, eventInitDict?: TrackEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "track": {
         "!type": "?"
@@ -17764,6 +18182,7 @@
   },
   "TransitionEvent": {
     "!type": "fn(type: string, eventInitDict?: TransitionEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "propertyName": {
         "!type": "string"
@@ -17913,6 +18332,7 @@
   },
   "UDPMessageEvent": {
     "!type": "fn(type: string, eventInitDict?: UDPMessageEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "remoteAddress": {
         "!type": "string"
@@ -17927,6 +18347,7 @@
   },
   "UDPSocket": {
     "!type": "fn(options?: UDPOptions)",
+    "!proto": "EventTarget",
     "prototype": {
       "localAddress": {
         "!type": "string"
@@ -17974,6 +18395,7 @@
   },
   "UIEvent": {
     "!type": "fn(type: string, eventInitDict?: UIEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "view": {
         "!type": "WindowProxy"
@@ -18091,6 +18513,7 @@
   },
   "USSDReceivedEvent": {
     "!type": "fn(type: string, eventInitDict?: USSDReceivedEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "serviceId": {
         "!type": "number"
@@ -18145,6 +18568,7 @@
   },
   "UserProximityEvent": {
     "!type": "fn(type: string, eventInitDict?: UserProximityEventInit)",
+    "!proto": "Event.prototype",
     "prototype": {
       "near": {
         "!type": "bool"
@@ -18167,6 +18591,7 @@
   },
   "VRFieldOfView": {
     "!type": "fn(upDegrees: number, rightDegrees: number, downDegrees: number, leftDegrees: number)",
+    "!proto": "VRFieldOfViewReadOnly",
     "prototype": {
       "upDegrees": {
         "!type": "number"
@@ -18243,6 +18668,7 @@
     }
   },
   "HMDVRDevice": {
+    "!proto": "VRDevice",
     "getEyeParameters": {
       "!type": "fn(whichEye: VREye) -> VREyeParameters"
     },
@@ -18251,6 +18677,7 @@
     }
   },
   "PositionSensorVRDevice": {
+    "!proto": "VRDevice",
     "getState": {
       "!type": "fn() -> VRPositionState"
     },
@@ -18263,6 +18690,7 @@
   },
   "VTTCue": {
     "!type": "fn(startTime: number, endTime: number, text: string)",
+    "!proto": "EventTarget",
     "prototype": {
       "track": {
         "!type": "TextTrack"
@@ -18401,7 +18829,9 @@
       "!type": "number"
     }
   },
-  "VideoStreamTrack": {},
+  "VideoStreamTrack": {
+    "!proto": "MediaStreamTrack"
+  },
   "VideoTrack": {
     "id": {
       "!type": "string"
@@ -18420,6 +18850,7 @@
     }
   },
   "VideoTrackList": {
+    "!proto": "EventTarget",
     "length": {
       "!type": "number"
     },
@@ -18440,6 +18871,7 @@
     }
   },
   "WaveShaperNode": {
+    "!proto": "AudioNode",
     "curve": {
       "!type": "Float32Array"
     },
@@ -18455,6 +18887,7 @@
   "WebGLSync": {},
   "WebGLTransformFeedback": {},
   "WebGL2RenderingContext": {
+    "!proto": "WebGLRenderingContext",
     "READ_BUFFER": {
       "!type": "GLenum"
     },
@@ -20896,6 +21329,7 @@
   },
   "WebSocket": {
     "!type": "fn(url: string, protocols: [string])",
+    "!proto": "EventTarget",
     "prototype": {
       "url": {
         "!type": "string"
@@ -20952,6 +21386,7 @@
   },
   "WheelEvent": {
     "!type": "fn(type: string, eventInitDict?: WheelEventInit)",
+    "!proto": "MouseEvent",
     "prototype": {
       "DOM_DELTA_PIXEL": {
         "!type": "number"
@@ -20978,6 +21413,7 @@
   },
   "ApplicationCache": {},
   "Window": {
+    "!proto": "EventTarget",
     "window": {
       "!type": "Window"
     },
@@ -21646,6 +22082,7 @@
   },
   "Worker": {
     "!type": "fn(scriptURL: string)",
+    "!proto": "EventTarget",
     "prototype": {
       "terminate": {
         "!type": "fn()"
@@ -21663,9 +22100,11 @@
   },
   "ChromeWorker": {
     "!type": "fn(scriptURL: string)",
+    "!proto": "Worker.prototype",
     "prototype": {}
   },
   "WorkerDebuggerGlobalScope": {
+    "!proto": "EventTarget",
     "global": {
       "!type": "object"
     },
@@ -21698,6 +22137,7 @@
     }
   },
   "WorkerGlobalScope": {
+    "!proto": "EventTarget",
     "self": {
       "!type": "WorkerGlobalScope"
     },
@@ -21827,6 +22267,7 @@
     }
   },
   "XMLDocument": {
+    "!proto": "Document.prototype",
     "load": {
       "!type": "fn(url: string) -> bool"
     },
@@ -21836,6 +22277,7 @@
   },
   "XMLHttpRequest": {
     "!type": "fn(ignored: string)",
+    "!proto": "XMLHttpRequestEventTarget",
     "prototype": {
       "onreadystatechange": {
         "!type": "fn(+Event)"
@@ -21924,6 +22366,7 @@
     }
   },
   "XMLHttpRequestEventTarget": {
+    "!proto": "EventTarget",
     "onloadstart": {
       "!type": "fn(+Event)"
     },
@@ -21947,6 +22390,7 @@
     }
   },
   "XMLHttpRequestUpload": {
+    "!proto": "XMLHttpRequestEventTarget",
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -21967,6 +22411,7 @@
     }
   },
   "XMLStylesheetProcessingInstruction": {
+    "!proto": "ProcessingInstruction",
     "sheet": {
       "!type": "StyleSheet"
     }
