@@ -92,6 +92,7 @@ var loader = {
     "use strict";
     var name = def.name;
     var partial = def.partial;
+    var inheritance = def.inheritance;
     var members = [];
     for (let prop of def.members) {
       if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
@@ -132,6 +133,7 @@ var loader = {
     return {
       type: 'interface',
       name: name,
+      inheritance: inheritance,
       partial: partial,
       members: members
     };

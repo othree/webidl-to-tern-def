@@ -87,6 +87,13 @@ var prop = function (inter) {
   if (type) {
     def["!type"] = type;
   }
+  if (inter.inheritance) {
+    if (store.isCons(inter.inheritance)) {
+      def['!proto'] = `${inter.inheritance}.prototype`;
+    } else {
+      def['!proto'] = inter.inheritance;
+    }
+  }
   if (inter.members) {
     for (let m of inter.members) {
       let name = m.name;
@@ -108,6 +115,13 @@ var cons = function (inter) {
   var proto = {};
   var rtn = {
     "!type": type,
+  }
+  if (inter.inheritance) {
+    if (store.isCons(inter.inheritance)) {
+      rtn['!proto'] = `${inter.inheritance}.prototype`;
+    } else {
+      rtn['!proto'] = inter.inheritance;
+    }
   }
 
   for (let m of inter.members) {

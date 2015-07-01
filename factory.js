@@ -4,6 +4,7 @@ var factory = {
     return {
       name: def.name,
       type: 'cons',
+      inheritance: def.inheritance,
       arguments: def.arguments,
       members: factory.members(def.members)
     }
@@ -13,6 +14,7 @@ var factory = {
       name: def.name,
       primary: def.primary,
       type: 'prop',
+      inheritance: def.inheritance,
       members: factory.members(def.members),
       nointerface: def.nointerface
     }
