@@ -1,7 +1,9 @@
 var util = require('util');
 
 
-var ptype = function (inter, nogeneric) {
+var ptype = function (inter, nogenericinfo) {
+  "use strict";
+  var type;
   var sequence = false;
   var generic = false;
   if (typeof inter !== 'string') {
@@ -32,16 +34,17 @@ var ptype = function (inter, nogeneric) {
   if (type === 'EventHandler') {
     type = "fn(event)";
   }
-  if (/[A-Z]/.test(type[0])) {
-    type = `+${type}`;
-  }
+  // if (/[A-Z]/.test(type[0])) {
+    // type = `${type}`;
+  // }
   if (sequence || generic === 'sequence') {
     type = `[${ptype(type)}]`;
   }
   if (generic && generic !== 'sequence') {
+    let itype = type;
     type = `+${generic}`;
-    if (!nogeneric) {
-      type += `[value=${ptype(type)}]`;
+    if (!nogenericinfo) {
+      type += `[value=${ptype(itype)}]`;
     }
   }
   return type;
