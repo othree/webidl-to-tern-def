@@ -1747,8 +1747,8 @@
   "AnimationEffectReadonly": {},
   "AnimationEvent": {
     "!type": "fn(type: string, eventInitDict?: AnimationEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "animationName": {
         "!type": "string"
       },
@@ -1911,8 +1911,8 @@
   },
   "AudioContext": {
     "!type": "fn(audioChannelType: AudioChannel)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "destination": {
         "!type": "AudioDestinationNode"
       },
@@ -2148,8 +2148,8 @@
   },
   "AutocompleteErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: AutocompleteErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "reason": {
         "!type": "AutoCompleteErrorReason"
       }
@@ -2192,8 +2192,8 @@
   },
   "BeforeAfterKeyboardEvent": {
     "!type": "fn(typeArg: string, eventInitDict?: BeforeAfterKeyboardEventInit)",
-    "!proto": "KeyboardEvent.prototype",
     "prototype": {
+      "!proto": "KeyboardEvent.prototype",
       "embeddedCancelled": {
         "!type": "bool"
       }
@@ -2245,8 +2245,8 @@
   },
   "BlobEvent": {
     "!type": "fn(type: string, eventInitDict?: BlobEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "data": {
         "!type": "+Blob"
       }
@@ -2368,8 +2368,8 @@
   },
   "BluetoothAdapterEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothAdapterEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "adapter": {
         "!type": "BluetoothAdapter"
       },
@@ -2380,8 +2380,8 @@
   },
   "BluetoothAttributeEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothAttributeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "attrs": {
         "!type": "[string]"
       }
@@ -2490,8 +2490,8 @@
   },
   "BluetoothDeviceEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothDeviceEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "device": {
         "!type": "BluetoothDevice"
       },
@@ -2508,8 +2508,8 @@
   },
   "BluetoothDiscoveryStateChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothDiscoveryStateChangedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "discovering": {
         "!type": "bool"
       }
@@ -2576,8 +2576,8 @@
   },
   "BluetoothGattCharacteristicEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothGattCharacteristicEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "characteristic": {
         "!type": "BluetoothGattCharacteristic"
       }
@@ -2637,8 +2637,8 @@
   },
   "BluetoothPairingEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothPairingEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "deviceName": {
         "!type": "string"
       },
@@ -2678,8 +2678,8 @@
   },
   "BluetoothStatusChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: BluetoothStatusChangedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "address": {
         "!type": "string"
       },
@@ -2746,8 +2746,8 @@
   },
   "BroadcastChannel": {
     "!type": "fn(channel: string)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "name": {
         "!type": "string"
       },
@@ -2778,8 +2778,8 @@
   },
   "CFStateChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: CFStateChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "action": {
         "!type": "number"
       },
@@ -3653,8 +3653,8 @@
   },
   "CSSFontFaceLoadEvent": {
     "!type": "fn(type: string, eventInitDict?: CSSFontFaceLoadEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "fontfaces": {
         "!type": "[+FontFace]"
       }
@@ -3902,8 +3902,8 @@
   },
   "CallEvent": {
     "!type": "fn(type: string, eventInitDict?: CallEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "call": {
         "!type": "TelephonyCall"
       }
@@ -3911,8 +3911,8 @@
   },
   "CallGroupErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: CallGroupErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "name": {
         "!type": "string"
       },
@@ -4037,8 +4037,8 @@
   },
   "CameraClosedEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraClosedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "reason": {
         "!type": "string"
       }
@@ -4046,8 +4046,8 @@
   },
   "CameraConfigurationEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraConfigurationEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "mode": {
         "!type": "CameraMode"
       },
@@ -4225,8 +4225,8 @@
   },
   "CameraFacesDetectedEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraFacesDetectedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "faces": {
         "!type": "[+CameraDetectedFace]"
       }
@@ -4242,8 +4242,8 @@
   },
   "CameraStateChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: CameraStateChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "newState": {
         "!type": "string"
       }
@@ -4595,8 +4595,8 @@
   },
   "ClipboardEvent": {
     "!type": "fn(type: string, eventInitDict?: ClipboardEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "clipboardData": {
         "!type": "DataTransfer"
       }
@@ -4604,8 +4604,8 @@
   },
   "CloseEvent": {
     "!type": "fn(type: string, eventInitDict?: CloseEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "wasClean": {
         "!type": "bool"
       },
@@ -4631,8 +4631,8 @@
   },
   "Comment": {
     "!type": "fn(data?: string)",
-    "!proto": "CharacterData",
     "prototype": {
+      "!proto": "CharacterData",
       "queryInterface": {
         "!type": "fn(iid: IID) -> nsISupports"
       }
@@ -4675,8 +4675,8 @@
   },
   "CustomEvent": {
     "!type": "fn(type: string, eventInitDict?: CustomEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "detail": {
         "!type": "?"
       },
@@ -4984,8 +4984,8 @@
   },
   "DOMMatrix": {
     "!type": "fn(numberSequence: [number])",
-    "!proto": "DOMMatrixReadOnly",
     "prototype": {
+      "!proto": "DOMMatrixReadOnly",
       "a": {
         "!type": "number"
       },
@@ -5138,8 +5138,8 @@
   },
   "DOMPoint": {
     "!type": "fn(x: number, y: number, z?: number, w?: number)",
-    "!proto": "DOMPointReadOnly",
     "prototype": {
+      "!proto": "DOMPointReadOnly",
       "x": {
         "!type": "number"
       },
@@ -5176,8 +5176,8 @@
   },
   "DOMRect": {
     "!type": "fn(x: number, y: number, width: number, height: number)",
-    "!proto": "DOMRectReadOnly",
     "prototype": {
+      "!proto": "DOMRectReadOnly",
       "x": {
         "!type": "number"
       },
@@ -5294,8 +5294,8 @@
   },
   "DOMTransactionEvent": {
     "!type": "fn(type: string, eventInitDict?: DOMTransactionEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "transactions": {
         "!type": "?"
       }
@@ -5351,8 +5351,8 @@
   },
   "DataErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: DataErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "message": {
         "!type": "string"
       }
@@ -5416,8 +5416,8 @@
   },
   "DataStoreChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: DataStoreChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "revisionId": {
         "!type": "string"
       },
@@ -5547,8 +5547,8 @@
   },
   "DeviceLightEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceLightEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "value": {
         "!type": "number"
       }
@@ -5556,8 +5556,8 @@
   },
   "DeviceMotionEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceMotionEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "acceleration": {
         "!type": "DeviceAcceleration"
       },
@@ -5577,8 +5577,8 @@
   },
   "DeviceOrientationEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceOrientationEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "alpha": {
         "!type": "number"
       },
@@ -5598,8 +5598,8 @@
   },
   "DeviceProximityEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceProximityEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "value": {
         "!type": "number"
       },
@@ -5685,8 +5685,8 @@
   },
   "DeviceStorageChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: DeviceStorageChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "path": {
         "!type": "string"
       },
@@ -5701,8 +5701,8 @@
   "WindowProxy": {},
   "Document": {
     "!type": "fn()",
-    "!proto": "Node",
     "prototype": {
+      "!proto": "Node",
       "implementation": {
         "!type": "DOMImplementation"
       },
@@ -6193,8 +6193,8 @@
   },
   "DocumentFragment": {
     "!type": "fn()",
-    "!proto": "Node",
     "prototype": {
+      "!proto": "Node",
       "getElementById": {
         "!type": "fn(elementId: string) -> Element"
       },
@@ -6247,8 +6247,8 @@
   },
   "DownloadEvent": {
     "!type": "fn(type: string, eventInitDict?: DownloadEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "download": {
         "!type": "DOMDownload"
       }
@@ -6304,8 +6304,8 @@
   },
   "DragEvent": {
     "!type": "fn(type: string, eventInitDict?: DragEventInit)",
-    "!proto": "MouseEvent",
     "prototype": {
+      "!proto": "MouseEvent",
       "dataTransfer": {
         "!type": "DataTransfer"
       },
@@ -6571,8 +6571,8 @@
   },
   "ErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: ErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "message": {
         "!type": "string"
       },
@@ -6681,8 +6681,8 @@
   },
   "EventSource": {
     "!type": "fn(url: string, eventSourceInitDict?: EventSourceInit)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "url": {
         "!type": "string"
       },
@@ -6740,8 +6740,8 @@
   },
   "ExtendableEvent": {
     "!type": "fn(type: string, eventInitDict?: ExtendableEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "waitUntil": {
         "!type": "fn(p: +Promise)"
       }
@@ -6859,8 +6859,8 @@
   },
   "FetchEvent": {
     "!type": "fn(type: string, eventInitDict?: FetchEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "request": {
         "!type": "+Request"
       },
@@ -6877,8 +6877,8 @@
   },
   "File": {
     "!type": "fn(fileBits: string, options?: ChromeFilePropertyBag)",
-    "!proto": "Blob.prototype",
     "prototype": {
+      "!proto": "Blob.prototype",
       "name": {
         "!type": "string"
       },
@@ -6903,8 +6903,8 @@
   },
   "FileReader": {
     "!type": "fn()",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "readAsArrayBuffer": {
         "!type": "fn(blob: +Blob)"
       },
@@ -6977,8 +6977,8 @@
   },
   "FocusEvent": {
     "!type": "fn(typeArg: string, focusEventInitDict?: FocusEventInit)",
-    "!proto": "UIEvent.prototype",
     "prototype": {
+      "!proto": "UIEvent.prototype",
       "relatedTarget": {
         "!type": "EventTarget"
       }
@@ -7129,8 +7129,8 @@
   },
   "GamepadAxisMoveEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadAxisMoveEventInit)",
-    "!proto": "GamepadEvent.prototype",
     "prototype": {
+      "!proto": "GamepadEvent.prototype",
       "axis": {
         "!type": "number"
       },
@@ -7141,8 +7141,8 @@
   },
   "GamepadButtonEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadButtonEventInit)",
-    "!proto": "GamepadEvent.prototype",
     "prototype": {
+      "!proto": "GamepadEvent.prototype",
       "button": {
         "!type": "number"
       }
@@ -7150,8 +7150,8 @@
   },
   "GamepadEvent": {
     "!type": "fn(type: string, eventInitDict?: GamepadEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "gamepad": {
         "!type": "Gamepad"
       }
@@ -7353,13 +7353,15 @@
   },
   "HTMLAudioElement": {
     "!type": "fn(src?: string)",
-    "!proto": "HTMLMediaElement",
-    "prototype": {}
+    "prototype": {
+      "!proto": "HTMLMediaElement"
+    }
   },
   "Audio": {
     "!type": "fn(src?: string)",
-    "!proto": "HTMLMediaElement",
-    "prototype": {}
+    "prototype": {
+      "!proto": "HTMLMediaElement"
+    }
   },
   "HTMLBRElement": {
     "!proto": "HTMLElement",
@@ -8346,8 +8348,8 @@
   "imgIRequest": {},
   "HTMLImageElement": {
     "!type": "fn(width?: number, height?: number)",
-    "!proto": "HTMLElement",
     "prototype": {
+      "!proto": "HTMLElement",
       "alt": {
         "!type": "string"
       },
@@ -8418,8 +8420,8 @@
   },
   "Image": {
     "!type": "fn(width?: number, height?: number)",
-    "!proto": "HTMLElement",
     "prototype": {
+      "!proto": "HTMLElement",
       "alt": {
         "!type": "string"
       },
@@ -9085,8 +9087,8 @@
   },
   "HTMLOptionElement": {
     "!type": "fn(text?: string, value?: string, defaultSelected?: bool, selected?: bool)",
-    "!proto": "HTMLElement",
     "prototype": {
+      "!proto": "HTMLElement",
       "disabled": {
         "!type": "bool"
       },
@@ -9115,8 +9117,8 @@
   },
   "Option": {
     "!type": "fn(text?: string, value?: string, defaultSelected?: bool, selected?: bool)",
-    "!proto": "HTMLElement",
     "prototype": {
+      "!proto": "HTMLElement",
       "disabled": {
         "!type": "bool"
       },
@@ -9784,8 +9786,8 @@
   },
   "HashChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: HashChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "oldURL": {
         "!type": "string"
       },
@@ -10209,8 +10211,8 @@
   },
   "IDBVersionChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: IDBVersionChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "oldVersion": {
         "!type": "number"
       },
@@ -10221,8 +10223,8 @@
   },
   "IccCardLockError": {
     "!type": "fn(errorName: string, retryCount: number)",
-    "!proto": "DOMError.prototype",
     "prototype": {
+      "!proto": "DOMError.prototype",
       "retryCount": {
         "!type": "number"
       }
@@ -10230,8 +10232,8 @@
   },
   "IccChangeEvent": {
     "!type": "fn(type: string, eventInitDict?: IccChangeEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "iccId": {
         "!type": "string"
       }
@@ -10239,8 +10241,8 @@
   },
   "ImageCapture": {
     "!type": "fn(track: VideoStreamTrack)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "videoStreamTrack": {
         "!type": "VideoStreamTrack"
       },
@@ -10257,8 +10259,8 @@
   },
   "ImageCaptureErrorEvent": {
     "!type": "fn(type: string, imageCaptureErrorInitDict?: ImageCaptureErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "imageCaptureError": {
         "!type": "ImageCaptureError"
       }
@@ -10280,8 +10282,8 @@
   },
   "InputEvent": {
     "!type": "fn(type: string, eventInitDict?: InputEventInit)",
-    "!proto": "UIEvent.prototype",
     "prototype": {
+      "!proto": "UIEvent.prototype",
       "isComposing": {
         "!type": "bool"
       }
@@ -10312,8 +10314,8 @@
   },
   "InstallEvent": {
     "!type": "fn(type: string, eventInitDict?: InstallEventInit)",
-    "!proto": "ExtendableEvent.prototype",
     "prototype": {
+      "!proto": "ExtendableEvent.prototype",
       "activeWorker": {
         "!type": "ServiceWorker"
       },
@@ -10324,8 +10326,8 @@
   },
   "InstallPhaseEvent": {
     "!type": "fn(type: string, eventInitDict?: EventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "waitUntil": {
         "!type": "fn(p: +Promise)"
       }
@@ -10893,8 +10895,8 @@
   },
   "KeyboardEvent": {
     "!type": "fn(typeArg: string, keyboardEventInitDict?: KeyboardEventInit)",
-    "!proto": "UIEvent.prototype",
     "prototype": {
+      "!proto": "UIEvent.prototype",
       "charCode": {
         "!type": "number"
       },
@@ -11599,8 +11601,8 @@
   },
   "MediaEncryptedEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaKeyNeededEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "initDataType": {
         "!type": "string"
       },
@@ -11634,8 +11636,8 @@
   },
   "MediaKeyMessageEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaKeyMessageEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "messageType": {
         "!type": "MediaKeyMessageType"
       },
@@ -11746,8 +11748,8 @@
   },
   "MediaRecorder": {
     "!type": "fn(node: AudioNode, output?: number, options?: MediaRecorderOptions)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "stream": {
         "!type": "MediaStream"
       },
@@ -11791,11 +11793,11 @@
   },
   "MediaSource": {
     "!type": "fn()",
-    "!proto": "EventTarget",
     "isTypeSupported": {
       "!type": "fn(type: string) -> bool"
     },
     "prototype": {
+      "!proto": "EventTarget",
       "sourceBuffers": {
         "!type": "SourceBufferList"
       },
@@ -11851,8 +11853,8 @@
   },
   "MediaStreamEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaStreamEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "stream": {
         "!type": "MediaStream"
       }
@@ -11877,8 +11879,8 @@
   },
   "MediaStreamTrackEvent": {
     "!type": "fn(type: string, eventInitDict?: MediaStreamTrackEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "receiver": {
         "!type": "RTCRtpReceiver"
       },
@@ -11918,8 +11920,8 @@
   },
   "MessageEvent": {
     "!type": "fn(type: string, eventInitDict?: MessageEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "data": {
         "!type": "?"
       },
@@ -12540,7 +12542,6 @@
   },
   "Notification": {
     "!type": "fn(title: string, options?: NotificationOptions)",
-    "!proto": "EventTarget",
     "permission": {
       "!type": "NotificationPermission"
     },
@@ -12551,6 +12552,7 @@
       "!type": "fn(filter?: GetNotificationOptions) -> +Promise"
     },
     "prototype": {
+      "!proto": "EventTarget",
       "onclick": {
         "!type": "fn(+Event)"
       },
@@ -12612,8 +12614,8 @@
   },
   "OfflineAudioContext": {
     "!type": "fn(numberOfChannels: number, length: number, sampleRate: number)",
-    "!proto": "AudioContext.prototype",
     "prototype": {
+      "!proto": "AudioContext.prototype",
       "startRendering": {
         "!type": "fn() -> +Promise[value=AudioBuffer]"
       },
@@ -12708,8 +12710,8 @@
   },
   "PageTransitionEvent": {
     "!type": "fn(type: string, eventInitDict?: PageTransitionEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "persisted": {
         "!type": "bool"
       }
@@ -13029,8 +13031,8 @@
   },
   "PointerEvent": {
     "!type": "fn(type: string, eventInitDict?: PointerEventInit)",
-    "!proto": "MouseEvent",
     "prototype": {
+      "!proto": "MouseEvent",
       "pointerId": {
         "!type": "number"
       },
@@ -13059,8 +13061,8 @@
   },
   "PopStateEvent": {
     "!type": "fn(type: string, eventInitDict?: PopStateEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "state": {
         "!type": "?"
       }
@@ -13068,8 +13070,8 @@
   },
   "PopupBlockedEvent": {
     "!type": "fn(type: string, eventInitDict?: PopupBlockedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "requestingWindow": {
         "!type": "Window"
       },
@@ -13170,8 +13172,8 @@
   },
   "ProgressEvent": {
     "!type": "fn(type: string, eventInitDict?: ProgressEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "lengthComputable": {
         "!type": "bool"
       },
@@ -13208,8 +13210,8 @@
   },
   "PushEvent": {
     "!type": "fn(type: string, eventInitDict?: PushEventInit)",
-    "!proto": "ExtendableEvent.prototype",
     "prototype": {
+      "!proto": "ExtendableEvent.prototype",
       "data": {
         "!type": "PushMessageData"
       }
@@ -13260,8 +13262,8 @@
   "RTCDataChannel": {},
   "RTCDataChannelEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCDataChannelEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "channel": {
         "!type": "RTCDataChannel"
       }
@@ -13269,8 +13271,8 @@
   },
   "RTCPeerConnectionIceEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCPeerConnectionIceEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "candidate": {
         "!type": "mozRTCIceCandidate"
       }
@@ -13415,8 +13417,8 @@
   },
   "RecordErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: RecordErrorEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "name": {
         "!type": "string"
       }
@@ -17001,8 +17003,8 @@
   },
   "SharedWorker": {
     "!type": "fn(scriptURL: string, name?: string)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "port": {
         "!type": "MessagePort"
       },
@@ -17133,8 +17135,8 @@
   },
   "SpeechRecognition": {
     "!type": "fn()",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "grammars": {
         "!type": "+SpeechGrammarList"
       },
@@ -17207,8 +17209,8 @@
   },
   "SpeechRecognitionError": {
     "!type": "fn(type: string, eventInitDict?: SpeechRecognitionErrorInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "error": {
         "!type": "SpeechRecognitionErrorCode"
       },
@@ -17219,8 +17221,8 @@
   },
   "SpeechRecognitionEvent": {
     "!type": "fn(type: string, eventInitDict?: SpeechRecognitionEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "resultIndex": {
         "!type": "number"
       },
@@ -17282,8 +17284,8 @@
   },
   "SpeechSynthesisEvent": {
     "!type": "fn(type: string, eventInitDict?: SpeechSynthesisEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "charIndex": {
         "!type": "number"
       },
@@ -17297,8 +17299,8 @@
   },
   "SpeechSynthesisUtterance": {
     "!type": "fn(text: string)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "text": {
         "!type": "string"
       },
@@ -17388,8 +17390,8 @@
   },
   "StorageEvent": {
     "!type": "fn(type: string, eventInitDict?: StorageEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "key": {
         "!type": "string"
       },
@@ -17534,8 +17536,8 @@
   },
   "TVCurrentChannelChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVCurrentChannelChangedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "channel": {
         "!type": "TVChannel"
       }
@@ -17543,8 +17545,8 @@
   },
   "TVCurrentSourceChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVCurrentSourceChangedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "source": {
         "!type": "TVSource"
       }
@@ -17552,8 +17554,8 @@
   },
   "TVEITBroadcastedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVEITBroadcastedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "programs": {
         "!type": "[TVProgram]"
       }
@@ -17596,8 +17598,8 @@
   },
   "TVScanningStateChangedEvent": {
     "!type": "fn(type: string, eventInitDict?: TVScanningStateChangedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "state": {
         "!type": "TVScanningState"
       },
@@ -17951,8 +17953,8 @@
   },
   "Text": {
     "!type": "fn(data?: string)",
-    "!proto": "CharacterData",
     "prototype": {
+      "!proto": "CharacterData",
       "splitText": {
         "!type": "fn(offset: number) -> +Text"
       },
@@ -18173,8 +18175,8 @@
   },
   "TrackEvent": {
     "!type": "fn(type: string, eventInitDict?: TrackEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "track": {
         "!type": "?"
       }
@@ -18182,8 +18184,8 @@
   },
   "TransitionEvent": {
     "!type": "fn(type: string, eventInitDict?: TransitionEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "propertyName": {
         "!type": "string"
       },
@@ -18332,8 +18334,8 @@
   },
   "UDPMessageEvent": {
     "!type": "fn(type: string, eventInitDict?: UDPMessageEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "remoteAddress": {
         "!type": "string"
       },
@@ -18347,8 +18349,8 @@
   },
   "UDPSocket": {
     "!type": "fn(options?: UDPOptions)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "localAddress": {
         "!type": "string"
       },
@@ -18395,8 +18397,8 @@
   },
   "UIEvent": {
     "!type": "fn(type: string, eventInitDict?: UIEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "view": {
         "!type": "WindowProxy"
       },
@@ -18513,8 +18515,8 @@
   },
   "USSDReceivedEvent": {
     "!type": "fn(type: string, eventInitDict?: USSDReceivedEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "serviceId": {
         "!type": "number"
       },
@@ -18568,8 +18570,8 @@
   },
   "UserProximityEvent": {
     "!type": "fn(type: string, eventInitDict?: UserProximityEventInit)",
-    "!proto": "Event.prototype",
     "prototype": {
+      "!proto": "Event.prototype",
       "near": {
         "!type": "bool"
       }
@@ -18591,8 +18593,8 @@
   },
   "VRFieldOfView": {
     "!type": "fn(upDegrees: number, rightDegrees: number, downDegrees: number, leftDegrees: number)",
-    "!proto": "VRFieldOfViewReadOnly",
     "prototype": {
+      "!proto": "VRFieldOfViewReadOnly",
       "upDegrees": {
         "!type": "number"
       },
@@ -18690,8 +18692,8 @@
   },
   "VTTCue": {
     "!type": "fn(startTime: number, endTime: number, text: string)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "track": {
         "!type": "TextTrack"
       },
@@ -21329,8 +21331,8 @@
   },
   "WebSocket": {
     "!type": "fn(url: string, protocols: [string])",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "url": {
         "!type": "string"
       },
@@ -21386,8 +21388,8 @@
   },
   "WheelEvent": {
     "!type": "fn(type: string, eventInitDict?: WheelEventInit)",
-    "!proto": "MouseEvent",
     "prototype": {
+      "!proto": "MouseEvent",
       "DOM_DELTA_PIXEL": {
         "!type": "number"
       },
@@ -22082,8 +22084,8 @@
   },
   "Worker": {
     "!type": "fn(scriptURL: string)",
-    "!proto": "EventTarget",
     "prototype": {
+      "!proto": "EventTarget",
       "terminate": {
         "!type": "fn()"
       },
@@ -22100,8 +22102,9 @@
   },
   "ChromeWorker": {
     "!type": "fn(scriptURL: string)",
-    "!proto": "Worker.prototype",
-    "prototype": {}
+    "prototype": {
+      "!proto": "Worker.prototype"
+    }
   },
   "WorkerDebuggerGlobalScope": {
     "!proto": "EventTarget",
@@ -22277,8 +22280,8 @@
   },
   "XMLHttpRequest": {
     "!type": "fn(ignored: string)",
-    "!proto": "XMLHttpRequestEventTarget",
     "prototype": {
+      "!proto": "XMLHttpRequestEventTarget",
       "onreadystatechange": {
         "!type": "fn(+Event)"
       },

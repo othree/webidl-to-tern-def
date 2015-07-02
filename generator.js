@@ -118,9 +118,9 @@ var cons = function (inter) {
   }
   if (inter.inheritance) {
     if (store.isCons(inter.inheritance)) {
-      rtn['!proto'] = `${inter.inheritance}.prototype`;
+      proto['!proto'] = `${inter.inheritance}.prototype`;
     } else {
-      rtn['!proto'] = inter.inheritance;
+      proto['!proto'] = inter.inheritance;
     }
   }
 
