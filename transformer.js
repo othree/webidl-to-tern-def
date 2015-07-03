@@ -8,7 +8,14 @@ var transform = {
     return factory.object(def);
   },
   assignMembers: function (target, fromInterfaces) {
-    target.members = target.members.concat(factory.members(fromInterfaces.members));
+    target.members = target.members.concat(transform.keys(fromInterfaces.name, factory.members(fromInterfaces.members)));
+  },
+  keys: function (name, members) {
+    "use strict";
+    for (let member of members) {
+      member.key = `${name}/${member.name}`;
+    }
+    return members;
   },
   implements: function (target, from, st) {
     "use strict";

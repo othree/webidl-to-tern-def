@@ -86,7 +86,7 @@ var method = function (inter, parent) {
   var def = {
     "!type": type
   };
-  var key = (parent? `${parent}/` : '') + inter.name;
+  var key = inter.key || (parent? `${parent}/` : '') + inter.name;
   if (doc[key]) {
     def['!url'] = doc[key]['!url'];
     def['!doc'] = doc[key]['!doc'];
@@ -101,7 +101,7 @@ var prop = function (inter, parent) {
   if (type) {
     def["!type"] = type;
   }
-  var key = (parent? `${parent}/` : '') + inter.name;
+  var key = inter.key || (parent? `${parent}/` : '') + inter.name;
   if (doc[key]) {
     def['!url'] = doc[key]['!url'];
     def['!doc'] = doc[key]['!doc'];
@@ -136,7 +136,7 @@ var cons = function (inter, parent) {
   var def = {
     "!type": type,
   }
-  var key = (parent? `${parent}/` : '') + inter.name;
+  var key = inter.key || (parent? `${parent}/` : '') + inter.name;
   if (doc[key]) {
     def['!url'] = doc[key]['!url'];
     def['!doc'] = doc[key]['!doc'];

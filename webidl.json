@@ -5991,13 +5991,19 @@
       "!type": "fn(offset: number, count: number, data: string)"
     },
     "remove": {
-      "!type": "fn()"
+      "!type": "fn()",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove",
+      "!doc": "© 2005-2015 Mozilla Developer Network and individual contributors Content is available under these licenses · About MDN · Terms · Privacy · Cookies · Contribute to the code"
     },
     "previousElementSibling": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling",
+      "!doc": "The NonDocumentTypeChildNode.previousElementSibling read-only property returns the Element immediately prior to the specified one in its parent's children list, or null if the specified element is the first one in the list."
     },
     "nextElementSibling": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling",
+      "!doc": "The NonDocumentTypeChildNode.nextElementSibling read-only property returns the element immediately following the specified one in its parent's children list, or null if the specified element is the last one in the list."
     }
   },
   "ChromeNotifications": {},
@@ -6156,7 +6162,9 @@
       "!doc": "The Crypto.subtle read-only property returns a SubtleCrypto object allowing to perform cryptographical operations."
     },
     "getRandomValues": {
-      "!type": "fn(array: ArrayBufferView) -> ArrayBufferView"
+      "!type": "fn(array: ArrayBufferView) -> ArrayBufferView",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/RandomSource/getRandomValues",
+      "!doc": "The RandomSource.getRandomValues() method lets you get cryptographically random values. The array given as the parameter is filled with random numbers (random in its cryptographic meaning)."
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -7738,13 +7746,19 @@
         "!type": "fn(iid: IID) -> nsISupports"
       },
       "onabort": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+        "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
       },
       "onblur": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+        "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
       },
       "onfocus": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+        "!doc": "The onfocus property returns the onFocus event handler code on the current element."
       },
       "oncanplay": {
         "!type": "fn(+Event)"
@@ -7753,16 +7767,24 @@
         "!type": "fn(+Event)"
       },
       "onchange": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+        "!doc": "The onchange property sets and returns the event handler for the change event."
       },
       "onclick": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+        "!doc": "The onclick property returns the click event handler code on the current element."
       },
       "oncontextmenu": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+        "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
       },
       "ondblclick": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+        "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
       },
       "ondrag": {
         "!type": "fn(+Event)"
@@ -7795,22 +7817,32 @@
         "!type": "fn(+Event)"
       },
       "oninput": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+        "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
       },
       "oninvalid": {
         "!type": "fn(+Event)"
       },
       "onkeydown": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+        "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
       },
       "onkeypress": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+        "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
       },
       "onkeyup": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+        "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
       },
       "onload": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+        "!doc": "An event handler for the load event of a window."
       },
       "onloadeddata": {
         "!type": "fn(+Event)"
@@ -7822,7 +7854,9 @@
         "!type": "fn(+Event)"
       },
       "onmousedown": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+        "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
       },
       "onmouseenter": {
         "!type": "fn(+Event)"
@@ -7831,16 +7865,24 @@
         "!type": "fn(+Event)"
       },
       "onmousemove": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+        "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
       },
       "onmouseout": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+        "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
       },
       "onmouseover": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+        "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
       },
       "onmouseup": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+        "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
       },
       "onpause": {
         "!type": "fn(+Event)"
@@ -7858,13 +7900,19 @@
         "!type": "fn(+Event)"
       },
       "onreset": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+        "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
       },
       "onresize": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+        "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
       },
       "onscroll": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+        "!doc": "An event handler for scroll events on element."
       },
       "onseeked": {
         "!type": "fn(+Event)"
@@ -7873,7 +7921,9 @@
         "!type": "fn(+Event)"
       },
       "onselect": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+        "!doc": "An event handler for the select event on the window."
       },
       "onshow": {
         "!type": "fn(+Event)"
@@ -7882,7 +7932,9 @@
         "!type": "fn(+Event)"
       },
       "onsubmit": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+        "!doc": "An event handler for the submit event on the window."
       },
       "onsuspend": {
         "!type": "fn(+Event)"
@@ -7951,16 +8003,24 @@
         "!type": "fn(+Event)"
       },
       "children": {
-        "!type": "HTMLCollection"
+        "!type": "HTMLCollection",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children",
+        "!doc": "Node.children is a read-only property that returns a live HTMLCollection of the child elements of Node."
       },
       "firstElementChild": {
-        "!type": "HTMLElement"
+        "!type": "HTMLElement",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild",
+        "!doc": "The ParentNode.firstElementChild read-only property returns the object's first child Element, or null if there are no child elements."
       },
       "lastElementChild": {
-        "!type": "HTMLElement"
+        "!type": "HTMLElement",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild",
+        "!doc": "The ParentNode.lastElementChild read-only property returns the object's last child Element or null if there are no child elements."
       },
       "childElementCount": {
-        "!type": "number"
+        "!type": "number",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount",
+        "!doc": "The ParentNode.childElementCount read-only property returns an unsigned long representing the number of child elements of the given element."
       },
       "onerror": {
         "!type": "fn(+Event)"
@@ -8002,16 +8062,24 @@
         "!doc": "The DocumentFragment.querySelectorAll() method returns a NodeList of elements within the DocumentFragment (using depth-first pre-order traversal of the document's nodes) that matches the specified group of selectors."
       },
       "children": {
-        "!type": "HTMLCollection"
+        "!type": "HTMLCollection",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children",
+        "!doc": "Node.children is a read-only property that returns a live HTMLCollection of the child elements of Node."
       },
       "firstElementChild": {
-        "!type": "HTMLElement"
+        "!type": "HTMLElement",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild",
+        "!doc": "The ParentNode.firstElementChild read-only property returns the object's first child Element, or null if there are no child elements."
       },
       "lastElementChild": {
-        "!type": "HTMLElement"
+        "!type": "HTMLElement",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild",
+        "!doc": "The ParentNode.lastElementChild read-only property returns the object's last child Element or null if there are no child elements."
       },
       "childElementCount": {
-        "!type": "number"
+        "!type": "number",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount",
+        "!doc": "The ParentNode.childElementCount read-only property returns an unsigned long representing the number of child elements of the given element."
       },
       "queryInterface": {
         "!type": "fn(iid: IID) -> nsISupports"
@@ -8038,7 +8106,9 @@
       "!type": "string"
     },
     "remove": {
-      "!type": "fn()"
+      "!type": "fn()",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove",
+      "!doc": "© 2005-2015 Mozilla Developer Network and individual contributors Content is available under these licenses · About MDN · Terms · Privacy · Cookies · Contribute to the code"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -8427,25 +8497,39 @@
       "!doc": "Draft \n    This page is not complete."
     },
     "remove": {
-      "!type": "fn()"
+      "!type": "fn()",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove",
+      "!doc": "© 2005-2015 Mozilla Developer Network and individual contributors Content is available under these licenses · About MDN · Terms · Privacy · Cookies · Contribute to the code"
     },
     "previousElementSibling": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/previousElementSibling",
+      "!doc": "The NonDocumentTypeChildNode.previousElementSibling read-only property returns the Element immediately prior to the specified one in its parent's children list, or null if the specified element is the first one in the list."
     },
     "nextElementSibling": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling",
+      "!doc": "The NonDocumentTypeChildNode.nextElementSibling read-only property returns the element immediately following the specified one in its parent's children list, or null if the specified element is the last one in the list."
     },
     "children": {
-      "!type": "HTMLCollection"
+      "!type": "HTMLCollection",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children",
+      "!doc": "Node.children is a read-only property that returns a live HTMLCollection of the child elements of Node."
     },
     "firstElementChild": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild",
+      "!doc": "The ParentNode.firstElementChild read-only property returns the object's first child Element, or null if there are no child elements."
     },
     "lastElementChild": {
-      "!type": "HTMLElement"
+      "!type": "HTMLElement",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/lastElementChild",
+      "!doc": "The ParentNode.lastElementChild read-only property returns the object's last child Element or null if there are no child elements."
     },
     "childElementCount": {
-      "!type": "number"
+      "!type": "number",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount",
+      "!doc": "The ParentNode.childElementCount read-only property returns an unsigned long representing the number of child elements of the given element."
     },
     "getAnimations": {
       "!type": "fn() -> [Animation]"
@@ -9296,37 +9380,59 @@
       "!type": "string"
     },
     "href": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/href",
+      "!doc": "The URLUtils.href property is a DOMString containing the whole URL."
     },
     "origin": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/origin",
+      "!doc": "The URLUtils.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
     },
     "protocol": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/protocol",
+      "!doc": "The URLUtils.protocol property is a DOMString representing the protocol scheme of the URL, including the final ':'."
     },
     "username": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/username",
+      "!doc": "The URLUtils.username property is a DOMString containing the username specified before the domain name."
     },
     "password": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/password",
+      "!doc": "The URLUtils.password property is a DOMString containing the password specified before the domain name."
     },
     "host": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/host",
+      "!doc": "The URLUtils.host property is a DOMString containing the host, that is the hostname, and then, if the port of the URL is nonempty, a ':', and the port of the URL."
     },
     "hostname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hostname",
+      "!doc": "The URLUtils.hostname property is a DOMString containing the domain of the URL."
     },
     "port": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/port",
+      "!doc": "The URLUtils.port property is a DOMString containing the port number of the URL."
     },
     "pathname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/pathname",
+      "!doc": "The URLUtils.pathname property is a DOMString containing an initial '/' followed by the path of the URL."
     },
     "search": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search",
+      "!doc": "The URLUtils.search property is a DOMString containing a '?' followed by the parameters of the URL."
     },
     "hash": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hash",
+      "!doc": "The URLUtils.hash property returns a DOMString containing a '#' followed by the fragment identifier of the URL."
     },
     "searchParams": {
       "!type": "+URLSearchParams"
@@ -9404,37 +9510,59 @@
       "!type": "bool"
     },
     "href": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/href",
+      "!doc": "The URLUtils.href property is a DOMString containing the whole URL."
     },
     "origin": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/origin",
+      "!doc": "The URLUtils.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
     },
     "protocol": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/protocol",
+      "!doc": "The URLUtils.protocol property is a DOMString representing the protocol scheme of the URL, including the final ':'."
     },
     "username": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/username",
+      "!doc": "The URLUtils.username property is a DOMString containing the username specified before the domain name."
     },
     "password": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/password",
+      "!doc": "The URLUtils.password property is a DOMString containing the password specified before the domain name."
     },
     "host": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/host",
+      "!doc": "The URLUtils.host property is a DOMString containing the host, that is the hostname, and then, if the port of the URL is nonempty, a ':', and the port of the URL."
     },
     "hostname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hostname",
+      "!doc": "The URLUtils.hostname property is a DOMString containing the domain of the URL."
     },
     "port": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/port",
+      "!doc": "The URLUtils.port property is a DOMString containing the port number of the URL."
     },
     "pathname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/pathname",
+      "!doc": "The URLUtils.pathname property is a DOMString containing an initial '/' followed by the path of the URL."
     },
     "search": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search",
+      "!doc": "The URLUtils.search property is a DOMString containing a '?' followed by the parameters of the URL."
     },
     "hash": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hash",
+      "!doc": "The URLUtils.hash property returns a DOMString containing a '#' followed by the fragment identifier of the URL."
     },
     "searchParams": {
       "!type": "+URLSearchParams"
@@ -9496,19 +9624,27 @@
       "!type": "string"
     },
     "onafterprint": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint",
+      "!doc": "The WindowEventHandlers.onafterprint property sets and returns the onafterprint EventHandler for the current window."
     },
     "onbeforeprint": {
       "!type": "fn(+Event)"
     },
     "onbeforeunload": {
-      "!type": "OnBeforeUnloadEventHandler"
+      "!type": "OnBeforeUnloadEventHandler",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload",
+      "!doc": "An event that fires when a window is about to unload its resources. The document is still visible and the event is still cancelable."
     },
     "onhashchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange",
+      "!doc": "The hashchange event fires when a window's hash changes (see location.hash)."
     },
     "onlanguagechange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange",
+      "!doc": "The WindowEventHandlers.onlanguagechange event handler is a property containing the code to execute when the languagechange event, of type Event, is received by the object implementing this interface, usually a Window, an HTMLBodyElement, or an HTMLIFrameElement. Such an event is sent by the browser to inform that the preferred languages list has been updated. The list is accessible via NavigatorLanguage.languages."
     },
     "onmessage": {
       "!type": "fn(+Event)"
@@ -9526,10 +9662,14 @@
       "!type": "fn(+Event)"
     },
     "onpopstate": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate",
+      "!doc": "An event handler for the popstate event on the window."
     },
     "onunload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+      "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
     }
   },
   "HTMLButtonElement": {
@@ -9945,13 +10085,19 @@
       "!type": "bool"
     },
     "onabort": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+      "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
     },
     "onblur": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+      "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
     },
     "onfocus": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+      "!doc": "The onfocus property returns the onFocus event handler code on the current element."
     },
     "oncanplay": {
       "!type": "fn(+Event)"
@@ -9960,16 +10106,24 @@
       "!type": "fn(+Event)"
     },
     "onchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+      "!doc": "The onchange property sets and returns the event handler for the change event."
     },
     "onclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+      "!doc": "The onclick property returns the click event handler code on the current element."
     },
     "oncontextmenu": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+      "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
     },
     "ondblclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+      "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
     },
     "ondrag": {
       "!type": "fn(+Event)"
@@ -10002,22 +10156,32 @@
       "!type": "fn(+Event)"
     },
     "oninput": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+      "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
     },
     "oninvalid": {
       "!type": "fn(+Event)"
     },
     "onkeydown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+      "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
     },
     "onkeypress": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+      "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
     },
     "onkeyup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+      "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
     },
     "onload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+      "!doc": "An event handler for the load event of a window."
     },
     "onloadeddata": {
       "!type": "fn(+Event)"
@@ -10029,7 +10193,9 @@
       "!type": "fn(+Event)"
     },
     "onmousedown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+      "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
     },
     "onmouseenter": {
       "!type": "fn(+Event)"
@@ -10038,16 +10204,24 @@
       "!type": "fn(+Event)"
     },
     "onmousemove": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+      "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
     },
     "onmouseout": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+      "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
     },
     "onmouseover": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+      "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
     },
     "onmouseup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+      "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
     },
     "onpause": {
       "!type": "fn(+Event)"
@@ -10065,13 +10239,19 @@
       "!type": "fn(+Event)"
     },
     "onreset": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+      "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
     },
     "onresize": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+      "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
     },
     "onscroll": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+      "!doc": "An event handler for scroll events on element."
     },
     "onseeked": {
       "!type": "fn(+Event)"
@@ -10080,7 +10260,9 @@
       "!type": "fn(+Event)"
     },
     "onselect": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+      "!doc": "An event handler for the select event on the window."
     },
     "onshow": {
       "!type": "fn(+Event)"
@@ -10089,7 +10271,9 @@
       "!type": "fn(+Event)"
     },
     "onsubmit": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+      "!doc": "An event handler for the submit event on the window."
     },
     "onsuspend": {
       "!type": "fn(+Event)"
@@ -10365,19 +10549,27 @@
       "!type": "string"
     },
     "onafterprint": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint",
+      "!doc": "The WindowEventHandlers.onafterprint property sets and returns the onafterprint EventHandler for the current window."
     },
     "onbeforeprint": {
       "!type": "fn(+Event)"
     },
     "onbeforeunload": {
-      "!type": "OnBeforeUnloadEventHandler"
+      "!type": "OnBeforeUnloadEventHandler",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload",
+      "!doc": "An event that fires when a window is about to unload its resources. The document is still visible and the event is still cancelable."
     },
     "onhashchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange",
+      "!doc": "The hashchange event fires when a window's hash changes (see location.hash)."
     },
     "onlanguagechange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange",
+      "!doc": "The WindowEventHandlers.onlanguagechange event handler is a property containing the code to execute when the languagechange event, of type Event, is received by the object implementing this interface, usually a Window, an HTMLBodyElement, or an HTMLIFrameElement. Such an event is sent by the browser to inform that the preferred languages list has been updated. The list is accessible via NavigatorLanguage.languages."
     },
     "onmessage": {
       "!type": "fn(+Event)"
@@ -10395,10 +10587,14 @@
       "!type": "fn(+Event)"
     },
     "onpopstate": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate",
+      "!doc": "An event handler for the popstate event on the window."
     },
     "onunload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+      "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
     }
   },
   "HTMLHRElement": {
@@ -14165,37 +14361,59 @@
       "!doc": "The Location.reload() method reloads the resource from the current URL. Its optional unique parameter is a Boolean, which, when it is true, causes the page to always be reloaded from the server. If it is false or not specified, the browser may reload the page from its cache."
     },
     "href": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/href",
+      "!doc": "The URLUtils.href property is a DOMString containing the whole URL."
     },
     "origin": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/origin",
+      "!doc": "The URLUtils.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
     },
     "protocol": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/protocol",
+      "!doc": "The URLUtils.protocol property is a DOMString representing the protocol scheme of the URL, including the final ':'."
     },
     "username": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/username",
+      "!doc": "The URLUtils.username property is a DOMString containing the username specified before the domain name."
     },
     "password": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/password",
+      "!doc": "The URLUtils.password property is a DOMString containing the password specified before the domain name."
     },
     "host": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/host",
+      "!doc": "The URLUtils.host property is a DOMString containing the host, that is the hostname, and then, if the port of the URL is nonempty, a ':', and the port of the URL."
     },
     "hostname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hostname",
+      "!doc": "The URLUtils.hostname property is a DOMString containing the domain of the URL."
     },
     "port": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/port",
+      "!doc": "The URLUtils.port property is a DOMString containing the port number of the URL."
     },
     "pathname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/pathname",
+      "!doc": "The URLUtils.pathname property is a DOMString containing an initial '/' followed by the path of the URL."
     },
     "search": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search",
+      "!doc": "The URLUtils.search property is a DOMString containing a '?' followed by the parameters of the URL."
     },
     "hash": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hash",
+      "!doc": "The URLUtils.hash property returns a DOMString containing a '#' followed by the fragment identifier of the URL."
     }
   },
   "MMICall": {
@@ -15122,34 +15340,54 @@
       "!type": "fn(iid: IID) -> nsISupports"
     },
     "appCodeName": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "appName": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "appVersion": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "platform": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "userAgent": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent",
+      "!doc": "Returns the user agent string for the current browser."
     },
     "product": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "taintEnabled": {
-      "!type": "fn() -> bool"
+      "!type": "fn() -> bool",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/taintEnabled",
+      "!doc": "Not available to workers.Although the interface of this feature is available to workers, this feature isn't."
     },
     "language": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language",
+      "!doc": "The NavigatorLanguage.language read-only property returns a string representing the preferred language of the user, usually the language of the browser UI."
     },
     "languages": {
-      "!type": "[string]"
+      "!type": "[string]",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages",
+      "!doc": "The NavigatorLanguage.languages read-only property returns an array of DOMStrings representing the user's preferred languages. The language is described using BCP 47 language tags. In the returned array they are ordered by preference with the most preferred language first."
     },
     "onLine": {
-      "!type": "bool"
+      "!type": "bool",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine",
+      "!doc": "Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline. The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page. For example, the property should return false when users click links soon after they lose internet connection."
     },
     "registerProtocolHandler": {
       "!type": "fn(scheme: string, url: string, title: string)"
@@ -15164,7 +15402,9 @@
       "!type": "fn(name: string) -> +Promise[value=?]"
     },
     "geolocation": {
-      "!type": "Geolocation"
+      "!type": "Geolocation",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorGeolocation/geolocation",
+      "!doc": "The Navigator.geolocation read-only property returns a Geolocation object that gives Web content access to the location of the device. This allows a Web site or app to offer customized results based on the user's location."
     },
     "battery": {
       "!type": "BatteryManager"
@@ -16696,22 +16936,34 @@
         "!type": "fn(context: RequestContext)"
       },
       "bodyUsed": {
-        "!type": "bool"
+        "!type": "bool",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed",
+        "!doc": "The bodyUsed read-only property of the Body mixin contains a Boolean that indicates whether the body has been read yet."
       },
       "arrayBuffer": {
-        "!type": "fn() -> +Promise[value=ArrayBuffer]"
+        "!type": "fn() -> +Promise[value=ArrayBuffer]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/arrayBuffer",
+        "!doc": "The arrayBuffer() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer."
       },
       "blob": {
-        "!type": "fn() -> +Promise[value=+Blob]"
+        "!type": "fn() -> +Promise[value=+Blob]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/blob",
+        "!doc": "The blob() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob."
       },
       "formData": {
-        "!type": "fn() -> +Promise[value=+FormData]"
+        "!type": "fn() -> +Promise[value=+FormData]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/formData",
+        "!doc": "Draft \n    This page is not complete."
       },
       "json": {
-        "!type": "fn() -> +Promise[value=JSON]"
+        "!type": "fn() -> +Promise[value=JSON]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/json",
+        "!doc": "The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an object literal containing the JSON data."
       },
       "text": {
-        "!type": "fn() -> +Promise[value=string]"
+        "!type": "fn() -> +Promise[value=string]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/text",
+        "!doc": "The text() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString object (text)."
       }
     }
   },
@@ -16937,22 +17189,34 @@
         "!doc": "The clone() method of the Response interface creates a clone of a response object, identical in every way, but stored in a different variable."
       },
       "bodyUsed": {
-        "!type": "bool"
+        "!type": "bool",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/bodyUsed",
+        "!doc": "The bodyUsed read-only property of the Body mixin contains a Boolean that indicates whether the body has been read yet."
       },
       "arrayBuffer": {
-        "!type": "fn() -> +Promise[value=ArrayBuffer]"
+        "!type": "fn() -> +Promise[value=ArrayBuffer]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/arrayBuffer",
+        "!doc": "The arrayBuffer() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an ArrayBuffer."
       },
       "blob": {
-        "!type": "fn() -> +Promise[value=+Blob]"
+        "!type": "fn() -> +Promise[value=+Blob]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/blob",
+        "!doc": "The blob() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a Blob."
       },
       "formData": {
-        "!type": "fn() -> +Promise[value=+FormData]"
+        "!type": "fn() -> +Promise[value=+FormData]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/formData",
+        "!doc": "Draft \n    This page is not complete."
       },
       "json": {
-        "!type": "fn() -> +Promise[value=JSON]"
+        "!type": "fn() -> +Promise[value=JSON]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/json",
+        "!doc": "The json() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with an object literal containing the JSON data."
       },
       "text": {
-        "!type": "fn() -> +Promise[value=string]"
+        "!type": "fn() -> +Promise[value=string]",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body/text",
+        "!doc": "The text() method of the Body mixin takes a Response stream and reads it to completion. It returns a promise that resolves with a USVString object (text)."
       }
     }
   },
@@ -17337,13 +17601,19 @@
       "!type": "fn(+Event)"
     },
     "onabort": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+      "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
     },
     "onblur": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+      "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
     },
     "onfocus": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+      "!doc": "The onfocus property returns the onFocus event handler code on the current element."
     },
     "oncanplay": {
       "!type": "fn(+Event)"
@@ -17352,16 +17622,24 @@
       "!type": "fn(+Event)"
     },
     "onchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+      "!doc": "The onchange property sets and returns the event handler for the change event."
     },
     "onclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+      "!doc": "The onclick property returns the click event handler code on the current element."
     },
     "oncontextmenu": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+      "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
     },
     "ondblclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+      "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
     },
     "ondrag": {
       "!type": "fn(+Event)"
@@ -17394,22 +17672,32 @@
       "!type": "fn(+Event)"
     },
     "oninput": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+      "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
     },
     "oninvalid": {
       "!type": "fn(+Event)"
     },
     "onkeydown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+      "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
     },
     "onkeypress": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+      "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
     },
     "onkeyup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+      "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
     },
     "onload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+      "!doc": "An event handler for the load event of a window."
     },
     "onloadeddata": {
       "!type": "fn(+Event)"
@@ -17421,7 +17709,9 @@
       "!type": "fn(+Event)"
     },
     "onmousedown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+      "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
     },
     "onmouseenter": {
       "!type": "fn(+Event)"
@@ -17430,16 +17720,24 @@
       "!type": "fn(+Event)"
     },
     "onmousemove": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+      "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
     },
     "onmouseout": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+      "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
     },
     "onmouseover": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+      "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
     },
     "onmouseup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+      "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
     },
     "onpause": {
       "!type": "fn(+Event)"
@@ -17457,13 +17755,19 @@
       "!type": "fn(+Event)"
     },
     "onreset": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+      "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
     },
     "onresize": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+      "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
     },
     "onscroll": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+      "!doc": "An event handler for scroll events on element."
     },
     "onseeked": {
       "!type": "fn(+Event)"
@@ -17472,7 +17776,9 @@
       "!type": "fn(+Event)"
     },
     "onselect": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+      "!doc": "An event handler for the select event on the window."
     },
     "onshow": {
       "!type": "fn(+Event)"
@@ -17481,7 +17787,9 @@
       "!type": "fn(+Event)"
     },
     "onsubmit": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+      "!doc": "An event handler for the submit event on the window."
     },
     "onsuspend": {
       "!type": "fn(+Event)"
@@ -20264,7 +20572,9 @@
       "!type": "fn(message: ?, transferable?: [Transferable])"
     },
     "onerror": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker/onerror",
+      "!doc": "The AbstractWorker.onerror property of the AbstractWorker interface represents an EventHandler, that is a function to be called when the error event occurs and bubbles through the Worker."
     }
   },
   "ServiceWorkerClient": {
@@ -20534,7 +20844,9 @@
         "!doc": "The port property of the SharedWorker interface returns a MessagePort object used to communicate and control the shared worker."
       },
       "onerror": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker/onerror",
+        "!doc": "The AbstractWorker.onerror property of the AbstractWorker interface represents an EventHandler, that is a function to be called when the error event occurs and bubbles through the Worker."
       }
     }
   },
@@ -22282,37 +22594,59 @@
     },
     "prototype": {
       "href": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/href",
+        "!doc": "The URLUtils.href property is a DOMString containing the whole URL."
       },
       "origin": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/origin",
+        "!doc": "The URLUtils.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
       },
       "protocol": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/protocol",
+        "!doc": "The URLUtils.protocol property is a DOMString representing the protocol scheme of the URL, including the final ':'."
       },
       "username": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/username",
+        "!doc": "The URLUtils.username property is a DOMString containing the username specified before the domain name."
       },
       "password": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/password",
+        "!doc": "The URLUtils.password property is a DOMString containing the password specified before the domain name."
       },
       "host": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/host",
+        "!doc": "The URLUtils.host property is a DOMString containing the host, that is the hostname, and then, if the port of the URL is nonempty, a ':', and the port of the URL."
       },
       "hostname": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hostname",
+        "!doc": "The URLUtils.hostname property is a DOMString containing the domain of the URL."
       },
       "port": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/port",
+        "!doc": "The URLUtils.port property is a DOMString containing the port number of the URL."
       },
       "pathname": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/pathname",
+        "!doc": "The URLUtils.pathname property is a DOMString containing an initial '/' followed by the path of the URL."
       },
       "search": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/search",
+        "!doc": "The URLUtils.search property is a DOMString containing a '?' followed by the parameters of the URL."
       },
       "hash": {
-        "!type": "string"
+        "!type": "string",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils/hash",
+        "!doc": "The URLUtils.hash property returns a DOMString containing a '#' followed by the fragment identifier of the URL."
       },
       "searchParams": {
         "!type": "+URLSearchParams"
@@ -25808,13 +26142,19 @@
       "!type": "fn(iid: IID) -> nsISupports"
     },
     "onabort": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+      "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
     },
     "onblur": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+      "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
     },
     "onfocus": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+      "!doc": "The onfocus property returns the onFocus event handler code on the current element."
     },
     "oncanplay": {
       "!type": "fn(+Event)"
@@ -25823,16 +26163,24 @@
       "!type": "fn(+Event)"
     },
     "onchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+      "!doc": "The onchange property sets and returns the event handler for the change event."
     },
     "onclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+      "!doc": "The onclick property returns the click event handler code on the current element."
     },
     "oncontextmenu": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+      "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
     },
     "ondblclick": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+      "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
     },
     "ondrag": {
       "!type": "fn(+Event)"
@@ -25865,22 +26213,32 @@
       "!type": "fn(+Event)"
     },
     "oninput": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+      "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
     },
     "oninvalid": {
       "!type": "fn(+Event)"
     },
     "onkeydown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+      "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
     },
     "onkeypress": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+      "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
     },
     "onkeyup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+      "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
     },
     "onload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+      "!doc": "An event handler for the load event of a window."
     },
     "onloadeddata": {
       "!type": "fn(+Event)"
@@ -25892,7 +26250,9 @@
       "!type": "fn(+Event)"
     },
     "onmousedown": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+      "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
     },
     "onmouseenter": {
       "!type": "fn(+Event)"
@@ -25901,16 +26261,24 @@
       "!type": "fn(+Event)"
     },
     "onmousemove": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+      "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
     },
     "onmouseout": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+      "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
     },
     "onmouseover": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+      "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
     },
     "onmouseup": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+      "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
     },
     "onpause": {
       "!type": "fn(+Event)"
@@ -25928,13 +26296,19 @@
       "!type": "fn(+Event)"
     },
     "onreset": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+      "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
     },
     "onresize": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+      "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
     },
     "onscroll": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+      "!doc": "An event handler for scroll events on element."
     },
     "onseeked": {
       "!type": "fn(+Event)"
@@ -25943,7 +26317,9 @@
       "!type": "fn(+Event)"
     },
     "onselect": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+      "!doc": "An event handler for the select event on the window."
     },
     "onshow": {
       "!type": "fn(+Event)"
@@ -25952,7 +26328,9 @@
       "!type": "fn(+Event)"
     },
     "onsubmit": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+      "!doc": "An event handler for the submit event on the window."
     },
     "onsuspend": {
       "!type": "fn(+Event)"
@@ -26009,19 +26387,27 @@
       "!type": "fn(+Event)"
     },
     "onafterprint": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint",
+      "!doc": "The WindowEventHandlers.onafterprint property sets and returns the onafterprint EventHandler for the current window."
     },
     "onbeforeprint": {
       "!type": "fn(+Event)"
     },
     "onbeforeunload": {
-      "!type": "OnBeforeUnloadEventHandler"
+      "!type": "OnBeforeUnloadEventHandler",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload",
+      "!doc": "An event that fires when a window is about to unload its resources. The document is still visible and the event is still cancelable."
     },
     "onhashchange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange",
+      "!doc": "The hashchange event fires when a window's hash changes (see location.hash)."
     },
     "onlanguagechange": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange",
+      "!doc": "The WindowEventHandlers.onlanguagechange event handler is a property containing the code to execute when the languagechange event, of type Event, is received by the object implementing this interface, usually a Window, an HTMLBodyElement, or an HTMLIFrameElement. Such an event is sent by the browser to inform that the preferred languages list has been updated. The list is accessible via NavigatorLanguage.languages."
     },
     "onmessage": {
       "!type": "fn(+Event)"
@@ -26039,28 +26425,44 @@
       "!type": "fn(+Event)"
     },
     "onpopstate": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate",
+      "!doc": "An event handler for the popstate event on the window."
     },
     "onunload": {
-      "!type": "fn(+Event)"
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+      "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
     },
     "setTimeout": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
+      "!doc": "Calls a function or executes a code snippet after a specified delay."
     },
     "clearTimeout": {
-      "!type": "fn(handle?: number)"
+      "!type": "fn(handle?: number)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearTimeout",
+      "!doc": "Clears the delay set by WindowTimers.setTimeout()."
     },
     "setInterval": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
+      "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
     },
     "clearInterval": {
-      "!type": "fn(handle?: number)"
+      "!type": "fn(handle?: number)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval",
+      "!doc": "Cancels repeated action which was set up using setInterval."
     },
     "btoa": {
-      "!type": "fn(btoa: string) -> string"
+      "!type": "fn(btoa: string) -> string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/btoa",
+      "!doc": "Creates a base-64 encoded ASCII string from a \"string\" of binary data."
     },
     "atob": {
-      "!type": "fn(atob: string) -> string"
+      "!type": "fn(atob: string) -> string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob",
+      "!doc": "The WindowBase64.atob() function decodes a string of data which has been encoded using base-64 encoding. You can use the window.btoa() method to encode and transmit data which may otherwise cause communication problems, then transmit it and use the window.atob() method to decode the data again. For example, you can encode, transmit, and decode control characters such as ASCII values 0 through 31."
     },
     "sessionStorage": {
       "!type": "Storage"
@@ -26069,7 +26471,9 @@
       "!type": "Storage"
     },
     "indexedDB": {
-      "!type": "IDBFactory"
+      "!type": "IDBFactory",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment/indexedDB",
+      "!doc": "The indexedDB property of the IDBEnvironment interface provides a mechanism for applications to asynchronously access the capabilities of indexed databases."
     },
     "speechSynthesis": {
       "!type": "SpeechSynthesis"
@@ -26144,7 +26548,9 @@
       "!type": "fn(mouseDownEvent: +Event, panel?: HTMLElement)"
     },
     "fetch": {
-      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
+      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch/fetch",
+      "!doc": "The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request."
     }
   },
   "ChromeWindow": {
@@ -26219,7 +26625,9 @@
         "!doc": "The onmessage property of the Worker interface represents an EventHandler, that is a function to be called when the message event occurs. These events are of type MessageEvent and will be called when the worker's parent receives a message (i.e. from the DedicatedWorkerGlobalScope.postMessage method."
       },
       "onerror": {
-        "!type": "fn(+Event)"
+        "!type": "fn(+Event)",
+        "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker/onerror",
+        "!doc": "The AbstractWorker.onerror property of the AbstractWorker interface represents an EventHandler, that is a function to be called when the error event occurs and bubbles through the Worker."
       }
     }
   },
@@ -26334,93 +26742,147 @@
       "!doc": "The  performance read-only property of the WorkerGlobalScope interface returns a Performance object to be used on the worker."
     },
     "setTimeout": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
+      "!doc": "Calls a function or executes a code snippet after a specified delay."
     },
     "clearTimeout": {
-      "!type": "fn(handle?: number)"
+      "!type": "fn(handle?: number)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearTimeout",
+      "!doc": "Clears the delay set by WindowTimers.setTimeout()."
     },
     "setInterval": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
+      "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
     },
     "clearInterval": {
-      "!type": "fn(handle?: number)"
+      "!type": "fn(handle?: number)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval",
+      "!doc": "Cancels repeated action which was set up using setInterval."
     },
     "btoa": {
-      "!type": "fn(btoa: string) -> string"
+      "!type": "fn(btoa: string) -> string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/btoa",
+      "!doc": "Creates a base-64 encoded ASCII string from a \"string\" of binary data."
     },
     "atob": {
-      "!type": "fn(atob: string) -> string"
+      "!type": "fn(atob: string) -> string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob",
+      "!doc": "The WindowBase64.atob() function decodes a string of data which has been encoded using base-64 encoding. You can use the window.btoa() method to encode and transmit data which may otherwise cause communication problems, then transmit it and use the window.atob() method to decode the data again. For example, you can encode, transmit, and decode control characters such as ASCII values 0 through 31."
     },
     "fetch": {
-      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
+      "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch/fetch",
+      "!doc": "The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request."
     },
     "indexedDB": {
-      "!type": "IDBFactory"
+      "!type": "IDBFactory",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment/indexedDB",
+      "!doc": "The indexedDB property of the IDBEnvironment interface provides a mechanism for applications to asynchronously access the capabilities of indexed databases."
     }
   },
   "WorkerLocation": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WorkerLocation",
     "!doc": "The WorkerLocation interface defines the absolute location of the script executed by the Worker. Such an object is initialized for each worker and is available via the WorkerGlobalScope.location property obtained by calling window.self.location.",
     "href": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/href",
+      "!doc": "The URLUtilsReadOnly.href read-only property returns a DOMString containing the whole URL."
     },
     "protocol": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/protocol",
+      "!doc": "The URLUtilsReadOnly.protocol read-only property returns a DOMString containing the protocol scheme of the URL, including the final ':'."
     },
     "host": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/host",
+      "!doc": "The URLUtilsReadOnly.host read-only property returns a DOMString containing the host, that is the hostname, a ':', and the port of the URL."
     },
     "hostname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/hostname",
+      "!doc": "The URLUtilsReadOnly.hostname read-only property returns a DOMString containing the domain of the URL."
     },
     "port": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/port",
+      "!doc": "The URLUtilsReadOnly.port read-only property returns a DOMString containing the port number of the URL."
     },
     "pathname": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/pathname",
+      "!doc": "The URLUtilsReadOnly.pathname read-only property returns a DOMString containing an initial '/' followed by the path of the URL."
     },
     "search": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/search",
+      "!doc": "The URLUtilsReadOnly.search read-only property returns a DOMString containing a '?' followed by the parameters of the URL."
     },
     "hash": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/hash",
+      "!doc": "The URLUtilsReadOnly.hash read-only property returns a DOMString containing a '#' followed by the fragment identifier of the URL. The hash is not percent encoded."
     },
     "origin": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/origin",
+      "!doc": "The URLUtilsReadOnly.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
     }
   },
   "WorkerNavigator": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WorkerNavigator",
     "!doc": "The WorkerNavigator interface represents a subset of the Navigator interface allowed to be accessed from a Worker. Such an object is initialized for each worker and is available via the WorkerGlobalScope.navigator property obtained by calling window.self.navigator.",
     "appCodeName": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appCodeName",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "appName": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appName",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "appVersion": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/appVersion",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "platform": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/platform",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "userAgent": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/userAgent",
+      "!doc": "Returns the user agent string for the current browser."
     },
     "product": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/product",
+      "!doc": "DeprecatedThis feature has been removed from the Web standards. Though some browsers may still support it, it is in the process of being dropped. Do not use it in old or new projects. Pages or Web apps using it may break at any time."
     },
     "taintEnabled": {
-      "!type": "fn() -> bool"
+      "!type": "fn() -> bool",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID/taintEnabled",
+      "!doc": "Not available to workers.Although the interface of this feature is available to workers, this feature isn't."
     },
     "language": {
-      "!type": "string"
+      "!type": "string",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/language",
+      "!doc": "The NavigatorLanguage.language read-only property returns a string representing the preferred language of the user, usually the language of the browser UI."
     },
     "languages": {
-      "!type": "[string]"
+      "!type": "[string]",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorLanguage/languages",
+      "!doc": "The NavigatorLanguage.languages read-only property returns an array of DOMStrings representing the user's preferred languages. The language is described using BCP 47 language tags. In the returned array they are ordered by preference with the most preferred language first."
     },
     "onLine": {
-      "!type": "bool"
+      "!type": "bool",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorOnLine/onLine",
+      "!doc": "Returns the online status of the browser. The property returns a boolean value, with true meaning online and false meaning offline. The property sends updates whenever the browser's ability to connect to the network changes. The update occurs when the user follows links or when a script requests a remote page. For example, the property should return false when users click links soon after they lose internet connection."
     },
     "getDataStores": {
       "!type": "fn(name: string, owner?: string) -> +Promise"
@@ -26984,13 +27446,19 @@
     "!type": "fn(iid: IID) -> nsISupports"
   },
   "onabort": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+    "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
   },
   "onblur": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+    "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
   },
   "onfocus": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+    "!doc": "The onfocus property returns the onFocus event handler code on the current element."
   },
   "oncanplay": {
     "!type": "fn(+Event)"
@@ -26999,16 +27467,24 @@
     "!type": "fn(+Event)"
   },
   "onchange": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+    "!doc": "The onchange property sets and returns the event handler for the change event."
   },
   "onclick": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+    "!doc": "The onclick property returns the click event handler code on the current element."
   },
   "oncontextmenu": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+    "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
   },
   "ondblclick": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+    "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
   },
   "ondrag": {
     "!type": "fn(+Event)"
@@ -27041,22 +27517,32 @@
     "!type": "fn(+Event)"
   },
   "oninput": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+    "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
   },
   "oninvalid": {
     "!type": "fn(+Event)"
   },
   "onkeydown": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+    "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
   },
   "onkeypress": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+    "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
   },
   "onkeyup": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+    "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
   },
   "onload": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+    "!doc": "An event handler for the load event of a window."
   },
   "onloadeddata": {
     "!type": "fn(+Event)"
@@ -27068,7 +27554,9 @@
     "!type": "fn(+Event)"
   },
   "onmousedown": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+    "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
   },
   "onmouseenter": {
     "!type": "fn(+Event)"
@@ -27077,16 +27565,24 @@
     "!type": "fn(+Event)"
   },
   "onmousemove": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+    "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
   },
   "onmouseout": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+    "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
   },
   "onmouseover": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+    "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
   },
   "onmouseup": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+    "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
   },
   "onpause": {
     "!type": "fn(+Event)"
@@ -27104,13 +27600,19 @@
     "!type": "fn(+Event)"
   },
   "onreset": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+    "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
   },
   "onresize": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+    "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
   },
   "onscroll": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+    "!doc": "An event handler for scroll events on element."
   },
   "onseeked": {
     "!type": "fn(+Event)"
@@ -27119,7 +27621,9 @@
     "!type": "fn(+Event)"
   },
   "onselect": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+    "!doc": "An event handler for the select event on the window."
   },
   "onshow": {
     "!type": "fn(+Event)"
@@ -27128,7 +27632,9 @@
     "!type": "fn(+Event)"
   },
   "onsubmit": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+    "!doc": "An event handler for the submit event on the window."
   },
   "onsuspend": {
     "!type": "fn(+Event)"
@@ -27185,19 +27691,27 @@
     "!type": "fn(+Event)"
   },
   "onafterprint": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onafterprint",
+    "!doc": "The WindowEventHandlers.onafterprint property sets and returns the onafterprint EventHandler for the current window."
   },
   "onbeforeprint": {
     "!type": "fn(+Event)"
   },
   "onbeforeunload": {
-    "!type": "OnBeforeUnloadEventHandler"
+    "!type": "OnBeforeUnloadEventHandler",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload",
+    "!doc": "An event that fires when a window is about to unload its resources. The document is still visible and the event is still cancelable."
   },
   "onhashchange": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onhashchange",
+    "!doc": "The hashchange event fires when a window's hash changes (see location.hash)."
   },
   "onlanguagechange": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onlanguagechange",
+    "!doc": "The WindowEventHandlers.onlanguagechange event handler is a property containing the code to execute when the languagechange event, of type Event, is received by the object implementing this interface, usually a Window, an HTMLBodyElement, or an HTMLIFrameElement. Such an event is sent by the browser to inform that the preferred languages list has been updated. The list is accessible via NavigatorLanguage.languages."
   },
   "onmessage": {
     "!type": "fn(+Event)"
@@ -27215,28 +27729,44 @@
     "!type": "fn(+Event)"
   },
   "onpopstate": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onpopstate",
+    "!doc": "An event handler for the popstate event on the window."
   },
   "onunload": {
-    "!type": "fn(+Event)"
+    "!type": "fn(+Event)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload",
+    "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
   },
   "setTimeout": {
-    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
+    "!doc": "Calls a function or executes a code snippet after a specified delay."
   },
   "clearTimeout": {
-    "!type": "fn(handle?: number)"
+    "!type": "fn(handle?: number)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearTimeout",
+    "!doc": "Clears the delay set by WindowTimers.setTimeout()."
   },
   "setInterval": {
-    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number"
+    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
+    "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
   },
   "clearInterval": {
-    "!type": "fn(handle?: number)"
+    "!type": "fn(handle?: number)",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/clearInterval",
+    "!doc": "Cancels repeated action which was set up using setInterval."
   },
   "btoa": {
-    "!type": "fn(btoa: string) -> string"
+    "!type": "fn(btoa: string) -> string",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/btoa",
+    "!doc": "Creates a base-64 encoded ASCII string from a \"string\" of binary data."
   },
   "atob": {
-    "!type": "fn(atob: string) -> string"
+    "!type": "fn(atob: string) -> string",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob",
+    "!doc": "The WindowBase64.atob() function decodes a string of data which has been encoded using base-64 encoding. You can use the window.btoa() method to encode and transmit data which may otherwise cause communication problems, then transmit it and use the window.atob() method to decode the data again. For example, you can encode, transmit, and decode control characters such as ASCII values 0 through 31."
   },
   "sessionStorage": {
     "!type": "Storage"
@@ -27245,7 +27775,9 @@
     "!type": "Storage"
   },
   "indexedDB": {
-    "!type": "IDBFactory"
+    "!type": "IDBFactory",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment/indexedDB",
+    "!doc": "The indexedDB property of the IDBEnvironment interface provides a mechanism for applications to asynchronously access the capabilities of indexed databases."
   },
   "speechSynthesis": {
     "!type": "SpeechSynthesis"
@@ -27320,6 +27852,8 @@
     "!type": "fn(mouseDownEvent: +Event, panel?: HTMLElement)"
   },
   "fetch": {
-    "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]"
+    "!type": "fn(input: RequestInfo, init?: RequestInit) -> +Promise[value=+Response]",
+    "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalFetch/fetch",
+    "!doc": "The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request."
   }
 }
