@@ -1,3 +1,6 @@
 [submodule "webidl"]
 	path = webidl
 	url = git@github.com:othree/webidl.git
+[submodule "mdn"]
+	path = mdn
+	url = git@github.com:othree/webidl-and-mdn.git
