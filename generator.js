@@ -48,6 +48,12 @@ var ptype = function (inter, nogenericinfo) {
   if (type === 'EventHandler') {
     type = "fn(+Event)";
   }
+  if (type === 'Element') {
+    type = "HTMLElement";
+  }
+  if (type === 'CSSStyleDeclaration') {
+    type = "CSS2Properties";
+  }
   if (sequence || generic === 'sequence') {
     type = `[${ptype(type)}]`;
   }
