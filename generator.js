@@ -1,4 +1,6 @@
-var util = require('util');
+var jsonfile = require('jsonfile');
+
+var doc = jsonfile.readFileSync('./mdn/webidl.json');
 
 var store = {
   set: function (st) {
@@ -69,7 +71,7 @@ var ptype = function (inter, nogenericinfo) {
   return type;
 };
 
-var method = function (inter) {
+var method = function (inter, parent) {
   "use strict";
   var args = [];
   for (let arg of inter.arguments) {
@@ -81,17 +83,28 @@ var method = function (inter) {
   if (rtn && rtn !== 'void') {
     type += ` -> ${rtn}`
   }
-  return {
+  var def = {
     "!type": type
   };
+  var key = (parent? `${parent}/` : '') + inter.name;
+  if (doc[key]) {
+    def['!url'] = doc[key]['!url'];
+    def['!doc'] = doc[key]['!doc'];
+  }
+  return def;
 };
 
-var prop = function (inter) {
+var prop = function (inter, parent) {
   "use strict";
   var type = inter.interface ? ptype(inter.interface) : null;
   var def = {};
   if (type) {
     def["!type"] = type;
+  }
+  var key = (parent? `${parent}/` : '') + inter.name;
+  if (doc[key]) {
+    def['!url'] = doc[key]['!url'];
+    def['!doc'] = doc[key]['!doc'];
   }
   if (inter.inheritance) {
     if (store.isCons(inter.inheritance)) {
@@ -101,16 +114,17 @@ var prop = function (inter) {
     }
   }
   if (inter.members) {
+    let pname = inter.name;
     for (let m of inter.members) {
       let name = m.name;
-      let inter = member(m);
+      let inter = member(m, pname);
       def[name] = inter;
     }
   }
   return def;
 };
 
-var cons = function (inter) {
+var cons = function (inter, parent) {
   "use strict";
   var args = [];
   for (let arg of inter.arguments) {
@@ -119,8 +133,13 @@ var cons = function (inter) {
   }
   var type = `fn(${args.join(', ')})`;
   var proto = {};
-  var rtn = {
+  var def = {
     "!type": type,
+  }
+  var key = (parent? `${parent}/` : '') + inter.name;
+  if (doc[key]) {
+    def['!url'] = doc[key]['!url'];
+    def['!doc'] = doc[key]['!doc'];
   }
   if (inter.inheritance) {
     if (store.isCons(inter.inheritance)) {
@@ -130,29 +149,30 @@ var cons = function (inter) {
     }
   }
 
+  var pname = inter.name;
   for (let m of inter.members) {
     let name = m.name;
-    let inter = member(m);
+    let inter = member(m, pname);
     if (m.static) {
-      rtn[name] = inter;
+      def[name] = inter;
     } else {
       proto[name] = inter;
     }
   }
-  rtn.prototype = proto;
-  return rtn;
+  def.prototype = proto;
+  return def;
 };
 
-var member = function (inter) {
+var member = function (inter, parent) {
   "use strict";
   if (inter.type === 'method') {
-    return method(inter);
+    return method(inter, parent);
   }
   if (inter.type === 'prop') {
-    return prop(inter);
+    return prop(inter, parent);
   }
   if (inter.type === 'cons') {
-    return cons(inter);
+    return cons(inter, parent);
   }
 };
 
@@ -174,7 +194,6 @@ var generator = {
       }
     }
 
-    // console.log(util.inspect(def, {showHidden: false, depth: null}));
     console.log(JSON.stringify(def, null, 2));
   }
 };
