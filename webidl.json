@@ -1958,6 +1958,9 @@
       "returnValue": {
         "!type": "?"
       }
+    },
+    "EventListener": {
+      "!type": "fn(e: +Event)"
     }
   },
   "AVInputPort": {
