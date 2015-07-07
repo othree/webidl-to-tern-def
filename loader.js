@@ -125,6 +125,7 @@ var loader = {
       members.push({
         name: prop.name,
         type: prop.type,
+        getter: prop.getter,
         static: !!prop.static,
         arguments: args,
         idlType: prop.idlType

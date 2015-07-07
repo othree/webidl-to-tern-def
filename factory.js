@@ -21,7 +21,16 @@ var factory = {
   },
   members: function (members) {
     "use strict";
-    return members.map(function (member) {
+    var getter = null;
+    var rtn = members.map(function (member) {
+      if (member.getter) {
+        getter = {
+          name: '<i>',
+          type: 'prop',
+          static: member.static,
+          interface: member.idlType
+        };
+      }
       var idltype = null;
       var m = {
         name: member.name,
@@ -34,6 +43,10 @@ var factory = {
       }
       return m;
     });
+    if (getter) {
+      rtn.push(getter);
+    }
+    return rtn;
   }
 };
 

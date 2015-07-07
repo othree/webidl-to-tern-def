@@ -198,6 +198,9 @@
       },
       "length": {
         "!type": "number"
+      },
+      "<i>": {
+        "!type": "TelephonyCall"
       }
     },
     "CanvasDrawingStyles": {
@@ -1079,6 +1082,9 @@
       },
       "item": {
         "!type": "fn(index: number) -> MessagePort"
+      },
+      "<i>": {
+        "!type": "MessagePort"
       }
     },
     "PaymentProvider": {
@@ -2665,6 +2671,9 @@
     },
     "onremovetrack": {
       "!type": "fn(+Event)"
+    },
+    "<i>": {
+      "!type": "AudioTrack"
     }
   },
   "AutocompleteErrorEvent": {
@@ -4988,6 +4997,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> CSSRule"
+    },
+    "<i>": {
+      "!type": "CSSRule"
     }
   },
   "CSSRule": {
@@ -5026,6 +5038,9 @@
     },
     "getAuthoredPropertyValue": {
       "!type": "fn(property: string) -> string"
+    },
+    "<i>": {
+      "!type": "string"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -5079,6 +5094,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> CSSValue"
+    },
+    "<i>": {
+      "!type": "CSSValue"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -5228,7 +5246,11 @@
       "!type": "CameraRecorderVideoProfile"
     }
   },
-  "CameraRecorderProfiles": {},
+  "CameraRecorderProfiles": {
+    "<i>": {
+      "!type": "CameraRecorderProfile"
+    }
+  },
   "CameraCapabilities": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/CameraCapabilities",
     "!doc": "The CameraControl.capabilities property returns a CameraCapabilities object, which describes all the camera's capabilities.",
@@ -6786,6 +6808,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> +DOMRect"
+    },
+    "<i>": {
+      "!type": "+DOMRect"
     }
   },
   "DOMRequest": {
@@ -6828,11 +6853,17 @@
     },
     "contains": {
       "!type": "fn(string: string) -> bool"
+    },
+    "<i>": {
+      "!type": "string"
     }
   },
   "DOMStringMap": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/DOMStringMap",
     "!doc": "Used by the dataset HTML attribute to represent data for custom attributes added to elements.",
+    "<i>": {
+      "!type": "string"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -6857,6 +6888,9 @@
     },
     "toggle": {
       "!type": "fn(token: string, force?: bool) -> bool"
+    },
+    "<i>": {
+      "!type": "string"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -8993,6 +9027,9 @@
     "length": {
       "!type": "number"
     },
+    "<i>": {
+      "!type": "+File"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -9333,6 +9370,9 @@
     },
     "namedItem": {
       "!type": "fn(name: string) -> ?"
+    },
+    "<i>": {
+      "!type": "?"
     }
   },
   "HTMLAnchorElement": {
@@ -9773,6 +9813,9 @@
     "namedItem": {
       "!type": "fn(name: string) -> HTMLElement"
     },
+    "<i>": {
+      "!type": "HTMLElement"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -9944,6 +9987,9 @@
     },
     "blockedTrackingNodes": {
       "!type": "NodeList"
+    },
+    "<i>": {
+      "!type": "object"
     }
   },
   "HTMLElement": {
@@ -10434,6 +10480,9 @@
       "!type": "fn(name: string) -> ?",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLFormControlsCollection/namedItem",
       "!doc": "Note that this version of namedItem() hide the one inherited from HTMLCollection. Like that one, in JavaScript, using the array bracket syntax with a String, like collection[\"value\"] is equivalent to collection.namedItem(\"value\")."
+    },
+    "<i>": {
+      "!type": "?"
     }
   },
   "HTMLFormElement": {
@@ -10506,6 +10555,9 @@
     },
     "requestAutocomplete": {
       "!type": "fn()"
+    },
+    "<i>": {
+      "!type": "nsISupports"
     }
   },
   "HTMLFrameElement": {
@@ -11721,6 +11773,9 @@
     },
     "names": {
       "!type": "DOMStringList"
+    },
+    "<i>": {
+      "!type": "PropertyNodeList"
     }
   },
   "PropertyNodeList": {
@@ -11855,6 +11910,9 @@
       "!type": "fn(error: string)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/setCustomValidity",
       "!doc": "The HTMLSelectElement.setCustomValidity() method sets the custom validity message for the selection element to the specified message. Use the empty string to indicate that the element does not have a custom validity error."
+    },
+    "<i>": {
+      "!type": "HTMLElement"
     }
   },
   "HTMLShadowElement": {
@@ -14632,6 +14690,9 @@
     },
     "appendMedium": {
       "!type": "fn(newMedium: string)"
+    },
+    "<i>": {
+      "!type": "string"
     }
   },
   "MediaQueryList": {
@@ -14954,6 +15015,9 @@
     "namedItem": {
       "!type": "fn(name: string) -> MimeType"
     },
+    "<i>": {
+      "!type": "MimeType"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -15213,6 +15277,9 @@
     },
     "removeNamedItemNS": {
       "!type": "fn(namespaceURI: string, localName: string) -> Attr"
+    },
+    "<i>": {
+      "!type": "Attr"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -15716,6 +15783,9 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NodeList/length",
       "!doc": "length returns the number of items in a NodeList."
     },
+    "<i>": {
+      "!type": "Node"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -15970,6 +16040,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> PaintRequest"
+    },
+    "<i>": {
+      "!type": "PaintRequest"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -16339,6 +16412,9 @@
     "namedItem": {
       "!type": "fn(name: string) -> MimeType"
     },
+    "<i>": {
+      "!type": "MimeType"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -16357,6 +16433,9 @@
     },
     "refresh": {
       "!type": "fn(reloadDocuments?: bool)"
+    },
+    "<i>": {
+      "!type": "Plugin"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -18873,6 +18952,9 @@
     "length": {
       "!type": "number"
     },
+    "<i>": {
+      "!type": "SVGLength"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -19108,6 +19190,9 @@
     },
     "length": {
       "!type": "number"
+    },
+    "<i>": {
+      "!type": "+SVGNumber"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -19520,6 +19605,9 @@
     "length": {
       "!type": "number"
     },
+    "<i>": {
+      "!type": "SVGPathSeg"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -19611,6 +19699,9 @@
     },
     "length": {
       "!type": "number"
+    },
+    "<i>": {
+      "!type": "SVGPoint"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -19926,6 +20017,9 @@
     "appendItem": {
       "!type": "fn(newItem: string) -> string"
     },
+    "<i>": {
+      "!type": "string"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -20178,6 +20272,9 @@
     },
     "length": {
       "!type": "number"
+    },
+    "<i>": {
+      "!type": "SVGTransform"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -20949,6 +21046,9 @@
     "!proto": "EventTarget",
     "length": {
       "!type": "number"
+    },
+    "<i>": {
+      "!type": "SourceBuffer"
     }
   },
   "SpeechGrammar": {
@@ -20976,6 +21076,9 @@
       },
       "addFromString": {
         "!type": "fn(string: string, weight?: number)"
+      },
+      "<i>": {
+        "!type": "+SpeechGrammar"
       }
     }
   },
@@ -21092,6 +21195,9 @@
     },
     "final": {
       "!type": "bool"
+    },
+    "<i>": {
+      "!type": "SpeechRecognitionAlternative"
     }
   },
   "SpeechRecognitionResultList": {
@@ -21100,6 +21206,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> SpeechRecognitionResult"
+    },
+    "<i>": {
+      "!type": "SpeechRecognitionResult"
     }
   },
   "SpeechSynthesis": {
@@ -21250,6 +21359,9 @@
       "!type": "fn()",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Storage/clear",
       "!doc": "The clear() method of the Storage interface, when invoked, will empty all keys out of the storage."
+    },
+    "<i>": {
+      "!type": "string"
     }
   },
   "StorageEvent": {
@@ -21328,6 +21440,9 @@
     },
     "item": {
       "!type": "fn(index: number) -> StyleSheet"
+    },
+    "<i>": {
+      "!type": "StyleSheet"
     }
   },
   "CryptoKey": {
@@ -22085,6 +22200,9 @@
     },
     "getCueById": {
       "!type": "fn(id: string) -> +VTTCue"
+    },
+    "<i>": {
+      "!type": "+VTTCue"
     }
   },
   "TextTrackList": {
@@ -22106,6 +22224,9 @@
     },
     "mediaElement": {
       "!type": "HTMLMediaElement"
+    },
+    "<i>": {
+      "!type": "TextTrack"
     }
   },
   "TimeEvent": {
@@ -22259,6 +22380,9 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/TouchList/identifiedTouch",
       "!doc": "This method returns the first Touch item in the TouchList matching the specified identifier."
     },
+    "<i>": {
+      "!type": "Touch"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     }
@@ -22385,6 +22509,9 @@
     },
     "restoreNaturalOrder": {
       "!type": "fn()"
+    },
+    "<i>": {
+      "!type": "TreeColumn"
     },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
@@ -23124,6 +23251,9 @@
     },
     "onremovetrack": {
       "!type": "fn(+Event)"
+    },
+    "<i>": {
+      "!type": "VideoTrack"
     }
   },
   "WaveShaperNode": {
@@ -26141,6 +26271,9 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/sidebar",
       "!doc": "Returns a sidebar object, which contains several methods for registering add-ons with browser."
     },
+    "<i>": {
+      "!type": "object"
+    },
     "queryInterface": {
       "!type": "fn(iid: IID) -> nsISupports"
     },
@@ -27444,6 +27577,9 @@
   },
   "sidebar": {
     "!type": "?"
+  },
+  "<i>": {
+    "!type": "object"
   },
   "queryInterface": {
     "!type": "fn(iid: IID) -> nsISupports"
