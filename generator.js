@@ -91,6 +91,9 @@ var method = function (inter, parent) {
     def['!url'] = doc[key]['!url'];
     def['!doc'] = doc[key]['!doc'];
   }
+  if (Object.keys(def).length === 1 && def['!type']) {
+    def = def['!type'];
+  }
   return def;
 };
 
@@ -120,6 +123,9 @@ var prop = function (inter, parent) {
       let inter = member(m, pname);
       def[name] = inter;
     }
+  }
+  if (Object.keys(def).length === 1 && def['!type']) {
+    def = def['!type'];
   }
   return def;
 };
@@ -160,6 +166,9 @@ var cons = function (inter, parent) {
     }
   }
   def.prototype = proto;
+  if (Object.keys(def).length === 1 && def['!type']) {
+    def = def['!type'];
+  }
   return def;
 };
 
