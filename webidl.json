@@ -57,8 +57,8 @@
       "getVisible": "fn() -> DOMRequest",
       "setActive": "fn(active: bool)",
       "getActive": "fn() -> bool",
-      "addNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)",
-      "removeNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)",
+      "addNextPaintListener": "fn(listener: fn())",
+      "removeNextPaintListener": "fn(listener: fn())",
       "sendMouseEvent": "fn(type: string, x: number, y: number, button: number, clickCount: number, modifiers: number)",
       "sendTouchEvent": "fn(type: string, identifiers: [number], x: [number], y: [number], rx: [number], ry: [number], rotationAngles: [number], forces: [number], count: number, modifiers: number)",
       "goBack": "fn()",
@@ -80,8 +80,8 @@
       "getVisible": "fn() -> DOMRequest",
       "setActive": "fn(active: bool)",
       "getActive": "fn() -> bool",
-      "addNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)",
-      "removeNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)"
+      "addNextPaintListener": "fn(listener: fn())",
+      "removeNextPaintListener": "fn(listener: fn())"
     },
     "BrowserElementPrivileged": {
       "sendMouseEvent": "fn(type: string, x: number, y: number, button: number, clickCount: number, modifiers: number)",
@@ -590,12 +590,12 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Geolocation",
       "!doc": "The Geolocation interface represents an object able to programmatically obtain the position of the device. It gives Web content access to the location of the device. This allows a Web site or app to offer customized results based on the user's location.",
       "getCurrentPosition": {
-        "!type": "fn(successCallback: PositionCallback, errorCallback?: PositionErrorCallback, options?: PositionOptions)",
+        "!type": "fn(successCallback: fn(position: Position), errorCallback?: fn(positionError: PositionError), options?: PositionOptions)",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Geolocation/getCurrentPosition",
         "!doc": "The Geolocation.getCurrentPosition() method is used to get the current position of the device."
       },
       "watchPosition": {
-        "!type": "fn(successCallback: PositionCallback, errorCallback?: PositionErrorCallback, options?: PositionOptions) -> number",
+        "!type": "fn(successCallback: fn(position: Position), errorCallback?: fn(positionError: PositionError), options?: PositionOptions) -> number",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Geolocation/watchPosition",
         "!doc": "The Geolocation.watchPosition() method is used to register a handler function that will be called automatically each time the position of the device changes. You can also, optionally, specify an error handling callback function."
       },
@@ -652,12 +652,12 @@
         "!doc": "Not native \n      This feature is not built into all browsers. To use it reliably, you'll need to include a JavaScript library in your page as a polyfill.  You can include the library from https://login.persona.org/include.js."
       },
       "get": {
-        "!type": "fn(callback: IdentityOnLoginCallback, options?: IdentityGetOptions)",
+        "!type": "fn(callback: fn(identityAssertion: string), options?: IdentityGetOptions)",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IdentityManager/get",
         "!doc": "Not native \n      This feature is not built into all browsers. To use it reliably, you'll need to include a JavaScript library in your page as a polyfill.  You can include the library from https://login.persona.org/include.js."
       },
       "getVerifiedEmail": {
-        "!type": "fn(callback: IdentityOnLoginCallback)",
+        "!type": "fn(callback: fn(identityAssertion: string))",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IdentityManager/getVerifiedEmail",
         "!doc": "Not native \n      This feature is not built into all browsers. To use it reliably, you'll need to include a JavaScript library in your page as a polyfill.  You can include the library from https://login.persona.org/include.js."
       }
@@ -705,8 +705,8 @@
       "paymentSuccess": "fn(result?: string)",
       "paymentFailed": "fn(error?: string)",
       "sendSilentSms": "fn(number: string, message: string) -> DOMRequest",
-      "observeSilentSms": "fn(number: string, callback: SilentSmsCallback)",
-      "removeSilentSmsObserver": "fn(number: string, callback: SilentSmsCallback)"
+      "observeSilentSms": "fn(number: string, callback: fn(message?: MozSmsMessage))",
+      "removeSilentSmsObserver": "fn(number: string, callback: fn(message?: MozSmsMessage))"
     },
     "NavigatorID": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID",
@@ -1182,7 +1182,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers",
       "!doc": "WindowTimers contains utility methods to set and clear timers.",
       "setTimeout": {
-        "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+        "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
         "!doc": "Calls a function or executes a code snippet after a specified delay."
       },
@@ -1192,7 +1192,7 @@
         "!doc": "Clears the delay set by WindowTimers.setTimeout()."
       },
       "setInterval": {
-        "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+        "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
         "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
       },
@@ -1595,7 +1595,7 @@
         "!doc": "The createBuffer() method of the AudioContext Interface is used to create a new, empty AudioBuffer object, which can then be populated by data, and played via an AudioBufferSourceNode."
       },
       "decodeAudioData": {
-        "!type": "fn(audioData: ArrayBuffer, successCallback?: DecodeSuccessCallback, errorCallback?: DecodeErrorCallback) -> +Promise[value=AudioBuffer]",
+        "!type": "fn(audioData: ArrayBuffer, successCallback?: fn(decodedData: AudioBuffer), errorCallback?: fn()) -> +Promise[value=AudioBuffer]",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AudioContext/decodeAudioData",
         "!doc": "The decodeAudioData() method of the AudioContext Interface is used to asynchronously decode audio file data contained in an ArrayBuffer. In this case the ArrayBuffer is usually loaded from an XMLHttpRequest's response attribute after setting the responseType to arraybuffer."
       },
@@ -5059,7 +5059,7 @@
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/DOMRequest",
     "!doc": "A DOMRequest object represents an ongoing operation. It provides callbacks that are called when the operation completes, as well as a reference to the operation's result. A DOM method that initiates an ongoing operation may return a DOMRequest object that you can use to monitor the progress of that operation.",
     "!proto": "EventTarget",
-    "then": "fn(fulfillCallback?: AnyCallback, rejectCallback?: AnyCallback) -> +Promise[value=?]",
+    "then": "fn(fulfillCallback?: fn(value: ?), rejectCallback?: fn(value: ?)) -> +Promise[value=?]",
     "readyState": "DOMRequestReadyState",
     "result": "?",
     "error": "+DOMError",
@@ -6849,7 +6849,7 @@
     "clear": "fn()",
     "entries": "fn() -> FontFaceSetIterator",
     "values": "fn() -> FontFaceSetIterator",
-    "forEach": "fn(cb: FontFaceSetForEachCallback, thisArg?: ?)",
+    "forEach": "fn(cb: fn(value: +FontFace, key: +FontFace, set: FontFaceSet), thisArg?: ?)",
     "onloading": "fn(+Event)",
     "onloadingdone": "fn(+Event)",
     "onloadingerror": "fn(+Event)",
@@ -7290,7 +7290,7 @@
       "!doc": "The HTMLCanvasElement.toDataURL() method returns a data URIs containing a representation of the image in the format specified by the type parameter (defaults to PNG). The returned image is in a resolution of 96 dpi."
     },
     "toBlob": {
-      "!type": "fn(callback: FileCallback, type?: string, encoderOptions?: ?)",
+      "!type": "fn(callback: fn(file: +Blob), type?: string, encoderOptions?: ?)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
       "!doc": "The HTMLCanvasElement.toBlob() method creates a Blob object representing the image contained in the canvas; this file may be cached on the disk or stored in memory at the discretion of the user agent. If type is not specified, the image type is image/png. The created image is in a resolution of 96dpi.\n The third argument is used with image/jpeg images to specify the quality of the output."
     }
@@ -7898,8 +7898,8 @@
     "getVisible": "fn() -> DOMRequest",
     "setActive": "fn(active: bool)",
     "getActive": "fn() -> bool",
-    "addNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)",
-    "removeNextPaintListener": "fn(listener: BrowserElementNextPaintEventCallback)",
+    "addNextPaintListener": "fn(listener: fn())",
+    "removeNextPaintListener": "fn(listener: fn())",
     "sendMouseEvent": "fn(type: string, x: number, y: number, button: number, clickCount: number, modifiers: number)",
     "sendTouchEvent": "fn(type: string, identifiers: [number], x: [number], y: [number], rx: [number], ry: [number], rotationAngles: [number], forces: [number], count: number, modifiers: number)",
     "goBack": "fn()",
@@ -10094,8 +10094,8 @@
     "!doc": "A MediaQueryList object maintains a list of media queries on a document, and handles sending notifications to listeners when the media queries on the document change.",
     "media": "string",
     "matches": "bool",
-    "addListener": "fn(listener: MediaQueryListListener)",
-    "removeListener": "fn(listener: MediaQueryListListener)"
+    "addListener": "fn(listener: fn(list: MediaQueryList))",
+    "removeListener": "fn(listener: fn(list: MediaQueryList))"
   },
   "MediaRecorder": {
     "!type": "fn(node: AudioNode, output?: number, options?: MediaRecorderOptions)",
@@ -10471,7 +10471,7 @@
     "queryInterface": "fn(iid: IID) -> nsISupports"
   },
   "MutationObserver": {
-    "!type": "fn(mutationCallback: MutationCallback)",
+    "!type": "fn(mutationCallback: fn(mutations: [MutationRecord], observer: +MutationObserver))",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/MutationObserver",
     "!doc": "MutationObserver provides developers a way to react to changes in a DOM. It is designed as a replacement for Mutation Events defined in the DOM3 Events specification.",
     "prototype": {
@@ -10479,7 +10479,7 @@
       "disconnect": "fn()",
       "takeRecords": "fn() -> [MutationRecord]",
       "getObservingInfo": "fn() -> [MutationObservingInfo]",
-      "mutationCallback": "MutationCallback",
+      "mutationCallback": "fn(mutations: [MutationRecord], observer: +MutationObserver)",
       "queryInterface": "fn(iid: IID) -> nsISupports"
     }
   },
@@ -10944,7 +10944,7 @@
       "!doc": "The permission read-only property of the Notification interface indicates the current permission granted by the user for the current origin to display web notifications."
     },
     "requestPermission": {
-      "!type": "fn(permissionCallback?: NotificationPermissionCallback)",
+      "!type": "fn(permissionCallback?: fn(permission: NotificationPermission))",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission",
       "!doc": "The requestPermission() method of the Notification interface requests permission from the user for the current origin to display notifications."
     },
@@ -11514,7 +11514,7 @@
     }
   },
   "Promise": {
-    "!type": "fn(init: PromiseInit)",
+    "!type": "fn(init: fn(resolve: object, reject: object))",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Promise",
     "!doc": "This is a new technology, part of the ECMAScript 2015 (ES6) standard .This technology's specification has been finalized, but  check the compatibility table for usage and implementation status in various browsers.",
     "resolve": "fn(value?: ?) -> +Promise[value=?]",
@@ -11522,8 +11522,8 @@
     "all": "fn(iterable: [?]) -> +Promise[value=?]",
     "race": "fn(iterable: [?]) -> +Promise[value=?]",
     "prototype": {
-      "then": "fn(fulfillCallback?: AnyCallback, rejectCallback?: AnyCallback) -> +Promise[value=?]",
-      "catch": "fn(rejectCallback?: AnyCallback) -> +Promise[value=?]"
+      "then": "fn(fulfillCallback?: fn(value: ?), rejectCallback?: fn(value: ?)) -> +Promise[value=?]",
+      "catch": "fn(rejectCallback?: fn(value: ?)) -> +Promise[value=?]"
     }
   },
   "PushEvent": {
@@ -11627,7 +11627,7 @@
     "replaceTrack": "fn(track: MediaStreamTrack) -> +Promise[value=void]"
   },
   "RTCStatsReport": {
-    "forEach": "fn(callbackFn: RTCStatsReportCallback, thisArg?: ?)",
+    "forEach": "fn(callbackFn: fn(obj: RTCStatsReport), thisArg?: ?)",
     "get": "fn(key: string) -> object",
     "has": "fn(key: string) -> bool"
   },
@@ -13883,12 +13883,12 @@
       "!doc": "This API is available on Firefox OS for internal applications only."
     },
     "addObserver": {
-      "!type": "fn(name: string, callback: SettingChangeCallback)",
+      "!type": "fn(name: string, callback: fn(setting: SettingChange))",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/SettingsManager/addObserver",
       "!doc": "This API is available on Firefox OS for internal applications only."
     },
     "removeObserver": {
-      "!type": "fn(name: string, callback: SettingChangeCallback)",
+      "!type": "fn(name: string, callback: fn(setting: SettingChange))",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/SettingsManager/removeObserver",
       "!doc": "This API is available on Firefox OS for internal applications only."
     },
@@ -14670,10 +14670,10 @@
       "testThrowDOMError": "fn()",
       "testThrowDOMException": "fn()",
       "testPromiseWithThrowingChromePromiseInit": "fn() -> +Promise[value=void]",
-      "testPromiseWithThrowingContentPromiseInit": "fn(func: PromiseInit) -> +Promise[value=void]",
+      "testPromiseWithThrowingContentPromiseInit": "fn(func: fn(resolve: object, reject: object)) -> +Promise[value=void]",
       "testPromiseWithDOMExceptionThrowingPromiseInit": "fn() -> +Promise[value=void]",
       "testPromiseWithThrowingChromeThenFunction": "fn() -> +Promise[value=void]",
-      "testPromiseWithThrowingContentThenFunction": "fn(func: AnyCallback) -> +Promise[value=void]",
+      "testPromiseWithThrowingContentThenFunction": "fn(func: fn(value: ?)) -> +Promise[value=void]",
       "testPromiseWithDOMExceptionThrowingThenFunction": "fn() -> +Promise[value=void]",
       "testPromiseWithThrowingChromeThenable": "fn() -> +Promise[value=void]",
       "testPromiseWithThrowingContentThenable": "fn(thenable: object) -> +Promise[value=void]",
@@ -16710,7 +16710,7 @@
       "!doc": "Window.outerHeight gets the height in pixels of the whole browser window. It represents the height of the whole browser window including sidebar (if expanded), window chrome and window resizing borders/handles."
     },
     "requestAnimationFrame": {
-      "!type": "fn(callback: FrameRequestCallback) -> number",
+      "!type": "fn(callback: fn(time: DOMHighResTimeStamp)) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
       "!doc": "You should call this method whenever you're ready to update your animation onscreen. This will request that your animation function be called before the browser performs the next repaint. The number of callbacks is usually 60 times per second, but will generally match the display refresh rate in most web browsers as per W3C recommendation. The callback rate may be reduced to a lower rate when running in background tabs."
     },
@@ -17045,7 +17045,7 @@
       "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
     },
     "setTimeout": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
       "!doc": "Calls a function or executes a code snippet after a specified delay."
     },
@@ -17055,7 +17055,7 @@
       "!doc": "Clears the delay set by WindowTimers.setTimeout()."
     },
     "setInterval": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
       "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
     },
@@ -17174,7 +17174,7 @@
     "leaveEventLoop": "fn()",
     "postMessage": "fn(message: string)",
     "onmessage": "fn(+Event)",
-    "setImmediate": "fn(handler: Function)",
+    "setImmediate": "fn(handler: fn(arguments: ?))",
     "reportError": "fn(message: string)",
     "dump": "fn(string?: string)"
   },
@@ -17248,7 +17248,7 @@
       "!doc": "The  performance read-only property of the WorkerGlobalScope interface returns a Performance object to be used on the worker."
     },
     "setTimeout": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
       "!doc": "Calls a function or executes a code snippet after a specified delay."
     },
@@ -17258,7 +17258,7 @@
       "!doc": "Clears the delay set by WindowTimers.setTimeout()."
     },
     "setInterval": {
-      "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+      "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
       "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
     },
@@ -17582,7 +17582,7 @@
   "screenY": "?",
   "outerWidth": "?",
   "outerHeight": "?",
-  "requestAnimationFrame": "fn(callback: FrameRequestCallback) -> number",
+  "requestAnimationFrame": "fn(callback: fn(time: DOMHighResTimeStamp)) -> number",
   "cancelAnimationFrame": "fn(handle: number)",
   "performance": "Performance",
   "caches": "CacheStorage",
@@ -17810,7 +17810,7 @@
     "!doc": "The unload event is raised when the window is unloading its content and resources. The resources removal is processed after the unload event occurs."
   },
   "setTimeout": {
-    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+    "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout",
     "!doc": "Calls a function or executes a code snippet after a specified delay."
   },
@@ -17820,7 +17820,7 @@
     "!doc": "Clears the delay set by WindowTimers.setTimeout()."
   },
   "setInterval": {
-    "!type": "fn(handler: Function, timeout?: number, arguments: ?) -> number",
+    "!type": "fn(handler: fn(arguments: ?), timeout?: number, arguments: ?) -> number",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval",
     "!doc": "Calls a function or executes a code snippet repeatedly, with a fixed time delay between each call to that function. Returns an intervalID."
   },

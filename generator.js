@@ -3,8 +3,17 @@ var jsonfile = require('jsonfile');
 var doc = jsonfile.readFileSync('./mdn/webidl.json');
 
 var store = {
-  set: function (st) {
+  init: function (st) {
     this.st = st;
+  },
+  get: function (name) {
+    return this.st[name];
+  },
+  isCallback: function (name) {
+    if (!this.st[name]) {
+      return false;
+    }
+    return (this.st[name].type === 'callback');
   },
   isCons: function (name) {
     if (!this.st[name]) {
@@ -66,6 +75,19 @@ var ptype = function (inter, nogenericinfo) {
       if (!itype.generic) {
         type += `[value=${ptype(itype)}]`;
       }
+    }
+  }
+  if (store.isCallback(type)) {
+    var inter = store.get(type);
+    var args = [];
+    for (let arg of inter.arguments) {
+      let optional = arg.optional ? '?' : '';
+      args.push(`${arg.name}${optional}: ${ptype(arg.idlType, true)}`)
+    }
+    type = `fn(${args.join(', ')})`;
+    var rtn = ptype(inter.interface);
+    if (rtn && rtn !== 'void') {
+      type += ` -> ${rtn}`
     }
   }
   return type;
@@ -188,7 +210,7 @@ var member = function (inter, parent) {
 var generator = {
   run: function (data) {
     "use strict";
-    store.set(data);
+    store.init(data);
 
     var def = {
       "!name": "webidl",

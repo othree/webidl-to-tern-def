@@ -41,7 +41,9 @@ var loader = {
     
     var d = null;
 
-    if (def.type === 'interface') {
+    if (def.type === 'callback') {
+      d = loader.callback(def);
+    } else if (def.type === 'interface') {
       d = loader.interface(def);
     } else if (def.type === 'implements') {
       d = loader.implements(def);
@@ -87,6 +89,36 @@ var loader = {
       rtn.arguments = def.arguments || [];
     }
     return rtn;
+  },
+  callback: function (def) {
+    "use strict";
+    var name = def.name;
+    var args = [];
+    if (def.arguments) {
+      for (let arg of def.arguments) {
+        // let idl = (arg.idlType && arg.idlType.idlType) || null;
+        let idl = arg.idlType || null;
+        let sequence = false;
+        if (idl) {
+          if (idl.sequence) {
+            sequence = true;
+            idl = idl.idlType;
+          }
+        }
+
+        args.push({
+          name: arg.name,
+          optional: !!arg.optional,
+          variadic: !!arg.variadic,
+          idlType: arg.idlType
+        });
+      }
+    }
+    return {
+      type: 'callback',
+      name: name,
+      arguments: args
+    };
   },
   interface: function (def) {
     "use strict";
@@ -151,6 +183,7 @@ var loader = {
   file: function (file, storage) {
     "use strict";
     // console.log(file);
+    if (!storage.callbacks)       { storage.callbacks = {}; }
     if (!storage.interfaces)      { storage.interfaces = {}; }
     if (!storage.implementations) { storage.implementations = {}; }
 
@@ -164,6 +197,9 @@ var loader = {
       if (!d) { continue; }
       if (d.chrome) { continue; }
 
+      if (d.type === 'callback') {
+        storage.callbacks[d.name] = d;
+      } 
       if (d.type === 'interface') {
         if (d.partial) {
           storage.interfaces[d.name].members = storage.interfaces[d.name].members.concat(d.members);

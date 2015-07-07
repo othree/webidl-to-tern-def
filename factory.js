@@ -1,5 +1,14 @@
 
 var factory = {
+  callback: function (def) {
+    return {
+      name: def.name,
+      type: 'callback',
+      interface: 'void',
+      arguments: def.arguments,
+      nointerface: true
+    }
+  },
   constructor: function (def) {
     return {
       name: def.name,

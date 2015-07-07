@@ -1,6 +1,9 @@
 var factory = require('./factory.js');
 
 var transform = {
+  callback: function (def) {
+    return factory.callback(def);
+  },
   constructor: function (def) {
     return factory.constructor(def);
   },
@@ -45,6 +48,10 @@ var transform = {
     "use strict";
     var primaryGlobal = {};
     var primary;
+
+    for (let name in st.callbacks) {
+      primaryGlobal[name] = transform.callback(st.callbacks[name]);
+    }
 
     for (let name in st.interfaces) {
       let o = null;
