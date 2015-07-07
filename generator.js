@@ -224,9 +224,6 @@ var generator = {
         def[name] = member(inter);
       }
     }
-    def['!define'].EventListener = {
-      '!type': 'fn(e: +Event)'
-    }
     console.log(JSON.stringify(def, null, 2));
   }
 };

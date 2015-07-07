@@ -1232,9 +1232,6 @@
     "WindowModal": {
       "dialogArguments": "?",
       "returnValue": "?"
-    },
-    "EventListener": {
-      "!type": "fn(e: +Event)"
     }
   },
   "AVInputPort": {
@@ -5096,6 +5093,13 @@
     "<i>": "string",
     "queryInterface": "fn(iid: IID) -> nsISupports"
   },
+  "DOMTransaction": {
+    "label": "string",
+    "executeAutomatic": "fn()",
+    "execute": "fn()",
+    "undo": "fn()",
+    "redo": "fn()"
+  },
   "DOMTransactionEvent": {
     "!type": "fn(type: string, eventInitDict?: DOMTransactionEventInit)",
     "prototype": {
@@ -5804,9 +5808,9 @@
       "isSrcdocDocument": "bool",
       "insertAnonymousContent": "fn(aElement: HTMLElement) -> AnonymousContent",
       "removeAnonymousContent": "fn(aContent: AnonymousContent)",
-      "createExpression": "fn(expression: string, resolver: XPathNSResolver) -> XPathExpression",
+      "createExpression": "fn(expression: string, resolver: fn(prefix: string)) -> XPathExpression",
       "createNSResolver": "fn(nodeResolver: Node) -> Node",
-      "evaluate": "fn(expression: string, contextNode: Node, resolver: XPathNSResolver, type: number, result: object) -> XPathResult",
+      "evaluate": "fn(expression: string, contextNode: Node, resolver: fn(prefix: string), type: number, result: object) -> XPathResult",
       "queryInterface": "fn(iid: IID) -> nsISupports",
       "onabort": {
         "!type": "fn(+Event)",
@@ -6552,12 +6556,12 @@
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/EventTarget",
     "!doc": "EventTarget is an interface implemented by objects that can receive events and may have listeners for them.",
     "addEventListener": {
-      "!type": "fn(type: string, listener: EventListener, capture?: bool, wantsUntrusted?: bool)",
+      "!type": "fn(type: string, listener: fn(event: +Event), capture?: bool, wantsUntrusted?: bool)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener",
       "!doc": "The EventTarget.addEventListener() method registers the specified listener on the EventTarget it's called on. The event target may be an Element in a document, the Document itself, a Window, or any other object that supports events (such as XMLHttpRequest)."
     },
     "removeEventListener": {
-      "!type": "fn(type: string, listener: EventListener, capture?: bool)",
+      "!type": "fn(type: string, listener: fn(event: +Event), capture?: bool)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener",
       "!doc": "Removes the event listener previously registered with EventTarget.addEventListener()."
     },
@@ -10873,6 +10877,25 @@
     },
     "getBoundMutationObservers": "fn() -> [+MutationObserver]"
   },
+  "NodeFilter": {
+    "FILTER_ACCEPT": "number",
+    "FILTER_REJECT": "number",
+    "FILTER_SKIP": "number",
+    "SHOW_ALL": "number",
+    "SHOW_ELEMENT": "number",
+    "SHOW_ATTRIBUTE": "number",
+    "SHOW_TEXT": "number",
+    "SHOW_CDATA_SECTION": "number",
+    "SHOW_ENTITY_REFERENCE": "number",
+    "SHOW_ENTITY": "number",
+    "SHOW_PROCESSING_INSTRUCTION": "number",
+    "SHOW_COMMENT": "number",
+    "SHOW_DOCUMENT": "number",
+    "SHOW_DOCUMENT_TYPE": "number",
+    "SHOW_DOCUMENT_FRAGMENT": "number",
+    "SHOW_NOTATION": "number",
+    "acceptNode": "fn(node: Node) -> number"
+  },
   "NodeIterator": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NodeIterator",
     "!doc": "The NodeIterator interface represents an iterator over the members of a list of the nodes in a subtree of the DOM. The nodes will be returned in document order.",
@@ -11526,6 +11549,10 @@
       "catch": "fn(rejectCallback?: fn(value: ?)) -> +Promise[value=?]"
     }
   },
+  "UncaughtRejectionObserver": {
+    "onLeftUncaught": "fn(p: +Promise)",
+    "onConsumed": "fn(p: +Promise)"
+  },
   "PushEvent": {
     "!type": "fn(type: string, eventInitDict?: PushEventInit)",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/PushEvent",
@@ -11605,6 +11632,10 @@
         "!doc": "The read-only property RTCDataChannelEvent.channel returns the RTCDataChannel associated with the event."
       }
     }
+  },
+  "RTCIdentityProvider": {
+    "generateAssertion": "fn(contents: string, origin: string, usernameHint?: string) -> +Promise[value=RTCIdentityAssertionResult]",
+    "validateAssertion": "fn(assertion: string, origin: string) -> +Promise[value=RTCIdentityValidationResult]"
   },
   "RTCPeerConnectionIceEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCPeerConnectionIceEventInit)",
@@ -17479,9 +17510,9 @@
   "XPathEvaluator": {
     "!type": "fn()",
     "prototype": {
-      "createExpression": "fn(expression: string, resolver: XPathNSResolver) -> XPathExpression",
+      "createExpression": "fn(expression: string, resolver: fn(prefix: string)) -> XPathExpression",
       "createNSResolver": "fn(nodeResolver: Node) -> Node",
-      "evaluate": "fn(expression: string, contextNode: Node, resolver: XPathNSResolver, type: number, result: object) -> XPathResult",
+      "evaluate": "fn(expression: string, contextNode: Node, resolver: fn(prefix: string), type: number, result: object) -> XPathResult",
       "queryInterface": "fn(iid: IID) -> nsISupports"
     }
   },

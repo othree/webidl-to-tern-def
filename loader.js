@@ -45,9 +45,22 @@ var loader = {
       d = loader.callback(def);
     } else if (def.type === 'interface') {
       d = loader.interface(def);
+    } else if (def.type === 'callback interface') {
+      if (def.members.length == 1 && def.members[0].type === 'operation') {
+        d = loader.callback({
+          type: 'callback',
+          name: def.name,
+          idlType: def.members[0].idlType,
+          arguments: def.members[0].arguments,
+          extAttrs: []
+        });
+      } else {
+        def.type = 'interface';
+        d = loader.interface(def);
+      }
     } else if (def.type === 'implements') {
       d = loader.implements(def);
-    }
+    } 
     if (!d) { return d; }
     return Object.assign(d, ext);
   },
