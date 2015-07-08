@@ -1,6 +1,22 @@
 {
   "!name": "webidl",
   "!define": {
+    "ScrollFrameDataEntry": {
+      "key": "string",
+      "value": "string"
+    },
+    "ScrollFrameData": {
+      "scrollId": "number",
+      "entries": "[ScrollFrameDataEntry]"
+    },
+    "APZBucket": {
+      "sequenceNumber": "number",
+      "scrollFrames": "[ScrollFrameData]"
+    },
+    "APZTestData": {
+      "paints": "[APZBucket]",
+      "repaintRequests": "[APZBucket]"
+    },
     "AbstractWorker": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AbstractWorker",
       "!doc": "The AbstractWorker interface of the Web Workers API abstracts properties and methods common to all kind of workers, being Worker or SharedWorker.",
@@ -12,6 +28,34 @@
     },
     "Animatable": {
       "getAnimations": "fn() -> [Animation]"
+    },
+    "AnimationEventInit": {
+      "animationName": "string",
+      "elapsedTime": "number",
+      "pseudoElement": "string"
+    },
+    "AppInfo": {
+      "path": "string",
+      "isCoreApp": "bool"
+    },
+    "AppNotificationServiceOptions": {
+      "textClickable": "bool",
+      "manifestURL": "string",
+      "id": "string",
+      "dbId": "string",
+      "dir": "string",
+      "lang": "string",
+      "tag": "string",
+      "data": "string"
+    },
+    "InstallParameters": {
+      "receipts": "[string]",
+      "categories": "[string]"
+    },
+    "LanguageDesc": {
+      "target": "string",
+      "revision": "number",
+      "name": "string"
     },
     "DOMApplicationsRegistry": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/DOMApplicationsRegistry",
@@ -49,8 +93,82 @@
       "getAdditionalLanguages": "fn() -> +Promise",
       "getLocalizationResource": "fn(language: string, version: string, path: string, dataType: LocaleResourceType) -> +Promise[value=?]"
     },
+    "ArchiveReaderOptions": {
+      "encoding": "string"
+    },
     "AudioNodePassThrough": {
       "passThrough": "bool"
+    },
+    "AutocompleteErrorEventInit": {
+      "reason": "AutoCompleteErrorReason"
+    },
+    "AutocompleteInfo": {
+      "section": "string",
+      "addressType": "string",
+      "contactType": "string",
+      "fieldName": "string"
+    },
+    "BeforeAfterKeyboardEventInit": {
+      "embeddedCancelled": "bool"
+    },
+    "BlobPropertyBag": {
+      "type": "string",
+      "endings": "EndingTypes"
+    },
+    "BlobEventInit": {
+      "data": "+Blob"
+    },
+    "MediaMetaData": {
+      "title": "string",
+      "artist": "string",
+      "album": "string",
+      "mediaNumber": "number",
+      "totalMediaCount": "number",
+      "duration": "number"
+    },
+    "MediaPlayStatus": {
+      "duration": "number",
+      "position": "number",
+      "playStatus": "string"
+    },
+    "BluetoothAdapterEventInit": {
+      "adapter": "BluetoothAdapter",
+      "address": "string"
+    },
+    "BluetoothAttributeEventInit": {
+      "attrs": "[string]"
+    },
+    "BluetoothDeviceEventInit": {
+      "device": "BluetoothDevice",
+      "address": "string"
+    },
+    "BluetoothDiscoveryStateChangedEventInit": {
+      "discovering": "bool"
+    },
+    "GattCharacteristicProperties": {
+      "broadcast": "bool",
+      "read": "bool",
+      "writeNoResponse": "bool",
+      "write": "bool",
+      "notify": "bool",
+      "indicate": "bool",
+      "signedWrite": "bool",
+      "extendedProps": "bool"
+    },
+    "BluetoothGattCharacteristicEventInit": {
+      "characteristic": "BluetoothGattCharacteristic"
+    },
+    "BluetoothPairingEventInit": {
+      "deviceName": "string",
+      "handle": "BluetoothPairingHandle"
+    },
+    "BluetoothStatusChangedEventInit": {
+      "address": "string",
+      "status": "bool"
+    },
+    "BrowserElementDownloadOptions": {
+      "filename": "string",
+      "referrer": "string"
     },
     "BrowserElement": {
       "setVisible": "fn(visible: bool)",
@@ -100,10 +218,136 @@
       "setInputMethodActive": "fn(isActive: bool) -> DOMRequest",
       "setNFCFocus": "fn(isFocus: bool)"
     },
+    "AsyncScrollEventDetail": {
+      "top": "number",
+      "left": "number",
+      "width": "number",
+      "height": "number",
+      "scrollWidth": "number",
+      "scrollHeight": "number"
+    },
+    "OpenWindowEventDetail": {
+      "url": "string",
+      "name": "string",
+      "features": "string",
+      "frameElement": "Node"
+    },
+    "DOMWindowResizeEventDetail": {
+      "width": "number",
+      "height": "number"
+    },
+    "CFStateChangeEventInit": {
+      "action": "number",
+      "reason": "number",
+      "number": "string",
+      "timeSeconds": "number",
+      "serviceClass": "number"
+    },
+    "CSPReportProperties": {
+      "referrer": "string"
+    },
+    "CSPReport": {},
+    "CSSFontFaceLoadEventInit": {
+      "fontfaces": "[+FontFace]"
+    },
+    "CacheQueryOptions": {
+      "ignoreSearch": "bool",
+      "ignoreMethod": "bool",
+      "ignoreVary": "bool",
+      "cacheName": "string"
+    },
+    "CacheBatchOperation": {
+      "type": "string",
+      "request": "+Request",
+      "response": "+Response",
+      "options": "CacheQueryOptions"
+    },
+    "CallEventInit": {
+      "call": "TelephonyCall"
+    },
+    "CallGroupErrorEventInit": {
+      "name": "string",
+      "message": "string"
+    },
     "CallsList": {
       "item": "fn(index: number) -> TelephonyCall",
       "length": "number",
       "<i>": "TelephonyCall"
+    },
+    "CameraClosedEventInit": {
+      "reason": "string"
+    },
+    "CameraConfigurationEventInit": {
+      "mode": "CameraMode",
+      "recorderProfile": "string",
+      "previewSize": "DOMRectReadOnly",
+      "pictureSize": "DOMRectReadOnly"
+    },
+    "CameraRegion": {
+      "top": "number",
+      "left": "number",
+      "bottom": "number",
+      "right": "number",
+      "weight": "number"
+    },
+    "CameraPosition": {
+      "latitude": "number",
+      "longitude": "number",
+      "altitude": "number",
+      "timestamp": "number"
+    },
+    "CameraPictureOptions": {
+      "pictureSize": "CameraSize",
+      "fileFormat": "string",
+      "rotation": "number",
+      "position": "CameraPosition",
+      "dateTime": "number"
+    },
+    "CameraStartRecordingOptions": {
+      "rotation": "number",
+      "maxFileSizeBytes": "number",
+      "maxVideoLengthMs": "number",
+      "autoEnableLowLightTorch": "bool"
+    },
+    "CameraDetectedFaceInit": {
+      "id": "number",
+      "score": "number",
+      "bounds": "CameraRegion",
+      "hasLeftEye": "bool",
+      "leftEye": "DOMPointInit",
+      "hasRightEye": "bool",
+      "rightEye": "DOMPointInit",
+      "hasMouth": "bool",
+      "mouth": "DOMPointInit"
+    },
+    "CameraFacesDetectedEventInit": {
+      "faces": "[+CameraDetectedFace]"
+    },
+    "CameraSize": {
+      "width": "number",
+      "height": "number"
+    },
+    "CameraConfiguration": {
+      "mode": "CameraMode",
+      "previewSize": "CameraSize",
+      "pictureSize": "CameraSize",
+      "recorderProfile": "string"
+    },
+    "CameraStateChangeEventInit": {
+      "newState": "string"
+    },
+    "CameraGetPromiseData": {
+      "camera": "CameraControl",
+      "configuration": "CameraConfiguration"
+    },
+    "ContextAttributes2D": {
+      "willReadFrequently": "bool",
+      "alpha": "bool"
+    },
+    "HitRegionOptions": {
+      "path": "+Path2D",
+      "id": "string",
+      "control": "HTMLElement"
     },
     "CanvasDrawingStyles": {
       "lineWidth": "number",
@@ -149,6 +393,137 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NonDocumentTypeChildNode/nextElementSibling",
         "!doc": "The NonDocumentTypeChildNode.nextElementSibling read-only property returns the element immediately following the specified one in its parent's children list, or null if the specified element is the last one in the list."
       }
+    },
+    "ClientQueryOptions": {
+      "includeUncontrolled": "bool",
+      "type": "ClientType"
+    },
+    "ClipboardEventInit": {
+      "data": "string",
+      "dataType": "string"
+    },
+    "CloseEventInit": {
+      "wasClean": "bool",
+      "code": "number",
+      "reason": "string"
+    },
+    "ConsoleEvent": {
+      "ID": "?",
+      "innerID": "?",
+      "level": "string",
+      "filename": "string",
+      "lineNumber": "number",
+      "columnNumber": "number",
+      "functionName": "string",
+      "timeStamp": "number",
+      "arguments": "[?]",
+      "styles": "[?]",
+      "private": "bool",
+      "groupName": "string",
+      "timer": "?",
+      "counter": "?"
+    },
+    "ConsoleProfileEvent": {
+      "action": "string",
+      "arguments": "[?]"
+    },
+    "ConsoleStackEntry": {
+      "filename": "string",
+      "lineNumber": "number",
+      "columnNumber": "number",
+      "functionName": "string",
+      "language": "number"
+    },
+    "ConsoleTimerStart": {
+      "name": "string",
+      "started": "number"
+    },
+    "ConsoleTimerEnd": {
+      "name": "string",
+      "duration": "number"
+    },
+    "ConsoleTimerError": {
+      "error": "string"
+    },
+    "ConsoleCounter": {
+      "label": "string",
+      "count": "number"
+    },
+    "ConsoleCounterError": {
+      "error": "string"
+    },
+    "ConstrainLongRange": {
+      "min": "number",
+      "max": "number",
+      "exact": "number",
+      "ideal": "number"
+    },
+    "ConstrainDoubleRange": {
+      "min": "number",
+      "max": "number",
+      "exact": "number",
+      "ideal": "number"
+    },
+    "ConstrainBooleanParameters": {
+      "exact": "bool",
+      "ideal": "bool"
+    },
+    "ConstrainDOMStringParameters": {
+      "exact": "?",
+      "ideal": "?"
+    },
+    "ContactAddress": {
+      "type": "[string]",
+      "streetAddress": "string",
+      "locality": "string",
+      "region": "string",
+      "postalCode": "string",
+      "countryName": "string",
+      "pref": "bool"
+    },
+    "ContactField": {
+      "type": "[string]",
+      "value": "string",
+      "pref": "bool"
+    },
+    "ContactTelField": {
+      "carrier": "string"
+    },
+    "ContactProperties": {
+      "bday": "Date",
+      "anniversary": "Date",
+      "sex": "string",
+      "genderIdentity": "string",
+      "photo": "[+Blob]",
+      "adr": "[ContactAddress]",
+      "email": "[ContactField]",
+      "url": "[ContactField]",
+      "impp": "[ContactField]",
+      "tel": "[ContactTelField]",
+      "name": "[string]",
+      "honorificPrefix": "[string]",
+      "givenName": "[string]",
+      "phoneticGivenName": "[string]",
+      "additionalName": "[string]",
+      "familyName": "[string]",
+      "phoneticFamilyName": "[string]",
+      "honorificSuffix": "[string]",
+      "nickname": "[string]",
+      "category": "[string]",
+      "org": "[string]",
+      "jobTitle": "[string]",
+      "note": "[string]",
+      "key": "[string]"
+    },
+    "ContactFindSortOptions": {
+      "sortBy": "string",
+      "sortOrder": "string"
+    },
+    "ContactFindOptions": {
+      "filterValue": "string",
+      "filterOp": "string",
+      "filterBy": "?",
+      "filterLimit": "number"
     },
     "ContactManager": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ContactManager",
@@ -247,6 +622,9 @@
         "!doc": "The RandomSource.getRandomValues() method lets you get cryptographically random values. The array given as the parameter is filled with random numbers (random in its cryptographic meaning)."
       }
     },
+    "CustomEventInit": {
+      "detail": "?"
+    },
     "ExceptionMembers": {
       "message": "string",
       "result": "number",
@@ -271,12 +649,44 @@
       "data": "nsISupports",
       "stack": "string"
     },
+    "DOMPointInit": {
+      "x": "number",
+      "y": "number",
+      "z": "number",
+      "w": "number"
+    },
     "DOMRequestShared": {
       "readyState": "DOMRequestReadyState",
       "result": "?",
       "error": "+DOMError",
       "onsuccess": "fn(+Event)",
       "onerror": "fn(+Event)"
+    },
+    "DOMTransactionEventInit": {
+      "transactions": "?"
+    },
+    "DataErrorEventInit": {
+      "message": "string"
+    },
+    "DataStoreTask": {
+      "revisionId": "string",
+      "operation": "DataStoreOperation",
+      "id": "DataStoreKey",
+      "data": "?"
+    },
+    "DataStoreRevisionData": {
+      "revisionId": "string",
+      "objectId": "number",
+      "operation": "string"
+    },
+    "DataStoreChangeEventInit": {
+      "revisionId": "string",
+      "id": "DataStoreKey",
+      "operation": "string",
+      "owner": "string"
+    },
+    "DeviceLightEventInit": {
+      "value": "number"
     },
     "DeviceAcceleration": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/DeviceAcceleration",
@@ -316,6 +726,40 @@
         "!doc": "This property indicates the rate of rotation around the Y axis -- in degrees per second -- in a DeviceRotationRate object."
       }
     },
+    "DeviceAccelerationInit": {
+      "x": "number",
+      "y": "number",
+      "z": "number"
+    },
+    "DeviceRotationRateInit": {
+      "alpha": "number",
+      "beta": "number",
+      "gamma": "number"
+    },
+    "DeviceMotionEventInit": {
+      "acceleration": "DeviceAccelerationInit",
+      "accelerationIncludingGravity": "DeviceAccelerationInit",
+      "rotationRate": "DeviceRotationRateInit",
+      "interval": "number"
+    },
+    "DeviceOrientationEventInit": {
+      "alpha": "number",
+      "beta": "number",
+      "gamma": "number",
+      "absolute": "bool"
+    },
+    "DeviceProximityEventInit": {
+      "value": "number",
+      "min": "number",
+      "max": "number"
+    },
+    "DeviceStorageEnumerationParameters": {
+      "since": "Date"
+    },
+    "DeviceStorageChangeEventInit": {
+      "path": "string",
+      "reason": "string"
+    },
     "Directory": {
       "name": "string",
       "createFile": "fn(path: string, options?: CreateFileOptions) -> +Promise[value=+File]",
@@ -324,6 +768,13 @@
       "remove": "fn(path: ?) -> +Promise[value=bool]",
       "removeDeep": "fn(path: ?) -> +Promise[value=bool]"
     },
+    "CreateFileOptions": {
+      "ifExists": "CreateIfExistsMode",
+      "data": "?"
+    },
+    "DownloadEventInit": {
+      "download": "DOMDownload"
+    },
     "DOMDownloadManager": {
       "!proto": "EventTarget",
       "getDownloads": "fn() -> +Promise",
@@ -331,6 +782,33 @@
       "clearAllDone": "fn()",
       "adoptDownload": "fn(download?: AdoptDownloadDict) -> +Promise[value=DOMDownload]",
       "ondownloadstart": "fn(+Event)"
+    },
+    "AdoptDownloadDict": {
+      "url": "string",
+      "storageName": "string",
+      "storagePath": "string",
+      "contentType": "string",
+      "startTime": "Date"
+    },
+    "DragEventInit": {
+      "dataTransfer": "DataTransfer"
+    },
+    "ScrollIntoViewOptions": {
+      "block": "ScrollLogicalPosition"
+    },
+    "RequestFullscreenOptions": {
+      "vrDisplay": "HMDVRDevice"
+    },
+    "ErrorEventInit": {
+      "message": "string",
+      "filename": "string",
+      "lineno": "number",
+      "colno": "number",
+      "error": "?"
+    },
+    "EventInit": {
+      "bubbles": "bool",
+      "cancelable": "bool"
     },
     "GlobalEventHandlers": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers",
@@ -537,6 +1015,10 @@
     "OnErrorEventHandlerForWindow": {
       "onerror": "OnErrorEventHandler"
     },
+    "EventSourceInit": {
+      "withCredentials": "bool"
+    },
+    "ExtendableEventInit": {},
     "Body": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Body",
       "!doc": "The Body mixin of the Fetch API represents the body of the response/request, allowing you to declare what its content type is and how it should be handled.",
@@ -580,11 +1062,54 @@
         "!doc": "The fetch() method of the GlobalFetch interface starts the process of fetching a resource. This returns a promise that resolves to the Response object representing the response to your request."
       }
     },
+    "FetchEventInit": {
+      "request": "+Request",
+      "client": "Client",
+      "isReload": "bool"
+    },
+    "FilePropertyBag": {
+      "type": "string",
+      "lastModified": "number"
+    },
+    "ChromeFilePropertyBag": {
+      "name": "string",
+      "temporary": "bool"
+    },
+    "FocusEventInit": {
+      "relatedTarget": "EventTarget"
+    },
+    "FontFaceDescriptors": {
+      "style": "string",
+      "weight": "string",
+      "stretch": "string",
+      "unicodeRange": "string",
+      "variant": "string",
+      "featureSettings": "string"
+    },
+    "FontFaceSetIteratorResult": {
+      "value": "?",
+      "done": "bool"
+    },
     "FontFaceSetIterator": {
       "next": "fn() -> FontFaceSetIteratorResult"
     },
     "FontFaceSource": {
       "fonts": "FontFaceSet"
+    },
+    "GamepadAxisMoveEventInit": {
+      "axis": "number",
+      "value": "number"
+    },
+    "GamepadButtonEventInit": {
+      "button": "number"
+    },
+    "GamepadEventInit": {
+      "gamepad": "Gamepad"
+    },
+    "PositionOptions": {
+      "enableHighAccuracy": "bool",
+      "timeout": "number",
+      "maximumAge": "number"
     },
     "Geolocation": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Geolocation",
@@ -605,6 +1130,14 @@
         "!doc": "The Geolocation.clearWatch() method is used to unregister location/error monitoring handlers previously installed using Geolocation.watchPosition()."
       }
     },
+    "BoxQuadOptions": {
+      "box": "CSSBoxType",
+      "relativeTo": "GeometryNode"
+    },
+    "ConvertCoordinateOptions": {
+      "fromBox": "CSSBoxType",
+      "toBox": "CSSBoxType"
+    },
     "GeometryUtils": {
       "getBoxQuads": "fn(options?: BoxQuadOptions) -> [+DOMQuad]",
       "convertQuadFromNode": "fn(quad: +DOMQuad, from: GeometryNode, options?: ConvertCoordinateOptions) -> +DOMQuad",
@@ -624,6 +1157,10 @@
       "ontouchmove": "fn(+Event)",
       "ontouchcancel": "fn(+Event)"
     },
+    "HashChangeEventInit": {
+      "oldURL": "string",
+      "newURL": "string"
+    },
     "IDBEnvironment": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment",
       "!doc": "The IDBEnvironment interface of the IndexedDB API contains the indexedDB property, which provides access to IndexedDB functionality. It is the top level IndexedDB interface implemented by the window and Worker objects.",
@@ -632,6 +1169,57 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBEnvironment/indexedDB",
         "!doc": "The indexedDB property of the IDBEnvironment interface provides a mechanism for applications to asynchronously access the capabilities of indexed databases."
       }
+    },
+    "IDBOpenDBOptions": {
+      "version": "number",
+      "storage": "StorageType"
+    },
+    "IDBFileMetadataParameters": {
+      "size": "bool",
+      "lastModified": "bool"
+    },
+    "IDBIndexParameters": {
+      "unique": "bool",
+      "multiEntry": "bool"
+    },
+    "IDBObjectStoreParameters": {
+      "keyPath": "?",
+      "autoIncrement": "bool"
+    },
+    "IDBVersionChangeEventInit": {
+      "oldVersion": "number",
+      "newVersion": "number"
+    },
+    "IccChangeEventInit": {
+      "iccId": "string"
+    },
+    "IdentityWatchOptions": {
+      "onlogin": "fn(identityAssertion: string)",
+      "wantIssuer": "string",
+      "loggedInUser": "string",
+      "onready": "fn()",
+      "onlogout": "fn()",
+      "onerror": "fn(error: string)",
+      "audience": "string"
+    },
+    "IdentityRequestOptions": {
+      "refreshAuthentication": "number",
+      "termsOfService": "string",
+      "privacyPolicy": "string",
+      "backgroundColor": "string",
+      "siteLogo": "string",
+      "siteName": "string",
+      "returnTo": "string",
+      "oncancel": "fn(error: string)",
+      "origin": "string"
+    },
+    "IdentityGetOptions": {
+      "privacyPolicy": "string",
+      "termsOfService": "string",
+      "privacyURL": "string",
+      "tosURL": "string",
+      "siteName": "string",
+      "siteLogo": "string"
     },
     "IdentityManager": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IdentityManager",
@@ -662,6 +1250,9 @@
         "!doc": "Not native \n      This feature is not built into all browsers. To use it reliably, you'll need to include a JavaScript library in your page as a polyfill.  You can include the library from https://login.persona.org/include.js."
       }
     },
+    "ImageCaptureErrorEventInit": {
+      "imageCaptureError": "ImageCaptureError"
+    },
     "ImageCaptureError": {
       "FRAME_GRAB_ERROR": "number",
       "SETTINGS_ERROR": "number",
@@ -669,6 +1260,64 @@
       "ERROR_UNKNOWN": "number",
       "code": "number",
       "message": "string"
+    },
+    "InputEventInit": {
+      "isComposing": "bool"
+    },
+    "CompositionClauseParameters": {
+      "selectionType": "string",
+      "length": "number"
+    },
+    "InspectorRGBTriple": {
+      "r": "number",
+      "g": "number",
+      "b": "number"
+    },
+    "InspectorRGBATuple": {
+      "r": "number",
+      "g": "number",
+      "b": "number",
+      "a": "number"
+    },
+    "InstallEventInit": {
+      "activeWorker": "ServiceWorker"
+    },
+    "InstallTriggerData": {
+      "URL": "string",
+      "IconURL": "string",
+      "Hash": "string"
+    },
+    "KeyAlgorithm": {
+      "name": "string"
+    },
+    "AesKeyAlgorithm": {
+      "length": "number"
+    },
+    "EcKeyAlgorithm": {
+      "namedCurve": "string"
+    },
+    "HmacKeyAlgorithm": {
+      "hash": "KeyAlgorithm",
+      "length": "number"
+    },
+    "RsaHashedKeyAlgorithm": {
+      "modulusLength": "number",
+      "publicExponent": "Uint8Array",
+      "hash": "KeyAlgorithm"
+    },
+    "DhKeyAlgorithm": {
+      "prime": "Uint8Array",
+      "generator": "Uint8Array"
+    },
+    "KeyboardEventInit": {
+      "key": "string",
+      "code": "string",
+      "location": "number",
+      "repeat": "bool",
+      "isComposing": "bool",
+      "charCode": "number",
+      "keyCode": "number",
+      "which": "number"
     },
     "LegacyQueryInterface": {
       "queryInterface": "fn(iid: IID) -> nsISupports"
@@ -689,15 +1338,163 @@
       "getItemAtIndex": "fn(index: number) -> HTMLElement",
       "getIndexOfItem": "fn(item: HTMLElement) -> number"
     },
+    "MediaKeyNeededEventInit": {
+      "initDataType": "string",
+      "initData": "ArrayBuffer"
+    },
+    "MediaKeyMessageEventInit": {
+      "messageType": "MediaKeyMessageType",
+      "message": "ArrayBuffer"
+    },
+    "MediaKeySystemOptions": {
+      "initDataType": "string",
+      "audioType": "string",
+      "audioCapability": "string",
+      "videoType": "string",
+      "videoCapability": "string",
+      "uniqueidentifier": "MediaKeysRequirement",
+      "stateful": "MediaKeysRequirement"
+    },
+    "RequestMediaKeySystemAccessNotification": {
+      "keySystem": "string",
+      "status": "MediaKeySystemStatus"
+    },
+    "MediaRecorderOptions": {
+      "mimeType": "string"
+    },
+    "MediaStreamConstraints": {
+      "audio": "?",
+      "video": "?",
+      "picture": "bool",
+      "fake": "bool",
+      "fakeTracks": "bool",
+      "peerIdentity": "string"
+    },
     "MediaStreamError": {
       "name": "string",
       "message": "string",
       "constraintName": "string"
     },
+    "MediaStreamEventInit": {
+      "stream": "MediaStream"
+    },
+    "MediaTrackConstraints": {
+      "advanced": "[MediaTrackConstraintSet]"
+    },
+    "MediaStreamTrackEventInit": {
+      "track": "MediaStreamTrack",
+      "receiver": "RTCRtpReceiver",
+      "stream": "MediaStream"
+    },
+    "MediaTrackConstraintSet": {
+      "width": "ConstrainLong",
+      "height": "ConstrainLong",
+      "frameRate": "ConstrainDouble",
+      "facingMode": "ConstrainDOMString",
+      "mediaSource": "string",
+      "browserWindow": "number",
+      "scrollWithPage": "bool"
+    },
+    "MessageEventInit": {
+      "data": "?",
+      "origin": "string",
+      "lastEventId": "string",
+      "source": "?",
+      "ports": "[MessagePort]"
+    },
     "MessagePortList": {
       "length": "number",
       "item": "fn(index: number) -> MessagePort",
       "<i>": "MessagePort"
+    },
+    "MouseEventInit": {
+      "screenX": "number",
+      "screenY": "number",
+      "clientX": "number",
+      "clientY": "number",
+      "button": "number",
+      "buttons": "number",
+      "relatedTarget": "EventTarget"
+    },
+    "ActivityOptions": {
+      "name": "string",
+      "data": "?",
+      "getFilterResults": "bool"
+    },
+    "IccUnlockCardLockOptions": {
+      "lockType": "IccLockType",
+      "pin": "string",
+      "puk": "string",
+      "newPin": "string"
+    },
+    "IccSetCardLockOptions": {
+      "lockType": "IccLockType",
+      "pin": "string",
+      "pin2": "string",
+      "newPin": "string",
+      "enabled": "bool"
+    },
+    "IccCardLockStatus": {
+      "enabled": "bool"
+    },
+    "IccCardLockRetryCount": {
+      "retryCount": "number"
+    },
+    "MmsDeliveryInfo": {
+      "receiver": "string",
+      "deliveryStatus": "string",
+      "deliveryTimestamp": "DOMTimeStamp",
+      "readStatus": "string",
+      "readTimestamp": "DOMTimeStamp"
+    },
+    "SmsSegmentInfo": {
+      "segments": "number",
+      "charsPerSegment": "number",
+      "charsAvailableInLastSegment": "number"
+    },
+    "MmsAttachment": {
+      "id": "string",
+      "location": "string",
+      "content": "+Blob"
+    },
+    "MmsParameters": {
+      "receivers": "[string]",
+      "subject": "string",
+      "smil": "string",
+      "attachments": "[MmsAttachment]"
+    },
+    "SmsSendParameters": {
+      "serviceId": "number"
+    },
+    "MmsSendParameters": {
+      "serviceId": "number"
+    },
+    "MobileMessageFilter": {
+      "startDate": "DOMTimeStamp",
+      "endDate": "DOMTimeStamp",
+      "numbers": "[string]",
+      "delivery": "MobileMessageFilterDelivery",
+      "read": "bool",
+      "threadId": "number"
+    },
+    "NetworkStatsGetOptions": {
+      "appManifestURL": "string",
+      "serviceType": "string",
+      "browsingTrafficOnly": "bool"
+    },
+    "NetworkStatsAlarmOptions": {
+      "startTime": "Date",
+      "data": "Date"
+    },
+    "NetworkInterface": {
+      "type": "number",
+      "id": "string"
+    },
+    "PaymentIccInfo": {
+      "mcc": "string",
+      "mnc": "string",
+      "iccId": "string",
+      "dataPrimary": "bool"
     },
     "PaymentProvider": {
       "paymentServiceId": "string",
@@ -707,6 +1504,89 @@
       "sendSilentSms": "fn(number: string, message: string) -> DOMRequest",
       "observeSilentSms": "fn(number: string, callback: fn(message?: MozSmsMessage))",
       "removeSilentSmsObserver": "fn(number: string, callback: fn(message?: MozSmsMessage))"
+    },
+    "WifiTetheringConfig": {
+      "ssid": "string",
+      "security": "SecurityType",
+      "key": "string"
+    },
+    "TetheringConfiguration": {
+      "ip": "string",
+      "prefix": "string",
+      "startIp": "string",
+      "endIp": "string",
+      "dns1": "string",
+      "dns2": "string",
+      "wifiConfig": "WifiTetheringConfig"
+    },
+    "WifiWPSInfo": {
+      "method": "WifiWPSMethod",
+      "pin": "string",
+      "bssid": "string"
+    },
+    "NetworkProperties": {
+      "ssid": "string",
+      "mode": "number",
+      "frequency": "number",
+      "security": "[string]",
+      "capabilities": "[string]",
+      "known": "bool",
+      "connected": "bool",
+      "hidden": "bool",
+      "bssid": "string",
+      "signalStrength": "string",
+      "relSignalStrength": "number",
+      "psk": "string",
+      "wep": "string",
+      "wep_key0": "string",
+      "wep_key1": "string",
+      "wep_key2": "string",
+      "wep_key3": "string",
+      "wep_tx_keyidx": "number",
+      "priority": "number",
+      "scan_ssid": "number",
+      "keyManagement": "string",
+      "identity": "string",
+      "password": "string",
+      "auth_alg": "string",
+      "phase1": "string",
+      "phase2": "string",
+      "eap": "string",
+      "pin": "string",
+      "dontConnect": "bool",
+      "serverCertificate": "string",
+      "subjectMatch": "string",
+      "userCertificate": "string"
+    },
+    "IPConfiguration": {
+      "enabled": "bool",
+      "ipaddr": "string",
+      "proxy": "string",
+      "maskLength": "number",
+      "gateway": "string",
+      "dns1": "string",
+      "dns2": "string"
+    },
+    "WPSInfo": {
+      "method": "WPSMethod",
+      "pin": "string"
+    },
+    "MutationObserverInit": {
+      "childList": "bool",
+      "attributes": "bool",
+      "characterData": "bool",
+      "subtree": "bool",
+      "attributeOldValue": "bool",
+      "characterDataOldValue": "bool",
+      "animations": "bool",
+      "attributeFilter": "[string]"
+    },
+    "MutationObservingInfo": {
+      "observedNode": "Node"
+    },
+    "NativeOSFileReadOptions": {
+      "encoding": "string",
+      "bytes": "number"
     },
     "NavigatorID": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NavigatorID",
@@ -794,6 +1674,199 @@
     "NavigatorDataStore": {
       "getDataStores": "fn(name: string, owner?: string) -> +Promise"
     },
+    "SocketElement": {
+      "host": "string",
+      "port": "number",
+      "active": "bool",
+      "tcp": "bool",
+      "sent": "number",
+      "received": "number"
+    },
+    "SocketsDict": {
+      "sockets": "[SocketElement]",
+      "sent": "number",
+      "received": "number"
+    },
+    "HttpConnInfo": {
+      "rtt": "number",
+      "ttl": "number",
+      "protocolVersion": "string"
+    },
+    "HalfOpenInfoDict": {
+      "speculative": "bool"
+    },
+    "HttpConnectionElement": {
+      "host": "string",
+      "port": "number",
+      "spdy": "bool",
+      "ssl": "bool",
+      "active": "[HttpConnInfo]",
+      "idle": "[HttpConnInfo]",
+      "halfOpens": "[HalfOpenInfoDict]"
+    },
+    "HttpConnDict": {
+      "connections": "[HttpConnectionElement]"
+    },
+    "WebSocketElement": {
+      "hostport": "string",
+      "msgsent": "number",
+      "msgreceived": "number",
+      "sentsize": "number",
+      "receivedsize": "number",
+      "encrypted": "bool"
+    },
+    "WebSocketDict": {
+      "websockets": "[WebSocketElement]"
+    },
+    "DnsCacheEntry": {
+      "hostname": "string",
+      "hostaddr": "[string]",
+      "family": "string",
+      "expiration": "number"
+    },
+    "DNSCacheDict": {
+      "entries": "[DnsCacheEntry]"
+    },
+    "DNSLookupDict": {
+      "address": "[string]",
+      "error": "string",
+      "answer": "bool"
+    },
+    "ConnStatusDict": {
+      "status": "string"
+    },
+    "NetworkCommandOptions": {
+      "id": "number",
+      "cmd": "string",
+      "ifname": "string",
+      "ip": "string",
+      "prefixLength": "number",
+      "domain": "string",
+      "dnses": "[string]",
+      "oldIfname": "string",
+      "gateway": "string",
+      "gateways": "[string]",
+      "mode": "string",
+      "report": "bool",
+      "enabled": "bool",
+      "wifictrlinterfacename": "string",
+      "internalIfname": "string",
+      "externalIfname": "string",
+      "enable": "bool",
+      "ssid": "string",
+      "security": "string",
+      "key": "string",
+      "prefix": "string",
+      "link": "string",
+      "interfaceList": "[string]",
+      "wifiStartIp": "string",
+      "wifiEndIp": "string",
+      "usbStartIp": "string",
+      "usbEndIp": "string",
+      "dns1": "string",
+      "dns2": "string",
+      "threshold": "number",
+      "startIp": "string",
+      "endIp": "string",
+      "serverIp": "string",
+      "maskLength": "string",
+      "preInternalIfname": "string",
+      "preExternalIfname": "string",
+      "curInternalIfname": "string",
+      "curExternalIfname": "string",
+      "ipaddr": "number",
+      "mask": "number",
+      "gateway_long": "number",
+      "dns1_long": "number",
+      "dns2_long": "number"
+    },
+    "NetworkResultOptions": {
+      "id": "number",
+      "ret": "bool",
+      "broadcast": "bool",
+      "topic": "string",
+      "reason": "string",
+      "resultCode": "number",
+      "resultReason": "string",
+      "error": "bool",
+      "enable": "bool",
+      "result": "bool",
+      "success": "bool",
+      "curExternalIfname": "string",
+      "curInternalIfname": "string",
+      "reply": "string",
+      "route": "string",
+      "ipaddr_str": "string",
+      "gateway_str": "string",
+      "dns1_str": "string",
+      "dns2_str": "string",
+      "mask_str": "string",
+      "server_str": "string",
+      "vendor_str": "string",
+      "lease": "number",
+      "mask": "number",
+      "ipaddr": "number",
+      "gateway": "number",
+      "dns1": "number",
+      "dns2": "number",
+      "server": "number",
+      "netId": "string"
+    },
+    "NfcCommandOptions": {
+      "type": "NfcRequestType",
+      "sessionId": "number",
+      "requestId": "string",
+      "rfState": "RFState",
+      "techType": "number",
+      "isP2P": "bool",
+      "records": "[MozNDEFRecordOptions]",
+      "technology": "NFCTechType",
+      "command": "Uint8Array"
+    },
+    "NfcEventOptions": {
+      "rspType": "NfcResponseType",
+      "ntfType": "NfcNotificationType",
+      "status": "number",
+      "errorMsg": "NfcErrorMessage",
+      "sessionId": "number",
+      "requestId": "string",
+      "majorVersion": "number",
+      "minorVersion": "number",
+      "isP2P": "bool",
+      "techList": "[NFCTechType]",
+      "tagId": "Uint8Array",
+      "records": "[MozNDEFRecordOptions]",
+      "tagType": "NFCTagType",
+      "maxNDEFSize": "number",
+      "isReadOnly": "bool",
+      "isFormatable": "bool",
+      "rfState": "RFState",
+      "origin": "string",
+      "aid": "Uint8Array",
+      "payload": "Uint8Array",
+      "response": "Uint8Array"
+    },
+    "NotificationOptions": {
+      "dir": "NotificationDirection",
+      "lang": "string",
+      "body": "string",
+      "tag": "string",
+      "icon": "string",
+      "data": "?"
+    },
+    "GetNotificationOptions": {
+      "tag": "string"
+    },
+    "NotificationBehavior": {
+      "noscreen": "bool",
+      "noclear": "bool",
+      "showOnlyOnce": "bool",
+      "soundFile": "string",
+      "vibrationPattern": "[number]"
+    },
+    "PageTransitionEventInit": {
+      "persisted": "bool"
+    },
     "ParentNode": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode",
       "!doc": "The ParentNode interface contains methods that are particular to Node objects that can have children.",
@@ -817,6 +1890,33 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ParentNode/childElementCount",
         "!doc": "The ParentNode.childElementCount read-only property returns an unsigned long representing the number of child elements of the given element."
       }
+    },
+    "PluginCrashedEventInit": {
+      "pluginDumpID": "string",
+      "pluginName": "string",
+      "browserDumpID": "string",
+      "pluginFilename": "string",
+      "submittedCrashReport": "bool",
+      "gmpPlugin": "bool"
+    },
+    "PointerEventInit": {
+      "pointerId": "number",
+      "width": "number",
+      "height": "number",
+      "pressure": "number",
+      "tiltX": "number",
+      "tiltY": "number",
+      "pointerType": "string",
+      "isPrimary": "bool"
+    },
+    "PopStateEventInit": {
+      "state": "?"
+    },
+    "PopupBlockedEventInit": {
+      "requestingWindow": "Window",
+      "popupWindowURI": "URI",
+      "popupWindowName": "string",
+      "popupWindowFeatures": "string"
     },
     "Position": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Position",
@@ -849,11 +1949,255 @@
         "!doc": "The PositionError.message read-only property returns a human-readable DOMString describing the details of the error."
       }
     },
+    "PresentationDeviceInfo": {
+      "id": "string",
+      "name": "string",
+      "type": "string"
+    },
+    "ProfileTimelineLayerRect": {
+      "x": "number",
+      "y": "number",
+      "width": "number",
+      "height": "number"
+    },
+    "ProfileTimelineMarker": {
+      "name": "string",
+      "start": "DOMHighResTimeStamp",
+      "end": "DOMHighResTimeStamp",
+      "stack": "object",
+      "causeName": "string",
+      "endStack": "object",
+      "type": "string",
+      "eventPhase": "number",
+      "rectangles": "[ProfileTimelineLayerRect]"
+    },
+    "ProgressEventInit": {
+      "lengthComputable": "bool",
+      "loaded": "number",
+      "total": "number"
+    },
+    "PromiseDebuggingStateHolder": {
+      "state": "PromiseDebuggingState",
+      "value": "?",
+      "reason": "?"
+    },
+    "PushEventInit": {
+      "data": "PushMessageDataInit"
+    },
+    "RTCIceServer": {
+      "urls": "?",
+      "url": "string",
+      "credential": "string",
+      "username": "string"
+    },
+    "RTCConfiguration": {
+      "iceServers": "[RTCIceServer]",
+      "peerIdentity": "string"
+    },
+    "RTCDataChannelEventInit": {
+      "channel": "RTCDataChannel"
+    },
+    "RTCIceCandidateInit": {
+      "candidate": "string",
+      "sdpMid": "string",
+      "sdpMLineIndex": "number"
+    },
+    "RTCIdentityAssertion": {
+      "idp": "string",
+      "name": "string"
+    },
     "RTCIdentityProviderRegistrar": {
       "register": "fn(idp: RTCIdentityProvider)",
       "idp": "RTCIdentityProvider",
       "generateAssertion": "fn(contents: string, origin: string, usernameHint?: string) -> +Promise[value=RTCIdentityAssertionResult]",
       "validateAssertion": "fn(assertion: string, origin: string) -> +Promise[value=RTCIdentityValidationResult]"
+    },
+    "RTCIdentityAssertionResult": {
+      "idp": "RTCIdentityProviderDetails",
+      "assertion": "string"
+    },
+    "RTCIdentityProviderDetails": {
+      "domain": "string",
+      "protocol": "string"
+    },
+    "RTCIdentityValidationResult": {
+      "identity": "string",
+      "contents": "string"
+    },
+    "RTCDataChannelInit": {
+      "ordered": "bool",
+      "maxRetransmitTime": "number",
+      "maxRetransmits": "number",
+      "protocol": "string",
+      "negotiated": "bool",
+      "id": "number",
+      "outOfOrderAllowed": "bool",
+      "maxRetransmitNum": "number",
+      "preset": "bool",
+      "stream": "number"
+    },
+    "RTCOfferOptions": {
+      "offerToReceiveVideo": "number",
+      "offerToReceiveAudio": "number",
+      "mandatory": "DeprecatedRTCOfferOptionsSet",
+      "optional": "[DeprecatedRTCOfferOptionsSet]"
+    },
+    "DeprecatedRTCOfferOptionsSet": {
+      "OfferToReceiveAudio": "bool",
+      "OfferToReceiveVideo": "bool"
+    },
+    "RTCPeerConnectionIceEventInit": {
+      "candidate": "mozRTCIceCandidate"
+    },
+    "RTCPeerConnectionIdentityErrorEventInit": {
+      "idp": "string",
+      "protocol": "string",
+      "loginUrl": "string"
+    },
+    "RTCPeerConnectionIdentityEventInit": {
+      "assertion": "string"
+    },
+    "RTCSessionDescriptionInit": {
+      "type": "RTCSdpType",
+      "sdp": "string"
+    },
+    "RTCStats": {
+      "timestamp": "DOMHighResTimeStamp",
+      "type": "RTCStatsType",
+      "id": "string"
+    },
+    "RTCRTPStreamStats": {
+      "ssrc": "string",
+      "mediaType": "string",
+      "remoteId": "string",
+      "isRemote": "bool",
+      "mediaTrackId": "string",
+      "transportId": "string",
+      "codecId": "string",
+      "bitrateMean": "number",
+      "bitrateStdDev": "number",
+      "framerateMean": "number",
+      "framerateStdDev": "number"
+    },
+    "RTCInboundRTPStreamStats": {
+      "packetsReceived": "number",
+      "bytesReceived": "number",
+      "jitter": "number",
+      "packetsLost": "number",
+      "discardedPackets": "number"
+    },
+    "RTCOutboundRTPStreamStats": {
+      "packetsSent": "number",
+      "bytesSent": "number",
+      "targetBitrate": "number",
+      "droppedFrames": "number"
+    },
+    "RTCMediaStreamTrackStats": {
+      "trackIdentifier": "string",
+      "remoteSource": "bool",
+      "ssrcIds": "[string]",
+      "frameWidth": "number",
+      "frameHeight": "number",
+      "framesPerSecond": "number",
+      "framesSent": "number",
+      "framesReceived": "number",
+      "framesDecoded": "number",
+      "framesDropped": "number",
+      "framesCorrupted": "number",
+      "audioLevel": "number",
+      "echoReturnLoss": "number",
+      "echoReturnLossEnhancement": "number"
+    },
+    "RTCMediaStreamStats": {
+      "streamIdentifier": "string",
+      "trackIds": "[string]"
+    },
+    "RTCTransportStats": {
+      "bytesSent": "number",
+      "bytesReceived": "number"
+    },
+    "RTCIceComponentStats": {
+      "transportId": "string",
+      "component": "number",
+      "bytesSent": "number",
+      "bytesReceived": "number",
+      "activeConnection": "bool"
+    },
+    "RTCIceCandidatePairStats": {
+      "componentId": "string",
+      "localCandidateId": "string",
+      "remoteCandidateId": "string",
+      "state": "RTCStatsIceCandidatePairState",
+      "readable": "bool",
+      "nominated": "bool",
+      "selected": "bool"
+    },
+    "RTCIceCandidateStats": {
+      "componentId": "string",
+      "candidateId": "string",
+      "ipAddress": "string",
+      "transport": "string",
+      "portNumber": "number",
+      "candidateType": "RTCStatsIceCandidateType"
+    },
+    "RTCCodecStats": {
+      "payloadType": "number",
+      "codec": "string",
+      "clockRate": "number",
+      "channels": "number",
+      "parameters": "string"
+    },
+    "RTCStatsReportInternal": {
+      "pcid": "string",
+      "inboundRTPStreamStats": "[RTCInboundRTPStreamStats]",
+      "outboundRTPStreamStats": "[RTCOutboundRTPStreamStats]",
+      "mediaStreamTrackStats": "[RTCMediaStreamTrackStats]",
+      "mediaStreamStats": "[RTCMediaStreamStats]",
+      "transportStats": "[RTCTransportStats]",
+      "iceComponentStats": "[RTCIceComponentStats]",
+      "iceCandidatePairStats": "[RTCIceCandidatePairStats]",
+      "iceCandidateStats": "[RTCIceCandidateStats]",
+      "codecStats": "[RTCCodecStats]",
+      "localSdp": "string",
+      "remoteSdp": "string",
+      "timestamp": "DOMHighResTimeStamp",
+      "closed": "bool"
+    },
+    "RecordErrorEventInit": {
+      "name": "string"
+    },
+    "RequestInit": {
+      "method": "ByteString",
+      "headers": "HeadersInit",
+      "body": "BodyInit",
+      "mode": "RequestMode",
+      "credentials": "RequestCredentials",
+      "cache": "RequestCache"
+    },
+    "RequestTaskParams": {
+      "wakeUpPage": "string",
+      "oneShot": "bool",
+      "minInterval": "number",
+      "wifiOnly": "bool",
+      "data": "?"
+    },
+    "RequestTaskFull": {
+      "task": "string",
+      "lastSync": "DOMTimeStamp"
+    },
+    "ResourceStatsOptions": {
+      "component": "string",
+      "serviceType": "SystemService",
+      "manifestURL": "string"
+    },
+    "ResourceStatsAlarmOptions": {
+      "startTime": "DOMTimeStamp",
+      "data": "?"
+    },
+    "ResponseInit": {
+      "status": "number",
+      "statusText": "ByteString",
+      "headers": "HeadersInit"
     },
     "SVGAnimatedPathData": {
       "pathSegList": "SVGPathSegList",
@@ -875,6 +2219,12 @@
     "SVGFitToViewBox": {
       "viewBox": "SVGAnimatedRect",
       "preserveAspectRatio": "SVGAnimatedPreserveAspectRatio"
+    },
+    "SVGBoundingBoxOptions": {
+      "fill": "bool",
+      "stroke": "bool",
+      "markers": "bool",
+      "clipped": "bool"
     },
     "SVGTests": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/SVGTests",
@@ -906,8 +2256,220 @@
       "ensureIndexIsVisible": "fn(index: number)",
       "ensureLineIsVisible": "fn(line: number)"
     },
+    "ScrollViewChangeEventInit": {
+      "state": "ScrollState"
+    },
+    "SECommand": {
+      "cla": "number",
+      "ins": "number",
+      "p1": "number",
+      "p2": "number",
+      "data": "[number]",
+      "le": "number"
+    },
     "SEManager": {
       "getSEReaders": "fn() -> +Promise"
+    },
+    "SelectionStateChangedEventInit": {
+      "visible": "bool",
+      "selectedText": "string",
+      "boundingClientRect": "DOMRectReadOnly",
+      "states": "[SelectionState]"
+    },
+    "RegistrationOptions": {
+      "scope": "string"
+    },
+    "SettingChangeNotification": {
+      "key": "string",
+      "value": "?",
+      "isInternalChange": "bool"
+    },
+    "SettingChange": {
+      "settingName": "string",
+      "settingValue": "string"
+    },
+    "SpeechRecognitionErrorInit": {
+      "error": "SpeechRecognitionErrorCode",
+      "message": "string"
+    },
+    "SpeechRecognitionEventInit": {
+      "resultIndex": "number",
+      "results": "nsISupports",
+      "interpretation": "string",
+      "emma": "+Document"
+    },
+    "SpeechSynthesisEventInit": {
+      "charIndex": "number",
+      "elapsedTime": "number",
+      "name": "string"
+    },
+    "StorageEventInit": {
+      "key": "string",
+      "oldValue": "string",
+      "newValue": "string",
+      "url": "string",
+      "storageArea": "Storage"
+    },
+    "StyleRuleChangeEventInit": {
+      "stylesheet": "CSSStyleSheet",
+      "rule": "CSSRule"
+    },
+    "StyleSheetApplicableStateChangeEventInit": {
+      "stylesheet": "CSSStyleSheet",
+      "applicable": "bool"
+    },
+    "StyleSheetChangeEventInit": {
+      "stylesheet": "CSSStyleSheet",
+      "documentSheet": "bool"
+    },
+    "Algorithm": {
+      "name": "string"
+    },
+    "AesCbcParams": {
+      "iv": "CryptoOperationData"
+    },
+    "AesCtrParams": {
+      "counter": "CryptoOperationData",
+      "length": "number"
+    },
+    "AesGcmParams": {
+      "iv": "CryptoOperationData",
+      "additionalData": "CryptoOperationData",
+      "tagLength": "number"
+    },
+    "HmacImportParams": {
+      "hash": "AlgorithmIdentifier"
+    },
+    "Pbkdf2Params": {
+      "salt": "CryptoOperationData",
+      "iterations": "number",
+      "hash": "AlgorithmIdentifier"
+    },
+    "RsaHashedImportParams": {
+      "hash": "AlgorithmIdentifier"
+    },
+    "AesKeyGenParams": {
+      "length": "number"
+    },
+    "HmacKeyGenParams": {
+      "hash": "AlgorithmIdentifier",
+      "length": "number"
+    },
+    "RsaHashedKeyGenParams": {
+      "modulusLength": "number",
+      "publicExponent": "BigInteger",
+      "hash": "AlgorithmIdentifier"
+    },
+    "RsaOaepParams": {
+      "label": "CryptoOperationData"
+    },
+    "DhKeyGenParams": {
+      "prime": "BigInteger",
+      "generator": "BigInteger"
+    },
+    "EcKeyGenParams": {
+      "namedCurve": "NamedCurve"
+    },
+    "AesDerivedKeyParams": {
+      "length": "number"
+    },
+    "HmacDerivedKeyParams": {
+      "length": "number"
+    },
+    "EcdhKeyDeriveParams": {
+      "public": "CryptoKey"
+    },
+    "DhKeyDeriveParams": {
+      "public": "CryptoKey"
+    },
+    "DhImportKeyParams": {
+      "prime": "BigInteger",
+      "generator": "BigInteger"
+    },
+    "EcdsaParams": {
+      "hash": "AlgorithmIdentifier"
+    },
+    "RsaOtherPrimesInfo": {
+      "r": "string",
+      "d": "string",
+      "t": "string"
+    },
+    "JsonWebKey": {
+      "kty": "string",
+      "use": "string",
+      "key_ops": "[string]",
+      "alg": "string",
+      "ext": "bool",
+      "crv": "string",
+      "x": "string",
+      "y": "string",
+      "d": "string",
+      "n": "string",
+      "e": "string",
+      "p": "string",
+      "q": "string",
+      "dp": "string",
+      "dq": "string",
+      "qi": "string",
+      "oth": "[RsaOtherPrimesInfo]",
+      "k": "string"
+    },
+    "CryptoKeyPair": {
+      "publicKey": "CryptoKey",
+      "privateKey": "CryptoKey"
+    },
+    "TVGetProgramsOptions": {
+      "startTime": "number",
+      "duration": "number"
+    },
+    "TVCurrentChannelChangedEventInit": {
+      "channel": "TVChannel"
+    },
+    "TVCurrentSourceChangedEventInit": {
+      "source": "TVSource"
+    },
+    "TVEITBroadcastedEventInit": {
+      "programs": "[TVProgram]"
+    },
+    "TVScanningStateChangedEventInit": {
+      "state": "TVScanningState",
+      "channel": "TVChannel"
+    },
+    "TVStartScanningOptions": {
+      "isRescanned": "bool"
+    },
+    "TestInterfaceJSUnionableDictionary": {
+      "objectMember": "object",
+      "anyMember": "?"
+    },
+    "TestInterfaceJSDictionary2": {
+      "innerObject": "object"
+    },
+    "TestInterfaceJSDictionary": {
+      "innerDictionary": "TestInterfaceJSDictionary2",
+      "objectMember": "object",
+      "anyMember": "?",
+      "objectOrStringMember": "?",
+      "anySequenceMember": "[?]"
+    },
+    "TextDecoderOptions": {
+      "fatal": "bool"
+    },
+    "TextDecodeOptions": {
+      "stream": "bool"
+    },
+    "TrackEventInit": {
+      "track": "?"
+    },
+    "TransitionEventInit": {
+      "propertyName": "string",
+      "elapsedTime": "number",
+      "pseudoElement": "string"
+    },
+    "TreeCellInfo": {
+      "row": "number",
+      "col": "TreeColumn",
+      "childElt": "string"
     },
     "TreeBoxObject": {
       "!proto": "BoxObject",
@@ -945,6 +2507,39 @@
       "endUpdateBatch": "fn()",
       "clearStyleAndImageCaches": "fn()"
     },
+    "UDPMessageEventInit": {
+      "remoteAddress": "string",
+      "remotePort": "number",
+      "data": "?"
+    },
+    "UDPOptions": {
+      "localAddress": "string",
+      "localPort": "number",
+      "remoteAddress": "string",
+      "remotePort": "number",
+      "addressReuse": "bool",
+      "loopback": "bool"
+    },
+    "UIEventInit": {
+      "view": "Window",
+      "detail": "number"
+    },
+    "EventModifierInit": {
+      "ctrlKey": "bool",
+      "shiftKey": "bool",
+      "altKey": "bool",
+      "metaKey": "bool",
+      "modifierAltGraph": "bool",
+      "modifierCapsLock": "bool",
+      "modifierFn": "bool",
+      "modifierFnLock": "bool",
+      "modifierNumLock": "bool",
+      "modifierOS": "bool",
+      "modifierScrollLock": "bool",
+      "modifierSymbol": "bool",
+      "modifierSymbolLock": "bool"
+    },
+    "objectURLOptions": {},
     "URLUtils": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtils",
       "!doc": "The URLUtils interface defines utility methods to work with URLs.",
@@ -1055,6 +2650,38 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/URLUtilsReadOnly/origin",
         "!doc": "The URLUtilsReadOnly.origin read-only property is a DOMString containing the Unicode serialization of the origin of the represented URL, that is, for http and https, the scheme followed by '://', followed by the domain, followed by ':', followed by the port (the default port, 80 and 443 respectively, if explicitely specified). For URL using file: scheme, the value is browser dependant."
       }
+    },
+    "USSDReceivedEventInit": {
+      "serviceId": "number",
+      "message": "string",
+      "session": "+USSDSession"
+    },
+    "UserProximityEventInit": {
+      "near": "bool"
+    },
+    "VRFieldOfViewInit": {
+      "upDegrees": "number",
+      "rightDegrees": "number",
+      "downDegrees": "number",
+      "leftDegrees": "number"
+    },
+    "LifecycleCallbacks": {
+      "createdCallback": "fn()",
+      "attachedCallback": "fn()",
+      "detachedCallback": "fn()",
+      "attributeChangedCallback": "fn(attrName: string, oldValue: string, newValue: string)"
+    },
+    "ElementRegistrationOptions": {
+      "prototype": "object",
+      "extends": "string"
+    },
+    "WebGLContextAttributes": {
+      "alpha": "bool",
+      "depth": "bool",
+      "stencil": "bool",
+      "antialias": "bool",
+      "premultipliedAlpha": "bool",
+      "preserveDrawingBuffer": "bool"
     },
     "WebGLExtensionCompressedTextureS3TC": {
       "COMPRESSED_RGB_S3TC_DXT1_EXT": "GLenum",
@@ -1178,6 +2805,31 @@
       "MIN_EXT": "GLenum",
       "MAX_EXT": "GLenum"
     },
+    "WebrtcGlobalStatisticsReport": {
+      "reports": "[RTCStatsReportInternal]"
+    },
+    "WheelEventInit": {
+      "deltaX": "number",
+      "deltaY": "number",
+      "deltaZ": "number",
+      "deltaMode": "number"
+    },
+    "WifiCommandOptions": {
+      "id": "number",
+      "cmd": "string",
+      "request": "string"
+    },
+    "WifiResultOptions": {
+      "id": "number",
+      "status": "number",
+      "reply": "string"
+    },
+    "WifiCertServiceResultOptions": {
+      "id": "number",
+      "status": "number",
+      "usageFlag": "number",
+      "nickname": "string"
+    },
     "WindowTimers": {
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowTimers",
       "!doc": "WindowTimers contains utility methods to set and clear timers.",
@@ -1225,6 +2877,13 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/WindowLocalStorage",
       "!doc": "The localStorage property allows you to access a local Storage object. localStorage is similar to sessionStorage. The only difference is that, while data stored in localStorage has no expiration time, data stored in sessionStorage gets cleared when the browsing session ends - that is when the browser is closed.",
       "localStorage": "Storage"
+    },
+    "ScrollOptions": {
+      "behavior": "ScrollBehavior"
+    },
+    "ScrollToOptions": {
+      "left": "number",
+      "top": "number"
     },
     "SpeechSynthesisGetter": {
       "speechSynthesis": "SpeechSynthesis"

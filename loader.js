@@ -60,6 +60,9 @@ var loader = {
       }
     } else if (def.type === 'implements') {
       d = loader.implements(def);
+    } else if (def.type === 'dictionary') {
+      ext.nointerface = true;
+      d = loader.dictionary(def);
     } 
     if (!d) { return d; }
     return Object.assign(d, ext);
@@ -191,6 +194,35 @@ var loader = {
       type: 'implements',
       target: def.target,
       implements: def.implements
+    };
+  },
+  dictionary: function (def) {
+    "use strict";
+    var name = def.name;
+    var members = [];
+    for (let prop of def.members) {
+      if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
+      if (/-/.test(prop.name)) { continue; }
+      // let idl = (prop.idlType && prop.idlType.idlType) || null;
+      // if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
+      // if (prop.idlType && prop.idlType.sequence) { idl = false; }
+      // if (prop.idlType && prop.idlType.union) { idl = false; }
+      let args = [];
+      members.push({
+        name: prop.name,
+        type: 'prop',
+        getter: false,
+        static: false,
+        arguments: [],
+        idlType: prop.idlType
+      });
+    }
+    return {
+      type: 'interface',
+      name: name,
+      inheritance: null,
+      partial: false,
+      members: members
     };
   },
   file: function (file, storage) {
