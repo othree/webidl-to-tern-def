@@ -216,14 +216,20 @@ var generator = {
       "!name": "webidl",
       "!define": {}
     };
+    var navigator = {};
     for (let name in data) {
       let inter = data[name];
+      let pinter = member(inter);
       if (inter.nointerface) {
-        def['!define'][name] = member(inter);
+        def['!define'][name] = pinter;
       } else {
-        def[name] = member(inter);
+        def[name] = pinter;
+      }
+      if (inter.navigator && !/^(?:moz|Moz|nsI)/.test(inter.navigator)) {
+        navigator[inter.navigator] = name;
       }
     }
+    Object.assign(def.Navigator, navigator);
     console.log(JSON.stringify(def, null, 2));
   }
 };

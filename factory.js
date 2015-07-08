@@ -25,7 +25,8 @@ var factory = {
       type: 'prop',
       inheritance: def.inheritance,
       members: factory.members(def.members),
-      nointerface: def.nointerface
+      nointerface: def.nointerface,
+      navigator: def.navigator
     }
   },
   members: function (members) {
