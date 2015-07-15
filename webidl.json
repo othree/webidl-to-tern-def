@@ -46,7 +46,8 @@
       "dir": "string",
       "lang": "string",
       "tag": "string",
-      "data": "string"
+      "data": "string",
+      "mozbehavior": "NotificationBehavior"
     },
     "InstallParameters": {
       "receipts": "[string]",
@@ -545,7 +546,7 @@
         "!doc": "The clear method is used to remove ALL the contacts from the device's contact database."
       },
       "save": {
-        "!type": "fn(contact: mozContact) -> DOMRequest",
+        "!type": "fn(contact: +mozContact) -> DOMRequest",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ContactManager/save",
         "!doc": "The save method is used to store a contact inside the device's contact database. If the contact is already in the database (based on its id), it is updated, otherwise it is created."
       },
@@ -1157,6 +1158,61 @@
       "ontouchmove": "fn(+Event)",
       "ontouchcancel": "fn(+Event)"
     },
+    "MozImageLoadingContent": {
+      "UNKNOWN_REQUEST": "number",
+      "CURRENT_REQUEST": "number",
+      "PENDING_REQUEST": "number",
+      "loadingEnabled": "bool",
+      "imageBlockingStatus": "number",
+      "addObserver": "fn(aObserver: imgINotificationObserver)",
+      "removeObserver": "fn(aObserver: imgINotificationObserver)",
+      "getRequest": "fn(aRequestType: number) -> imgIRequest",
+      "getRequestType": "fn(aRequest: imgIRequest) -> number",
+      "currentURI": "URI",
+      "loadImageWithChannel": "fn(aChannel: MozChannel) -> nsIStreamListener",
+      "forceReload": "fn(aNotify?: bool)",
+      "forceImageState": "fn(aForce: bool, aState: number)"
+    },
+    "MozPhonetic": {
+      "phonetic": "string"
+    },
+    "MozObjectLoadingContent": {
+      "TYPE_LOADING": "number",
+      "TYPE_IMAGE": "number",
+      "TYPE_PLUGIN": "number",
+      "TYPE_DOCUMENT": "number",
+      "TYPE_NULL": "number",
+      "PLUGIN_UNSUPPORTED": "number",
+      "PLUGIN_ALTERNATE": "number",
+      "PLUGIN_DISABLED": "number",
+      "PLUGIN_BLOCKLISTED": "number",
+      "PLUGIN_OUTDATED": "number",
+      "PLUGIN_CRASHED": "number",
+      "PLUGIN_SUPPRESSED": "number",
+      "PLUGIN_USER_DISABLED": "number",
+      "PLUGIN_CLICK_TO_PLAY": "number",
+      "PLUGIN_VULNERABLE_UPDATABLE": "number",
+      "PLUGIN_VULNERABLE_NO_UPDATE": "number",
+      "PLUGIN_PLAY_PREVIEW": "number",
+      "actualType": "string",
+      "displayedType": "number",
+      "getContentTypeForMIMEType": "fn(aMimeType: string) -> number",
+      "getPluginAttributes": "fn() -> [MozPluginParameter]",
+      "getPluginParameters": "fn() -> [MozPluginParameter]",
+      "playPlugin": "fn()",
+      "reload": "fn(aClearActivation: bool)",
+      "activated": "bool",
+      "srcURI": "URI",
+      "defaultFallbackType": "number",
+      "pluginFallbackType": "number",
+      "hasRunningPlugin": "bool",
+      "cancelPlayPreview": "fn()",
+      "runID": "number"
+    },
+    "MozPluginParameter": {
+      "name": "string",
+      "value": "string"
+    },
     "HashChangeEventInit": {
       "oldURL": "string",
       "newURL": "string"
@@ -1421,6 +1477,23 @@
       "data": "?",
       "getFilterResults": "bool"
     },
+    "MozApplicationEventInit": {
+      "application": "DOMApplication"
+    },
+    "MozCellBroadcastEventInit": {
+      "message": "MozCellBroadcastMessage"
+    },
+    "MozClirModeEventInit": {
+      "mode": "number"
+    },
+    "MozContactChangeEventInit": {
+      "contactID": "string",
+      "reason": "string"
+    },
+    "MozEmergencyCbModeEventInit": {
+      "active": "bool",
+      "timeoutMs": "number"
+    },
     "IccUnlockCardLockOptions": {
       "lockType": "IccLockType",
       "pin": "string",
@@ -1440,12 +1513,48 @@
     "IccCardLockRetryCount": {
       "retryCount": "number"
     },
+    "MozInterAppMessageEventInit": {
+      "data": "?"
+    },
+    "MozMessageDeletedEventInit": {
+      "deletedMessageIds": "[number]",
+      "deletedThreadIds": "[number]"
+    },
+    "MozMmsEventInit": {
+      "message": "MozMmsMessage"
+    },
     "MmsDeliveryInfo": {
       "receiver": "string",
       "deliveryStatus": "string",
       "deliveryTimestamp": "DOMTimeStamp",
       "readStatus": "string",
       "readTimestamp": "DOMTimeStamp"
+    },
+    "MozCallForwardingOptions": {
+      "active": "bool",
+      "action": "number",
+      "reason": "number",
+      "number": "string",
+      "timeSeconds": "number",
+      "serviceClass": "number"
+    },
+    "MozCallBarringOptions": {
+      "program": "number",
+      "enabled": "bool",
+      "password": "string",
+      "serviceClass": "number",
+      "pin": "string",
+      "newPin": "string"
+    },
+    "MozMMIResult": {
+      "success": "bool",
+      "serviceCode": "string",
+      "statusMessage": "string",
+      "additionalInformation": "?"
+    },
+    "MozClirStatus": {
+      "n": "number",
+      "m": "number"
     },
     "SmsSegmentInfo": {
       "segments": "number",
@@ -1477,6 +1586,27 @@
       "read": "bool",
       "threadId": "number"
     },
+    "MozNDEFRecordOptions": {
+      "tnf": "TNF",
+      "type": "Uint8Array",
+      "id": "Uint8Array",
+      "payload": "Uint8Array"
+    },
+    "MozNFCManager": {
+      "checkP2PRegistration": "fn(manifestUrl: string) -> +Promise[value=bool]",
+      "notifyUserAcceptedP2P": "fn(manifestUrl: string)",
+      "notifySendFileStatus": "fn(status: number, requestId: string)",
+      "startPoll": "fn() -> +Promise[value=void]",
+      "stopPoll": "fn() -> +Promise[value=void]",
+      "powerOff": "fn() -> +Promise[value=void]"
+    },
+    "MozNFCPeerEventInit": {
+      "peer": "MozNFCPeer"
+    },
+    "MozNFCTagEventInit": {
+      "tag": "MozNFCTag",
+      "ndefRecords": "[+MozNDEFRecord]"
+    },
     "NetworkStatsGetOptions": {
       "appManifestURL": "string",
       "serviceType": "string",
@@ -1489,6 +1619,9 @@
     "NetworkInterface": {
       "type": "number",
       "id": "string"
+    },
+    "MozOtaStatusEventInit": {
+      "status": "string"
     },
     "PaymentIccInfo": {
       "mcc": "string",
@@ -1505,6 +1638,146 @@
       "observeSilentSms": "fn(number: string, callback: fn(message?: MozSmsMessage))",
       "removeSilentSmsObserver": "fn(number: string, callback: fn(message?: MozSmsMessage))"
     },
+    "MozSettingsEventInit": {
+      "settingName": "string",
+      "settingValue": "?"
+    },
+    "MozSettingsTransactionEventInit": {
+      "error": "string"
+    },
+    "MozSmsEventInit": {
+      "message": "MozSmsMessage"
+    },
+    "MozStkIcon": {
+      "width": "number",
+      "height": "number",
+      "codingScheme": "IccImageCodingScheme",
+      "pixels": "[number]"
+    },
+    "MozStkIconContainer": {
+      "iconSelfExplanatory": "bool",
+      "icons": "[MozStkIcon]"
+    },
+    "MozStkCommandEventInit": {
+      "command": "?"
+    },
+    "MozStkTextMessage": {
+      "text": "string",
+      "duration": "MozStkDuration",
+      "isHighPriority": "bool",
+      "userClear": "bool",
+      "responseNeeded": "bool"
+    },
+    "MozStkItem": {
+      "identifier": "number",
+      "text": "string"
+    },
+    "MozStkMenu": {
+      "items": "[MozStkItem]",
+      "presentationType": "number",
+      "title": "string",
+      "defaultItem": "number",
+      "isHelpAvailable": "bool",
+      "nextActionList": "[number]"
+    },
+    "MozStkInput": {
+      "text": "string",
+      "duration": "MozStkDuration",
+      "minLength": "number",
+      "maxLength": "number",
+      "defaultText": "string",
+      "isAlphabet": "bool",
+      "isUCS2": "bool",
+      "hideInput": "bool",
+      "isYesNoRequested": "bool",
+      "isPacked": "bool",
+      "isHelpAvailable": "bool"
+    },
+    "MozStkBrowserSetting": {
+      "confirmMessage": "MozStkTextMessage",
+      "url": "string",
+      "mode": "number"
+    },
+    "MozStkSetUpCall": {
+      "address": "string",
+      "confirmMessage": "MozStkTextMessage",
+      "callMessage": "MozStkTextMessage",
+      "duration": "MozStkDuration"
+    },
+    "MozStkSetUpEventList": {
+      "eventList": "[number]"
+    },
+    "MozStkLocationInfo": {
+      "mcc": "number",
+      "mnc": "number",
+      "gsmLocationAreaCode": "number",
+      "gsmCellId": "number"
+    },
+    "MozStkDuration": {
+      "timeUnit": "number",
+      "timeInterval": "number"
+    },
+    "MozStkPlayTone": {
+      "text": "string",
+      "tone": "number",
+      "duration": "MozStkDuration",
+      "isVibrate": "bool"
+    },
+    "MozStkProvideLocalInfo": {
+      "localInfoType": "number"
+    },
+    "MozStkLocationEvent": {
+      "eventType": "number",
+      "locationStatus": "number",
+      "locationInfo": "MozStkLocationInfo"
+    },
+    "MozStkTimer": {
+      "timerId": "number",
+      "timerValue": "number",
+      "timerAction": "number"
+    },
+    "MozStkBipMessage": {
+      "text": "string"
+    },
+    "MozStkCommand": {
+      "commandNumber": "number",
+      "typeOfCommand": "number",
+      "commandQualifier": "number",
+      "options": "?"
+    },
+    "MozStkResponse": {
+      "resultCode": "number",
+      "additionalInformation": "number",
+      "itemIdentifier": "number",
+      "input": "string",
+      "isYesNo": "bool",
+      "hasConfirmed": "bool",
+      "localInfo": "MozStkLocalInfo",
+      "timer": "MozStkTimer"
+    },
+    "MozStkCallEvent": {
+      "eventType": "number",
+      "number": "string",
+      "isIssuedByRemote": "bool",
+      "error": "string"
+    },
+    "MozStkLocalInfo": {
+      "imei": "string",
+      "locationInfo": "MozStkLocationInfo",
+      "date": "Date",
+      "language": "string"
+    },
+    "MozStkLanguageSelectionEvent": {
+      "eventType": "number",
+      "language": "string"
+    },
+    "MozStkBrowserTerminationEvent": {
+      "eventType": "number",
+      "terminationCause": "number"
+    },
+    "MozStkGeneralEvent": {
+      "eventType": "number"
+    },
     "WifiTetheringConfig": {
       "ssid": "string",
       "security": "SecurityType",
@@ -1518,6 +1791,16 @@
       "dns1": "string",
       "dns2": "string",
       "wifiConfig": "WifiTetheringConfig"
+    },
+    "MozVoicemailEventInit": {
+      "status": "MozVoicemailStatus"
+    },
+    "MozWifiConnectionInfoEventInit": {
+      "network": "?",
+      "signalStrength": "number",
+      "relSignalStrength": "number",
+      "linkSpeed": "number",
+      "ipAddress": "string"
     },
     "WifiWPSInfo": {
       "method": "WifiWPSMethod",
@@ -1570,6 +1853,16 @@
     "WPSInfo": {
       "method": "WPSMethod",
       "pin": "string"
+    },
+    "MozWifiP2pStatusChangeEventInit": {
+      "peerAddress": "string"
+    },
+    "MozWifiStationInfoEventInit": {
+      "station": "number"
+    },
+    "MozWifiStatusChangeEventInit": {
+      "network": "?",
+      "status": "string"
     },
     "MutationObserverInit": {
       "childList": "bool",
@@ -1852,7 +2145,8 @@
       "body": "string",
       "tag": "string",
       "icon": "string",
-      "data": "?"
+      "data": "?",
+      "mozbehavior": "NotificationBehavior"
     },
     "GetNotificationOptions": {
       "tag": "string"
@@ -2039,15 +2333,19 @@
     "RTCOfferOptions": {
       "offerToReceiveVideo": "number",
       "offerToReceiveAudio": "number",
+      "mozDontOfferDataChannel": "bool",
+      "mozBundleOnly": "bool",
       "mandatory": "DeprecatedRTCOfferOptionsSet",
       "optional": "[DeprecatedRTCOfferOptionsSet]"
     },
     "DeprecatedRTCOfferOptionsSet": {
       "OfferToReceiveAudio": "bool",
-      "OfferToReceiveVideo": "bool"
+      "OfferToReceiveVideo": "bool",
+      "MozDontOfferDataChannel": "bool",
+      "MozBundleOnly": "bool"
     },
     "RTCPeerConnectionIceEventInit": {
-      "candidate": "mozRTCIceCandidate"
+      "candidate": "+mozRTCIceCandidate"
     },
     "RTCPeerConnectionIdentityErrorEventInit": {
       "idp": "string",
@@ -2084,6 +2382,9 @@
       "bytesReceived": "number",
       "jitter": "number",
       "packetsLost": "number",
+      "mozAvSyncDelay": "number",
+      "mozJitterBufferDelay": "number",
+      "mozRtt": "number",
       "discardedPackets": "number"
     },
     "RTCOutboundRTPStreamStats": {
@@ -2128,6 +2429,7 @@
       "localCandidateId": "string",
       "remoteCandidateId": "string",
       "state": "RTCStatsIceCandidatePairState",
+      "mozPriority": "number",
       "readable": "bool",
       "nominated": "bool",
       "selected": "bool"
@@ -2137,6 +2439,7 @@
       "candidateId": "string",
       "ipAddress": "string",
       "transport": "string",
+      "mozLocalTransport": "string",
       "portNumber": "number",
       "candidateType": "RTCStatsIceCandidateType"
     },
@@ -2891,10 +3194,26 @@
     "WindowModal": {
       "dialogArguments": "?",
       "returnValue": "?"
+    },
+    "MozXMLHttpRequestParameters": {
+      "mozAnon": "bool",
+      "mozSystem": "bool"
+    },
+    "MozFrameLoaderOwner": {
+      "frameLoader": "MozFrameLoader",
+      "setIsPrerendered": "fn()",
+      "swapFrameLoaders": "fn(aOtherOwner: XULElement)"
     }
   },
   "AVInputPort": {
     "!proto": "InputPort"
+  },
+  "MozAbortablePromise": {
+    "!type": "fn(init: fn(resolve: object, reject: object), abortCallback: fn())",
+    "prototype": {
+      "!proto": "Promise.prototype",
+      "abort": "fn()"
+    }
   },
   "AlarmsManager": {
     "getAll": "fn() -> DOMRequest",
@@ -3059,6 +3378,7 @@
   "AnimationTimeline": {
     "currentTime": "number"
   },
+  "MozObserver": {},
   "ArchiveReader": {
     "!type": "fn(blob: +Blob, options?: ArchiveReaderOptions)",
     "prototype": {
@@ -3345,6 +3665,7 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createPeriodicWave",
         "!doc": "The createPeriodicWave() method of the AudioContext Interface is used to create a PeriodicWave, which is used to define a periodic waveform that can be used to shape the output of an OscillatorNode."
       },
+      "mozAudioChannelType": "AudioChannel",
       "onmozinterruptbegin": "fn(+Event)",
       "onmozinterruptend": "fn(+Event)",
       "testAudioChannelInAudioNodeStream": "fn() -> AudioChannel"
@@ -4101,6 +4422,13 @@
   },
   "CSS2Properties": {
     "!proto": "CSSStyleDeclaration",
+    "MozAppearance": "string",
+    "MozOutlineRadius": "string",
+    "MozOutlineRadiusTopleft": "string",
+    "MozOutlineRadiusTopright": "string",
+    "MozOutlineRadiusBottomright": "string",
+    "MozOutlineRadiusBottomleft": "string",
+    "MozTabSize": "string",
     "all": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/all",
@@ -4201,6 +4529,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/background-size",
       "!doc": "The background-size CSS property specifies the size of the background images. The size of the image can be fully constrained or only partially in order to preserve its intrinsic ratio."
     },
+    "MozBinding": "string",
     "blockSize": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/block-size",
@@ -4261,6 +4590,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color",
       "!doc": "The border-bottom-color CSS property sets the color of the bottom border of an element. Note that in many cases the shorthand CSS properties border-color or border-bottom are more convenient and preferable."
     },
+    "MozBorderBottomColors": "string",
     "borderBottomStyle": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-style",
@@ -4311,6 +4641,14 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-image-repeat",
       "!doc": "The border-image-repeat CSS property defines how the middle part of a border image is handled so that it can match the size of the border. It has a one-value syntax that describes the behavior of all the sides, and a two-value syntax that sets a different value for the horizontal and vertical behavior."
     },
+    "MozBorderEnd": "string",
+    "MozBorderEndColor": "string",
+    "MozBorderEndStyle": "string",
+    "MozBorderEndWidth": "string",
+    "MozBorderStart": "string",
+    "MozBorderStartColor": "string",
+    "MozBorderStartStyle": "string",
+    "MozBorderStartWidth": "string",
     "borderLeft": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-left",
@@ -4321,6 +4659,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color",
       "!doc": "The border-left-color CSS property sets the color of the bottom border of an element. Note that in many cases the shorthand CSS properties border-color or border-left are more convenient and preferable."
     },
+    "MozBorderLeftColors": "string",
     "borderLeftStyle": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-left-style",
@@ -4341,6 +4680,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color",
       "!doc": "The border-right-color CSS property sets the color of the right border of an element. Note that in many cases the shorthand CSS properties  border-color or border-right are more convenient and preferable."
     },
+    "MozBorderRightColors": "string",
     "borderRightStyle": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-right-style",
@@ -4371,6 +4711,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color",
       "!doc": "The border-top-color CSS property sets the color of the top border of an element. Note that in many cases the shorthand CSS properties border-color or border-top are more convenient and preferable."
     },
+    "MozBorderTopColors": "string",
     "borderTopStyle": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/border-top-style",
@@ -4451,6 +4792,15 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/color",
       "!doc": "The color property sets the foreground color of an element's text content, and its decorations. It doesn't affect any other characteristic of the element; it should really be called text-color and would have been named so, save for historical reasons and its appearance in CSS Level 1."
     },
+    "MozColumns": "string",
+    "MozColumnCount": "string",
+    "MozColumnFill": "string",
+    "MozColumnWidth": "string",
+    "MozColumnGap": "string",
+    "MozColumnRule": "string",
+    "MozColumnRuleColor": "string",
+    "MozColumnRuleStyle": "string",
+    "MozColumnRuleWidth": "string",
     "content": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/content",
@@ -4552,6 +4902,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/float",
       "!doc": "The float CSS property specifies that an element should be taken from the normal flow and placed along the left or right side of its container, where text and inline elements will wrap around it."
     },
+    "MozFloatEdge": "string",
     "font": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/font",
@@ -4587,6 +4938,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/font-size-adjust",
       "!doc": "The font-size-adjust CSS property specifies that font size should be chosen based on the height of lowercase letters rather than the height of capital letters. This is useful since the legibility of fonts, especially at small sizes, is determined more by the size of lowercase letters than by the size of capital letters."
     },
+    "MozOsxFontSmoothing": "string",
     "fontStretch": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/font-stretch",
@@ -4642,6 +4994,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/font-weight",
       "!doc": "The font-weight CSS property specifies the weight or boldness of the font. Some fonts are only available in normal and bold."
     },
+    "MozForceBrokenImageIcon": "string",
     "gridAutoFlow": "string",
     "gridAutoColumns": "string",
     "gridAutoRows": "string",
@@ -4667,6 +5020,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/image-orientation",
       "!doc": "The image-orientation CSS property describes how to correct the default orientation of an image."
     },
+    "MozImageRegion": "string",
     "imeMode": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/ime-mode",
@@ -4732,6 +5086,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/margin-bottom",
       "!doc": "The margin-bottom CSS property of an element sets the margin space required on the bottom of an element. A negative value is also allowed."
     },
+    "MozMarginEnd": "string",
+    "MozMarginStart": "string",
     "marginLeft": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/margin-left",
@@ -4842,6 +5198,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/opacity",
       "!doc": "The opacity CSS property specifies the transparency of an element, that is, the degree to which the background behind the element is overlaid."
     },
+    "MozOrient": "string",
     "orphans": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/orphans",
@@ -4912,6 +5269,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/padding-bottom",
       "!doc": "The padding-bottom CSS property of an element sets the height of the padding area at the bottom of an element. The padding area is the space between the content of the element and it's border. Contrary to margin-bottom values, negative values of padding-bottom are invalid."
     },
+    "MozPaddingEnd": "string",
+    "MozPaddingStart": "string",
     "paddingLeft": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/padding-left",
@@ -5030,6 +5389,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/text-align",
       "!doc": "The text-align CSS property describes how inline content like text is aligned in its parent block element. text-align does not control the alignment of block elements itself, only their inline content."
     },
+    "MozTextAlignLast": "string",
     "textDecoration": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration",
@@ -5075,6 +5435,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow",
       "!doc": "The text-shadow property adds shadows to text. It accepts a comma-separated list of shadows to be applied to the text and text-decorations of the element."
     },
+    "MozTextSizeAdjust": "string",
     "textTransform": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/text-transform",
@@ -5150,6 +5511,10 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/unicode-bidi",
       "!doc": "The unicode-bidi CSS property together with the direction property relates to the handling of bidirectional text in a document. For example, if a block of text contains both left-to-right and right-to-left text then the user-agent uses a complex Unicode algorithm to decide how to display the text. This property overrides this algorithm and allows the developer to control the text embedding."
     },
+    "MozUserFocus": "string",
+    "MozUserInput": "string",
+    "MozUserModify": "string",
+    "MozUserSelect": "string",
     "verticalAlign": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align",
@@ -5175,6 +5540,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/width",
       "!doc": "The width CSS property specifies the width of the content area of an element. The content area is inside the padding, border, and margin of the element."
     },
+    "MozWindowDragging": "string",
+    "MozWindowShadow": "string",
     "wordBreak": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/word-break",
@@ -5190,6 +5557,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/word-wrap",
       "!doc": "The word-wrap property is used to specify whether or not the browser may break lines within words in order to prevent overflow when an otherwise unbreakable string is too long to fit in its containing box."
     },
+    "MozHyphens": "string",
     "writingMode": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/writing-mode",
@@ -5200,6 +5568,13 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/z-index",
       "!doc": "The z-index property specifies the z-order of an element and its descendants. When elements overlap, z-order determines which one covers the other. An element with a larger z-index generally covers an element with a lower one."
     },
+    "MozBoxAlign": "string",
+    "MozBoxDirection": "string",
+    "MozBoxFlex": "string",
+    "MozBoxOrient": "string",
+    "MozBoxPack": "string",
+    "MozBoxOrdinalGroup": "string",
+    "MozStackSizing": "string",
     "clipPath": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/clip-path",
@@ -5358,6 +5733,30 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/will-change",
       "!doc": "The will-change CSS property provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can setup appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required."
     },
+    "MozTransform": "string",
+    "MozTransformOrigin": "string",
+    "MozPerspectiveOrigin": "string",
+    "MozPerspective": "string",
+    "MozTransformStyle": "string",
+    "MozBackfaceVisibility": "string",
+    "MozBorderImage": "string",
+    "MozTransition": "string",
+    "MozTransitionDelay": "string",
+    "MozTransitionDuration": "string",
+    "MozTransitionProperty": "string",
+    "MozTransitionTimingFunction": "string",
+    "MozAnimation": "string",
+    "MozAnimationDelay": "string",
+    "MozAnimationDirection": "string",
+    "MozAnimationDuration": "string",
+    "MozAnimationFillMode": "string",
+    "MozAnimationIterationCount": "string",
+    "MozAnimationName": "string",
+    "MozAnimationPlayState": "string",
+    "MozAnimationTimingFunction": "string",
+    "MozBoxSizing": "string",
+    "MozFontFeatureSettings": "string",
+    "MozFontLanguageOverride": "string",
     "paddingInlineEnd": {
       "!type": "string",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/CSS/padding-inline-end",
@@ -6116,6 +6515,13 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/putImageData",
       "!doc": "The CanvasRenderingContext2D.putImageData() method of the Canvas 2D API paints data from the given ImageData object onto the bitmap. If a dirty rectangle is provided, only the pixels from that rectangle are painted."
     },
+    "mozCurrentTransform": "object",
+    "mozCurrentTransformInverse": "object",
+    "mozFillRule": "string",
+    "mozDash": "?",
+    "mozDashOffset": "number",
+    "mozTextStyle": "string",
+    "mozImageSmoothingEnabled": "bool",
     "DRAWWINDOW_DRAW_CARET": "number",
     "DRAWWINDOW_DO_NOT_FLUSH": "number",
     "DRAWWINDOW_DRAW_VIEW": "number",
@@ -6243,7 +6649,9 @@
       "!doc": "The NonDocumentTypeChildNode.nextElementSibling read-only property returns the element immediately following the specified one in its parent's children list, or null if the specified element is the last one in the list."
     }
   },
-  "ChromeNotifications": {},
+  "ChromeNotifications": {
+    "mozResendAllNotifications": "fn(resendCallback: fn(count: number))"
+  },
   "Client": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Client",
     "!doc": "The Client interface of the ServiceWorker API represents the scope of a service worker client. A service worker client is either a document in a browser context or a SharedWorker, which is controlled by an active worker. A client object acts as a snapshot representation of its associated service worker client in the scope of a service worker.",
@@ -6349,6 +6757,40 @@
     "data": "string",
     "locale": "string",
     "initCompositionEvent": "fn(typeArg: string, canBubbleArg: bool, cancelableArg: bool, viewArg: Window, dataArg: string, localeArg: string)"
+  },
+  "mozContact": {
+    "!type": "fn(properties?: ContactProperties)",
+    "prototype": {
+      "id": "string",
+      "published": "Date",
+      "updated": "Date",
+      "bday": "Date",
+      "anniversary": "Date",
+      "sex": "string",
+      "genderIdentity": "string",
+      "photo": "[+Blob]",
+      "adr": "[ContactAddress]",
+      "email": "[ContactField]",
+      "url": "[ContactField]",
+      "impp": "[ContactField]",
+      "tel": "[ContactTelField]",
+      "name": "[string]",
+      "honorificPrefix": "[string]",
+      "givenName": "[string]",
+      "phoneticGivenName": "[string]",
+      "additionalName": "[string]",
+      "familyName": "[string]",
+      "phoneticFamilyName": "[string]",
+      "honorificSuffix": "[string]",
+      "nickname": "[string]",
+      "category": "[string]",
+      "org": "[string]",
+      "jobTitle": "[string]",
+      "note": "[string]",
+      "key": "[string]",
+      "init": "fn(properties?: ContactProperties)",
+      "setMetadata": "fn(id: string, published: Date, updated: Date)"
+    }
   },
   "ConvolverNode": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ConvolverNode",
@@ -6784,6 +7226,7 @@
     "id": "number",
     "stream": "number"
   },
+  "nsIVariant": {},
   "DataErrorEvent": {
     "!type": "fn(type: string, eventInitDict?: DataErrorEventInit)",
     "prototype": {
@@ -6935,7 +7378,15 @@
     "setData": "fn(format: string, data: string)",
     "clearData": "fn(format?: string)",
     "files": "FileList",
-    "addElement": "fn(element: HTMLElement)"
+    "addElement": "fn(element: HTMLElement)",
+    "mozItemCount": "number",
+    "mozCursor": "string",
+    "mozTypesAt": "fn(index: number) -> DOMStringList",
+    "mozClearDataAt": "fn(format: string, index: number)",
+    "mozSetDataAt": "fn(format: string, data: ?, index: number)",
+    "mozGetDataAt": "fn(format: string, index: number) -> ?",
+    "mozUserCancelled": "bool",
+    "mozSourceNode": "Node"
   },
   "DedicatedWorkerGlobalScope": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/DedicatedWorkerGlobalScope",
@@ -7168,6 +7619,9 @@
     "!proto": "InputPort"
   },
   "WindowProxy": {},
+  "nsISupports": {},
+  "nsIDocShell": {},
+  "nsILoadGroup": {},
   "Document": {
     "!type": "fn()",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document",
@@ -7370,6 +7824,7 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/onafterscriptexecute",
         "!doc": "Fired when a static <script> element  finishes executing its script. Does not fire if the element is added dynamically, eg with appendChild()."
       },
+      "mozSyntheticDocument": "bool",
       "currentScript": {
         "!type": "HTMLElement",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/currentScript",
@@ -7380,19 +7835,28 @@
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/releaseCapture",
         "!doc": "Releases mouse capture if it's currently enabled on an element within this document. Enabling mouse capture on an element is done by calling element.setCapture()."
       },
+      "mozSetImageElement": "fn(aImageElementId: string, aImageElement: HTMLElement)",
       "documentURIObject": {
         "!type": "URI",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/documentURIObject",
         "!doc": "The Document.documentURIObject read-only property returns an nsIURI object representing the URI of the document."
       },
       "referrerPolicy": "number",
+      "mozFullScreenEnabled": "bool",
+      "mozFullScreenElement": "HTMLElement",
+      "mozFullScreen": "bool",
+      "mozCancelFullScreen": "fn()",
+      "mozPointerLockElement": "HTMLElement",
+      "mozExitPointerLock": "fn()",
       "registerElement": {
         "!type": "fn(name: string, options?: ElementRegistrationOptions) -> object",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/registerElement",
         "!doc": "The Document.registerElement() method registers a new custom element in the browser and returns a constructor for the new element."
       },
       "hidden": "bool",
+      "mozHidden": "bool",
       "visibilityState": "VisibilityState",
+      "mozVisibilityState": "VisibilityState",
       "styleSheets": {
         "!type": "StyleSheetList",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Document/styleSheets",
@@ -7896,6 +8360,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Element/onwheel",
       "!doc": "The onwheel property returns the onwheel event handler code on the current element."
     },
+    "mozMatchesSelector": "fn(selector: string) -> bool",
     "setPointerCapture": "fn(pointerId: number)",
     "releasePointerCapture": "fn(pointerId: number)",
     "setCapture": {
@@ -7904,6 +8369,8 @@
       "!doc": "Call this method during the handling of a mousedown event to retarget all mouse events to this element until the mouse button is released or document.releaseCapture() is called."
     },
     "releaseCapture": "fn()",
+    "mozRequestFullScreen": "fn(options?: ?)",
+    "mozRequestPointerLock": "fn()",
     "getAttributeNode": {
       "!type": "fn(name: string) -> Attr",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNode",
@@ -7968,6 +8435,7 @@
     "scroll": "fn(x: number, y: number)",
     "scrollTo": "fn(x: number, y: number)",
     "scrollBy": "fn(x: number, y: number)",
+    "mozScrollSnap": "fn()",
     "clientTop": {
       "!type": "number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Element/clientTop",
@@ -8380,6 +8848,7 @@
       }
     }
   },
+  "nsIFile": {},
   "File": {
     "!type": "fn(fileBits: string, options?: ChromeFilePropertyBag)",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/File",
@@ -8396,7 +8865,8 @@
         "!type": "Date",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/File/lastModifiedDate",
         "!doc": "Returns the last modified date of the file. Files without a known last modified date use the current date instead."
-      }
+      },
+      "mozFullPath": "string"
     }
   },
   "FileList": {
@@ -8927,6 +9397,7 @@
     "checkValidity": "fn() -> bool",
     "setCustomValidity": "fn(error: string)"
   },
+  "nsIInputStreamCallback": {},
   "Variant": {},
   "HTMLCanvasElement": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement",
@@ -8956,7 +9427,12 @@
       "!type": "fn(callback: fn(file: +Blob), type?: string, encoderOptions?: ?)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/toBlob",
       "!doc": "The HTMLCanvasElement.toBlob() method creates a Blob object representing the image contained in the canvas; this file may be cached on the disk or stored in memory at the discretion of the user agent. If type is not specified, the image type is image/png. The created image is in a resolution of 96dpi.\n The third argument is used with image/jpeg images to specify the quality of the output."
-    }
+    },
+    "mozOpaque": "bool",
+    "mozGetAsFile": "fn(name: string, type?: string) -> +File",
+    "MozGetIPCContext": "fn(contextId: string) -> nsISupports",
+    "mozFetchAsStream": "fn(callback: nsIInputStreamCallback, type?: string)",
+    "mozPrintCallback": "fn(ctx: MozCanvasPrintState)"
   },
   "HTMLCollection": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLCollection",
@@ -9556,6 +10032,7 @@
     "marginHeight": "string",
     "marginWidth": "string",
     "getSVGDocument": "fn() -> +Document",
+    "mozbrowser": "bool",
     "appManifestURL": "string",
     "setVisible": "fn(visible: bool)",
     "getVisible": "fn() -> DOMRequest",
@@ -9581,6 +10058,8 @@
   },
   "imgINotificationObserver": {},
   "imgIRequest": {},
+  "MozChannel": {},
+  "nsIStreamListener": {},
   "HTMLImageElement": {
     "!type": "fn(width?: number, height?: number)",
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement",
@@ -9639,6 +10118,7 @@
       "y": "number"
     }
   },
+  "nsIControllers": {},
   "HTMLInputElement": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement",
     "!doc": "The HTMLInputElement interface provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of input elements.",
@@ -9709,7 +10189,11 @@
     },
     "controllers": "nsIControllers",
     "textLength": "number",
+    "mozGetFileNameArray": "fn() -> [string]",
+    "mozSetFileNameArray": "fn(fileNames: [string])",
+    "mozSetFileArray": "fn(files: [+File])",
     "ownerNumberControl": "HTMLInputElement",
+    "mozIsTextField": "fn(aExcludePassword: bool) -> bool",
     "getAutocompleteInfo": "fn() -> AutocompleteInfo",
     "editor": "nsIEditor",
     "setUserInput": "fn(input: string)"
@@ -9816,6 +10300,19 @@
     "videoTracks": "VideoTrackList",
     "textTracks": "TextTrackList",
     "addTextTrack": "fn(kind: TextTrackKind, label?: string, language?: string) -> TextTrack",
+    "mozMediaSourceObject": "+MediaSource",
+    "mozSrcObject": "MediaStream",
+    "mozPreservesPitch": "bool",
+    "mozAutoplayEnabled": "bool",
+    "mozMediaStatisticsShowing": "bool",
+    "mozAllowCasting": "bool",
+    "mozIsCasting": "bool",
+    "mozCaptureStream": "fn() -> MediaStream",
+    "mozCaptureStreamUntilEnded": "fn() -> MediaStream",
+    "mozAudioCaptured": "bool",
+    "mozGetMetadata": "fn() -> object",
+    "mozFragmentEnd": "number",
+    "mozAudioChannelType": "AudioChannel",
     "mediaKeys": "MediaKeys",
     "setMediaKeys": "fn(mediaKeys: MediaKeys) -> +Promise[value=void]",
     "onencrypted": "fn(+Event)"
@@ -10329,6 +10826,8 @@
     "!proto": "HTMLElement",
     "content": "+DocumentFragment"
   },
+  "nsIEditor": {},
+  "MozControllers": {},
   "HTMLTextAreaElement": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLTextAreaElement",
     "!doc": "The HTMLTextAreaElement interface, which provides special properties and methods (beyond the regular HTMLElement interface it also has available to it by inheritance) for manipulating the layout and presentation of <textarea> elements.",
@@ -10411,6 +10910,12 @@
     "videoWidth": "number",
     "videoHeight": "number",
     "poster": "string",
+    "mozParsedFrames": "number",
+    "mozDecodedFrames": "number",
+    "mozPresentedFrames": "number",
+    "mozPaintedFrames": "number",
+    "mozFrameDelay": "number",
+    "mozHasAudio": "bool",
     "getVideoPlaybackQuality": {
       "!type": "fn() -> VideoPlaybackQuality",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/getVideoPlaybackQuality",
@@ -10591,7 +11096,8 @@
       "!doc": "The onversionchange event handler of the IDBDatabase interface handles the versionchange event, fired when a database structure change (IDBOpenDBRequest.onupgradeneeded event or IDBFactory.deleteDatabase) was requested elsewhere (most probably in another window/tab on the same computer)."
     },
     "storage": "StorageType",
-    "createMutableFile": "fn(name: string, type?: string) -> IDBRequest"
+    "createMutableFile": "fn(name: string, type?: string) -> IDBRequest",
+    "mozCreateFileHandle": "fn(name: string, type?: string) -> IDBRequest"
   },
   "IDBFactory": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBFactory",
@@ -10692,6 +11198,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/count",
       "!doc": "The count() method of the IDBIndex interface returns an IDBRequest object, and in a separate thread, returns the number of records within a key range."
     },
+    "mozGetAll": "fn(key?: ?, limit?: number) -> IDBRequest",
+    "mozGetAllKeys": "fn(key?: ?, limit?: number) -> IDBRequest",
     "getAll": {
       "!type": "fn(key?: ?, limit?: number) -> IDBRequest",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBIndex/getAll",
@@ -10835,6 +11343,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/IDBObjectStore/count",
       "!doc": "The count() method of the IDBObjectStore interface returns an IDBRequest object, and, in a separate thread, returns the total number of records that match the provided key or IDBKeyRange. If no arguments are provided, it returns the total number of records in the store."
     },
+    "mozGetAll": "fn(key?: ?, limit?: number) -> IDBRequest",
     "getAll": "fn(key?: ?, limit?: number) -> IDBRequest",
     "getAllKeys": "fn(key?: ?, limit?: number) -> IDBRequest",
     "openKeyCursor": {
@@ -11028,6 +11537,45 @@
       }
     }
   },
+  "MozInputMethod": {
+    "!proto": "EventTarget",
+    "mgmt": "MozInputMethodManager",
+    "oninputcontextchange": "fn(+Event)",
+    "inputcontext": "MozInputContext",
+    "setActive": "fn(isActive: bool)",
+    "addInput": "fn(inputId: string, inputManifest: object) -> +Promise[value=void]",
+    "removeInput": "fn(id: string) -> +Promise[value=void]",
+    "setValue": "fn(value: string)",
+    "setSelectedOption": "fn(index: number)",
+    "setSelectedOptions": "fn(indexes: [number])",
+    "removeFocus": "fn()"
+  },
+  "MozInputMethodManager": {
+    "showAll": "fn()",
+    "next": "fn()",
+    "supportsSwitching": "fn() -> bool",
+    "hide": "fn()"
+  },
+  "MozInputContext": {
+    "!proto": "EventTarget",
+    "type": "string",
+    "inputType": "string",
+    "inputMode": "string",
+    "lang": "string",
+    "getText": "fn(offset?: number, length?: number) -> +Promise[value=string]",
+    "selectionStart": "number",
+    "selectionEnd": "number",
+    "textBeforeCursor": "string",
+    "textAfterCursor": "string",
+    "setSelectionRange": "fn(start: number, length: number) -> +Promise[value=bool]",
+    "onselectionchange": "fn(+Event)",
+    "replaceSurroundingText": "fn(text: string, offset?: number, length?: number) -> +Promise[value=bool]",
+    "deleteSurroundingText": "fn(offset: number, length: number) -> +Promise[value=bool]",
+    "onsurroundingtextchange": "fn(+Event)",
+    "sendKey": "fn(keyCode: number, charCode: number, modifiers: number, repeat?: bool) -> +Promise[value=bool]",
+    "setComposition": "fn(text: string, cursor?: number, clauses?: [CompositionClauseParameters]) -> +Promise[value=?]",
+    "endComposition": "fn(text?: string) -> +Promise[value=?]"
+  },
   "InputPort": {
     "!proto": "EventTarget",
     "id": "string",
@@ -11058,6 +11606,32 @@
     "prototype": {
       "!proto": "Event.prototype",
       "waitUntil": "fn(p: +Promise)"
+    }
+  },
+  "MozInterAppConnection": {
+    "!type": "fn(keyword: string, publisher: string, subsriber: string)",
+    "prototype": {
+      "keyword": "string",
+      "publisher": "string",
+      "subscriber": "string",
+      "cancel": "fn()"
+    }
+  },
+  "MozInterAppConnectionRequest": {
+    "!type": "fn(keyword: string, port: +MozInterAppMessagePort)",
+    "prototype": {
+      "keyword": "string",
+      "port": "+MozInterAppMessagePort"
+    }
+  },
+  "MozInterAppMessagePort": {
+    "!type": "fn(messagePortID: string)",
+    "prototype": {
+      "!proto": "EventTarget",
+      "postMessage": "fn(message: ?)",
+      "start": "fn()",
+      "close": "fn()",
+      "onmessage": "fn(+Event)"
     }
   },
   "KeyEvent": {
@@ -11842,7 +12416,8 @@
       "duration": "number",
       "addSourceBuffer": "fn(type: string) -> SourceBuffer",
       "removeSourceBuffer": "fn(sourceBuffer: SourceBuffer)",
-      "endOfStream": "fn(error?: MediaSourceEndOfStreamError)"
+      "endOfStream": "fn(error?: MediaSourceEndOfStreamError)",
+      "mozDebugReaderData": "string"
     }
   },
   "MediaStream": {
@@ -12085,6 +12660,9 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/getModifierState",
       "!doc": "The MouseEvent.getModifierState() method returns the current state of the specified modifier key: true if the modifier is active (i.e., the modifier key is pressed or locked), otherwise, false."
     },
+    "mozMovementX": "number",
+    "mozMovementY": "number",
+    "mozPressure": "number",
     "MOZ_SOURCE_UNKNOWN": "number",
     "MOZ_SOURCE_MOUSE": "number",
     "MOZ_SOURCE_PEN": "number",
@@ -12092,6 +12670,7 @@
     "MOZ_SOURCE_CURSOR": "number",
     "MOZ_SOURCE_TOUCH": "number",
     "MOZ_SOURCE_KEYBOARD": "number",
+    "mozInputSource": "number",
     "initNSMouseEvent": "fn(typeArg: string, canBubbleArg: bool, cancelableArg: bool, viewArg: Window, detailArg: number, screenXArg: number, screenYArg: number, clientXArg: number, clientYArg: number, ctrlKeyArg: bool, altKeyArg: bool, shiftKeyArg: bool, metaKeyArg: bool, buttonArg: number, relatedTargetArg: EventTarget, pressure: number, inputSourceArg: number)",
     "hitCluster": "bool"
   },
@@ -12103,6 +12682,646 @@
     "VERTICAL_AXIS": "number",
     "axis": "number",
     "initMouseScrollEvent": "fn(type: string, canBubble: bool, cancelable: bool, view: Window, detail: number, screenX: number, screenY: number, clientX: number, clientY: number, ctrlKey: bool, altKey: bool, shiftKey: bool, metaKey: bool, button: number, relatedTarget: EventTarget, axis: number)"
+  },
+  "MozActivity": {
+    "!type": "fn(options?: ActivityOptions)",
+    "prototype": {
+      "!proto": "DOMRequest"
+    }
+  },
+  "MozCellBroadcast": {
+    "!proto": "EventTarget",
+    "onreceived": "fn(+Event)"
+  },
+  "MozCellBroadcastEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozCellBroadcastEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "message": "MozCellBroadcastMessage"
+    }
+  },
+  "MozCellBroadcastMessage": {
+    "serviceId": "number",
+    "gsmGeographicalScope": "CellBroadcastGsmGeographicalScope",
+    "messageCode": "number",
+    "messageId": "number",
+    "language": "string",
+    "body": "string",
+    "messageClass": "CellBroadcastMessageClass",
+    "timestamp": "DOMTimeStamp",
+    "etws": "MozCellBroadcastEtwsInfo",
+    "cdmaServiceCategory": "number"
+  },
+  "MozCellBroadcastEtwsInfo": {
+    "warningType": "CellBroadcastEtwsWarningType",
+    "emergencyUserAlert": "bool",
+    "popup": "bool"
+  },
+  "MozClirModeEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozClirModeEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "mode": "number"
+    }
+  },
+  "MozContactChangeEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozContactChangeEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "contactID": "string",
+      "reason": "string"
+    }
+  },
+  "MozEmergencyCbModeEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozEmergencyCbModeEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "active": "bool",
+      "timeoutMs": "number"
+    }
+  },
+  "MozIcc": {
+    "!proto": "EventTarget",
+    "iccInfo": "?",
+    "oniccinfochange": "fn(+Event)",
+    "cardState": "IccCardState",
+    "oncardstatechange": "fn(+Event)",
+    "sendStkResponse": "fn(command: ?, response: ?)",
+    "sendStkMenuSelection": "fn(itemIdentifier: number, helpRequested: bool)",
+    "sendStkTimerExpiration": "fn(timer: ?)",
+    "sendStkEventDownload": "fn(event: ?)",
+    "onstkcommand": "fn(+Event)",
+    "onstksessionend": "fn(+Event)",
+    "getCardLock": "fn(lockType: IccLockType) -> DOMRequest",
+    "unlockCardLock": "fn(info?: IccUnlockCardLockOptions) -> DOMRequest",
+    "setCardLock": "fn(info?: IccSetCardLockOptions) -> DOMRequest",
+    "getCardLockRetryCount": "fn(lockType: IccLockType) -> DOMRequest",
+    "readContacts": "fn(contactType: IccContactType) -> DOMRequest",
+    "updateContact": "fn(contactType: IccContactType, contact: ?, pin2?: string) -> DOMRequest",
+    "matchMvno": "fn(mvnoType: IccMvnoType, matchData: string) -> DOMRequest",
+    "getServiceState": "fn(service: IccService) -> +Promise[value=bool]"
+  },
+  "MozIccInfo": {
+    "iccType": "IccType",
+    "iccid": "string",
+    "mcc": "string",
+    "mnc": "string",
+    "spn": "string",
+    "isDisplayNetworkNameRequired": "bool",
+    "isDisplaySpnRequired": "bool"
+  },
+  "MozGsmIccInfo": {
+    "!proto": "MozIccInfo",
+    "msisdn": "string"
+  },
+  "MozCdmaIccInfo": {
+    "!proto": "MozIccInfo",
+    "mdn": "string",
+    "prlVersion": "number"
+  },
+  "MozIccManager": {
+    "!proto": "EventTarget",
+    "STK_MENU_TYPE_NOT_SPECIFIED": "number",
+    "STK_MENU_TYPE_DATA_VALUES": "number",
+    "STK_MENU_TYPE_NAVIGATION_OPTIONS": "number",
+    "STK_BROWSER_MODE_LAUNCH_IF_NOT_ALREADY_LAUNCHED": "number",
+    "STK_BROWSER_MODE_USING_EXISTING_BROWSER": "number",
+    "STK_BROWSER_MODE_USING_NEW_BROWSER": "number",
+    "STK_CMD_REFRESH": "number",
+    "STK_CMD_POLL_INTERVAL": "number",
+    "STK_CMD_POLL_OFF": "number",
+    "STK_CMD_SET_UP_EVENT_LIST": "number",
+    "STK_CMD_SET_UP_CALL": "number",
+    "STK_CMD_SEND_SS": "number",
+    "STK_CMD_SEND_USSD": "number",
+    "STK_CMD_SEND_SMS": "number",
+    "STK_CMD_SEND_DTMF": "number",
+    "STK_CMD_LAUNCH_BROWSER": "number",
+    "STK_CMD_PLAY_TONE": "number",
+    "STK_CMD_DISPLAY_TEXT": "number",
+    "STK_CMD_GET_INKEY": "number",
+    "STK_CMD_GET_INPUT": "number",
+    "STK_CMD_SELECT_ITEM": "number",
+    "STK_CMD_SET_UP_MENU": "number",
+    "STK_CMD_PROVIDE_LOCAL_INFO": "number",
+    "STK_CMD_TIMER_MANAGEMENT": "number",
+    "STK_CMD_SET_UP_IDLE_MODE_TEXT": "number",
+    "STK_CMD_OPEN_CHANNEL": "number",
+    "STK_CMD_CLOSE_CHANNEL": "number",
+    "STK_CMD_RECEIVE_DATA": "number",
+    "STK_CMD_SEND_DATA": "number",
+    "STK_RESULT_OK": "number",
+    "STK_RESULT_PRFRMD_WITH_PARTIAL_COMPREHENSION": "number",
+    "STK_RESULT_PRFRMD_WITH_MISSING_INFO": "number",
+    "STK_RESULT_PRFRMD_WITH_ADDITIONAL_EFS_READ": "number",
+    "STK_RESULT_PRFRMD_ICON_NOT_DISPLAYED": "number",
+    "STK_RESULT_PRFRMD_LIMITED_SERVICE": "number",
+    "STK_RESULT_UICC_SESSION_TERM_BY_USER": "number",
+    "STK_RESULT_BACKWARD_MOVE_BY_USER": "number",
+    "STK_RESULT_NO_RESPONSE_FROM_USER": "number",
+    "STK_RESULT_HELP_INFO_REQUIRED": "number",
+    "STK_RESULT_USSD_SS_SESSION_TERM_BY_USER": "number",
+    "STK_RESULT_TERMINAL_CRNTLY_UNABLE_TO_PROCESS": "number",
+    "STK_RESULT_NETWORK_CRNTLY_UNABLE_TO_PROCESS": "number",
+    "STK_RESULT_USER_NOT_ACCEPT": "number",
+    "STK_RESULT_USER_CLEAR_DOWN_CALL": "number",
+    "STK_RESULT_ACTION_CONTRADICTION_TIMER_STATE": "number",
+    "STK_RESULT_LAUNCH_BROWSER_ERROR": "number",
+    "STK_RESULT_BEYOND_TERMINAL_CAPABILITY": "number",
+    "STK_RESULT_CMD_TYPE_NOT_UNDERSTOOD": "number",
+    "STK_RESULT_CMD_DATA_NOT_UNDERSTOOD": "number",
+    "STK_RESULT_CMD_NUM_NOT_KNOWN": "number",
+    "STK_RESULT_SS_RETURN_ERROR": "number",
+    "STK_RESULT_SMS_RP_ERROR": "number",
+    "STK_RESULT_REQUIRED_VALUES_MISSING": "number",
+    "STK_RESULT_USSD_RETURN_ERROR": "number",
+    "STK_RESULT_MULTI_CARDS_CMD_ERROR": "number",
+    "STK_RESULT_USIM_CALL_CONTROL_PERMANENT": "number",
+    "STK_RESULT_BIP_ERROR": "number",
+    "STK_ADDITIONAL_INFO_ME_PROBLEM_SCREEN_IS_BUSY": "number",
+    "STK_EVENT_TYPE_MT_CALL": "number",
+    "STK_EVENT_TYPE_CALL_CONNECTED": "number",
+    "STK_EVENT_TYPE_CALL_DISCONNECTED": "number",
+    "STK_EVENT_TYPE_LOCATION_STATUS": "number",
+    "STK_EVENT_TYPE_USER_ACTIVITY": "number",
+    "STK_EVENT_TYPE_IDLE_SCREEN_AVAILABLE": "number",
+    "STK_EVENT_TYPE_CARD_READER_STATUS": "number",
+    "STK_EVENT_TYPE_LANGUAGE_SELECTION": "number",
+    "STK_EVENT_TYPE_BROWSER_TERMINATION": "number",
+    "STK_EVENT_TYPE_DATA_AVAILABLE": "number",
+    "STK_EVENT_TYPE_CHANNEL_STATUS": "number",
+    "STK_EVENT_TYPE_SINGLE_ACCESS_TECHNOLOGY_CHANGED": "number",
+    "STK_EVENT_TYPE_DISPLAY_PARAMETER_CHANGED": "number",
+    "STK_EVENT_TYPE_LOCAL_CONNECTION": "number",
+    "STK_EVENT_TYPE_NETWORK_SEARCH_MODE_CHANGED": "number",
+    "STK_EVENT_TYPE_BROWSING_STATUS": "number",
+    "STK_EVENT_TYPE_FRAMES_INFORMATION_CHANGED": "number",
+    "STK_SERVICE_STATE_NORMAL": "number",
+    "STK_SERVICE_STATE_LIMITED": "number",
+    "STK_SERVICE_STATE_UNAVAILABLE": "number",
+    "STK_TONE_TYPE_DIAL_TONE": "number",
+    "STK_TONE_TYPE_CALLED_SUBSCRIBER_BUSY": "number",
+    "STK_TONE_TYPE_CONGESTION": "number",
+    "STK_TONE_TYPE_RADIO_PATH_ACK": "number",
+    "STK_TONE_TYPE_RADIO_PATH_NOT_AVAILABLE": "number",
+    "STK_TONE_TYPE_ERROR": "number",
+    "STK_TONE_TYPE_CALL_WAITING_TONE": "number",
+    "STK_TONE_TYPE_RINGING_TONE": "number",
+    "STK_TONE_TYPE_GENERAL_BEEP": "number",
+    "STK_TONE_TYPE_POSITIVE_ACK_TONE": "number",
+    "STK_TONE_TYPE_NEGATIVE_ACK_TONE": "number",
+    "STK_TIME_UNIT_MINUTE": "number",
+    "STK_TIME_UNIT_SECOND": "number",
+    "STK_TIME_UNIT_TENTH_SECOND": "number",
+    "STK_LOCAL_INFO_LOCATION_INFO": "number",
+    "STK_LOCAL_INFO_IMEI": "number",
+    "STK_LOCAL_INFO_DATE_TIME_ZONE": "number",
+    "STK_LOCAL_INFO_LANGUAGE": "number",
+    "STK_TIMER_START": "number",
+    "STK_TIMER_DEACTIVATE": "number",
+    "STK_TIMER_GET_CURRENT_VALUE": "number",
+    "STK_BROWSER_TERMINATION_CAUSE_USER": "number",
+    "STK_BROWSER_TERMINATION_CAUSE_ERROR": "number",
+    "STK_NEXT_ACTION_NULL": "number",
+    "STK_NEXT_ACTION_END_PROACTIVE_SESSION": "number",
+    "iccIds": "[string]",
+    "getIccById": "fn(iccId: string) -> MozIcc",
+    "oniccdetected": "fn(+Event)",
+    "oniccundetected": "fn(+Event)"
+  },
+  "MozInterAppMessageEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozInterAppMessageEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "data": "?"
+    }
+  },
+  "MozIsoDepTech": {
+    "transceive": "fn(command: Uint8Array) -> +Promise[value=Uint8Array]"
+  },
+  "MozMessageDeletedEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozMessageDeletedEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "deletedMessageIds": "[number]",
+      "deletedThreadIds": "[number]"
+    }
+  },
+  "MozMmsMessage": {},
+  "MozMmsEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozMmsEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "message": "MozMmsMessage"
+    }
+  },
+  "MozMobileCellInfo": {
+    "gsmLocationAreaCode": "number",
+    "gsmCellId": "number",
+    "cdmaBaseStationId": "number",
+    "cdmaBaseStationLatitude": "number",
+    "cdmaBaseStationLongitude": "number",
+    "cdmaSystemId": "number",
+    "cdmaNetworkId": "number"
+  },
+  "MozMobileConnection": {
+    "!proto": "EventTarget",
+    "ICC_SERVICE_CLASS_VOICE": "number",
+    "ICC_SERVICE_CLASS_DATA": "number",
+    "ICC_SERVICE_CLASS_FAX": "number",
+    "ICC_SERVICE_CLASS_SMS": "number",
+    "ICC_SERVICE_CLASS_DATA_SYNC": "number",
+    "ICC_SERVICE_CLASS_DATA_ASYNC": "number",
+    "ICC_SERVICE_CLASS_PACKET": "number",
+    "ICC_SERVICE_CLASS_PAD": "number",
+    "ICC_SERVICE_CLASS_MAX": "number",
+    "CALL_FORWARD_ACTION_DISABLE": "number",
+    "CALL_FORWARD_ACTION_ENABLE": "number",
+    "CALL_FORWARD_ACTION_QUERY_STATUS": "number",
+    "CALL_FORWARD_ACTION_REGISTRATION": "number",
+    "CALL_FORWARD_ACTION_ERASURE": "number",
+    "CALL_FORWARD_REASON_UNCONDITIONAL": "number",
+    "CALL_FORWARD_REASON_MOBILE_BUSY": "number",
+    "CALL_FORWARD_REASON_NO_REPLY": "number",
+    "CALL_FORWARD_REASON_NOT_REACHABLE": "number",
+    "CALL_FORWARD_REASON_ALL_CALL_FORWARDING": "number",
+    "CALL_FORWARD_REASON_ALL_CONDITIONAL_CALL_FORWARDING": "number",
+    "CALL_BARRING_PROGRAM_ALL_OUTGOING": "number",
+    "CALL_BARRING_PROGRAM_OUTGOING_INTERNATIONAL": "number",
+    "CALL_BARRING_PROGRAM_OUTGOING_INTERNATIONAL_EXCEPT_HOME": "number",
+    "CALL_BARRING_PROGRAM_ALL_INCOMING": "number",
+    "CALL_BARRING_PROGRAM_INCOMING_ROAMING": "number",
+    "CLIR_DEFAULT": "number",
+    "CLIR_INVOCATION": "number",
+    "CLIR_SUPPRESSION": "number",
+    "lastKnownNetwork": "string",
+    "lastKnownHomeNetwork": "string",
+    "voice": "MozMobileConnectionInfo",
+    "data": "MozMobileConnectionInfo",
+    "iccId": "string",
+    "networkSelectionMode": "MobileNetworkSelectionMode",
+    "radioState": "MobileRadioState",
+    "supportedNetworkTypes": "[MobileNetworkType]",
+    "getNetworks": "fn() -> DOMRequest",
+    "selectNetwork": "fn(network: MozMobileNetworkInfo) -> DOMRequest",
+    "selectNetworkAutomatically": "fn() -> DOMRequest",
+    "setPreferredNetworkType": "fn(type: MobilePreferredNetworkType) -> DOMRequest",
+    "getPreferredNetworkType": "fn() -> DOMRequest",
+    "setRoamingPreference": "fn(mode: MobileRoamingMode) -> DOMRequest",
+    "getRoamingPreference": "fn() -> DOMRequest",
+    "setVoicePrivacyMode": "fn(enabled: bool) -> DOMRequest",
+    "getVoicePrivacyMode": "fn() -> DOMRequest",
+    "setCallForwardingOption": "fn(options?: MozCallForwardingOptions) -> DOMRequest",
+    "getCallForwardingOption": "fn(reason: number) -> DOMRequest",
+    "setCallBarringOption": "fn(options?: MozCallBarringOptions) -> DOMRequest",
+    "getCallBarringOption": "fn(options?: MozCallBarringOptions) -> DOMRequest",
+    "changeCallBarringPassword": "fn(options?: MozCallBarringOptions) -> DOMRequest",
+    "setCallWaitingOption": "fn(enabled: bool) -> DOMRequest",
+    "getCallWaitingOption": "fn() -> DOMRequest",
+    "setCallingLineIdRestriction": "fn(mode: number) -> DOMRequest",
+    "getCallingLineIdRestriction": "fn() -> DOMRequest",
+    "exitEmergencyCbMode": "fn() -> DOMRequest",
+    "setRadioEnabled": "fn(enabled: bool) -> DOMRequest",
+    "onvoicechange": "fn(+Event)",
+    "ondatachange": "fn(+Event)",
+    "ondataerror": "fn(+Event)",
+    "oncfstatechange": "fn(+Event)",
+    "onemergencycbmodechange": "fn(+Event)",
+    "onotastatuschange": "fn(+Event)",
+    "oniccchange": "fn(+Event)",
+    "onradiostatechange": "fn(+Event)",
+    "onclirmodechange": "fn(+Event)"
+  },
+  "MozMobileConnectionArray": {
+    "item": "fn(index: number) -> MozMobileConnection",
+    "length": "number",
+    "<i>": "MozMobileConnection"
+  },
+  "MozMobileConnectionInfo": {
+    "state": "MobileConnectionState",
+    "connected": "bool",
+    "emergencyCallsOnly": "bool",
+    "roaming": "bool",
+    "network": "MozMobileNetworkInfo",
+    "type": "MobileConnectionType",
+    "signalStrength": "number",
+    "relSignalStrength": "number",
+    "cell": "MozMobileCellInfo"
+  },
+  "MozSmsMessage": {},
+  "MozMobileMessageManager": {
+    "!proto": "EventTarget",
+    "getSegmentInfoForText": "fn(text: string) -> DOMRequest",
+    "send": "fn(number: string, text: string, sendParameters?: SmsSendParameters) -> DOMRequest",
+    "sendMMS": "fn(parameters?: MmsParameters, sendParameters?: MmsSendParameters) -> DOMRequest",
+    "getMessage": "fn(id: number) -> DOMRequest",
+    "delete": "fn(id: number) -> DOMRequest",
+    "getMessages": "fn(filter?: MobileMessageFilter, reverse?: bool) -> DOMCursor",
+    "markMessageRead": "fn(id: number, read: bool, sendReadReport?: bool) -> DOMRequest",
+    "getThreads": "fn() -> DOMCursor",
+    "retrieveMMS": "fn(id: number) -> DOMRequest",
+    "getSmscAddress": "fn(serviceId?: number) -> DOMRequest",
+    "onreceived": "fn(+Event)",
+    "onretrieving": "fn(+Event)",
+    "onsending": "fn(+Event)",
+    "onsent": "fn(+Event)",
+    "onfailed": "fn(+Event)",
+    "ondeliverysuccess": "fn(+Event)",
+    "ondeliveryerror": "fn(+Event)",
+    "onreadsuccess": "fn(+Event)",
+    "onreaderror": "fn(+Event)",
+    "ondeleted": "fn(+Event)"
+  },
+  "MozMobileNetworkInfo": {
+    "shortName": "string",
+    "longName": "string",
+    "mcc": "string",
+    "mnc": "string",
+    "state": "MobileNetworkState"
+  },
+  "MozNDEFRecord": {
+    "!type": "fn(uri: string)",
+    "prototype": {
+      "tnf": "TNF",
+      "type": "Uint8Array",
+      "id": "Uint8Array",
+      "payload": "Uint8Array",
+      "size": "number",
+      "getAsURI": "fn() -> string"
+    }
+  },
+  "MozNFC": {
+    "!proto": "EventTarget",
+    "enabled": "bool",
+    "onpeerready": "fn(+Event)",
+    "onpeerfound": "fn(+Event)",
+    "onpeerlost": "fn(+Event)",
+    "ontagfound": "fn(+Event)",
+    "ontaglost": "fn(+Event)",
+    "eventListenerWasAdded": "fn(aType: string)",
+    "eventListenerWasRemoved": "fn(aType: string)"
+  },
+  "MozNFCPeer": {
+    "isLost": "bool",
+    "sendNDEF": "fn(records: [+MozNDEFRecord]) -> +Promise[value=void]",
+    "sendFile": "fn(blob: +Blob) -> +Promise[value=void]",
+    "session": "string",
+    "notifyLost": "fn()"
+  },
+  "MozNFCPeerEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozNFCPeerEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "peer": "MozNFCPeer"
+    }
+  },
+  "MozNFCTag": {
+    "techList": "[NFCTechType]",
+    "id": "Uint8Array",
+    "type": "NFCTagType",
+    "maxNDEFSize": "number",
+    "isReadOnly": "bool",
+    "isFormatable": "bool",
+    "canBeMadeReadOnly": "bool",
+    "isLost": "bool",
+    "readNDEF": "fn() -> +Promise",
+    "writeNDEF": "fn(records: [+MozNDEFRecord]) -> +Promise[value=void]",
+    "makeReadOnly": "fn() -> +Promise[value=void]",
+    "format": "fn() -> +Promise[value=void]",
+    "selectTech": "fn(tech: NFCTechType) -> MozTagTech",
+    "session": "string",
+    "notifyLost": "fn()",
+    "transceive": "fn(tech: NFCTechType, command: Uint8Array) -> +Promise[value=Uint8Array]"
+  },
+  "MozNFCTagEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozNFCTagEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "tag": "MozNFCTag",
+      "ndefRecords": "[+MozNDEFRecord]"
+    }
+  },
+  "MozNetworkStatsInterface": {
+    "!type": "fn(networkinterface?: NetworkInterface)",
+    "prototype": {
+      "type": "number",
+      "id": "string"
+    }
+  },
+  "MozOtaStatusEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozOtaStatusEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "status": "string"
+    }
+  },
+  "MozWakeLockListener": {},
+  "MozPowerManager": {
+    "powerOff": "fn()",
+    "reboot": "fn()",
+    "factoryReset": "fn(reason?: FactoryResetReason)",
+    "addWakeLockListener": "fn(aListener: MozWakeLockListener)",
+    "removeWakeLockListener": "fn(aListener: MozWakeLockListener)",
+    "getWakeLockState": "fn(aTopic: string) -> string",
+    "screenEnabled": "bool",
+    "keyLightEnabled": "bool",
+    "screenBrightness": "number",
+    "cpuSleepAllowed": "bool"
+  },
+  "MozSettingsEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozSettingsEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "settingName": "string",
+      "settingValue": "?"
+    }
+  },
+  "MozSettingsTransactionEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozSettingsTransactionEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "error": "string"
+    }
+  },
+  "MozSmsEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozSmsEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "message": "MozSmsMessage"
+    }
+  },
+  "MozSpeakerManager": {
+    "!type": "fn()",
+    "prototype": {
+      "!proto": "EventTarget",
+      "speakerforced": "bool",
+      "forcespeaker": "bool",
+      "onspeakerforcedchange": "fn(+Event)"
+    }
+  },
+  "MozStkCommandEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozStkCommandEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "command": "?"
+    }
+  },
+  "MozTetheringManager": {
+    "setTetheringEnabled": "fn(enabled: bool, type: TetheringType, config?: TetheringConfiguration) -> +Promise[value=?]"
+  },
+  "MozTimeManager": {
+    "set": "fn(time: Date)"
+  },
+  "MozVoicemail": {
+    "!proto": "EventTarget",
+    "getStatus": "fn(serviceId?: number) -> MozVoicemailStatus",
+    "getNumber": "fn(serviceId?: number) -> string",
+    "getDisplayName": "fn(serviceId?: number) -> string",
+    "onstatuschanged": "fn(+Event)"
+  },
+  "MozVoicemailEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozVoicemailEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "status": "MozVoicemailStatus"
+    }
+  },
+  "MozVoicemailStatus": {
+    "serviceId": "number",
+    "hasMessages": "bool",
+    "messageCount": "number",
+    "returnNumber": "string",
+    "returnMessage": "string"
+  },
+  "MozWakeLock": {
+    "topic": "string",
+    "unlock": "fn()"
+  },
+  "MozWifiCapabilities": {
+    "security": "[WifiSecurityMethod]",
+    "eapMethod": "[WifiWpaMethod]",
+    "eapPhase2": "[WifiWpaPhase2Method]",
+    "certificate": "[WifiWpaCertificate]"
+  },
+  "MozWifiConnectionInfoEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozWifiConnectionInfoEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "network": "?",
+      "signalStrength": "number",
+      "relSignalStrength": "number",
+      "linkSpeed": "number",
+      "ipAddress": "string"
+    }
+  },
+  "MozWifiNetwork": {
+    "!type": "fn(properties?: NetworkProperties)",
+    "prototype": {
+      "ssid": "string",
+      "mode": "number",
+      "frequency": "number",
+      "security": "[string]",
+      "capabilities": "[string]",
+      "known": "bool",
+      "connected": "bool",
+      "hidden": "bool",
+      "bssid": "string",
+      "signalStrength": "string",
+      "relSignalStrength": "number",
+      "psk": "string",
+      "wep": "string",
+      "wep_key0": "string",
+      "wep_key1": "string",
+      "wep_key2": "string",
+      "wep_key3": "string",
+      "wep_tx_keyidx": "number",
+      "priority": "number",
+      "scan_ssid": "number",
+      "keyManagement": "string",
+      "identity": "string",
+      "password": "string",
+      "auth_alg": "string",
+      "phase1": "string",
+      "phase2": "string",
+      "eap": "string",
+      "pin": "string",
+      "dontConnect": "bool",
+      "serverCertificate": "string",
+      "subjectMatch": "string",
+      "userCertificate": "string"
+    }
+  },
+  "MozWifiManager": {
+    "!proto": "EventTarget",
+    "setWifiEnabled": "fn(enabled: bool) -> DOMRequest",
+    "getNetworks": "fn() -> DOMRequest",
+    "getKnownNetworks": "fn() -> DOMRequest",
+    "associate": "fn(network: +MozWifiNetwork) -> DOMRequest",
+    "forget": "fn(network: +MozWifiNetwork) -> DOMRequest",
+    "wps": "fn(detail?: WifiWPSInfo) -> DOMRequest",
+    "setPowerSavingMode": "fn(enabled: bool) -> DOMRequest",
+    "setStaticIpMode": "fn(network: +MozWifiNetwork, info?: IPConfiguration) -> DOMRequest",
+    "setHttpProxy": "fn(network: +MozWifiNetwork, info: ?) -> DOMRequest",
+    "importCert": "fn(certBlob: +Blob, certPassword: string, certNickname: string) -> DOMRequest",
+    "getImportedCerts": "fn() -> DOMRequest",
+    "deleteCert": "fn(certNickname: string) -> DOMRequest",
+    "enabled": "bool",
+    "macAddress": "string",
+    "connection": "MozWifiConnection",
+    "connectionInformation": "MozWifiConnectionInfo",
+    "capabilities": "MozWifiCapabilities",
+    "onstatuschange": "fn(+Event)",
+    "onconnectioninfoupdate": "fn(+Event)",
+    "onenabled": "fn(+Event)",
+    "ondisabled": "fn(+Event)",
+    "onstationinfoupdate": "fn(+Event)"
+  },
+  "MozWifiP2pGroupOwner": {
+    "groupName": "string",
+    "macAddress": "string",
+    "ipAddress": "string",
+    "passphrase": "string",
+    "ssid": "string",
+    "wpsCapabilities": "?",
+    "freq": "number",
+    "isLocal": "bool"
+  },
+  "MozWifiP2pManager": {
+    "!proto": "EventTarget",
+    "setScanEnabled": "fn(enabled: bool) -> DOMRequest",
+    "connect": "fn(address: string, wpsMethod: WPSMethod, goIntent?: number) -> DOMRequest",
+    "disconnect": "fn(address: string) -> DOMRequest",
+    "getPeerList": "fn() -> DOMRequest",
+    "setPairingConfirmation": "fn(accepted: bool, pin?: string) -> DOMRequest",
+    "setDeviceName": "fn(deviceName: string) -> DOMRequest",
+    "enabled": "bool",
+    "groupOwner": "MozWifiP2pGroupOwner",
+    "onpeerinfoupdate": "fn(+Event)",
+    "onstatuschange": "fn(+Event)",
+    "onenabled": "fn(+Event)",
+    "ondisabled": "fn(+Event)"
+  },
+  "MozWifiP2pStatusChangeEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozWifiP2pStatusChangeEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "peerAddress": "string"
+    }
+  },
+  "MozWifiStationInfoEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozWifiStationInfoEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "station": "number"
+    }
+  },
+  "MozWifiStatusChangeEvent": {
+    "!type": "fn(type: string, eventInitDict?: MozWifiStatusChangeEventInit)",
+    "prototype": {
+      "!proto": "Event.prototype",
+      "network": "?",
+      "status": "string"
+    }
   },
   "MutationEvent": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/MutationEvent",
@@ -12214,6 +13433,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/buildID",
       "!doc": "Returns the build identifier of the browser."
     },
+    "mozPower": "MozPowerManager",
     "javaEnabled": "fn() -> bool",
     "addIdleObserver": {
       "!type": "fn(aIdleObserver: MozIdleObserver)",
@@ -12240,7 +13460,12 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/getDeviceStorages",
       "!doc": "The getDeviceStorages method is used to access individual storage areas available on the device. This method return an Array of DeviceStorage objects, one per physical storage area. Each storage area will have a name, retrievable using the .storageName attribute (see below)."
     },
+    "mozNotification": "DesktopNotificationCenter",
     "connection": "NetworkInformation",
+    "mozCameras": "CameraManager",
+    "mozSetMessageHandler": "fn(type: string, callback: fn(message?: object))",
+    "mozHasPendingMessage": "fn(type: string) -> bool",
+    "mozSetMessageHandlerPromise": "fn(promise: +Promise)",
     "getGamepads": {
       "!type": "fn() -> [Gamepad]",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/getGamepads",
@@ -12256,6 +13481,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices",
       "!doc": "The Navigator.mediaDevices read-only property returns a MediaDevices object, which provides access to connected media input devices like cameras and microphones, as well as screensharing."
     },
+    "mozGetUserMedia": "fn(constraints: MediaStreamConstraints, successCallback: fn(stream: MediaStream), errorCallback: fn(error: MediaStreamError))",
+    "mozGetUserMediaDevices": "fn(constraints: MediaStreamConstraints, onsuccess: fn(devices: nsIVariant), onerror: fn(error: MediaStreamError), innerWindowID?: number)",
     "serviceWorker": {
       "!type": "ServiceWorkerContainer",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/serviceWorker",
@@ -12273,6 +13500,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Navigator/requestMediaKeySystemAccess",
       "!doc": "The Navigator.requestMediaKeySystemAccess() method returns a Promise for a MediaKeySystemAccess object."
     },
+    "mozE10sEnabled": "bool",
     "queryInterface": "fn(iid: IID) -> nsISupports",
     "appCodeName": {
       "!type": "string",
@@ -12335,11 +13563,32 @@
     },
     "battery": "BatteryManager",
     "getDataStores": "fn(name: string, owner?: string) -> +Promise",
+    "mozAlarms": "AlarmsManager",
+    "mozApps": "DOMApplicationsRegistry",
+    "mozChromeNotifications": "ChromeNotifications",
+    "mozContacts": "ContactManager",
+    "mozDownloadManager": "DOMDownloadManager",
     "engineeringMode": "EngineeringMode",
+    "mozId": "IdentityManager",
+    "mozInputMethod": "MozInputMethod",
+    "mozNfc": "MozNFC",
+    "mozPaymentProvider": "PaymentProvider",
+    "mozTetheringManager": "MozTetheringManager",
+    "mozWifiManager": "MozWifiManager",
+    "mozWifiP2pManager": "MozWifiP2pManager",
+    "mozPermissionSettings": "PermissionSettings",
+    "mozPhoneNumberService": "PhoneNumberService",
+    "mozPresentationDeviceInfo": "PresentationDeviceInfoManager",
     "syncManager": "RequestSyncManager",
     "sync": "RequestSyncScheduler",
     "seManager": "SEManager",
+    "mozSettings": "SettingsManager",
     "push": "SimplePushManager"
+  },
+  "MozIdleObserver": {
+    "time": "number",
+    "onidle": "fn()",
+    "onactive": "fn()"
   },
   "NetworkInformation": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/NetworkInformation",
@@ -12756,6 +14005,13 @@
     "onupdateready": "fn(+Event)",
     "oncached": "fn(+Event)",
     "onobsolete": "fn(+Event)",
+    "mozItems": "DOMStringList",
+    "mozHasItem": "fn(uri: string) -> bool",
+    "mozLength": "number",
+    "mozItem": "fn(index: number) -> string",
+    "mozAdd": "fn(uri: string)",
+    "mozRemove": "fn(uri: string)",
+    "<i>": "string",
     "queryInterface": "fn(iid: IID) -> nsISupports"
   },
   "OscillatorNode": {
@@ -12904,6 +14160,7 @@
     "clearResourceTimings": "fn()",
     "setResourceTimingBufferSize": "fn(maxSize: number)",
     "onresourcetimingbufferfull": "fn(+Event)",
+    "mozMemory": "object",
     "mark": "fn(markName: string)",
     "clearMarks": "fn(markName?: string)",
     "measure": "fn(measureName: string, startMark?: string, endMark?: string)",
@@ -13303,9 +14560,60 @@
       }
     }
   },
+  "mozRTCIceCandidate": {
+    "!type": "fn(candidateInitDict?: RTCIceCandidateInit)",
+    "prototype": {
+      "candidate": "string",
+      "sdpMid": "string",
+      "sdpMLineIndex": "number"
+    }
+  },
   "RTCIdentityProvider": {
     "generateAssertion": "fn(contents: string, origin: string, usernameHint?: string) -> +Promise[value=RTCIdentityAssertionResult]",
     "validateAssertion": "fn(assertion: string, origin: string) -> +Promise[value=RTCIdentityValidationResult]"
+  },
+  "mozRTCPeerConnection": {
+    "!type": "fn(configuration?: RTCConfiguration, constraints?: object)",
+    "prototype": {
+      "!proto": "EventTarget",
+      "setIdentityProvider": "fn(provider: string, protocol?: string, username?: string)",
+      "getIdentityAssertion": "fn() -> +Promise[value=string]",
+      "createOffer": "fn(options?: RTCOfferOptions) -> +Promise[value=+mozRTCSessionDescription]",
+      "createAnswer": "fn() -> +Promise[value=+mozRTCSessionDescription]",
+      "setLocalDescription": "fn(description: +mozRTCSessionDescription) -> +Promise[value=void]",
+      "setRemoteDescription": "fn(description: +mozRTCSessionDescription) -> +Promise[value=void]",
+      "localDescription": "+mozRTCSessionDescription",
+      "remoteDescription": "+mozRTCSessionDescription",
+      "signalingState": "RTCSignalingState",
+      "updateIce": "fn(configuration?: RTCConfiguration)",
+      "addIceCandidate": "fn(candidate: +mozRTCIceCandidate) -> +Promise[value=void]",
+      "iceGatheringState": "RTCIceGatheringState",
+      "iceConnectionState": "RTCIceConnectionState",
+      "peerIdentity": "+Promise[value=RTCIdentityAssertion]",
+      "idpLoginUrl": "string",
+      "id": "string",
+      "getConfiguration": "fn() -> RTCConfiguration",
+      "getLocalStreams": "fn() -> [MediaStream]",
+      "getRemoteStreams": "fn() -> [MediaStream]",
+      "getStreamById": "fn(streamId: string) -> MediaStream",
+      "addStream": "fn(stream: MediaStream)",
+      "removeStream": "fn(stream: MediaStream)",
+      "addTrack": "fn(track: MediaStreamTrack, stream: MediaStream, moreStreams: MediaStream) -> RTCRtpSender",
+      "removeTrack": "fn(sender: RTCRtpSender)",
+      "getSenders": "fn() -> [RTCRtpSender]",
+      "getReceivers": "fn() -> [RTCRtpReceiver]",
+      "close": "fn()",
+      "onnegotiationneeded": "fn(+Event)",
+      "onicecandidate": "fn(+Event)",
+      "onsignalingstatechange": "fn(+Event)",
+      "onaddstream": "fn(+Event)",
+      "onaddtrack": "fn(+Event)",
+      "onremovestream": "fn(+Event)",
+      "oniceconnectionstatechange": "fn(+Event)",
+      "getStats": "fn(selector: MediaStreamTrack) -> +Promise[value=RTCStatsReport]",
+      "createDataChannel": "fn(label: string, dataChannelDict?: RTCDataChannelInit) -> RTCDataChannel",
+      "ondatachannel": "fn(+Event)"
+    }
   },
   "RTCPeerConnectionIceEvent": {
     "!type": "fn(type: string, eventInitDict?: RTCPeerConnectionIceEventInit)",
@@ -13314,7 +14622,7 @@
     "prototype": {
       "!proto": "Event.prototype",
       "candidate": {
-        "!type": "mozRTCIceCandidate",
+        "!type": "+mozRTCIceCandidate",
         "!url": "http://developer.mozilla.org/en-US/docs/Web/API/RTCPeerConnectionIceEvent/candidate",
         "!doc": "The read-only property RTCPeerConnectionIceEvent.candidate returns the RTCIceCandidate associated with the event."
       }
@@ -13327,7 +14635,15 @@
     "track": "MediaStreamTrack",
     "replaceTrack": "fn(track: MediaStreamTrack) -> +Promise[value=void]"
   },
+  "mozRTCSessionDescription": {
+    "!type": "fn(descriptionInitDict?: RTCSessionDescriptionInit)",
+    "prototype": {
+      "type": "RTCSdpType",
+      "sdp": "string"
+    }
+  },
   "RTCStatsReport": {
+    "mozPcid": "string",
     "forEach": "fn(callbackFn: fn(obj: RTCStatsReport), thisArg?: ?)",
     "get": "fn(key: string) -> object",
     "has": "fn(key: string) -> bool"
@@ -15209,7 +16525,10 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Screen/availLeft",
       "!doc": "Returns the first available pixel available from the left side of the screen."
     },
+    "mozOrientation": "string",
     "onmozorientationchange": "fn(+Event)",
+    "mozLockOrientation": "fn(orientation: string) -> bool",
+    "mozUnlockOrientation": "fn()",
     "queryInterface": "fn(iid: IID) -> nsISupports"
   },
   "ScriptProcessorNode": {
@@ -15366,6 +16685,7 @@
     "scrollIntoView": "fn(aRegion: number, aIsSynchronous: bool, aVPercent: number, aHPercent: number)",
     "queryInterface": "fn(iid: IID) -> nsISupports"
   },
+  "nsISelectionListener": {},
   "ServiceWorker": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/ServiceWorker",
     "!doc": "The ServiceWorker interface of the ServiceWorker API provides a reference to a service worker. Multiple browsing contexts (e.g. pages, workers, etc.) can be associated with the same service worker, each through a unique ServiceWorker object.",
@@ -16628,6 +17948,8 @@
       }
     }
   },
+  "MozTreeView": {},
+  "nsIScriptableRegion": {},
   "TreeColumn": {
     "element": "HTMLElement",
     "columns": "TreeColumns",
@@ -18133,6 +19455,10 @@
     }
   },
   "ApplicationCache": {},
+  "MozFrameRequestCallback": {},
+  "nsIBrowserDOMWindow": {},
+  "nsIMessageBroadcaster": {},
+  "nsIDOMCrypto": {},
   "Window": {
     "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window",
     "!doc": "The window object represents a window containing a DOM document; the document property points to the DOM document loaded in that window. A window for a given document can be obtained using the document.defaultView property.",
@@ -18378,6 +19704,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/scrollBy",
       "!doc": "Scrolls the document in the window by the given amount."
     },
+    "mozScrollSnap": "fn()",
     "scrollX": {
       "!type": "number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/scrollX",
@@ -18410,6 +19737,7 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/outerHeight",
       "!doc": "Window.outerHeight gets the height in pixels of the whole browser window. It represents the height of the whole browser window including sidebar (if expanded), window chrome and window resizing borders/handles."
     },
+    "mozRequestOverfill": "fn(callback: fn(overfill: number))",
     "requestAnimationFrame": {
       "!type": "fn(callback: fn(time: DOMHighResTimeStamp)) -> number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame",
@@ -18435,6 +19763,10 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/getDefaultComputedStyle",
       "!doc": "getDefaultComputedStyle() gives the default computed values of all the CSS properties of an element, ignoring author styling.  That is, only user-agent and user styles are taken into account."
     },
+    "mozRequestAnimationFrame": "fn(aCallback: MozFrameRequestCallback) -> number",
+    "mozCancelAnimationFrame": "fn(aHandle: number)",
+    "mozCancelRequestAnimationFrame": "fn(aHandle: number)",
+    "mozAnimationStartTime": "number",
     "scrollByLines": {
       "!type": "fn(numLines: number, options?: ScrollOptions)",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/scrollByLines",
@@ -18456,6 +19788,8 @@
       "!doc": "Returns the XUL controllers of the chrome window."
     },
     "realFrameElement": "HTMLElement",
+    "mozInnerScreenX": "number",
+    "mozInnerScreenY": "number",
     "devicePixelRatio": {
       "!type": "number",
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/devicePixelRatio",
@@ -18501,6 +19835,8 @@
       "!url": "http://developer.mozilla.org/en-US/docs/Web/API/Window/find",
       "!doc": "Finds a string in a window."
     },
+    "mozPaintCount": "number",
+    "MozSelfSupport": "MozSelfSupport",
     "onwheel": "fn(+Event)",
     "ondevicemotion": {
       "!type": "fn(+Event)",
@@ -19142,9 +20478,12 @@
       "response": "?",
       "responseText": "string",
       "responseXML": "+Document",
+      "mozBackgroundRequest": "bool",
       "channel": "MozChannel",
       "networkInterfaceId": "ByteString",
       "getInterface": "fn(iid: IID) -> ?",
+      "mozAnon": "bool",
+      "mozSystem": "bool",
       "queryInterface": "fn(iid: IID) -> nsISupports"
     }
   },
@@ -19226,6 +20565,240 @@
       "flags": "number"
     }
   },
+  "XULCommandEvent": {
+    "!proto": "UIEvent.prototype",
+    "ctrlKey": "bool",
+    "shiftKey": "bool",
+    "altKey": "bool",
+    "metaKey": "bool",
+    "sourceEvent": "+Event",
+    "initCommandEvent": "fn(type: string, canBubble: bool, cancelable: bool, view: Window, detail: number, ctrlKey: bool, altKey: bool, shiftKey: bool, metaKey: bool, sourceEvent: +Event)"
+  },
+  "XULCommandDispatcher": {},
+  "XULDocument": {
+    "!proto": "Document.prototype",
+    "popupNode": "Node",
+    "popupRangeParent": "Node",
+    "popupRangeOffset": "number",
+    "tooltipNode": "Node",
+    "commandDispatcher": "XULCommandDispatcher",
+    "width": "number",
+    "height": "number",
+    "getElementsByAttribute": "fn(name: string, value: string) -> NodeList",
+    "getElementsByAttributeNS": "fn(namespaceURI: string, name: string, value: string) -> NodeList",
+    "addBroadcastListenerFor": "fn(broadcaster: HTMLElement, observer: HTMLElement, attr: string)",
+    "removeBroadcastListenerFor": "fn(broadcaster: HTMLElement, observer: HTMLElement, attr: string)",
+    "persist": "fn(id: string, attr: string)",
+    "getBoxObjectFor": "fn(element: HTMLElement) -> BoxObject",
+    "loadOverlay": "fn(url: string, observer: MozObserver)"
+  },
+  "MozFrameLoader": {},
+  "MozRDFCompositeDataSource": {},
+  "MozRDFResource": {},
+  "MozXULTemplateBuilder": {},
+  "XULElement": {
+    "!proto": "Element",
+    "className": "string",
+    "align": "string",
+    "dir": "string",
+    "flex": "string",
+    "flexGroup": "string",
+    "ordinal": "string",
+    "orient": "string",
+    "pack": "string",
+    "hidden": "bool",
+    "collapsed": "bool",
+    "observes": "string",
+    "menu": "string",
+    "contextMenu": "string",
+    "tooltip": "string",
+    "width": "string",
+    "height": "string",
+    "minWidth": "string",
+    "minHeight": "string",
+    "maxWidth": "string",
+    "maxHeight": "string",
+    "persist": "string",
+    "left": "string",
+    "top": "string",
+    "datasources": "string",
+    "ref": "string",
+    "tooltipText": "string",
+    "statusText": "string",
+    "allowEvents": "bool",
+    "database": "MozRDFCompositeDataSource",
+    "builder": "MozXULTemplateBuilder",
+    "resource": "MozRDFResource",
+    "controllers": "MozControllers",
+    "boxObject": "BoxObject",
+    "focus": "fn()",
+    "blur": "fn()",
+    "click": "fn()",
+    "doCommand": "fn()",
+    "getElementsByAttribute": "fn(name: string, value: string) -> NodeList",
+    "getElementsByAttributeNS": "fn(namespaceURI: string, name: string, value: string) -> NodeList",
+    "style": "CSS2Properties",
+    "onabort": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort",
+      "!doc": "An event handler for abort events sent to the window. (Not available with Firefox 2 or Safari)"
+    },
+    "onblur": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur",
+      "!doc": "The onblur property returns the onBlur event handler code, if any, that exists on the current element."
+    },
+    "onfocus": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus",
+      "!doc": "The onfocus property returns the onFocus event handler code on the current element."
+    },
+    "oncanplay": "fn(+Event)",
+    "oncanplaythrough": "fn(+Event)",
+    "onchange": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange",
+      "!doc": "The onchange property sets and returns the event handler for the change event."
+    },
+    "onclick": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick",
+      "!doc": "The onclick property returns the click event handler code on the current element."
+    },
+    "oncontextmenu": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu",
+      "!doc": "An event handler property for right-click events on the window. Unless the default behavior is prevented (see examples below on how to do this), the browser context menu will activate (though IE8 has a bug with this and will not activate the context menu if a contextmenu event handler is defined). Note that this event will occur with any non-disabled right-click event and does not depend on an element possessing the \"contextmenu\" attribute."
+    },
+    "ondblclick": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick",
+      "!doc": "The ondblclick property returns the onDblClick event handler code on the current element."
+    },
+    "ondrag": "fn(+Event)",
+    "ondragend": "fn(+Event)",
+    "ondragenter": "fn(+Event)",
+    "ondragleave": "fn(+Event)",
+    "ondragover": "fn(+Event)",
+    "ondragstart": "fn(+Event)",
+    "ondrop": "fn(+Event)",
+    "ondurationchange": "fn(+Event)",
+    "onemptied": "fn(+Event)",
+    "onended": "fn(+Event)",
+    "oninput": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput",
+      "!doc": "An event handler for the input event on the window. The input event is raised when an <input> element value changes."
+    },
+    "oninvalid": "fn(+Event)",
+    "onkeydown": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeydown",
+      "!doc": "The onkeydown property returns the onKeyDown event handler code on the current element."
+    },
+    "onkeypress": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress",
+      "!doc": "The onkeypress property sets and returns the onKeyPress event handler code for the current element."
+    },
+    "onkeyup": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup",
+      "!doc": "The onkeyup property returns the onKeyUp event handler code for the current element."
+    },
+    "onload": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload",
+      "!doc": "An event handler for the load event of a window."
+    },
+    "onloadeddata": "fn(+Event)",
+    "onloadedmetadata": "fn(+Event)",
+    "onloadstart": "fn(+Event)",
+    "onmousedown": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown",
+      "!doc": "The onmousedown property returns the onmousedown event handler code on the current element."
+    },
+    "onmouseenter": "fn(+Event)",
+    "onmouseleave": "fn(+Event)",
+    "onmousemove": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove",
+      "!doc": "The onmousemove property returns the mousemove event handler code on the current element."
+    },
+    "onmouseout": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout",
+      "!doc": "The onmouseout property returns the onMouseOut event handler code on the current element."
+    },
+    "onmouseover": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover",
+      "!doc": "The onmouseover property returns the onMouseOver event handler code on the current element."
+    },
+    "onmouseup": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup",
+      "!doc": "The onmouseup property returns the onMouseUp event handler code on the current element."
+    },
+    "onpause": "fn(+Event)",
+    "onplay": "fn(+Event)",
+    "onplaying": "fn(+Event)",
+    "onprogress": "fn(+Event)",
+    "onratechange": "fn(+Event)",
+    "onreset": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset",
+      "!doc": "The GlobalEventHandlers.onreset property contains an EventHandler triggered when a reset event is received."
+    },
+    "onresize": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize",
+      "!doc": "The GlobalEventHandlers.onresize property contains an EventHandler triggered when a resize event is received."
+    },
+    "onscroll": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll",
+      "!doc": "An event handler for scroll events on element."
+    },
+    "onseeked": "fn(+Event)",
+    "onseeking": "fn(+Event)",
+    "onselect": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect",
+      "!doc": "An event handler for the select event on the window."
+    },
+    "onshow": "fn(+Event)",
+    "onstalled": "fn(+Event)",
+    "onsubmit": {
+      "!type": "fn(+Event)",
+      "!url": "http://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit",
+      "!doc": "An event handler for the submit event on the window."
+    },
+    "onsuspend": "fn(+Event)",
+    "ontimeupdate": "fn(+Event)",
+    "onvolumechange": "fn(+Event)",
+    "onwaiting": "fn(+Event)",
+    "onpointercancel": "fn(+Event)",
+    "onpointerdown": "fn(+Event)",
+    "onpointerup": "fn(+Event)",
+    "onpointermove": "fn(+Event)",
+    "onpointerout": "fn(+Event)",
+    "onpointerover": "fn(+Event)",
+    "onpointerenter": "fn(+Event)",
+    "onpointerleave": "fn(+Event)",
+    "ongotpointercapture": "fn(+Event)",
+    "onlostpointercapture": "fn(+Event)",
+    "onmozfullscreenchange": "fn(+Event)",
+    "onmozfullscreenerror": "fn(+Event)",
+    "onmozpointerlockchange": "fn(+Event)",
+    "onmozpointerlockerror": "fn(+Event)",
+    "ontouchstart": "fn(+Event)",
+    "ontouchend": "fn(+Event)",
+    "ontouchmove": "fn(+Event)",
+    "ontouchcancel": "fn(+Event)",
+    "onerror": "fn(+Event)"
+  },
   "window": "Window",
   "self": "WindowProxy",
   "document": "+Document",
@@ -19275,6 +20848,7 @@
   "scroll": "fn(x: number, y: number)",
   "scrollTo": "fn(x: number, y: number)",
   "scrollBy": "fn(x: number, y: number)",
+  "mozScrollSnap": "fn()",
   "scrollX": "number",
   "pageXOffset": "number",
   "scrollY": "number",
@@ -19283,16 +20857,23 @@
   "screenY": "?",
   "outerWidth": "?",
   "outerHeight": "?",
+  "mozRequestOverfill": "fn(callback: fn(overfill: number))",
   "requestAnimationFrame": "fn(callback: fn(time: DOMHighResTimeStamp)) -> number",
   "cancelAnimationFrame": "fn(handle: number)",
   "performance": "Performance",
   "caches": "CacheStorage",
   "getDefaultComputedStyle": "fn(elt: HTMLElement, pseudoElt?: string) -> CSS2Properties",
+  "mozRequestAnimationFrame": "fn(aCallback: MozFrameRequestCallback) -> number",
+  "mozCancelAnimationFrame": "fn(aHandle: number)",
+  "mozCancelRequestAnimationFrame": "fn(aHandle: number)",
+  "mozAnimationStartTime": "number",
   "scrollByLines": "fn(numLines: number, options?: ScrollOptions)",
   "scrollByPages": "fn(numPages: number, options?: ScrollOptions)",
   "sizeToContent": "fn()",
   "controllers": "MozControllers",
   "realFrameElement": "HTMLElement",
+  "mozInnerScreenX": "number",
+  "mozInnerScreenY": "number",
   "devicePixelRatio": "number",
   "scrollMaxX": "number",
   "scrollMaxY": "number",
@@ -19302,6 +20883,8 @@
   "home": "fn()",
   "updateCommands": "fn(action: string, sel?: Selection, reason?: number)",
   "find": "fn(str?: string, caseSensitive?: bool, backwards?: bool, wrapAround?: bool, wholeWord?: bool, searchInFrames?: bool, showDialog?: bool) -> bool",
+  "mozPaintCount": "number",
+  "MozSelfSupport": "MozSelfSupport",
   "onwheel": "fn(+Event)",
   "ondevicemotion": "fn(+Event)",
   "ondeviceorientation": "fn(+Event)",

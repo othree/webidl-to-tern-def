@@ -225,7 +225,8 @@ var generator = {
       } else {
         def[name] = pinter;
       }
-      if (inter.navigator && !/^(?:moz|Moz|nsI)/.test(inter.navigator)) {
+      // if (inter.navigator && !/^(?:moz|Moz|nsI)/.test(inter.navigator)) {
+      if (inter.navigator) {
         navigator[inter.navigator] = name;
       }
     }

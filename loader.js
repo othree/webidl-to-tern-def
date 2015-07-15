@@ -146,7 +146,7 @@ var loader = {
     var inheritance = def.inheritance;
     var members = [];
     for (let prop of def.members) {
-      if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
+      // if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
       if (/-/.test(prop.name)) { continue; }
       // let idl = (prop.idlType && prop.idlType.idlType) || null;
       // if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
@@ -204,7 +204,7 @@ var loader = {
     var name = def.name;
     var members = [];
     for (let prop of def.members) {
-      if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
+      // if (/^(?:moz|Moz|nsI)/.test(prop.name)) { continue; }
       if (/-/.test(prop.name)) { continue; }
       // let idl = (prop.idlType && prop.idlType.idlType) || null;
       // if (prop.idlType && prop.idlType.generic) { idl = prop.idlType.generic; }
@@ -238,7 +238,7 @@ var loader = {
     var tree = parse(fs.readFileSync(file, 'utf8'));
 
     for (let def of tree) {
-      if (/^(?:moz|Moz|XUL|nsI)/.test(def.name)) { continue; }
+      // if (/^(?:moz|Moz|XUL|nsI)/.test(def.name)) { continue; }
 
       let d = loader.definition(def);
 
