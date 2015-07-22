@@ -47,7 +47,7 @@ var ptype = function (inter, nogenericinfo) {
    || type === 'unresticted float' || type === 'double' || type === 'unrestricted double') {
     type = 'number'
   }
-  if (type === 'DOMString' || type === 'ByteString ' || type === 'USVString') {
+  if (type === 'DOMString' || type === 'ByteString' || type === 'USVString') {
     type = 'string'
   }
   if (type === 'boolean') {
