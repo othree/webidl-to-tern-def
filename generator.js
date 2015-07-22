@@ -223,6 +223,9 @@ var generator = {
       if (inter.nointerface) {
         def['!define'][name] = pinter;
       } else {
+        if (name === 'Promise') {
+          continue;
+        }
         def[name] = pinter;
       }
       // if (inter.navigator && !/^(?:moz|Moz|nsI)/.test(inter.navigator)) {
