@@ -18,6 +18,15 @@ var factory = {
       members: factory.members(def.members)
     }
   },
+  typedef: function (def) {
+    return {
+      name: def.name,
+      type: 'typedef',
+      members: [],
+      nointerface: true,
+      idlType: def.idlType
+    }
+  },
   object: function (def) {
     return {
       name: def.name,

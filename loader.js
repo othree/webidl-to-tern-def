@@ -60,6 +60,9 @@ var loader = {
       }
     } else if (def.type === 'implements') {
       d = loader.implements(def);
+    } else if (def.type === 'typedef') {
+      ext.nointerface = true;
+      d = loader.typedef(def);
     } else if (def.type === 'dictionary') {
       ext.nointerface = true;
       d = loader.dictionary(def);
@@ -199,6 +202,17 @@ var loader = {
       implements: def.implements
     };
   },
+  typedef: function (def) {
+    "use strict";
+    return {
+      type: 'interface',
+      name: def.name,
+      inheritance: null,
+      partial: false,
+      members: [],
+      idlType: def.idlType
+    };
+  },
   dictionary: function (def) {
     "use strict";
     var name = def.name;
@@ -244,6 +258,7 @@ var loader = {
 
       if (!d) { continue; }
       if (d.chrome) { continue; }
+      if (d.name === 'JSON' && d.idlType) { continue; }
 
       if (d.type === 'callback') {
         storage.callbacks[d.name] = d;

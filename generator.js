@@ -68,6 +68,9 @@ var ptype = function (inter, options) {
   if (type === 'boolean') {
     type = 'bool'
   }
+  if (type === 'JSON') {
+    type = 'object'
+  }
   if (type === 'any') {
     type = "?";
   }
@@ -106,6 +109,16 @@ var ptype = function (inter, options) {
     }
   }
   return type;
+};
+
+var typedef = function (inter, parent) {
+  "use strict";
+  var def = {};
+  def["!type"] = ptype(inter.idlType);
+  if (Object.keys(def).length === 1 && def['!type']) {
+    def = def['!type'];
+  }
+  return def;
 };
 
 var method = function (inter, parent) {
@@ -211,6 +224,9 @@ var cons = function (inter, parent) {
 
 var member = function (inter, parent) {
   "use strict";
+  if (inter.type === 'typedef') {
+    return typedef(inter, parent);
+  }
   if (inter.type === 'method') {
     return method(inter, parent);
   }

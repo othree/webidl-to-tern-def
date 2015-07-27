@@ -7,6 +7,9 @@ var transform = {
   constructor: function (def) {
     return factory.constructor(def);
   },
+  typedef: function (def) {
+    return factory.typedef(def);
+  },
   object: function (def) {
     return factory.object(def);
   },
@@ -64,7 +67,11 @@ var transform = {
         namedo = transform.constructor(currentInterface);
         namedo.name = currentInterface.named;
       } else if (currentInterface.nointerface) {
-        o = transform.object(currentInterface);
+        if (currentInterface.idlType) {
+          o = transform.typedef(currentInterface);
+        } else {
+          o = transform.object(currentInterface);
+        }
       } else {
         o = transform.object(currentInterface);
       }
