@@ -35,7 +35,7 @@ var ptype = function (inter, nogenericinfo) {
     if (Array.isArray(type)) {
       type = 'any';
     }
-    if (typeof type === 'string' && store.isCons(type)) {
+    if (typeof type === 'string' && (store.isCons(type) || 'ArrayBuffer' === type )) {
       type = `+${type}`;
     }
   } else {
