@@ -23,20 +23,35 @@ var store = {
   }
 };
 
-var ptype = function (inter, nogenericinfo) {
+var ptype = function (inter, options) {
   "use strict";
+  options = options || {};
   var type;
   var sequence = false;
   var generic = false;
+  var nogenericinfo = options.nogenericinfo;
+  var nounion = options.nounion;
   if (typeof inter !== 'string') {
-    sequence = inter.sequence;
-    generic = inter.generic;
-    type = inter.idlType;
-    if (Array.isArray(type)) {
-      type = 'any';
-    }
-    if (typeof type === 'string' && (store.isCons(type) || 'ArrayBuffer' === type )) {
-      type = `+${type}`;
+    if (inter.union && !nounion) {
+      let types = inter.idlType;
+      let ts = [];
+      for (let t of types) {
+        ts.push(ptype(t));
+      }
+      type = ts.join('|');
+    } else {
+      if (inter.union && nounion) {
+        inter = inter.idlType[0];
+      }
+      sequence = inter.sequence;
+      generic = inter.generic;
+      type = inter.idlType;
+      if (Array.isArray(type)) {
+        type = 'any';
+      }
+      if (typeof type === 'string' && (store.isCons(type) || 'ArrayBuffer' === type )) {
+        type = `+${type}`;
+      }
     }
   } else {
     type = inter;
@@ -82,7 +97,7 @@ var ptype = function (inter, nogenericinfo) {
     var args = [];
     for (let arg of inter.arguments) {
       let optional = arg.optional ? '?' : '';
-      args.push(`${arg.name}${optional}: ${ptype(arg.idlType, true)}`)
+      args.push(`${arg.name}${optional}: ${ptype(arg.idlType, {nogenericinfo: true, nounion: true})}`)
     }
     type = `fn(${args.join(', ')})`;
     var rtn = ptype(inter.interface);
@@ -98,7 +113,7 @@ var method = function (inter, parent) {
   var args = [];
   for (let arg of inter.arguments) {
     let optional = arg.optional ? '?' : '';
-    args.push(`${arg.name}${optional}: ${ptype(arg.idlType, true)}`)
+    args.push(`${arg.name}${optional}: ${ptype(arg.idlType, {nogenericinfo: true, nounion: true})}`)
   }
   var type = `fn(${args.join(', ')})`;
   var rtn = ptype(inter.interface);
@@ -157,7 +172,7 @@ var cons = function (inter, parent) {
   var args = [];
   for (let arg of inter.arguments) {
     let optional = arg.optional ? '?' : '';
-    args.push(`${arg.name}${optional}: ${ptype(arg.idlType)}`)
+    args.push(`${arg.name}${optional}: ${ptype(arg.idlType, {nounion: true})}`)
   }
   var type = `fn(${args.join(', ')})`;
   var proto = {};
