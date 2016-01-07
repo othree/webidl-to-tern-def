@@ -29,8 +29,8 @@ var transform = {
       transform.assignMembers(target, st.interfaces[from]);
     }
     if (st.implementations[from]) {
-      for (let from of st.implementations[from]) {
-        transform.implements(target, from, st);
+      for (let ffrom of st.implementations[from]) {
+        transform.implements(target, ffrom, st);
       }
     }
   },

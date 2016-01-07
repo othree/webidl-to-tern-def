@@ -265,9 +265,24 @@ var loader = {
       } 
       if (d.type === 'interface') {
         if (d.partial) {
+          if (!storage.interfaces[d.name]) {
+            storage.interfaces[d.name] = {
+              members: []
+            };
+          }
           storage.interfaces[d.name].members = storage.interfaces[d.name].members.concat(d.members);
         } else {
+          if (storage.interfaces[d.name]) {
+            var cached_members = storage.interfaces[d.name].members
+          }
           storage.interfaces[d.name] = d;
+          if (cached_members) {
+            if (storage.interfaces[d.name].members) {
+              storage.interfaces[d.name].members = storage.interfaces[d.name].members.concat(cached_members);
+            } else {
+              storage.interfaces[d.name].members = cached_members;
+            }
+          }
         }
       } 
       if (d.type === 'implements') {
